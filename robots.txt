@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://j2hongming.github.io/sitemap.xml 
