@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | J2hongming Blog]]></title>
   <link href="http://j2hongming.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://j2hongming.github.io/"/>
-  <updated>2014-10-20T17:44:32+08:00</updated>
+  <updated>2014-10-20T17:48:14+08:00</updated>
   <id>http://j2hongming.github.io/</id>
   <author>
     <name><![CDATA[HongMing ChangChine]]></name>
@@ -21,6 +21,9 @@
     <content type="html"><![CDATA[<h2>方法一</h2>
 
 <p><code>Ctrl + r</code>: 搜尋指令歷史紀錄，進入<strong>(reverse-i-search)</strong>模式</p>
+
+<!-- more -->
+
 
 <p>在<strong>reverse-i-search</strong>下，輸入關鍵字</p>
 
