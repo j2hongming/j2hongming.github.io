@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Blog | J2hongming Blog]]></title>
   <link href="http://j2hongming.github.io/blog/categories/blog/atom.xml" rel="self"/>
   <link href="http://j2hongming.github.io/"/>
-  <updated>2014-10-17T17:59:57+08:00</updated>
+  <updated>2014-10-20T17:44:32+08:00</updated>
   <id>http://j2hongming.github.io/</id>
   <author>
     <name><![CDATA[HongMing ChangChine]]></name>
@@ -26,6 +26,7 @@
 <li>Atx Format Header</li>
 <li>Setext Format Header</li>
 <li>Break Line</li>
+<li>Link</li>
 </ul>
 
 
@@ -34,16 +35,16 @@
 
 <p><a href="http://markdown.tw/">Markdown Syntax</a></p>
 
-<h1>Sharing Code Snippets</h1>
+<h2>Sharing Code Snippets</h2>
 
-<h2>Example  1</h2>
+<h3>Example  1</h3>
 
 <p><figure class='code'><figcaption><span>PHP echo-hello.php <a href="http://php.net/manual/en/function.echo.php">http://php.net/manual/en/function.echo.php</a> </span></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='php'><span class='line'><span class="k">echo</span> <span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">部落格開張</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;;</span>
 </span></code></pre></td></tr></table></div></figure></p>
 
-<h2>Example  2</h2>
+<h3>Example  2</h3>
 
 <p><a href="http://octopress.org/docs/blogging/code/">Octopress: Sharing Code Snippets</a>
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -76,9 +77,9 @@
 </span><span class='line'><span class="nt">&lt;/html&gt;</span>
 </span></code></pre></td></tr></table></div></figure></p>
 
-<h1>Quote</h1>
+<h2>Quote</h2>
 
-<h2>Example 1</h2>
+<h3>Example 1</h3>
 
 <p><a href="http://octopress.org/docs/plugins/blockquote/">Octopress: Blockquote</a></p>
 
@@ -96,15 +97,15 @@ Line</li>
 </ol>
 </blockquote>
 
-<h2>Example 2</h2>
+<h3>Example 2</h3>
 
 <p><blockquote><p>Flying is learning how to throw yourself at the ground and miss.</p><footer><strong>Douglas Adams</strong> <cite>The Hichhikers Guide to the Galaxy</cite></footer></blockquote></p>
 
-<h1>List</h1>
+<h2>List</h2>
 
-<h2>Example</h2>
+<h3>Example</h3>
 
-<h3>TODO List</h3>
+<h4>TODO List</h4>
 
 <ul>
 <li>open</li>
@@ -120,11 +121,11 @@ Line</li>
 </ul>
 
 
-<h1>Email</h1>
+<h2>Email</h2>
 
-<h2>Example</h2>
+<h3>Example</h3>
 
-<p><a href="&#109;&#x61;&#105;&#108;&#x74;&#x6f;&#x3a;&#97;&#100;&#100;&#114;&#101;&#115;&#x73;&#x40;&#101;&#x78;&#97;&#109;&#x70;&#108;&#x65;&#x2e;&#x63;&#x6f;&#109;">&#x61;&#x64;&#100;&#x72;&#101;&#115;&#x73;&#x40;&#101;&#120;&#97;&#x6d;&#112;&#108;&#101;&#x2e;&#99;&#111;&#109;</a></p>
+<p><a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#x6f;&#x3a;&#97;&#x64;&#100;&#114;&#101;&#x73;&#x73;&#64;&#x65;&#120;&#97;&#109;&#112;&#108;&#x65;&#x2e;&#x63;&#x6f;&#x6d;">&#97;&#100;&#x64;&#x72;&#x65;&#115;&#115;&#x40;&#x65;&#120;&#97;&#109;&#112;&#108;&#101;&#x2e;&#99;&#111;&#109;</a></p>
 
 <h1>Atx format Header L1</h1>
 
@@ -142,7 +143,7 @@ Line</li>
 
 <h1>This is an Setext Format  H1</h1>
 
-<h2>Example</h2>
+<h3>Example</h3>
 
 <h2>This is an  Setext Format  H2</h2>
 
@@ -160,11 +161,11 @@ Line</li>
 
 <h1>Link</h1>
 
-<h2>Example 1: Inline</h2>
+<h3>Example 1: Inline</h3>
 
 <p>This is <a href="http://example.com/" title="Title">an example</a> inline link.</p>
 
-<h2>Example 2: Ref</h2>
+<h3>Example 2: Ref</h3>
 
 <p>This is <a href="http://example.com/" title="Optional Title Here">an example</a> reference-style link.</p>
 ]]></content>
