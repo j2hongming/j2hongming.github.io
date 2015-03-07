@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Drupal | J2hongming Blog]]></title>
+  <link href="http://j2hongming.github.io/blog/categories/drupal/atom.xml" rel="self"/>
+  <link href="http://j2hongming.github.io/"/>
+  <updated>2015-03-07T02:46:27+00:00</updated>
+  <id>http://j2hongming.github.io/</id>
+  <author>
+    <name><![CDATA[HongMing ChangChine]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Drupal Module使用整理]]></title>
+    <link href="http://j2hongming.github.io/blog/2015/03/07/drupal-moduleshi-yong-zheng-li/"/>
+    <updated>2015-03-07T02:26:00+00:00</updated>
+    <id>http://j2hongming.github.io/blog/2015/03/07/drupal-moduleshi-yong-zheng-li</id>
+    <content type="html"><![CDATA[<ul>
+<li>Mail</li>
+<li>Cron</li>
+</ul>
+
+
+<h2>Mail</h2>
+
+<p><em>Elysia Cron</em></p>
+
+<h2>Cron</h2>
+
+<p><em>SMTP Authentication Support</em></p>
+]]></content>
+  </entry>
+  
+</feed>
