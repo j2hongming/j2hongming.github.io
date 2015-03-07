@@ -4,7 +4,7 @@
   <title><![CDATA[J2hongming Blog]]></title>
   <link href="http://j2hongming.github.io/atom.xml" rel="self"/>
   <link href="http://j2hongming.github.io/"/>
-  <updated>2015-03-07T02:52:33+00:00</updated>
+  <updated>2015-03-07T03:24:05+00:00</updated>
   <id>http://j2hongming.github.io/</id>
   <author>
     <name><![CDATA[HongMing ChangChine]]></name>
@@ -19,21 +19,25 @@
     <updated>2015-03-07T02:26:00+00:00</updated>
     <id>http://j2hongming.github.io/blog/2015/03/07/drupal-moduleshi-yong-zheng-li</id>
     <content type="html"><![CDATA[<ul>
-<li>Mail</li>
 <li>Cron</li>
+<li>Mail</li>
 </ul>
 
 
 <!-- more -->
 
 
-<h2>Mail</h2>
-
-<p><em>Elysia Cron</em></p>
-
 <h2>Cron</h2>
 
-<p><em>SMTP Authentication Support</em></p>
+<p><a href="https://www.drupal.org/project/elysia_cron" title="Elysia Cron"><em>Elysia Cron</em></a></p>
+
+<blockquote><p>Elysia Cron 可使用類似crontab指定時間的方法執行cron</p></blockquote>
+
+<h2>Mail</h2>
+
+<p><a href="https://www.drupal.org/project/smtp" title="SMTP Authentication Support"><em>SMTP Authentication Support</em></a></p>
+
+<blockquote><p>可讓系統發信的模組(連結到Gmail或其他Mail Server)</p></blockquote>
 ]]></content>
   </entry>
   
@@ -184,7 +188,7 @@ Line</li>
 
 <h3>Example</h3>
 
-<p><a href="&#109;&#x61;&#105;&#108;&#x74;&#x6f;&#58;&#97;&#x64;&#x64;&#x72;&#101;&#x73;&#115;&#x40;&#101;&#x78;&#97;&#109;&#x70;&#108;&#101;&#46;&#x63;&#111;&#109;">&#x61;&#x64;&#x64;&#x72;&#101;&#115;&#115;&#x40;&#101;&#120;&#97;&#109;&#112;&#108;&#x65;&#x2e;&#99;&#x6f;&#x6d;</a></p>
+<p><a href="&#109;&#97;&#105;&#x6c;&#116;&#111;&#x3a;&#x61;&#100;&#100;&#x72;&#101;&#115;&#115;&#x40;&#x65;&#x78;&#97;&#109;&#112;&#108;&#101;&#x2e;&#99;&#x6f;&#x6d;">&#x61;&#100;&#100;&#x72;&#101;&#115;&#x73;&#64;&#x65;&#x78;&#97;&#109;&#x70;&#x6c;&#101;&#46;&#x63;&#x6f;&#109;</a></p>
 
 <h1>Atx format Header L1</h1>
 
