@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Blog | J2hongming Blog]]></title>
+  <link href="http://j2hongming.github.io/blog/categories/blog/atom.xml" rel="self"/>
+  <link href="http://j2hongming.github.io/"/>
+  <updated>2015-07-14T18:37:11+08:00</updated>
+  <id>http://j2hongming.github.io/</id>
+  <author>
+    <name><![CDATA[HongMing ChangChine]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[部落格開張Markdown Demo]]></title>
+    <link href="http://j2hongming.github.io/blog/2014/10/16/bu-luo-ge-kai-zhang/"/>
+    <updated>2014-10-16T16:22:49+08:00</updated>
+    <id>http://j2hongming.github.io/blog/2014/10/16/bu-luo-ge-kai-zhang</id>
+    <content type="html"><![CDATA[<ul>
+<li>Sharing Code Snippets</li>
+<li>Quote</li>
+<li>List</li>
+<li>Email</li>
+<li>Atx Format Header</li>
+<li>Setext Format Header</li>
+<li>Break Line</li>
+<li>Link</li>
+</ul>
+
+
+<!-- more -->
+
+
+<p><a href="http://markdown.tw/">Markdown Syntax</a></p>
+
+<h2>Sharing Code Snippets</h2>
+
+<h3>Example  1</h3>
+
+<p><figure class='code'><figcaption><span>PHP echo-hello.php <a href="http://php.net/manual/en/function.echo.php">http://php.net/manual/en/function.echo.php</a> </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="k">echo</span> <span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">部落格開張</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;;</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<h3>Example  2</h3>
+
+<p><a href="http://octopress.org/docs/blogging/code/">Octopress: Sharing Code Snippets</a>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="ni">&amp;lt;</span>!DOCTYPE html&gt;
+</span><span class='line'><span class="nt">&lt;html&gt;</span>
+</span><span class='line'><span class="nt">&lt;body&gt;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;h1&gt;</span>My First Heading<span class="nt">&lt;/h1&gt;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;</span>My first paragraph.<span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;&lt;/body&gt;</span>
+</span><span class='line'><span class="nt">&lt;/html&gt;</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<h2>Quote</h2>
+
+<h3>Example 1</h3>
+
+<p><a href="http://octopress.org/docs/plugins/blockquote/">Octopress: Blockquote</a></p>
+
+<blockquote><p>Stay hungry, Stay foolish. -Steve Jobs</p>
+
+<p>A apple a day, keep the doctor away</p>
+
+<blockquote><p>May I help U?</p></blockquote>
+
+<ol>
+<li>First
+Line</li>
+<li>Two
+Line</li>
+</ol>
+</blockquote>
+
+<h3>Example 2</h3>
+
+<p><blockquote><p>Flying is learning how to throw yourself at the ground and miss.</p><footer><strong>Douglas Adams</strong> <cite>The Hichhikers Guide to the Galaxy</cite></footer></blockquote></p>
+
+<h2>List</h2>
+
+<h3>Example</h3>
+
+<h4>TODO List</h4>
+
+<ul>
+<li>open</li>
+<li><em>hadle em</em></li>
+<li><strong>*strong*</strong>
+
+<ol>
+<li>s1</li>
+<li>s2</li>
+<li>s3</li>
+</ol>
+</li>
+</ul>
+
+
+<h2>Email</h2>
+
+<h3>Example</h3>
+
+<p><a href="&#x6d;&#97;&#x69;&#108;&#x74;&#111;&#58;&#97;&#x64;&#x64;&#114;&#101;&#115;&#115;&#64;&#101;&#120;&#x61;&#109;&#112;&#x6c;&#x65;&#x2e;&#x63;&#111;&#x6d;">&#x61;&#x64;&#100;&#x72;&#x65;&#115;&#x73;&#64;&#101;&#120;&#97;&#x6d;&#112;&#x6c;&#101;&#x2e;&#99;&#111;&#x6d;</a></p>
+
+<h1>Atx format Header L1</h1>
+
+<h2>Example</h2>
+
+<h2>Header L2</h2>
+
+<h3>Header L3</h3>
+
+<h4>Header L4</h4>
+
+<h5>Header L5</h5>
+
+<h6>Header L6</h6>
+
+<h1>This is an Setext Format  H1</h1>
+
+<h3>Example</h3>
+
+<h2>This is an  Setext Format  H2</h2>
+
+<h1>Break Line</h1>
+
+<h2>Example</h2>
+
+<p>BreakLine</p>
+
+<hr />
+
+<hr />
+
+<hr />
+
+<h1>Link</h1>
+
+<h3>Example 1: Inline</h3>
+
+<p>This is <a href="http://example.com/" title="Title">an example</a> inline link.</p>
+
+<h3>Example 2: Ref</h3>
+
+<p>This is <a href="http://example.com/" title="Optional Title Here">an example</a> reference-style link.</p>
+]]></content>
+  </entry>
+  
+</feed>
