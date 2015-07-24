@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Linux | J2hongming Blog]]></title>
-  <link href="http://j2hongming.github.io/blog/categories/linux/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Memcache | J2hongming Blog]]></title>
+  <link href="http://j2hongming.github.io/blog/categories/memcache/atom.xml" rel="self"/>
   <link href="http://j2hongming.github.io/"/>
   <updated>2015-07-24T17:35:53+08:00</updated>
   <id>http://j2hongming.github.io/</id>
@@ -48,46 +48,6 @@
 <h3>設定Drupal 7 setting.php</h3>
 
 <h2>注意事項</h2>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Linux指令歷史紀錄]]></title>
-    <link href="http://j2hongming.github.io/blog/2014/10/20/linux-command-history/"/>
-    <updated>2014-10-20T17:09:32+08:00</updated>
-    <id>http://j2hongming.github.io/blog/2014/10/20/linux-command-history</id>
-    <content type="html"><![CDATA[<h2>方法一</h2>
-
-<p><code>Ctrl + r</code>: 搜尋指令歷史紀錄，進入<strong>(reverse-i-search)</strong>模式</p>
-
-<!-- more -->
-
-
-<p>在<strong>reverse-i-search</strong>下，輸入關鍵字</p>
-
-<ul>
-<li><code>Enter</code>: 直接執行此指令</li>
-<li><code>左右鍵</code>: 跳回一般命令提示字元</li>
-<li><code>Ctrl + r</code>: 下一個</li>
-</ul>
-
-
-<h2>方法二</h2>
-
-<ul>
-<li><code>history | more</code></li>
-<li><code>!n</code>: n為history的輸出編號</li>
-<li><code>!keyword</code>: keyword為指定之關鍵字</li>
-<li><code>history n</code>:  列出最近n個使用的指令</li>
-</ul>
-
-
-<h2>Ref.</h2>
-
-<ol>
-<li><a href="http://www.gtwang.org/2013/10/mastering-linux-command-line-history.html">Linux 指令歷史紀錄（History）的操作教學與範例</a></li>
-</ol>
-
 ]]></content>
   </entry>
   

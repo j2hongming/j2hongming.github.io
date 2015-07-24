@@ -4,7 +4,7 @@
   <title><![CDATA[J2hongming Blog]]></title>
   <link href="http://j2hongming.github.io/atom.xml" rel="self"/>
   <link href="http://j2hongming.github.io/"/>
-  <updated>2015-07-16T17:06:11+08:00</updated>
+  <updated>2015-07-24T17:35:53+08:00</updated>
   <id>http://j2hongming.github.io/</id>
   <author>
     <name><![CDATA[HongMing ChangChine]]></name>
@@ -12,6 +12,44 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Drupal 7 + Memcached on CentOS 6]]></title>
+    <link href="http://j2hongming.github.io/blog/2015/07/24/drupal-7-plus-memcached-on-centos-6/"/>
+    <updated>2015-07-24T17:24:34+08:00</updated>
+    <id>http://j2hongming.github.io/blog/2015/07/24/drupal-7-plus-memcached-on-centos-6</id>
+    <content type="html"><![CDATA[<ul>
+<li>安裝Memcached</li>
+<li>設定Memcached</li>
+<li>安裝Memcached PHP extension(PECL Memcache)</li>
+<li>設定Memcached PHP extension</li>
+<li>安裝Drupal 7 memcache 模組</li>
+<li>設定Drupal 7 setting.php</li>
+<li>注意事項</li>
+</ul>
+
+
+<h2>Memcached</h2>
+
+<h3>安裝Memcached</h3>
+
+<h3>設定Memcached</h3>
+
+<h2>Memcached PHP extension</h2>
+
+<h3>安裝Memcached PHP extension</h3>
+
+<h3>設定Memcached PHP extension</h3>
+
+<h2>Drupal 7</h2>
+
+<h3>安裝Drupal 7 memcache 模組</h3>
+
+<h3>設定Drupal 7 setting.php</h3>
+
+<h2>注意事項</h2>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Linux指令歷史紀錄]]></title>
@@ -160,7 +198,7 @@ Line</li>
 
 <h3>Example</h3>
 
-<p><a href="&#x6d;&#97;&#105;&#x6c;&#x74;&#111;&#x3a;&#x61;&#x64;&#x64;&#x72;&#101;&#115;&#x73;&#x40;&#x65;&#x78;&#x61;&#109;&#112;&#108;&#x65;&#46;&#99;&#111;&#109;">&#97;&#x64;&#x64;&#x72;&#101;&#115;&#x73;&#64;&#x65;&#120;&#97;&#x6d;&#x70;&#108;&#101;&#x2e;&#99;&#111;&#109;</a></p>
+<p><a href="&#109;&#x61;&#x69;&#108;&#x74;&#111;&#58;&#97;&#100;&#x64;&#114;&#x65;&#x73;&#115;&#64;&#x65;&#x78;&#x61;&#x6d;&#x70;&#108;&#101;&#46;&#x63;&#111;&#x6d;">&#97;&#100;&#x64;&#x72;&#101;&#115;&#115;&#x40;&#101;&#x78;&#97;&#109;&#x70;&#108;&#x65;&#x2e;&#x63;&#111;&#x6d;</a></p>
 
 <h1>Atx format Header L1</h1>
 
