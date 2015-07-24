@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Memcache | J2hongming Blog]]></title>
   <link href="http://j2hongming.github.io/blog/categories/memcache/atom.xml" rel="self"/>
   <link href="http://j2hongming.github.io/"/>
-  <updated>2015-07-24T17:43:54+08:00</updated>
+  <updated>2015-07-24T17:50:43+08:00</updated>
   <id>http://j2hongming.github.io/</id>
   <author>
     <name><![CDATA[HongMing ChangChine]]></name>
@@ -38,9 +38,16 @@
 
 <h3>設定Memcached</h3>
 
+<p>設定 /etc/sysconfig/memcached
+注意OPTIONS=&ldquo;-l 127.0.0.1&rdquo;</p>
+
 <h2>Memcached PHP extension</h2>
 
 <h3>安裝Memcached PHP extension</h3>
+
+<p>指定版本
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo pecl install channel://pecl.php.net/memcache-3.0.6</span></code></pre></td></tr></table></div></figure></p>
 
 <h3>設定Memcached PHP extension</h3>
 
