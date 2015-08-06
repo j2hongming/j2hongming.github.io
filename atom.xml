@@ -4,7 +4,7 @@
   <title><![CDATA[J2hongming Blog]]></title>
   <link href="http://j2hongming.github.io/atom.xml" rel="self"/>
   <link href="http://j2hongming.github.io/"/>
-  <updated>2015-07-24T17:50:43+08:00</updated>
+  <updated>2015-08-06T16:02:40+08:00</updated>
   <id>http://j2hongming.github.io/</id>
   <author>
     <name><![CDATA[HongMing ChangChine]]></name>
@@ -54,13 +54,67 @@
 
 <h3>設定Memcached PHP extension</h3>
 
+<p>設定/etc/php.d/memcache.ini</p>
+
+<p>開啟hash相關設定</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>memcache.hash\_strategy=consistent</span></code></pre></td></tr></table></div></figure>
+
+
 <h2>Drupal 7</h2>
 
 <h3>安裝Drupal 7 memcache 模組</h3>
 
+<p><a href="https://www.drupal.org/project/memcache">Memcache API and Integration</a></p>
+
 <h3>設定Drupal 7 setting.php</h3>
 
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$conf['cache_backends'][] = 'sites/all/modules/memcache/memcache.inc';
+</span><span class='line'>// The 'cache_form' bin must be assigned no non-volatile storage.
+</span><span class='line'>$conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
+</span><span class='line'>$conf['cache_default_class'] = 'MemCacheDrupal';
+</span><span class='line'>$conf['memcache_key_prefix'] = 'something_unique';
+</span><span class='line'>// Don't bootstrap the database when serving pages from the cache.
+</span><span class='line'>$conf['page_cache_without_database'] = TRUE;
+</span><span class='line'>$conf['page_cache_invoke_hooks'] = FALSE;
+</span><span class='line'>
+</span><span class='line'>$conf['memcache_stampede_protection'] = TRUE;
+</span><span class='line'>$conf['lock_inc'] = 'sites/all/modules/memcache/memcache-lock.inc';</span></code></pre></td></tr></table></div></figure>
+
+
 <h2>注意事項</h2>
+
+<ol>
+<li>若memcache service有起來，Druapl卻沒連到，注意防火牆設定</li>
+</ol>
+
+
+<h2>Ref</h2>
+
+<ul>
+<li><a href="https://www.drupal.org/node/1131468">Drupal 7 Memcache Tutorial</a>
+大致流程說明</li>
+<li><a href="http://tag1consulting.com/blog/memcache-centos-fedora">Memcached and PECL memcache on CentOS and Fedora</a>
+CentOS安裝注意事項</li>
+<li><a href="http://www.tecmint.com/install-memcached-caching-server-on-rhel-centos-fedora/">Install Memcached (Caching Server) on RHEL/CentOS 6.3/5.8 and Fedora 17-12</a>
+安裝流程與指令(推薦)</li>
+<li><a href="http://chimera.labs.oreilly.com/books/1230000000845/ch16.html">Chapter 16. Alternative Storage and Cache Backends</a>
+觀念</li>
+<li><a href="http://www.hellosanta.com.tw/Drupal%E7%B6%B2%E7%AB%99%E8%A8%AD%E8%A8%88/drupal-memcached">Drupal Memcached中文教學</a></li>
+</ul>
+
 ]]></content>
   </entry>
   
@@ -211,7 +265,7 @@ Line</li>
 
 <h3>Example</h3>
 
-<p><a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x61;&#x64;&#x64;&#114;&#x65;&#115;&#x73;&#64;&#101;&#120;&#x61;&#109;&#x70;&#108;&#101;&#46;&#x63;&#111;&#x6d;">&#97;&#100;&#x64;&#x72;&#101;&#x73;&#x73;&#64;&#101;&#x78;&#x61;&#109;&#112;&#108;&#x65;&#46;&#x63;&#x6f;&#x6d;</a></p>
+<p><a href="&#x6d;&#97;&#105;&#x6c;&#116;&#x6f;&#58;&#97;&#x64;&#100;&#x72;&#x65;&#x73;&#x73;&#x40;&#x65;&#120;&#97;&#x6d;&#112;&#108;&#101;&#x2e;&#x63;&#111;&#109;">&#x61;&#100;&#100;&#x72;&#x65;&#x73;&#x73;&#x40;&#101;&#x78;&#97;&#109;&#x70;&#108;&#101;&#46;&#x63;&#111;&#109;</a></p>
 
 <h1>Atx format Header L1</h1>
 
