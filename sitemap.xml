@@ -3,6 +3,14 @@
   
   
   <url>
+    <loc>http://j2hongming.github.io/blog/2016/02/18/github-pages-with-octopress/</loc>
+    
+    <lastmod>2016-02-18T17:29:01+08:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://j2hongming.github.io/blog/2015/07/24/drupal-7-plus-memcached-on-centos-6/</loc>
     
     <lastmod>2015-07-24T17:24:34+08:00</lastmod>
@@ -29,28 +37,28 @@
   
   <url>
     <loc>http://j2hongming.github.io/</loc>
-    <lastmod>2016-02-18T17:12:33+08:00</lastmod>
+    <lastmod>2016-02-18T18:17:47+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://j2hongming.github.io/blog/archives/</loc>
-    <lastmod>2016-02-18T17:12:33+08:00</lastmod>
+    <lastmod>2016-02-18T18:17:47+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://j2hongming.github.io/toolbox/</loc>
-    <lastmod>2016-02-18T17:12:33+08:00</lastmod>
+    <lastmod>2016-02-18T18:17:47+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://j2hongming.github.io/bookshelf/</loc>
-    <lastmod>2016-02-18T17:12:33+08:00</lastmod>
+    <lastmod>2016-02-18T18:17:47+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

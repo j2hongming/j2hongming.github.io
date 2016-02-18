@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Octopress | J2hongming Blog]]></title>
+  <link href="http://j2hongming.github.io/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://j2hongming.github.io/"/>
+  <updated>2016-02-18T18:17:47+08:00</updated>
+  <id>http://j2hongming.github.io/</id>
+  <author>
+    <name><![CDATA[HongMing ChangChine]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Github Pages With Octopress]]></title>
+    <link href="http://j2hongming.github.io/blog/2016/02/18/github-pages-with-octopress/"/>
+    <updated>2016-02-18T17:29:01+08:00</updated>
+    <id>http://j2hongming.github.io/blog/2016/02/18/github-pages-with-octopress</id>
+    <content type="html"><![CDATA[<ul>
+<li>建置Octopress</li>
+<li>設定佈署到 github</li>
+<li>網站設定</li>
+<li>內容管理</li>
+</ul>
+
+
+<!-- more -->
+
+
+<h2>建置Octopress</h2>
+
+<h2>設定佈署到 github</h2>
+
+<pre><code>rake setup_github_pages
+</code></pre>
+
+<p>輸入自己的Github Pages repository url
+git@github.com:your_username/your_username.github.io.git</p>
+
+<h2>網站設定</h2>
+
+<p><a href="http://octopress.org/docs/configuring/">Configuring Octopress</a></p>
+
+<h2>內容管理</h2>
+
+<p>Octopress的網頁內容是使用<a href="http://markdown.tw/">Markdown語法</a>
+Blog的文章會被存放在source/_posts, 以Jekyll&rsquo;s naming conventions:YYYY-MM-DD-post-title.markdown來命名</p>
+
+<h3>如何在Octopress分享程式碼</h3>
+
+<h4>markdown方法</h4>
+
+<pre><code>4個空白或1個tab
+</code></pre>
+
+<h4>octopress方法</h4>
+
+<p><a href="http://octopress.org/docs/blogging/code/">Sharing Code Snippets in Octopress</a></p>
+
+<h3>常用指令</h3>
+
+<p>建立新文章</p>
+
+<pre><code>rake new_post["標題"]
+#保存在 source/_posts/日期-標題.markdown
+</code></pre>
+
+<p>建立新頁面</p>
+
+<pre><code>rake new_page[super-awesome]
+#creates /source/super-awesome/index.markdown
+#保存在anywhere in your blog source directory
+
+rake new_page[super-awesome/page.html]
+# creates /source/super-awesome/page.html 
+</code></pre>
+
+<p>產生網站檔案</p>
+
+<pre><code>rake generate
+# Generates posts and pages into the public directory
+</code></pre>
+
+<p>發佈到 GitHub</p>
+
+<pre><code>rake deploy
+</code></pre>
+]]></content>
+  </entry>
+  
+</feed>
