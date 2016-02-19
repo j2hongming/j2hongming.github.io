@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | J2hongming Blog]]></title>
   <link href="http://j2hongming.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://j2hongming.github.io/"/>
-  <updated>2016-02-18T18:17:47+08:00</updated>
+  <updated>2016-02-19T17:15:32+08:00</updated>
   <id>http://j2hongming.github.io/</id>
   <author>
     <name><![CDATA[HongMing ChangChine]]></name>
@@ -52,7 +52,8 @@ Blog的文章會被存放在source/_posts, 以Jekyll&rsquo;s naming conventions:
 
 <h4>markdown方法</h4>
 
-<pre><code>4個空白或1個tab
+<pre><code>若為區塊程式碼, 使用4個空白或1個tab
+若為行內程式碼, 使用反引號 `
 </code></pre>
 
 <h4>octopress方法</h4>

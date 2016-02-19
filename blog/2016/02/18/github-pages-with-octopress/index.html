@@ -136,7 +136,8 @@ Blog的文章會被存放在source/_posts, 以Jekyll&rsquo;s naming conventions:
 
 <h4>markdown方法</h4>
 
-<pre><code>4個空白或1個tab
+<pre><code>若為區塊程式碼, 使用4個空白或1個tab
+若為行內程式碼, 使用反引號 `
 </code></pre>
 
 <h4>octopress方法</h4>
@@ -216,6 +217,8 @@ rake new_page[super-awesome/page.html]
         <a class="basic-alignment left" href="/blog/2015/07/24/drupal-7-plus-memcached-on-centos-6/" title="Previous Post: Drupal 7 + Memcached on CentOS 6">&laquo; Drupal 7 + Memcached on CentOS 6</a>
       
       
+        <a class="basic-alignment right" href="/blog/2016/02/19/notes-for-vim/" title="Next Post: Notes for Vim">Notes for Vim &raquo;</a>
+      
     </p>
   </footer>
 </article>
@@ -227,6 +230,10 @@ rake new_page[super-awesome/page.html]
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2016/02/19/notes-for-vim/">Notes for Vim</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2016/02/18/github-pages-with-octopress/">Github Pages With Octopress</a>

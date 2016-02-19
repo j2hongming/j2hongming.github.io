@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | J2hongming Blog]]></title>
   <link href="http://j2hongming.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://j2hongming.github.io/"/>
-  <updated>2016-02-18T18:17:47+08:00</updated>
+  <updated>2016-02-19T17:15:32+08:00</updated>
   <id>http://j2hongming.github.io/</id>
   <author>
     <name><![CDATA[HongMing ChangChine]]></name>
@@ -12,6 +12,64 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Notes for Vim]]></title>
+    <link href="http://j2hongming.github.io/blog/2016/02/19/notes-for-vim/"/>
+    <updated>2016-02-19T11:28:15+08:00</updated>
+    <id>http://j2hongming.github.io/blog/2016/02/19/notes-for-vim</id>
+    <content type="html"><![CDATA[<ul>
+<li>概念Concept</li>
+<li>基本Basic</li>
+<li>組合技Combo</li>
+</ul>
+
+
+<h2>概念Concept</h2>
+
+<ul>
+<li>模式</li>
+<li>單檔案</li>
+<li>單行</li>
+<li>單詞</li>
+<li>單檔案</li>
+</ul>
+
+
+<h3>模式</h3>
+
+<p>Command Line mode, Normal mode, Insert mode, 預設在Normal mode</p>
+
+<p>Nm to Im: <code>i</code></p>
+
+<p>Nm to CLm:<code>:</code></p>
+
+<p>Im to Nm:<code>esc</code></p>
+
+<h2>基本Basic</h2>
+
+<h3>存檔</h3>
+
+<h4>CL mode</h4>
+
+<pre><code>w #存檔
+q #離開
+wq #存檔並離開
+q! #不存檔強制離開
+</code></pre>
+
+<h3>瞬間移動</h3>
+
+<h4>N mode</h4>
+
+<h5>搜尋</h5>
+
+<pre><code>/ #搜尋
+n #下一個符合
+N #上一個符合
+</code></pre>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Drupal 7 + Memcached on CentOS 6]]></title>
