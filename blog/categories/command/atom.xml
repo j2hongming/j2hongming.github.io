@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Command | J2hongming Blog]]></title>
   <link href="http://j2hongming.github.io/blog/categories/command/atom.xml" rel="self"/>
   <link href="http://j2hongming.github.io/"/>
-  <updated>2016-03-02T16:40:25+08:00</updated>
+  <updated>2016-03-02T16:53:52+08:00</updated>
   <id>http://j2hongming.github.io/</id>
   <author>
     <name><![CDATA[HongMing ChangChine]]></name>
@@ -12,6 +12,44 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Config Static IP in Ubuntu]]></title>
+    <link href="http://j2hongming.github.io/blog/2016/03/02/config-static-ip-in-ubuntu/"/>
+    <updated>2016-03-02T16:48:33+08:00</updated>
+    <id>http://j2hongming.github.io/blog/2016/03/02/config-static-ip-in-ubuntu</id>
+    <content type="html"><![CDATA[<ul>
+<li>設定network interface</li>
+<li>重新讀取網路設定</li>
+</ul>
+
+
+<!-- more -->
+
+
+<h2>設定network interface</h2>
+
+<pre><code>$ vim /etc/network/interfaces
+# 加上下面IP設定(address, netmask, gateway要看當時環境而定)
+iface eth0 inet static
+address 192.168.7.151
+netmask 255.255.255.0
+gateway 192.168.7.1
+</code></pre>
+
+<h2>重新讀取網路設定</h2>
+
+<pre><code>$ sudo /etc/init.d/networking restart
+</code></pre>
+
+<ul>
+<li><a href="http://note.drx.tw/2008/02/ubuntu-ip.html">凍仁的筆記: Ubuntu 網路設定 - 固定 IP</a>
+
+<h2>- <a href="http://www.arthurtoday.com/2010/08/ubuntu-ip.html">Ubuntu 如何設定固定 IP ( 設定網路 )</a></h2></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Check Hardware Information in Ubuntu]]></title>
@@ -122,6 +160,9 @@ cat /sys/block/sda/device/model
 <li>基本Basic</li>
 <li>組合技Combo</li>
 </ul>
+
+
+<!--more-->
 
 
 <h2>概念Concept</h2>
