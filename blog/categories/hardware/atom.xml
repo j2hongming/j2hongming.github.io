@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Hardware | J2hongming Blog]]></title>
+  <link href="http://j2hongming.github.io/blog/categories/hardware/atom.xml" rel="self"/>
+  <link href="http://j2hongming.github.io/"/>
+  <updated>2016-03-02T16:30:06+08:00</updated>
+  <id>http://j2hongming.github.io/</id>
+  <author>
+    <name><![CDATA[HongMing ChangChine]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Check Hardware Information in Ubuntu]]></title>
+    <link href="http://j2hongming.github.io/blog/2016/03/02/check-hardware-information-in-ubuntu/"/>
+    <updated>2016-03-02T16:17:19+08:00</updated>
+    <id>http://j2hongming.github.io/blog/2016/03/02/check-hardware-information-in-ubuntu</id>
+    <content type="html"><![CDATA[<ul>
+<li>CPU</li>
+<li>RAM</li>
+<li>HD</li>
+<li>MAC Adress</li>
+</ul>
+
+
+<!-- more -->
+
+
+<h2>CPU</h2>
+
+<pre><code>lscpu
+
+cat /proc/cpuinfo
+</code></pre>
+
+<ul>
+<li><a href="http://www.binarytides.com/linux-cpu-information/">8 commands to check cpu information on Linux</a></li>
+<li><a href="http://www.cyberciti.biz/faq/ubuntu-cpu-information/">Ubuntu: Find CPU Information / Speed</a></li>
+<li><a href="http://www.binarytides.com/linux-check-processor/">How to check processor and cpu details on Linux</a></li>
+</ul>
+
+
+<h2>RAM</h2>
+
+<h3>可用記憶體大小</h3>
+
+<pre><code>free -m
+</code></pre>
+
+<h3>詳細資料</h3>
+
+<pre><code>cat /proc/meminfo
+</code></pre>
+
+<h3>時脈和DDR</h3>
+
+<pre><code>sudo dmidecode --type 17
+</code></pre>
+
+<ul>
+<li><a href="http://www.cyberciti.biz/faq/check-ram-in-ubuntu/">HowTo: Check RAM Size In Ubuntu Linux</a></li>
+<li><a href="http://www.cyberciti.biz/faq/linux-ram-info-command/">Find Linux RAM Information Command</a></li>
+</ul>
+
+
+<h2>Hard Drive</h2>
+]]></content>
+  </entry>
+  
+</feed>

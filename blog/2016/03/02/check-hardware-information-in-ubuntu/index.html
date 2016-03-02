@@ -5,18 +5,16 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>部落格開張Markdown Demo - J2hongming Blog</title>
+  <title>Check Hardware Information in Ubuntu - J2hongming Blog</title>
   <meta name="author" content="HongMing ChangChine">
 
   
-  <meta name="description" content="Sharing Code Snippets
-Quote
-List
-Email
-Atx Format Header
-Setext Format Header
-Break Line
-Link Markdown Syntax Sharing Code Snippets Example 1 PHP &hellip;">
+  <meta name="description" content="CPU
+RAM
+HD
+MAC Adress CPU lscpu cat /proc/cpuinfo 8 commands to check cpu information on Linux
+Ubuntu: Find CPU Information / Speed
+How to check &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -25,7 +23,7 @@ Link Markdown Syntax Sharing Code Snippets Example 1 PHP &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://j2hongming.github.io/blog/2014/10/16/bu-luo-ge-kai-zhang">
+  <link rel="canonical" href="http://j2hongming.github.io/blog/2016/03/02/check-hardware-information-in-ubuntu">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="J2hongming Blog" type="application/atom+xml">
@@ -89,7 +87,7 @@ Link Markdown Syntax Sharing Code Snippets Example 1 PHP &hellip;">
   
   <header>
     
-      <h1 class="entry-title">部落格開張Markdown Demo</h1>
+      <h1 class="entry-title">Check Hardware Information in Ubuntu</h1>
     
     
       <p class="meta">
@@ -98,7 +96,7 @@ Link Markdown Syntax Sharing Code Snippets Example 1 PHP &hellip;">
 
 
 
-<time class='entry-date' datetime='2014-10-16T16:22:49+08:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>4:22 pm</span></time>
+<time class='entry-date' datetime='2016-03-02T16:17:19+08:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>2</span><span class='date-suffix'>nd</span>, <span class='date-year'>2016</span></span> <span class='time'>4:17 pm</span></time>
         
       </p>
     
@@ -106,150 +104,54 @@ Link Markdown Syntax Sharing Code Snippets Example 1 PHP &hellip;">
 
 
 <div class="entry-content"><ul>
-<li>Sharing Code Snippets</li>
-<li>Quote</li>
-<li>List</li>
-<li>Email</li>
-<li>Atx Format Header</li>
-<li>Setext Format Header</li>
-<li>Break Line</li>
-<li>Link</li>
+<li>CPU</li>
+<li>RAM</li>
+<li>HD</li>
+<li>MAC Adress</li>
 </ul>
 
 
 <!-- more -->
 
 
-<p><a href="http://markdown.tw/">Markdown Syntax</a></p>
+<h2>CPU</h2>
 
-<h2>Sharing Code Snippets</h2>
+<pre><code>lscpu
 
-<h3>Example  1</h3>
-
-<figure class='code'><figcaption><span>PHP echo-hello.php</span><a href='http://php.net/manual/en/function.echo.php'>link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="k">echo</span> <span class="s1">&#39;部落格開張&#39;</span><span class="p">;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Example  2</h3>
-
-<p><a href="http://octopress.org/docs/blogging/code/">Octopress: Sharing Code Snippets</a></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="cp">&lt;!DOCTYPE html&gt;</span>
-</span><span class='line'><span class="nt">&lt;html&gt;</span>
-</span><span class='line'><span class="nt">&lt;body&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;h1&gt;</span>My First Heading<span class="nt">&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;</span>My first paragraph.<span class="nt">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;/body&gt;</span>
-</span><span class='line'><span class="nt">&lt;/html&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Quote</h2>
-
-<h3>Example 1</h3>
-
-<p><a href="http://octopress.org/docs/plugins/blockquote/">Octopress: Blockquote</a></p>
-
-<blockquote><p>Stay hungry, Stay foolish. -Steve Jobs</p>
-
-<p>A apple a day, keep the doctor away</p>
-
-<blockquote><p>May I help U?</p></blockquote>
-
-<ol>
-<li>First
-Line</li>
-<li>Two
-Line</li>
-</ol>
-</blockquote>
-
-<h3>Example 2</h3>
-
-<blockquote><p>Flying is learning how to throw yourself at the ground and miss.</p><footer><strong>Douglas Adams</strong> <cite>The Hichhikers Guide to the Galaxy</cite></footer></blockquote>
-
-
-<h2>List</h2>
-
-<h3>Example</h3>
-
-<h4>TODO List</h4>
+cat /proc/cpuinfo
+</code></pre>
 
 <ul>
-<li>open</li>
-<li><em>hadle em</em></li>
-<li><strong>*strong*</strong>
-
-<ol>
-<li>s1</li>
-<li>s2</li>
-<li>s3</li>
-</ol>
-</li>
+<li><a href="http://www.binarytides.com/linux-cpu-information/">8 commands to check cpu information on Linux</a></li>
+<li><a href="http://www.cyberciti.biz/faq/ubuntu-cpu-information/">Ubuntu: Find CPU Information / Speed</a></li>
+<li><a href="http://www.binarytides.com/linux-check-processor/">How to check processor and cpu details on Linux</a></li>
 </ul>
 
 
-<h2>Email</h2>
+<h2>RAM</h2>
 
-<h3>Example</h3>
+<h3>可用記憶體大小</h3>
 
-<p><a href="&#x6d;&#97;&#x69;&#108;&#116;&#x6f;&#58;&#97;&#100;&#100;&#114;&#x65;&#115;&#115;&#x40;&#101;&#120;&#x61;&#x6d;&#x70;&#x6c;&#x65;&#x2e;&#x63;&#111;&#109;">&#x61;&#100;&#100;&#x72;&#101;&#x73;&#115;&#x40;&#101;&#120;&#97;&#109;&#x70;&#108;&#x65;&#x2e;&#x63;&#x6f;&#x6d;</a></p>
+<pre><code>free -m
+</code></pre>
 
-<h1>Atx format Header L1</h1>
+<h3>詳細資料</h3>
 
-<h2>Example</h2>
+<pre><code>cat /proc/meminfo
+</code></pre>
 
-<h2>Header L2</h2>
+<h3>時脈和DDR</h3>
 
-<h3>Header L3</h3>
+<pre><code>sudo dmidecode --type 17
+</code></pre>
 
-<h4>Header L4</h4>
+<ul>
+<li><a href="http://www.cyberciti.biz/faq/check-ram-in-ubuntu/">HowTo: Check RAM Size In Ubuntu Linux</a></li>
+<li><a href="http://www.cyberciti.biz/faq/linux-ram-info-command/">Find Linux RAM Information Command</a></li>
+</ul>
 
-<h5>Header L5</h5>
 
-<h6>Header L6</h6>
-
-<h1>This is an Setext Format  H1</h1>
-
-<h3>Example</h3>
-
-<h2>This is an  Setext Format  H2</h2>
-
-<h1>Break Line</h1>
-
-<h2>Example</h2>
-
-<p>BreakLine</p>
-
-<hr />
-
-<hr />
-
-<hr />
-
-<h1>Link</h1>
-
-<h3>Example 1: Inline</h3>
-
-<p>This is <a href="http://example.com/" title="Title">an example</a> inline link.</p>
-
-<h3>Example 2: Ref</h3>
-
-<p>This is <a href="http://example.com/" title="Optional Title Here">an example</a> reference-style link.</p>
+<h2>Hard Drive</h2>
 </div>
 
 
@@ -265,12 +167,12 @@ Line</li>
 
 
 
-<time class='entry-date' datetime='2014-10-16T16:22:49+08:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>4:22 pm</span></time>
+<time class='entry-date' datetime='2016-03-02T16:17:19+08:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>2</span><span class='date-suffix'>nd</span>, <span class='date-year'>2016</span></span> <span class='time'>4:17 pm</span></time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/blog/'>blog</a>, <a class='category' href='/blog/categories/intro/'>intro</a>
+    <a class='category' href='/blog/categories/command/'>command</a>, <a class='category' href='/blog/categories/hardware/'>hardware</a>, <a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/ubuntu/'>ubuntu</a>
   
 </span>
 
@@ -279,7 +181,7 @@ Line</li>
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://j2hongming.github.io/blog/2014/10/16/bu-luo-ge-kai-zhang/" data-via="" data-counturl="http://j2hongming.github.io/blog/2014/10/16/bu-luo-ge-kai-zhang/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://j2hongming.github.io/blog/2016/03/02/check-hardware-information-in-ubuntu/" data-via="" data-counturl="http://j2hongming.github.io/blog/2016/03/02/check-hardware-information-in-ubuntu/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -292,8 +194,8 @@ Line</li>
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2016/02/19/notes-for-vim/" title="Previous Post: Notes for Vim">&laquo; Notes for Vim</a>
       
-        <a class="basic-alignment right" href="/blog/2014/10/20/linux-command-history/" title="Next Post: Linux指令歷史紀錄">Linux指令歷史紀錄 &raquo;</a>
       
     </p>
   </footer>
