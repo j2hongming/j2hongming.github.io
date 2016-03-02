@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Command | J2hongming Blog]]></title>
   <link href="http://j2hongming.github.io/blog/categories/command/atom.xml" rel="self"/>
   <link href="http://j2hongming.github.io/"/>
-  <updated>2016-03-02T16:30:06+08:00</updated>
+  <updated>2016-03-02T16:40:25+08:00</updated>
   <id>http://j2hongming.github.io/</id>
   <author>
     <name><![CDATA[HongMing ChangChine]]></name>
@@ -32,8 +32,18 @@
 <h2>CPU</h2>
 
 <pre><code>lscpu
+# Architecture:          x86_64
+# CPU op-mode(s):        32-bit, 64-bit
+# Byte Order:            Little Endian
+# ...
 
 cat /proc/cpuinfo
+# processor       : 0
+# vendor_id       : GenuineIntel
+# cpu family      : 6
+# model           : 37
+# model name      : Intel(R) Xeon(R) CPU E5-2670 0 @ 2.60GHz
+# ...
 </code></pre>
 
 <ul>
@@ -67,6 +77,38 @@ cat /proc/cpuinfo
 
 
 <h2>Hard Drive</h2>
+
+<h3>Check Partitions</h3>
+
+<pre><code>fdisk -l
+
+df
+</code></pre>
+
+<h3>Lists out all the storage blocks</h3>
+
+<pre><code>lsblk
+
+hwinfo
+</code></pre>
+
+<h3>Other</h3>
+
+<pre><code>ls /dev/disk/by-id
+
+cat /sys/block/sda/device/model
+</code></pre>
+
+<ul>
+<li><a href="http://www.linuxjournal.com/content/tech-tip-retrieve-disk-info-command-line">Tech Tip: Retrieve Disk Info from the Command Line | Linux Journal</a></li>
+<li><a href="http://www.binarytides.com/linux-command-check-disk-partitions/">9 commands to check hard disk partitions and disk space on Linux</a></li>
+</ul>
+
+
+<h2>MAC Adress</h2>
+
+<pre><code>ifconfig -a
+</code></pre>
 ]]></content>
   </entry>
   
