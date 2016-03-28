@@ -5,17 +5,15 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Notes for Vim - J2hongming Blog</title>
+  <title>Batch API Notes - J2hongming Blog</title>
   <meta name="author" content="HongMing ChangChine">
 
   
-  <meta name="description" content="概念Concept
-基本Basic
-組合技Combo 概念Concept 模式
-單檔案
-單行
-單詞
-單檔案 模式 Command Line mode, Normal mode, Insert mode, 預設在Normal mode Nm to Im: i Nm to CLm:: Im to &hellip;">
+  <meta name="description" content="設定operations
+設定batch資訊
+設定finish callback function
+線上展示
+其他批次處理可用模組 Batch sets are used to spread processing (primarily, but not exclusively, forms &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -24,7 +22,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://j2hongming.github.io/blog/2016/02/19/notes-for-vim">
+  <link rel="canonical" href="http://j2hongming.github.io/blog/2016/03/28/batch-api-notes">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="J2hongming Blog" type="application/atom+xml">
@@ -88,7 +86,7 @@
   
   <header>
     
-      <h1 class="entry-title">Notes for Vim</h1>
+      <h1 class="entry-title">Batch API Notes</h1>
     
     
       <p class="meta">
@@ -97,7 +95,7 @@
 
 
 
-<time class='entry-date' datetime='2016-02-19T11:28:15+08:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>19</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>11:28 am</span></time>
+<time class='entry-date' datetime='2016-03-28T14:41:34+08:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>2:41 pm</span></time>
         
            | <a href="#disqus_thread"
              data-disqus-identifier="http://j2hongming.github.io">Comments</a>
@@ -108,134 +106,105 @@
 
 
 <div class="entry-content"><ul>
-<li>概念Concept</li>
-<li>基本Basic</li>
-<li>組合技Combo</li>
+<li>設定operations</li>
+<li>設定batch資訊</li>
+<li>設定finish callback function</li>
+<li>線上展示</li>
+<li>其他批次處理可用模組</li>
 </ul>
 
 
-<!--more-->
+<!-- more -->
 
 
-<h2>概念Concept</h2>
+<blockquote><p>Batch sets are used to spread processing (primarily, but not exclusively, forms processing) over several page requests. This helps to ensure that the processing is not interrupted due to PHP timeouts, while users are still able to receive feedback on the progress of the ongoing operations.
+<a href="https://api.drupal.org/api/drupal/includes%21form.inc/group/batch/7">Batch operations</a></p></blockquote>
+
+<h2>設定operations</h2>
+
+<p>可依照需求切割一個operation內做的事，假設1000個node，可以一個operation處理一個node或一個operation處理多個node。Client端利用ajax對<a href="https://sitename/batch?id=">https://sitename/batch?id=</a>[batch_id]&amp;op=do發出HttpRequest。</p>
+
+<pre><code>// 假設$data是從EXCEL中讀出的資料
+
+$split_rows = array_chunk($data, 50);
+
+foreach ($split_rows as $key =&gt; $rows) {
+  $operations[] = array(
+    'import_batch_processing',  // The function to run on 50 row in one operation
+    array($rows),  // The rows in the Excel
+  );
+}
+</code></pre>
+
+<h2>設定batch資訊</h2>
+
+<pre><code>$batch = array(
+  'title' =&gt; t('批次處理中...'),
+  'operations' =&gt; $operations,  // Runs all of the queued processes from the while loop above.
+  'file' =&gt; drupal_get_path('module', 'module_name_which_you_create') . '/import_batch_processing.inc',
+  'finished' =&gt; 'import_batch_processing_finished', // Function to run when the import is successful
+'error_message' =&gt; t('The installation has encountered an error.'),
+'progress_message' =&gt; t('資料匯入中...'),
+);
+</code></pre>
 
 <ul>
-<li>模式</li>
-<li>單檔案</li>
-<li>單行</li>
-<li>單詞</li>
-<li>單檔案</li>
+<li><code>file</code>: 若import_batch_processing和import_batch_processing_finished沒有定義在.module檔內，需設定有定義這兩個callback function的file</li>
+<li><code>finished</code>: batch結束後須執行的callback function</li>
+<li><code>error_message</code>:batch過程中若發生錯誤的回傳訊息</li>
+<li><code>progress_message</code>: batch過程中顯示的訊息</li>
 </ul>
 
 
-<h3>模式</h3>
+<h2>設定finish callback function</h2>
 
-<p>Command Line mode, Normal mode, Insert mode, 預設在Normal mode</p>
-
-<p>Nm to Im: <code>i</code></p>
-
-<p>Nm to CLm:<code>:</code></p>
-
-<p>Im to Nm:<code>esc</code></p>
-
-<h2>基本Basic</h2>
-
-<h3>存檔</h3>
-
-<h4>CL mode</h4>
-
-<pre><code>w #存檔
-q #離開
-wq #存檔並離開
-q! #不存檔強制離開
+<pre><code>function import_batch_processing_finished( $success, $results, $operations ){
+if($success){
+  ...
+}
+else {
+  // An error occurred.
+  // $operations contains the operations that remained unprocessed.
+  $error_operation = reset($operations);
+  drupal_set_message(
+    t('An error occurred while processing @operation with arguments : @args',
+      array(
+        '@operation' =&gt; $error_operation[0],
+        '@args' =&gt; print_r($error_operation[0], TRUE),
+      )
+    )
+  );
+}
 </code></pre>
 
-<h3>瞬間移動</h3>
+<h2>線上展示</h2>
 
-<h4>N mode</h4>
+<ol>
+<li><a href="https://simplytest.me/">Evaluate Drupal projects online</a></li>
+<li>安裝模組 Examples for Developers</li>
+<li>登入admin帳號後，開啟模組Devel generate和Batch example</li>
+<li>前往路徑 admin/config/development/generate/content，新增1000個測試Node</li>
+<li>前往路徑 examples/batch_example，開始測試</li>
+</ol>
 
-<h5>搜尋</h5>
 
-<pre><code>/ #搜尋
-n #下一個符合
-N #上一個符合
-</code></pre>
+<blockquote><p>可配合程式碼觀察
+<a href="http://cgit.drupalcode.org/examples/tree/batch_example/batch_example.module?id=refs/heads;id2=7.x-1.x">Batch example source code</a></p></blockquote>
 
-<h5>檔案觀點</h5>
-
-<pre><code>gg #檔頭
-G #檔尾
-j5 #往下移動5行, 5可改為任意數字
-</code></pre>
-
-<h5>行觀點</h5>
-
-<pre><code>0 #行內移動: 行首
-^ #行內移動: 行首
-$ #行內移動: 行尾
-f #行內字元搜尋: 往後
-F #行內字元搜尋: 往前
-</code></pre>
-
-<h5>詞觀點</h5>
-
-<pre><code>w #單詞移動: 下一單詞之詞頭
-e #單詞移動: 下一單詞之詞尾
-b #單詞移動: 上一單詞之詞頭
-</code></pre>
-
-<h4>CL mode</h4>
-
-<pre><code>0 #檔頭
-$ #檔尾
-n #跳到第n行
-</code></pre>
-
-<h3>標記與複製</h3>
-
-<h4>N mode</h4>
-
-<pre><code>v #選取
-V #標記行
-Ctrl + v #標記區塊
-y #複製標記內容
-yy #複製游標行
-p #在下一行貼上複製或刪除的內容
-P #在上一行貼上複製或刪除的內容
-</code></pre>
-
-<h3>刪除與復原</h3>
-
-<h4>N mode</h4>
-
-<pre><code>dd #刪除一行
-D #刪除至行尾
-u #復原
-Ctrl + r #重做
-</code></pre>
-
-<h2>組合技Combo</h2>
-
-<h3>N mode</h3>
-
-<h4>CP大法</h4>
-
-<pre><code>yy p #複製單行貼上
-</code></pre>
-
-<h4>快速刪除</h4>
-
-<pre><code>d f 字元 #刪除當時游標所在到到該字元前
-</code></pre>
-
-<h2>參考資源</h2>
+<h2>其他批次處理可用模組</h2>
 
 <ul>
-<li><a href="http://www.slideshare.net/BruceLi2/008-vim">vim超基礎入門</a></li>
-<li><a href="http://blog.eddie.com.tw/2012/04/27/screencast-1-learning-vim-from-the-beginning/">爽爽快快學Vim(1)</a></li>
-<li><a href="http://blog.vgod.tw/2009/12/08/vim-cheat-sheet-for-programmers/">給程式設計師的Vim入門圖解說明</a></li>
-<li><a href="http://blog.linux.org.tw/~jserv/archives/001675.html">vi / vim 圖解鍵盤指令</a></li>
-<li><a href="http://www.slideshare.net/taichunmin/ss-16096723">寫程式？那些老師沒教的事</a></li>
+<li><a href="https://www.drupal.org/project/views_data_export">Views Data Export</a></li>
+<li><a href="https://www.drupal.org/project/node_export">Node export</a></li>
+</ul>
+
+
+<h2>Ref.</h2>
+
+<ul>
+<li><a href="https://api.drupal.org/api/drupal/includes%21form.inc/group/batch/7">Batch operations</a></li>
+<li><a href="https://www.drupal.org/node/180528">how to use the Batch API</a></li>
+<li><a href="http://www.jeffgeerling.com/blogs/jeff-geerling/using-batch-api-build-huge-csv">Using Batch API to build huge CSV files for custom exports</a></li>
 </ul>
 
 </div>
@@ -253,12 +222,12 @@ Ctrl + r #重做
 
 
 
-<time class='entry-date' datetime='2016-02-19T11:28:15+08:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>19</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>11:28 am</span></time>
+<time class='entry-date' datetime='2016-03-28T14:41:34+08:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>2:41 pm</span></time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/command/'>command</a>, <a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/vim/'>vim</a>
+    <a class='category' href='/blog/categories/batch/'>batch</a>, <a class='category' href='/blog/categories/drupal7/'>drupal7</a>
   
 </span>
 
@@ -267,7 +236,7 @@ Ctrl + r #重做
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://j2hongming.github.io/blog/2016/02/19/notes-for-vim/" data-via="" data-counturl="http://j2hongming.github.io/blog/2016/02/19/notes-for-vim/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://j2hongming.github.io/blog/2016/03/28/batch-api-notes/" data-via="" data-counturl="http://j2hongming.github.io/blog/2016/03/28/batch-api-notes/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -280,10 +249,8 @@ Ctrl + r #重做
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2016/02/18/github-pages-with-octopress/" title="Previous Post: Github Pages with Octopress">&laquo; Github Pages with Octopress</a>
+        <a class="basic-alignment left" href="/blog/2016/03/28/how-to-access-data-in-drupal-7/" title="Previous Post: How to access data in Drupal 7">&laquo; How to access data in Drupal 7</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2016/03/02/check-hardware-information-in-ubuntu/" title="Next Post: Check Hardware Information in Ubuntu">Check Hardware Information in Ubuntu &raquo;</a>
       
     </p>
   </footer>
@@ -349,8 +316,8 @@ Ctrl + r #重做
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://j2hongming.github.io/blog/2016/02/19/notes-for-vim/';
-        var disqus_url = 'http://j2hongming.github.io/blog/2016/02/19/notes-for-vim/';
+        var disqus_identifier = 'http://j2hongming.github.io/blog/2016/03/28/batch-api-notes/';
+        var disqus_url = 'http://j2hongming.github.io/blog/2016/03/28/batch-api-notes/';
         var disqus_script = 'embed.js';
       
     (function () {

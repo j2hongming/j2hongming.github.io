@@ -4,7 +4,7 @@
   <title><![CDATA[J2hongming Blog]]></title>
   <link href="http://j2hongming.github.io/atom.xml" rel="self"/>
   <link href="http://j2hongming.github.io/"/>
-  <updated>2016-03-28T12:15:43+08:00</updated>
+  <updated>2016-03-28T18:10:48+08:00</updated>
   <id>http://j2hongming.github.io/</id>
   <author>
     <name><![CDATA[HongMing ChangChine]]></name>
@@ -12,6 +12,116 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Batch API Notes]]></title>
+    <link href="http://j2hongming.github.io/blog/2016/03/28/batch-api-notes/"/>
+    <updated>2016-03-28T14:41:34+08:00</updated>
+    <id>http://j2hongming.github.io/blog/2016/03/28/batch-api-notes</id>
+    <content type="html"><![CDATA[<ul>
+<li>設定operations</li>
+<li>設定batch資訊</li>
+<li>設定finish callback function</li>
+<li>線上展示</li>
+<li>其他批次處理可用模組</li>
+</ul>
+
+
+<!-- more -->
+
+
+<blockquote><p>Batch sets are used to spread processing (primarily, but not exclusively, forms processing) over several page requests. This helps to ensure that the processing is not interrupted due to PHP timeouts, while users are still able to receive feedback on the progress of the ongoing operations.
+<a href="https://api.drupal.org/api/drupal/includes%21form.inc/group/batch/7">Batch operations</a></p></blockquote>
+
+<h2>設定operations</h2>
+
+<p>可依照需求切割一個operation內做的事，假設1000個node，可以一個operation處理一個node或一個operation處理多個node。Client端利用ajax對<a href="https://sitename/batch?id=">https://sitename/batch?id=</a>[batch_id]&amp;op=do發出HttpRequest。</p>
+
+<pre><code>// 假設$data是從EXCEL中讀出的資料
+
+$split_rows = array_chunk($data, 50);
+
+foreach ($split_rows as $key =&gt; $rows) {
+  $operations[] = array(
+    'import_batch_processing',  // The function to run on 50 row in one operation
+    array($rows),  // The rows in the Excel
+  );
+}
+</code></pre>
+
+<h2>設定batch資訊</h2>
+
+<pre><code>$batch = array(
+  'title' =&gt; t('批次處理中...'),
+  'operations' =&gt; $operations,  // Runs all of the queued processes from the while loop above.
+  'file' =&gt; drupal_get_path('module', 'module_name_which_you_create') . '/import_batch_processing.inc',
+  'finished' =&gt; 'import_batch_processing_finished', // Function to run when the import is successful
+'error_message' =&gt; t('The installation has encountered an error.'),
+'progress_message' =&gt; t('資料匯入中...'),
+);
+</code></pre>
+
+<ul>
+<li><code>file</code>: 若import_batch_processing和import_batch_processing_finished沒有定義在.module檔內，需設定有定義這兩個callback function的file</li>
+<li><code>finished</code>: batch結束後須執行的callback function</li>
+<li><code>error_message</code>:batch過程中若發生錯誤的回傳訊息</li>
+<li><code>progress_message</code>: batch過程中顯示的訊息</li>
+</ul>
+
+
+<h2>設定finish callback function</h2>
+
+<pre><code>function import_batch_processing_finished( $success, $results, $operations ){
+if($success){
+  ...
+}
+else {
+  // An error occurred.
+  // $operations contains the operations that remained unprocessed.
+  $error_operation = reset($operations);
+  drupal_set_message(
+    t('An error occurred while processing @operation with arguments : @args',
+      array(
+        '@operation' =&gt; $error_operation[0],
+        '@args' =&gt; print_r($error_operation[0], TRUE),
+      )
+    )
+  );
+}
+</code></pre>
+
+<h2>線上展示</h2>
+
+<ol>
+<li><a href="https://simplytest.me/">Evaluate Drupal projects online</a></li>
+<li>安裝模組 Examples for Developers</li>
+<li>登入admin帳號後，開啟模組Devel generate和Batch example</li>
+<li>前往路徑 admin/config/development/generate/content，新增1000個測試Node</li>
+<li>前往路徑 examples/batch_example，開始測試</li>
+</ol>
+
+
+<blockquote><p>可配合程式碼觀察
+<a href="http://cgit.drupalcode.org/examples/tree/batch_example/batch_example.module?id=refs/heads;id2=7.x-1.x">Batch example source code</a></p></blockquote>
+
+<h2>其他批次處理可用模組</h2>
+
+<ul>
+<li><a href="https://www.drupal.org/project/views_data_export">Views Data Export</a></li>
+<li><a href="https://www.drupal.org/project/node_export">Node export</a></li>
+</ul>
+
+
+<h2>Ref.</h2>
+
+<ul>
+<li><a href="https://api.drupal.org/api/drupal/includes%21form.inc/group/batch/7">Batch operations</a></li>
+<li><a href="https://www.drupal.org/node/180528">how to use the Batch API</a></li>
+<li><a href="http://www.jeffgeerling.com/blogs/jeff-geerling/using-batch-api-build-huge-csv">Using Batch API to build huge CSV files for custom exports</a></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How to Access Data in Drupal 7]]></title>
@@ -785,7 +895,7 @@ Line</li>
 
 <h3>Example</h3>
 
-<p><a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#111;&#x3a;&#97;&#100;&#x64;&#x72;&#x65;&#x73;&#115;&#64;&#x65;&#x78;&#97;&#x6d;&#112;&#108;&#101;&#x2e;&#x63;&#111;&#x6d;">&#x61;&#x64;&#100;&#x72;&#x65;&#x73;&#x73;&#64;&#101;&#x78;&#x61;&#x6d;&#x70;&#x6c;&#x65;&#46;&#x63;&#111;&#x6d;</a></p>
+<p><a href="&#x6d;&#x61;&#105;&#108;&#116;&#x6f;&#x3a;&#97;&#100;&#x64;&#114;&#x65;&#115;&#x73;&#x40;&#101;&#120;&#97;&#x6d;&#112;&#x6c;&#101;&#x2e;&#x63;&#x6f;&#109;">&#x61;&#100;&#x64;&#x72;&#x65;&#115;&#115;&#x40;&#101;&#x78;&#x61;&#x6d;&#x70;&#x6c;&#101;&#x2e;&#99;&#111;&#109;</a></p>
 
 <h1>Atx format Header L1</h1>
 
