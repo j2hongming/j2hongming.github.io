@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Drupal7 | J2hongming Blog]]></title>
   <link href="http://j2hongming.github.io/blog/categories/drupal7/atom.xml" rel="self"/>
   <link href="http://j2hongming.github.io/"/>
-  <updated>2016-03-04T17:11:55+08:00</updated>
+  <updated>2016-03-28T12:15:43+08:00</updated>
   <id>http://j2hongming.github.io/</id>
   <author>
     <name><![CDATA[HongMing ChangChine]]></name>
@@ -12,6 +12,170 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How to Access Data in Drupal 7]]></title>
+    <link href="http://j2hongming.github.io/blog/2016/03/28/how-to-access-data-in-drupal-7/"/>
+    <updated>2016-03-28T10:05:52+08:00</updated>
+    <id>http://j2hongming.github.io/blog/2016/03/28/how-to-access-data-in-drupal-7</id>
+    <content type="html"><![CDATA[<ul>
+<li>Basic API</li>
+<li>Database API
+
+<ul>
+<li>Dynamic Query</li>
+<li>Static Query</li>
+<li>Show Query String and Arguments</li>
+</ul>
+</li>
+<li>EntityFieldQuery</li>
+</ul>
+
+
+<!-- more  -->
+
+
+<h2>Basic API</h2>
+
+<pre><code>node_load, user_load, taxonomy_term_load, comment_load
+主要帶入參數為node id, user_id, term id, comment id
+</code></pre>
+
+<h2>Database API</h2>
+
+<h3>Dynamic Query</h3>
+
+<h4>db_select</h4>
+
+<pre><code>$query = db_select('node', 'n');
+// access node table, alias is n
+</code></pre>
+
+<h4>codition</h4>
+
+<pre><code>$query-&gt;condition($field, $value = NULL, $operator = '=')
+// 基本型態
+
+$query-&gt;condition('node.type', array('node_type_name'),'IN');
+// 使用In
+
+$query-&gt;condition('node.title',  '%'.db_like($key_word).'%', 'LIKE');
+// 使用Like
+
+$query-&gt;where('now() &gt;  TIMESTAMPADD( DAY , 9, FROM_UNIXTIME( field_data_field_timefield.field_timefield_value  ) )');
+// 使用where而非condition的寫法
+
+$or = db_or();
+$or-&gt;condition('node.title','%'.db_like($key_word).'%', 'LIKE');
+$or-&gt;condition('comment.subject','%'.db_like($key_word).'%', 'LIKE');
+$query-&gt;condition($or);
+// 使用OR連接過濾條件
+</code></pre>
+
+<h4>fields, addField</h4>
+
+<p>差別在於是否要使用欄位別名和一次可以存取的欄位數量
+    $query->fields(&lsquo;node&rsquo;, array(&lsquo;nid&rsquo;, &lsquo;title&rsquo;));
+    // 一次存取多個欄位但無法使用欄位別名</p>
+
+<pre><code>$query-&gt;addField('node','title','node_title');
+// 一次存取一個欄位，可以使用欄位別名
+</code></pre>
+
+<h4>addExpression</h4>
+
+<pre><code>$query-&gt;addExpression('IFNULL(count1, 0)+IFNULL(count2, 0)','total_count');
+
+$query-&gt;addExpression('SUM(clickCount)', 'total_count');
+</code></pre>
+
+<h4>join</h4>
+
+<p>預設join的型態為inner join, 有提供<code>join()</code>, <code>innerJoin()</code>, <code>leftJoin()</code>, or <code>rightJoin()</code>的方法</p>
+
+<pre><code>$query = db_select('node', 'n');
+$table_alias = $query-&gt;join('users', 'u', 'n.uid = u.uid AND u.uid = :uid');
+// node table join user talbe on uid
+</code></pre>
+
+<h4>SubQuery</h4>
+
+<pre><code>$subquery_customlog = db_select('customlog', 'clg')-&gt;fields('clg', array('nid'));
+$subquery_customlog-&gt;addExpression('COUNT(*)', 'count');
+$subquery_customlog-&gt;groupBy('clg.nid');
+$query = db_select('node','n')-&gt;fields('n', array('nid','title'));
+$query-&gt;leftJoin( $subquery_customlog, 'c_count' ,'c_count.nid = n.nid');
+...
+// 自行產生所需的table後, 再Join到另一個table
+</code></pre>
+
+<h4>Extender</h4>
+
+<p>tablesort和pager</p>
+
+<pre><code>$query-&gt;extend('TableSort')
+      -&gt;orderByHeader($header);
+// Sorting Extender, 依照表格的Header排序
+
+$query-&gt;extend('PagerDefault')
+      -&gt;limit(10);
+// Pager Extender
+</code></pre>
+
+<h3>Static Query</h3>
+
+<pre><code>$result = db_query("SELECT nid, title FROM {node} WHERE type = :type", array( ':type' =&gt; 'page',));
+</code></pre>
+
+<h3>Show Query String and Arguments</h3>
+
+<p>顯示Drupal產生的SQL子句和參數</p>
+
+<pre><code>echo $query-&gt;__toString() . "\n";
+// Get query string
+$args = $query-&gt;getArguments();
+var_dump($args);
+// Get the arguments passed to the string
+</code></pre>
+
+<h2>EntityFieldQuery</h2>
+
+<p>取得Entity相關的資料, 在Drupal中Entity指的是node, user, taxonomy term, comment&hellip;等。回傳值是和entity相關的ID值，必須另外使用entity_load讀取entity其他資料。</p>
+
+<p>和Basic API相比，優勢在於能使用較複雜的過濾條件得到想要的entity資料；和Database API相比，優勢在於直接以entity觀點看資料，直覺性較強，有一個小缺點是EntityFieldQuery若要同時取得兩個entity的資訊，很難使用join的概念處理。</p>
+
+<pre><code>$query = new EntityFieldQuery();
+
+$query-&gt;entityCondition('entity_type', 'node')
+      -&gt;entityCondition('bundle', 'article')
+      -&gt;propertyCondition('status', NODE_PUBLISHED)
+      -&gt;fieldCondition('field_news_types', 'value', 'spotlight', '=')
+      -&gt;fieldCondition('field_news_publishdate', 'value', $year . '%', 'like')-&gt;fieldCondition('field_news_publishdate', 'value', $year . '%', 'like')
+      -&gt;fieldOrderBy('field_photo', 'fid', 'DESC')
+      -&gt;range(0, 10);
+
+$result = $query-&gt;execute();
+
+if (isset($result['node'])) {
+  $news_items_nids = array_keys($result['node']);
+  $news_items = entity_load('node', $news_items_nids);
+}
+</code></pre>
+
+<h2>Ref.</h2>
+
+<ul>
+<li><a href="https://api.drupal.org/api/drupal/modules%21node%21node.module/function/node_load/7">node_load</a></li>
+<li><a href="https://api.drupal.org/api/drupal/modules%21user%21user.module/function/user_load/7">user_load</a></li>
+<li><a href="https://api.drupal.org/api/drupal/modules%21taxonomy%21taxonomy.module/function/taxonomy_term_load/7">taxonomy_term_load</a></li>
+<li><a href="https://api.drupal.org/api/drupal/modules%21comment%21comment.module/function/comment_load/7">comment_load</a></li>
+<li><a href="https://www.drupal.org/dynamic-queries">Dynamic queries</a></li>
+<li><a href="https://www.drupal.org/node/310072">Static queries</a></li>
+<li><a href="https://www.drupal.org/node/1343708">How to use EntityFieldQuery</a></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Drupal 7 + Memcached on CentOS 6]]></title>

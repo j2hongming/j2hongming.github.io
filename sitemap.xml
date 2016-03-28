@@ -3,6 +3,14 @@
   
   
   <url>
+    <loc>http://j2hongming.github.io/blog/2016/03/28/how-to-access-data-in-drupal-7/</loc>
+    
+    <lastmod>2016-03-28T10:05:52+08:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://j2hongming.github.io/blog/2016/03/02/config-static-ip-in-ubuntu/</loc>
     
     <lastmod>2016-03-02T16:48:33+08:00</lastmod>
@@ -61,28 +69,28 @@
   
   <url>
     <loc>http://j2hongming.github.io/</loc>
-    <lastmod>2016-03-04T17:11:55+08:00</lastmod>
+    <lastmod>2016-03-28T12:15:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://j2hongming.github.io/blog/archives/</loc>
-    <lastmod>2016-03-04T17:11:55+08:00</lastmod>
+    <lastmod>2016-03-28T12:15:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://j2hongming.github.io/toolbox/</loc>
-    <lastmod>2016-03-04T17:11:55+08:00</lastmod>
+    <lastmod>2016-03-28T12:15:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://j2hongming.github.io/bookshelf/</loc>
-    <lastmod>2016-03-04T17:11:55+08:00</lastmod>
+    <lastmod>2016-03-28T12:15:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

@@ -1,0 +1,421 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>How to Access Data in Drupal 7 - J2hongming Blog</title>
+  <meta name="author" content="HongMing ChangChine">
+
+  
+  <meta name="description" content="Basic API
+Database API Dynamic Query
+Static Query
+Show Query String and Arguments EntityFieldQuery Basic API node_load, user_load, &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://j2hongming.github.io/blog/2016/03/28/how-to-access-data-in-drupal-7">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="J2hongming Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-55818738-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">J2hongming Blog</a></h1>
+  
+    <h2>Notes for Reusing.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:j2hongming.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/toolbox">ToolBox</a></li>
+  <li><a href="/bookshelf">BookShelf</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">How to Access Data in Drupal 7</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2016-03-28T10:05:52+08:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>10:05 am</span></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://j2hongming.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><ul>
+<li>Basic API</li>
+<li>Database API
+
+<ul>
+<li>Dynamic Query</li>
+<li>Static Query</li>
+<li>Show Query String and Arguments</li>
+</ul>
+</li>
+<li>EntityFieldQuery</li>
+</ul>
+
+
+<!-- more  -->
+
+
+<h2>Basic API</h2>
+
+<pre><code>node_load, user_load, taxonomy_term_load, comment_load
+主要帶入參數為node id, user_id, term id, comment id
+</code></pre>
+
+<h2>Database API</h2>
+
+<h3>Dynamic Query</h3>
+
+<h4>db_select</h4>
+
+<pre><code>$query = db_select('node', 'n');
+// access node table, alias is n
+</code></pre>
+
+<h4>codition</h4>
+
+<pre><code>$query-&gt;condition($field, $value = NULL, $operator = '=')
+// 基本型態
+
+$query-&gt;condition('node.type', array('node_type_name'),'IN');
+// 使用In
+
+$query-&gt;condition('node.title',  '%'.db_like($key_word).'%', 'LIKE');
+// 使用Like
+
+$query-&gt;where('now() &gt;  TIMESTAMPADD( DAY , 9, FROM_UNIXTIME( field_data_field_timefield.field_timefield_value  ) )');
+// 使用where而非condition的寫法
+
+$or = db_or();
+$or-&gt;condition('node.title','%'.db_like($key_word).'%', 'LIKE');
+$or-&gt;condition('comment.subject','%'.db_like($key_word).'%', 'LIKE');
+$query-&gt;condition($or);
+// 使用OR連接過濾條件
+</code></pre>
+
+<h4>fields, addField</h4>
+
+<p>差別在於是否要使用欄位別名和一次可以存取的欄位數量
+    $query->fields(&lsquo;node&rsquo;, array(&lsquo;nid&rsquo;, &lsquo;title&rsquo;));
+    // 一次存取多個欄位但無法使用欄位別名</p>
+
+<pre><code>$query-&gt;addField('node','title','node_title');
+// 一次存取一個欄位，可以使用欄位別名
+</code></pre>
+
+<h4>addExpression</h4>
+
+<pre><code>$query-&gt;addExpression('IFNULL(count1, 0)+IFNULL(count2, 0)','total_count');
+
+$query-&gt;addExpression('SUM(clickCount)', 'total_count');
+</code></pre>
+
+<h4>join</h4>
+
+<p>預設join的型態為inner join, 有提供<code>join()</code>, <code>innerJoin()</code>, <code>leftJoin()</code>, or <code>rightJoin()</code>的方法</p>
+
+<pre><code>$query = db_select('node', 'n');
+$table_alias = $query-&gt;join('users', 'u', 'n.uid = u.uid AND u.uid = :uid');
+// node table join user talbe on uid
+</code></pre>
+
+<h4>SubQuery</h4>
+
+<pre><code>$subquery_customlog = db_select('customlog', 'clg')-&gt;fields('clg', array('nid'));
+$subquery_customlog-&gt;addExpression('COUNT(*)', 'count');
+$subquery_customlog-&gt;groupBy('clg.nid');
+$query = db_select('node','n')-&gt;fields('n', array('nid','title'));
+$query-&gt;leftJoin( $subquery_customlog, 'c_count' ,'c_count.nid = n.nid');
+...
+// 自行產生所需的table後, 再Join到另一個table
+</code></pre>
+
+<h4>Extender</h4>
+
+<p>tablesort和pager</p>
+
+<pre><code>$query-&gt;extend('TableSort')
+      -&gt;orderByHeader($header);
+// Sorting Extender, 依照表格的Header排序
+
+$query-&gt;extend('PagerDefault')
+      -&gt;limit(10);
+// Pager Extender
+</code></pre>
+
+<h3>Static Query</h3>
+
+<pre><code>$result = db_query("SELECT nid, title FROM {node} WHERE type = :type", array( ':type' =&gt; 'page',));
+</code></pre>
+
+<h3>Show Query String and Arguments</h3>
+
+<p>顯示Drupal產生的SQL子句和參數</p>
+
+<pre><code>echo $query-&gt;__toString() . "\n";
+// Get query string
+$args = $query-&gt;getArguments();
+var_dump($args);
+// Get the arguments passed to the string
+</code></pre>
+
+<h2>EntityFieldQuery</h2>
+
+<p>取得Entity相關的資料, 在Drupal中Entity指的是node, user, taxonomy term, comment&hellip;等。回傳值是和entity相關的ID值，必須另外使用entity_load讀取entity其他資料。</p>
+
+<p>和Basic API相比，優勢在於能使用較複雜的過濾條件得到想要的entity資料；和Database API相比，優勢在於直接以entity觀點看資料，直覺性較強，有一個小缺點是EntityFieldQuery若要同時取得兩個entity的資訊，很難使用join的概念處理。</p>
+
+<pre><code>$query = new EntityFieldQuery();
+
+$query-&gt;entityCondition('entity_type', 'node')
+      -&gt;entityCondition('bundle', 'article')
+      -&gt;propertyCondition('status', NODE_PUBLISHED)
+      -&gt;fieldCondition('field_news_types', 'value', 'spotlight', '=')
+      -&gt;fieldCondition('field_news_publishdate', 'value', $year . '%', 'like')-&gt;fieldCondition('field_news_publishdate', 'value', $year . '%', 'like')
+      -&gt;fieldOrderBy('field_photo', 'fid', 'DESC')
+      -&gt;range(0, 10);
+
+$result = $query-&gt;execute();
+
+if (isset($result['node'])) {
+  $news_items_nids = array_keys($result['node']);
+  $news_items = entity_load('node', $news_items_nids);
+}
+</code></pre>
+
+<h2>Ref.</h2>
+
+<ul>
+<li><a href="https://api.drupal.org/api/drupal/modules%21node%21node.module/function/node_load/7">node_load</a></li>
+<li><a href="https://api.drupal.org/api/drupal/modules%21user%21user.module/function/user_load/7">user_load</a></li>
+<li><a href="https://api.drupal.org/api/drupal/modules%21taxonomy%21taxonomy.module/function/taxonomy_term_load/7">taxonomy_term_load</a></li>
+<li><a href="https://api.drupal.org/api/drupal/modules%21comment%21comment.module/function/comment_load/7">comment_load</a></li>
+<li><a href="https://www.drupal.org/dynamic-queries">Dynamic queries</a></li>
+<li><a href="https://www.drupal.org/node/310072">Static queries</a></li>
+<li><a href="https://www.drupal.org/node/1343708">How to use EntityFieldQuery</a></li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">HongMing ChangChine</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2016-03-28T10:05:52+08:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>10:05 am</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/drupal7/'>drupal7</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://j2hongming.github.io/blog/2016/03/28/how-to-access-data-in-drupal-7/" data-via="" data-counturl="http://j2hongming.github.io/blog/2016/03/28/how-to-access-data-in-drupal-7/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2016/03/02/config-static-ip-in-ubuntu/" title="Previous Post: Config Static IP in Ubuntu">&laquo; Config Static IP in Ubuntu</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2016/03/28/how-to-access-data-in-drupal-7/">How to Access Data in Drupal 7</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/03/02/config-static-ip-in-ubuntu/">Config Static IP in Ubuntu</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/03/02/check-hardware-information-in-ubuntu/">Check Hardware Information in Ubuntu</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/02/19/notes-for-vim/">Notes for Vim</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/02/18/github-pages-with-octopress/">Github Pages With Octopress</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2016 - HongMing ChangChine -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'j2hongminggithubio';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://j2hongming.github.io/blog/2016/03/28/how-to-access-data-in-drupal-7/';
+        var disqus_url = 'http://j2hongming.github.io/blog/2016/03/28/how-to-access-data-in-drupal-7/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
