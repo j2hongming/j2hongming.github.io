@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Code Snippet | J2hongming Blog]]></title>
+  <link href="http://j2hongming.github.io/blog/categories/code-snippet/atom.xml" rel="self"/>
+  <link href="http://j2hongming.github.io/"/>
+  <updated>2016-03-31T14:06:28+08:00</updated>
+  <id>http://j2hongming.github.io/</id>
+  <author>
+    <name><![CDATA[HongMing ChangChine]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Get Field Names of Content Type in Drupal]]></title>
+    <link href="http://j2hongming.github.io/blog/2016/03/31/get-field-names-of-content-type-in-drupal/"/>
+    <updated>2016-03-31T13:30:28+08:00</updated>
+    <id>http://j2hongming.github.io/blog/2016/03/31/get-field-names-of-content-type-in-drupal</id>
+    <content type="html"><![CDATA[<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="o">&lt;/</span><span class="nx">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;/&lt;</span><span class="nx">em</span><span class="o">&gt;*</span>
+</span><span class='line'><span class="o">*</span> <span class="nx">取得ContentType的field</span> <span class="nx">name</span>
+</span><span class='line'><span class="o">*</span> <span class="o">@</span><span class="nx">see</span>
+</span><span class='line'><span class="o">*</span> <span class="o">@</span><span class="nb">link</span> <span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&quot;http://drupal.stackexchange.com/questions/39850/get-all-fields-for-a-given-content-type-including-title&quot;</span><span class="o">&gt;</span><span class="nx">http</span><span class="o">://</span><span class="nx">drupal</span><span class="o">.</span><span class="nx">stackexchange</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">questions</span><span class="o">/</span><span class="mi">39850</span><span class="o">/</span><span class="nx">get</span><span class="o">-</span><span class="nx">all</span><span class="o">-</span><span class="nx">fields</span><span class="o">-</span><span class="k">for</span><span class="o">-</span><span class="nx">a</span><span class="o">-</span><span class="nx">given</span><span class="o">-</span><span class="nx">content</span><span class="o">-</span><span class="nx">type</span><span class="o">-</span><span class="nx">including</span><span class="o">-</span><span class="nx">title</span><span class="o">&lt;/</span><span class="nx">a</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="nx">em</span><span class="o">&gt;/&lt;/</span><span class="nx">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="k">function</span> <span class="nf">modulename_get_field_name</span><span class="p">(</span><span class="nv">$content_type</span><span class="p">){</span><span class="o">&lt;/</span><span class="nx">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span>        <span class="nv">$fields</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+</span><span class='line'>        <span class="nv">$field_map</span> <span class="o">=</span> <span class="nx">field_info_field_map</span><span class="p">();</span>
+</span><span class='line'>        <span class="nv">$instances</span> <span class="o">=</span> <span class="nx">field_info_instances</span><span class="p">(</span><span class="s1">&#39;node&#39;</span><span class="p">,</span> <span class="nv">$content_type</span><span class="p">);</span>
+</span><span class='line'>        <span class="nv">$extra_fields</span> <span class="o">=</span> <span class="nx">field_info_extra_fields</span><span class="p">(</span><span class="s1">&#39;node&#39;</span><span class="p">,</span> <span class="nv">$content_type</span><span class="p">,</span> <span class="s1">&#39;form&#39;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="c1">// Fields.</span>
+</span><span class='line'>        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$instances</span> <span class="k">as</span> <span class="nv">$name</span> <span class="o">=&amp;</span><span class="nx">gt</span><span class="p">;</span> <span class="nv">$instance</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>          <span class="nv">$field</span> <span class="o">=</span> <span class="nx">field_info_field</span><span class="p">(</span><span class="nv">$instance</span><span class="p">[</span><span class="s1">&#39;field_name&#39;</span><span class="p">]);</span>
+</span><span class='line'>          <span class="nv">$fields</span><span class="p">[</span><span class="nv">$instance</span><span class="p">[</span><span class="s1">&#39;field_name&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+</span><span class='line'>            <span class="s1">&#39;field_name&#39;</span> <span class="o">=&amp;</span><span class="nx">gt</span><span class="p">;</span> <span class="nv">$instance</span><span class="p">[</span><span class="s1">&#39;field_name&#39;</span><span class="p">],</span>
+</span><span class='line'>            <span class="s1">&#39;title&#39;</span> <span class="o">=&amp;</span><span class="nx">gt</span><span class="p">;</span> <span class="nv">$instance</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">],</span>
+</span><span class='line'>            <span class="s1">&#39;weight&#39;</span> <span class="o">=&amp;</span><span class="nx">gt</span><span class="p">;</span> <span class="nv">$instance</span><span class="p">[</span><span class="s1">&#39;widget&#39;</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">],</span>
+</span><span class='line'>            <span class="s1">&#39;type&#39;</span> <span class="o">=&amp;</span><span class="nx">gt</span><span class="p">;</span> <span class="nv">$field_map</span><span class="p">[</span><span class="nv">$instance</span><span class="p">[</span><span class="s1">&#39;field_name&#39;</span><span class="p">]][</span><span class="s1">&#39;type&#39;</span><span class="p">],</span>
+</span><span class='line'>          <span class="p">);</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>        <span class="c1">// Non-field elements. ex. title</span>
+</span><span class='line'>        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$extra_fields</span> <span class="k">as</span> <span class="nv">$name</span> <span class="o">=&amp;</span><span class="nx">gt</span><span class="p">;</span> <span class="nv">$extra_field</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>          <span class="nv">$fields</span><span class="p">[</span><span class="nv">$name</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+</span><span class='line'>            <span class="s1">&#39;title&#39;</span> <span class="o">=&amp;</span><span class="nx">gt</span><span class="p">;</span> <span class="nv">$extra_field</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">],</span>
+</span><span class='line'>            <span class="s1">&#39;weight&#39;</span> <span class="o">=&amp;</span><span class="nx">gt</span><span class="p">;</span> <span class="nv">$extra_field</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">],</span>
+</span><span class='line'>          <span class="p">);</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="k">return</span> <span class="nv">$fields</span><span class="p">;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="nx">code</span><span class="o">&gt;&lt;/</span><span class="nx">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">}</span><span class="o">&lt;/</span><span class="nx">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -149,7 +149,7 @@ foreach ($split_rows as $key =&gt; $rows) {
 </code></pre>
 
 <ul>
-<li><code>file</code>: 若import_batch_processing和import_batch_processing_finished沒有定義在.module檔內，需設定有定義這兩個callback function的file</li>
+<li><code>file</code>: 若import_batch_processing和import_batch_processing_finished沒有定義在.module檔內，需設定有定義這兩個callback function的file。<a href="http://data.agaric.com/batch-api-process-silently-fails-if-function-file-not-default-drupal-bootstrap-isnt-explicitly-inclu">Batch API process silently fails</a></li>
 <li><code>finished</code>: batch結束後須執行的callback function</li>
 <li><code>error_message</code>:batch過程中若發生錯誤的回傳訊息</li>
 <li><code>progress_message</code>: batch過程中顯示的訊息</li>
@@ -252,6 +252,8 @@ else {
         <a class="basic-alignment left" href="/blog/2016/03/28/how-to-access-data-in-drupal-7/" title="Previous Post: How to access data in Drupal 7">&laquo; How to access data in Drupal 7</a>
       
       
+        <a class="basic-alignment right" href="/blog/2016/03/31/drupal-development-resources/" title="Next Post: Drupal Development Resources">Drupal Development Resources &raquo;</a>
+      
     </p>
   </footer>
 </article>
@@ -271,6 +273,14 @@ else {
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/03/31/get-field-names-of-content-type-in-drupal/">Get Field Names of Content Type in Drupal</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/03/31/drupal-development-resources/">Drupal Development Resources</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/03/28/batch-api-notes/">Batch API Notes</a>
       </li>
     
@@ -280,14 +290,6 @@ else {
     
       <li class="post">
         <a href="/blog/2016/03/02/config-static-ip-in-ubuntu/">Config Static IP in Ubuntu</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/03/02/check-hardware-information-in-ubuntu/">Check Hardware Information in Ubuntu</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/02/19/notes-for-vim/">Notes for Vim</a>
       </li>
     
   </ul>

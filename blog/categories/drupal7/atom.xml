@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Drupal7 | J2hongming Blog]]></title>
   <link href="http://j2hongming.github.io/blog/categories/drupal7/atom.xml" rel="self"/>
   <link href="http://j2hongming.github.io/"/>
-  <updated>2016-03-28T18:10:48+08:00</updated>
+  <updated>2016-03-31T14:06:28+08:00</updated>
   <id>http://j2hongming.github.io/</id>
   <author>
     <name><![CDATA[HongMing ChangChine]]></name>
@@ -12,6 +12,269 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Get Field Names of Content Type in Drupal]]></title>
+    <link href="http://j2hongming.github.io/blog/2016/03/31/get-field-names-of-content-type-in-drupal/"/>
+    <updated>2016-03-31T13:30:28+08:00</updated>
+    <id>http://j2hongming.github.io/blog/2016/03/31/get-field-names-of-content-type-in-drupal</id>
+    <content type="html"><![CDATA[<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="o">&lt;/</span><span class="nx">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;/&lt;</span><span class="nx">em</span><span class="o">&gt;*</span>
+</span><span class='line'><span class="o">*</span> <span class="nx">取得ContentType的field</span> <span class="nx">name</span>
+</span><span class='line'><span class="o">*</span> <span class="o">@</span><span class="nx">see</span>
+</span><span class='line'><span class="o">*</span> <span class="o">@</span><span class="nb">link</span> <span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&quot;http://drupal.stackexchange.com/questions/39850/get-all-fields-for-a-given-content-type-including-title&quot;</span><span class="o">&gt;</span><span class="nx">http</span><span class="o">://</span><span class="nx">drupal</span><span class="o">.</span><span class="nx">stackexchange</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">questions</span><span class="o">/</span><span class="mi">39850</span><span class="o">/</span><span class="nx">get</span><span class="o">-</span><span class="nx">all</span><span class="o">-</span><span class="nx">fields</span><span class="o">-</span><span class="k">for</span><span class="o">-</span><span class="nx">a</span><span class="o">-</span><span class="nx">given</span><span class="o">-</span><span class="nx">content</span><span class="o">-</span><span class="nx">type</span><span class="o">-</span><span class="nx">including</span><span class="o">-</span><span class="nx">title</span><span class="o">&lt;/</span><span class="nx">a</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="nx">em</span><span class="o">&gt;/&lt;/</span><span class="nx">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="k">function</span> <span class="nf">modulename_get_field_name</span><span class="p">(</span><span class="nv">$content_type</span><span class="p">){</span><span class="o">&lt;/</span><span class="nx">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span>        <span class="nv">$fields</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+</span><span class='line'>        <span class="nv">$field_map</span> <span class="o">=</span> <span class="nx">field_info_field_map</span><span class="p">();</span>
+</span><span class='line'>        <span class="nv">$instances</span> <span class="o">=</span> <span class="nx">field_info_instances</span><span class="p">(</span><span class="s1">&#39;node&#39;</span><span class="p">,</span> <span class="nv">$content_type</span><span class="p">);</span>
+</span><span class='line'>        <span class="nv">$extra_fields</span> <span class="o">=</span> <span class="nx">field_info_extra_fields</span><span class="p">(</span><span class="s1">&#39;node&#39;</span><span class="p">,</span> <span class="nv">$content_type</span><span class="p">,</span> <span class="s1">&#39;form&#39;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="c1">// Fields.</span>
+</span><span class='line'>        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$instances</span> <span class="k">as</span> <span class="nv">$name</span> <span class="o">=&amp;</span><span class="nx">gt</span><span class="p">;</span> <span class="nv">$instance</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>          <span class="nv">$field</span> <span class="o">=</span> <span class="nx">field_info_field</span><span class="p">(</span><span class="nv">$instance</span><span class="p">[</span><span class="s1">&#39;field_name&#39;</span><span class="p">]);</span>
+</span><span class='line'>          <span class="nv">$fields</span><span class="p">[</span><span class="nv">$instance</span><span class="p">[</span><span class="s1">&#39;field_name&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+</span><span class='line'>            <span class="s1">&#39;field_name&#39;</span> <span class="o">=&amp;</span><span class="nx">gt</span><span class="p">;</span> <span class="nv">$instance</span><span class="p">[</span><span class="s1">&#39;field_name&#39;</span><span class="p">],</span>
+</span><span class='line'>            <span class="s1">&#39;title&#39;</span> <span class="o">=&amp;</span><span class="nx">gt</span><span class="p">;</span> <span class="nv">$instance</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">],</span>
+</span><span class='line'>            <span class="s1">&#39;weight&#39;</span> <span class="o">=&amp;</span><span class="nx">gt</span><span class="p">;</span> <span class="nv">$instance</span><span class="p">[</span><span class="s1">&#39;widget&#39;</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">],</span>
+</span><span class='line'>            <span class="s1">&#39;type&#39;</span> <span class="o">=&amp;</span><span class="nx">gt</span><span class="p">;</span> <span class="nv">$field_map</span><span class="p">[</span><span class="nv">$instance</span><span class="p">[</span><span class="s1">&#39;field_name&#39;</span><span class="p">]][</span><span class="s1">&#39;type&#39;</span><span class="p">],</span>
+</span><span class='line'>          <span class="p">);</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>        <span class="c1">// Non-field elements. ex. title</span>
+</span><span class='line'>        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$extra_fields</span> <span class="k">as</span> <span class="nv">$name</span> <span class="o">=&amp;</span><span class="nx">gt</span><span class="p">;</span> <span class="nv">$extra_field</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>          <span class="nv">$fields</span><span class="p">[</span><span class="nv">$name</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+</span><span class='line'>            <span class="s1">&#39;title&#39;</span> <span class="o">=&amp;</span><span class="nx">gt</span><span class="p">;</span> <span class="nv">$extra_field</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">],</span>
+</span><span class='line'>            <span class="s1">&#39;weight&#39;</span> <span class="o">=&amp;</span><span class="nx">gt</span><span class="p">;</span> <span class="nv">$extra_field</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">],</span>
+</span><span class='line'>          <span class="p">);</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="k">return</span> <span class="nv">$fields</span><span class="p">;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="nx">code</span><span class="o">&gt;&lt;/</span><span class="nx">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">}</span><span class="o">&lt;/</span><span class="nx">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Drupal Development Resources]]></title>
+    <link href="http://j2hongming.github.io/blog/2016/03/31/drupal-development-resources/"/>
+    <updated>2016-03-31T11:39:48+08:00</updated>
+    <id>http://j2hongming.github.io/blog/2016/03/31/drupal-development-resources</id>
+    <content type="html"><![CDATA[<ul>
+<li>Concepts</li>
+<li>Tools</li>
+<li>Nice Modules and API</li>
+<li>Code Snippet</li>
+</ul>
+
+
+<!-- more -->
+
+
+<h2>Concepts</h2>
+
+<p><a href="https://www.drupal.org/documentation/develop">Develop for Drupal</a></p>
+
+<h2>Tools</h2>
+
+<p><a href="https://www.drupal.org/node/147789">Development tools</a></p>
+
+<h2>Nice Modules and API</h2>
+
+<ul>
+<li>Form Handling</li>
+<li>Cron Jobs</li>
+<li>Batch Processing</li>
+<li>Send Mail</li>
+</ul>
+
+
+<h3>Form Handling</h3>
+
+<p><a href="https://api.drupal.org/api/drupal/developer!topics!forms_api_reference.html/7">Durpal Form API</a></p>
+
+<h3>Cron Jobs</h3>
+
+<p><a href="https://www.drupal.org/project/elysia_cron">Elysia Cron</a></p>
+
+<h3>Batch Processing</h3>
+
+<p><a href="/blog/2016/03/28/batch-api-notes/">Batch API</a></p>
+
+<h3>Send Mail</h3>
+
+<p><a href="https://www.drupal.org/project/smtp">SMTP Authentication Support</a></p>
+
+<h2>Code Snippet</h2>
+
+<ul>
+<li>Entity</li>
+<li>Node</li>
+<li>Taxonomy</li>
+<li>Comment</li>
+<li>Field</li>
+<li>Field Collection</li>
+<li>Block</li>
+<li>Theme</li>
+<li>Form</li>
+<li>Database</li>
+<li>Mail</li>
+<li>Batch/Oueue</li>
+<li>Cron</li>
+<li>Cache</li>
+<li>Misc.</li>
+</ul>
+
+
+<h3>Entity</h3>
+
+<ul>
+<li><a href="https://www.drupal.org/node/1427962">Better examples for entity_metadata_wrapper()</a></li>
+<li><a href="http://dropbucket.org/node/1563">Various EntityMetadataWrapper Examples</a></li>
+</ul>
+
+
+<h3>Node</h3>
+
+<ul>
+<li><a href="https://anders.unix.se/2011/04/13/guide-to-programmatic-node-creation-in-drupal-7/">Guide to programmatic node creation in Drupal 7</a></li>
+<li><a href="https://www.urbaninsight.com/2011/10/24/saving-nodes-fields-without-saving-node-itself">Saving node&rsquo;s fields without saving the node itself</a></li>
+</ul>
+
+
+<h3>Taxonomy</h3>
+
+<ul>
+<li><a href="http://www.lightrains.com/blog/programmatically-create-taxonomy-term-drupal">How to programmatically create a taxonomy term in drupal</a></li>
+</ul>
+
+
+<h3>Comment</h3>
+
+<ul>
+<li><a href="https://www.drupal.org/node/1030676">How to create comments programmatically in Drupal 7</a></li>
+</ul>
+
+
+<h3>Field</h3>
+
+<ul>
+<li><a href="/blog/2016/03/31/get-field-names-of-content-type-in-drupal/">Get Field Names of Content Type in Drupal</a></li>
+</ul>
+
+
+<h3>Field Collection</h3>
+
+<ul>
+<li><a href="http://audiblecode.com/blog/programmatically-create-and-update-field-collection-item-node-entity-api">Programmatically create and update field collection item for the node with entity API</a></li>
+<li><a href="http://cornel.co/article/delete-node-field-collection-items-drupal-7">Delete a node field collection items in Drupal 7</a></li>
+<li><a href="http://rapiddg.com/blog/programmatically-adding-field-collection-item-node-drupal">Programmatically Adding a Field Collection Item to a Node in Drupal</a></li>
+</ul>
+
+
+<h3>Block</h3>
+
+<ul>
+<li><a href="http://stackoverflow.com/questions/4731420/how-to-insert-a-block-into-a-node-or-template-in-drupal-7">How to insert a block into a node or template in Drupal 7? - Stack Overflow</a></li>
+</ul>
+
+
+<h3>Theme</h3>
+
+<ul>
+<li><a href="https://www.drupal.org/node/930760">Render Arrays in Drupal 7</a></li>
+<li><a href="https://api.drupal.org/api/drupal/modules%21system%21system.api.php/function/hook_theme/7">hook_theme</a></li>
+<li><a href="http://stackoverflow.com/questions/7742203/how-does-hook-theme-work">How does hook_theme() work?</a></li>
+<li><a href="https://www.drupal.org/node/933976">Using the theme layer (Drupal 7.x)</a></li>
+</ul>
+
+
+<h3>Form</h3>
+
+<ul>
+<li><a href="http://webemania.com/blog/how-to-add-classes-or-attributes-to-drupal-form-elements">How to add classes or attributes to Drupal form elements</a></li>
+<li><a href="http://befused.com/drupal/form-validation">http://befused.com/drupal/form-validation</a></li>
+</ul>
+
+
+<h3>Database</h3>
+
+<h3>Mail</h3>
+
+<h3>Batch/Queue</h3>
+
+<h3>Cron</h3>
+
+<h3>Cache</h3>
+
+<ul>
+<li><a href="http://www.workhabit.com/blog/using-drupal-cache-your-custom-module-better-performance">Using Drupal Cache In Your Custom Module For Better Performance</a></li>
+</ul>
+
+
+<h3>Misc.</h3>
+
+<ul>
+<li><a href="http://befused.com/drupal/print_r-in-drupal_set_message">print_r in drupal_set_message</a></li>
+<li><a href="https://www.drupal.org/node/834074">multiple wildcards in hook_menu on same place</a></li>
+<li><a href="https://www.drupal.org/node/756722">Managing JavaScript in Drupal 7</a></li>
+<li><a href="http://drupal.stackexchange.com/questions/29210/how-do-i-add-javascript-specific-for-a-view">How do I add JavaScript specific for a view?</a></li>
+<li><a href="https://www.drupal.org/writing-secure-code">Writing secure code</a></li>
+<li><a href="http://www.tekritisoftware.com/restful-web-services-drupal-eight">Accepting POST in Drupal: Customizing RESTful Endpoints</a></li>
+<li><a href="http://www.timtoon.com/2009/05/27/customizing-an-rss-feed-using-drupal-and-views/">Customizing an RSS feed using Drupal and Views</a></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Batch API Notes]]></title>
@@ -62,7 +325,7 @@ foreach ($split_rows as $key =&gt; $rows) {
 </code></pre>
 
 <ul>
-<li><code>file</code>: 若import_batch_processing和import_batch_processing_finished沒有定義在.module檔內，需設定有定義這兩個callback function的file</li>
+<li><code>file</code>: 若import_batch_processing和import_batch_processing_finished沒有定義在.module檔內，需設定有定義這兩個callback function的file。<a href="http://data.agaric.com/batch-api-process-silently-fails-if-function-file-not-default-drupal-bootstrap-isnt-explicitly-inclu">Batch API process silently fails</a></li>
 <li><code>finished</code>: batch結束後須執行的callback function</li>
 <li><code>error_message</code>:batch過程中若發生錯誤的回傳訊息</li>
 <li><code>progress_message</code>: batch過程中顯示的訊息</li>

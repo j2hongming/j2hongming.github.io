@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Batch | J2hongming Blog]]></title>
   <link href="http://j2hongming.github.io/blog/categories/batch/atom.xml" rel="self"/>
   <link href="http://j2hongming.github.io/"/>
-  <updated>2016-03-28T18:10:48+08:00</updated>
+  <updated>2016-03-31T14:06:28+08:00</updated>
   <id>http://j2hongming.github.io/</id>
   <author>
     <name><![CDATA[HongMing ChangChine]]></name>
@@ -62,7 +62,7 @@ foreach ($split_rows as $key =&gt; $rows) {
 </code></pre>
 
 <ul>
-<li><code>file</code>: 若import_batch_processing和import_batch_processing_finished沒有定義在.module檔內，需設定有定義這兩個callback function的file</li>
+<li><code>file</code>: 若import_batch_processing和import_batch_processing_finished沒有定義在.module檔內，需設定有定義這兩個callback function的file。<a href="http://data.agaric.com/batch-api-process-silently-fails-if-function-file-not-default-drupal-bootstrap-isnt-explicitly-inclu">Batch API process silently fails</a></li>
 <li><code>finished</code>: batch結束後須執行的callback function</li>
 <li><code>error_message</code>:batch過程中若發生錯誤的回傳訊息</li>
 <li><code>progress_message</code>: batch過程中顯示的訊息</li>

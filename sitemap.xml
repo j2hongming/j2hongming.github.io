@@ -3,6 +3,22 @@
   
   
   <url>
+    <loc>http://j2hongming.github.io/blog/2016/03/31/get-field-names-of-content-type-in-drupal/</loc>
+    
+    <lastmod>2016-03-31T13:30:28+08:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://j2hongming.github.io/blog/2016/03/31/drupal-development-resources/</loc>
+    
+    <lastmod>2016-03-31T11:39:48+08:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://j2hongming.github.io/blog/2016/03/28/batch-api-notes/</loc>
     
     <lastmod>2016-03-28T14:41:34+08:00</lastmod>
@@ -77,28 +93,28 @@
   
   <url>
     <loc>http://j2hongming.github.io/</loc>
-    <lastmod>2016-03-28T18:10:48+08:00</lastmod>
+    <lastmod>2016-03-31T14:06:28+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://j2hongming.github.io/blog/archives/</loc>
-    <lastmod>2016-03-28T18:10:48+08:00</lastmod>
+    <lastmod>2016-03-31T14:06:28+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://j2hongming.github.io/toolbox/</loc>
-    <lastmod>2016-03-28T18:10:48+08:00</lastmod>
+    <lastmod>2016-03-31T14:06:28+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://j2hongming.github.io/bookshelf/</loc>
-    <lastmod>2016-03-28T18:10:48+08:00</lastmod>
+    <lastmod>2016-03-31T14:06:28+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

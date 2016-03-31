@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Resource | J2hongming Blog]]></title>
+  <link href="http://j2hongming.github.io/blog/categories/resource/atom.xml" rel="self"/>
+  <link href="http://j2hongming.github.io/"/>
+  <updated>2016-03-31T14:06:28+08:00</updated>
+  <id>http://j2hongming.github.io/</id>
+  <author>
+    <name><![CDATA[HongMing ChangChine]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Drupal Development Resources]]></title>
+    <link href="http://j2hongming.github.io/blog/2016/03/31/drupal-development-resources/"/>
+    <updated>2016-03-31T11:39:48+08:00</updated>
+    <id>http://j2hongming.github.io/blog/2016/03/31/drupal-development-resources</id>
+    <content type="html"><![CDATA[<ul>
+<li>Concepts</li>
+<li>Tools</li>
+<li>Nice Modules and API</li>
+<li>Code Snippet</li>
+</ul>
+
+
+<!-- more -->
+
+
+<h2>Concepts</h2>
+
+<p><a href="https://www.drupal.org/documentation/develop">Develop for Drupal</a></p>
+
+<h2>Tools</h2>
+
+<p><a href="https://www.drupal.org/node/147789">Development tools</a></p>
+
+<h2>Nice Modules and API</h2>
+
+<ul>
+<li>Form Handling</li>
+<li>Cron Jobs</li>
+<li>Batch Processing</li>
+<li>Send Mail</li>
+</ul>
+
+
+<h3>Form Handling</h3>
+
+<p><a href="https://api.drupal.org/api/drupal/developer!topics!forms_api_reference.html/7">Durpal Form API</a></p>
+
+<h3>Cron Jobs</h3>
+
+<p><a href="https://www.drupal.org/project/elysia_cron">Elysia Cron</a></p>
+
+<h3>Batch Processing</h3>
+
+<p><a href="/blog/2016/03/28/batch-api-notes/">Batch API</a></p>
+
+<h3>Send Mail</h3>
+
+<p><a href="https://www.drupal.org/project/smtp">SMTP Authentication Support</a></p>
+
+<h2>Code Snippet</h2>
+
+<ul>
+<li>Entity</li>
+<li>Node</li>
+<li>Taxonomy</li>
+<li>Comment</li>
+<li>Field</li>
+<li>Field Collection</li>
+<li>Block</li>
+<li>Theme</li>
+<li>Form</li>
+<li>Database</li>
+<li>Mail</li>
+<li>Batch/Oueue</li>
+<li>Cron</li>
+<li>Cache</li>
+<li>Misc.</li>
+</ul>
+
+
+<h3>Entity</h3>
+
+<ul>
+<li><a href="https://www.drupal.org/node/1427962">Better examples for entity_metadata_wrapper()</a></li>
+<li><a href="http://dropbucket.org/node/1563">Various EntityMetadataWrapper Examples</a></li>
+</ul>
+
+
+<h3>Node</h3>
+
+<ul>
+<li><a href="https://anders.unix.se/2011/04/13/guide-to-programmatic-node-creation-in-drupal-7/">Guide to programmatic node creation in Drupal 7</a></li>
+<li><a href="https://www.urbaninsight.com/2011/10/24/saving-nodes-fields-without-saving-node-itself">Saving node&rsquo;s fields without saving the node itself</a></li>
+</ul>
+
+
+<h3>Taxonomy</h3>
+
+<ul>
+<li><a href="http://www.lightrains.com/blog/programmatically-create-taxonomy-term-drupal">How to programmatically create a taxonomy term in drupal</a></li>
+</ul>
+
+
+<h3>Comment</h3>
+
+<ul>
+<li><a href="https://www.drupal.org/node/1030676">How to create comments programmatically in Drupal 7</a></li>
+</ul>
+
+
+<h3>Field</h3>
+
+<ul>
+<li><a href="/blog/2016/03/31/get-field-names-of-content-type-in-drupal/">Get Field Names of Content Type in Drupal</a></li>
+</ul>
+
+
+<h3>Field Collection</h3>
+
+<ul>
+<li><a href="http://audiblecode.com/blog/programmatically-create-and-update-field-collection-item-node-entity-api">Programmatically create and update field collection item for the node with entity API</a></li>
+<li><a href="http://cornel.co/article/delete-node-field-collection-items-drupal-7">Delete a node field collection items in Drupal 7</a></li>
+<li><a href="http://rapiddg.com/blog/programmatically-adding-field-collection-item-node-drupal">Programmatically Adding a Field Collection Item to a Node in Drupal</a></li>
+</ul>
+
+
+<h3>Block</h3>
+
+<ul>
+<li><a href="http://stackoverflow.com/questions/4731420/how-to-insert-a-block-into-a-node-or-template-in-drupal-7">How to insert a block into a node or template in Drupal 7? - Stack Overflow</a></li>
+</ul>
+
+
+<h3>Theme</h3>
+
+<ul>
+<li><a href="https://www.drupal.org/node/930760">Render Arrays in Drupal 7</a></li>
+<li><a href="https://api.drupal.org/api/drupal/modules%21system%21system.api.php/function/hook_theme/7">hook_theme</a></li>
+<li><a href="http://stackoverflow.com/questions/7742203/how-does-hook-theme-work">How does hook_theme() work?</a></li>
+<li><a href="https://www.drupal.org/node/933976">Using the theme layer (Drupal 7.x)</a></li>
+</ul>
+
+
+<h3>Form</h3>
+
+<ul>
+<li><a href="http://webemania.com/blog/how-to-add-classes-or-attributes-to-drupal-form-elements">How to add classes or attributes to Drupal form elements</a></li>
+<li><a href="http://befused.com/drupal/form-validation">http://befused.com/drupal/form-validation</a></li>
+</ul>
+
+
+<h3>Database</h3>
+
+<h3>Mail</h3>
+
+<h3>Batch/Queue</h3>
+
+<h3>Cron</h3>
+
+<h3>Cache</h3>
+
+<ul>
+<li><a href="http://www.workhabit.com/blog/using-drupal-cache-your-custom-module-better-performance">Using Drupal Cache In Your Custom Module For Better Performance</a></li>
+</ul>
+
+
+<h3>Misc.</h3>
+
+<ul>
+<li><a href="http://befused.com/drupal/print_r-in-drupal_set_message">print_r in drupal_set_message</a></li>
+<li><a href="https://www.drupal.org/node/834074">multiple wildcards in hook_menu on same place</a></li>
+<li><a href="https://www.drupal.org/node/756722">Managing JavaScript in Drupal 7</a></li>
+<li><a href="http://drupal.stackexchange.com/questions/29210/how-do-i-add-javascript-specific-for-a-view">How do I add JavaScript specific for a view?</a></li>
+<li><a href="https://www.drupal.org/writing-secure-code">Writing secure code</a></li>
+<li><a href="http://www.tekritisoftware.com/restful-web-services-drupal-eight">Accepting POST in Drupal: Customizing RESTful Endpoints</a></li>
+<li><a href="http://www.timtoon.com/2009/05/27/customizing-an-rss-feed-using-drupal-and-views/">Customizing an RSS feed using Drupal and Views</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>
