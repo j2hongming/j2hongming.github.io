@@ -4,7 +4,7 @@
   <title><![CDATA[J2hongming Blog]]></title>
   <link href="http://j2hongming.github.io/atom.xml" rel="self"/>
   <link href="http://j2hongming.github.io/"/>
-  <updated>2016-04-01T13:56:30+08:00</updated>
+  <updated>2016-04-28T13:20:41+08:00</updated>
   <id>http://j2hongming.github.io/</id>
   <author>
     <name><![CDATA[HongMing ChangChine]]></name>
@@ -12,6 +12,121 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[No Access-Control-Allow-Origin Header Is Present on the Requested Resource]]></title>
+    <link href="http://j2hongming.github.io/blog/2016/04/28/no-access-control-allow-origin-header-is-present-on-the-requested-resource/"/>
+    <updated>2016-04-28T11:25:22+08:00</updated>
+    <id>http://j2hongming.github.io/blog/2016/04/28/no-access-control-allow-origin-header-is-present-on-the-requested-resource</id>
+    <content type="html"><![CDATA[<ul>
+<li>問題描述</li>
+<li>本質</li>
+<li>解法</li>
+</ul>
+
+
+<!-- more -->
+
+
+<h2>問題描述</h2>
+
+<p>使用jQuery AJAX發出Request時，console出現No &lsquo;Access-Control-Allow-Origin&rsquo; header is present on the requested resource</p>
+
+<figure class='code'><figcaption><span>CORS.js</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span><span class="o">&gt;</span>
+</span><span class='line'><span class="c1">// ERROR, and show error message in console </span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">&quot;http://data.tycg.gov.tw/api/v1/rest/datastore/a1b4714b-3b75-4ff8-a8f2-cc377e4eaa0f?format=json&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="c1">// SUCCESS</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s1">&#39;http://ptx.transportdata.tw/MOTC/v1/Bus/EstimatedTimeOfArrival/Thb?%24format=json&amp;$top=10&#39;</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+</span><span class='line'>   <span class="nx">url</span><span class="o">:</span> <span class="nx">url</span><span class="p">,</span>
+</span><span class='line'>   <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+</span><span class='line'>   <span class="nx">dataType</span><span class="o">:</span> <span class="s2">&quot;JSON&quot;</span><span class="p">,</span>
+</span><span class='line'>   <span class="nx">success</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">request</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>     <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;SUCCESS!!!&quot;</span><span class="p">);</span>
+</span><span class='line'>     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+</span><span class='line'>   <span class="p">},</span>
+</span><span class='line'>   <span class="nx">error</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>     <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;ERROR!!!&quot;</span><span class="p">);</span>
+</span><span class='line'>   <span class="p">}</span>
+</span><span class='line'> <span class="p">});</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/script&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<div><script src='https://gist.github.com/89c858fdf4fd510fd910787a64eb9f04.js?file=CORS.js'></script>
+<noscript><pre><code>&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+// ERROR, and show error message in console 
+var url = &quot;http://data.tycg.gov.tw/api/v1/rest/datastore/a1b4714b-3b75-4ff8-a8f2-cc377e4eaa0f?format=json&quot;;
+// SUCCESS
+var url = 'http://ptx.transportdata.tw/MOTC/v1/Bus/EstimatedTimeOfArrival/Thb?%24format=json&amp;$top=10';
+
+$.ajax({
+   url: url,
+   type: &quot;GET&quot;,
+   dataType: &quot;JSON&quot;,
+   success: function(data, textStatus, request) {
+     alert(&quot;SUCCESS!!!&quot;);
+     console.log(data);
+   },
+   error: function() {
+     alert(&quot;ERROR!!!&quot;);
+   }
+ });
+
+&lt;/script&gt;</code></pre></noscript></div>
+
+
+<h2>本質</h2>
+
+<p>基於同源策略(Same-origin policy)所形成的議題
+根據MDN所描述，同源的定義必須<code>protocol</code>, <code>host</code>, <code>port</code>相同
+所以若要取得不同網域的資源會受到限制。</p>
+
+<h2>解法</h2>
+
+<p>HTTP response header加上<code>Access-Control-Allow-Origin</code>屬性，若有機會碰到Server端的前提下。</p>
+
+<p>使用JSONP溝通，Client端和Server端都要支援。</p>
+
+<p>JQuery降版到1.4，只能動到Client端，Server端是別人家的。</p>
+
+<h2>Ref.</h2>
+
+<ul>
+<li><a href="http://stackoverflow.com/questions/20035101/no-access-control-allow-origin-header-is-present-on-the-requested-resource">No &lsquo;Access-Control-Allow-Origin&rsquo; header is present on the requested resource</a></li>
+<li><a href="https://developer.mozilla.org/zh-TW/docs/HTTP/Access_control_CORS">HTTP access control (CORS):MDN</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy">Same-origin policy</a></li>
+<li><a href="http://ithelp.ithome.com.tw/question/10094915?tab=opinion">Cross Domain Ajax 跨網域抓取資料(JSONP)</a></li>
+<li><a href="http://stackoverflow.com/questions/10507345/ajax-and-jsonp-parseerror-and-uncaught-syntaxerror-unexpected-token">$.ajax and JSONP. ParseError and Uncaught SyntaxError: Unexpected token :</a></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Get Field Names of Content Type in Drupal]]></title>
@@ -1098,6 +1213,55 @@ CentOS安裝注意事項</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
+<h3>Example 3</h3>
+
+<p><a href="http://octopress.org/docs/blogging/code/">Octopress: Sharing Code Snippets</a></p>
+
+<blockquote><p>&#8220;` [language] [title] [url] [link text]
+code snippet
+&#8220;`</p></blockquote>
+
+<figure class='code'><figcaption><span>Discover if a number is prime</span><a href='http://www.noulakaz.net/weblog/2007/03/18/a-regular-expression-to-check-for-prime-numbers/'>Source Article</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Fixnum</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">prime?</span>
+</span><span class='line'>    <span class="p">(</span><span class="s1">&#39;1&#39;</span> <span class="o">*</span> <span class="nb">self</span><span class="p">)</span> <span class="o">!~</span> <span class="sr">/^1?$|^(11+?)\1+$/</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Example 4: gist embed</h3>
+
+<p>{ % gist 89c858fdf4fd510fd910787a64eb9f04 % }</p>
+
+<div><script src='https://gist.github.com/89c858fdf4fd510fd910787a64eb9f04.js'></script>
+<noscript><pre><code>&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+// ERROR, and show error message in console 
+var url = &quot;http://data.tycg.gov.tw/api/v1/rest/datastore/a1b4714b-3b75-4ff8-a8f2-cc377e4eaa0f?format=json&quot;;
+// SUCCESS
+var url = 'http://ptx.transportdata.tw/MOTC/v1/Bus/EstimatedTimeOfArrival/Thb?%24format=json&amp;$top=10';
+
+$.ajax({
+   url: url,
+   type: &quot;GET&quot;,
+   dataType: &quot;JSON&quot;,
+   success: function(data, textStatus, request) {
+     alert(&quot;SUCCESS!!!&quot;);
+     console.log(data);
+   },
+   error: function() {
+     alert(&quot;ERROR!!!&quot;);
+   }
+ });
+
+&lt;/script&gt;</code></pre></noscript></div>
+
+
 <h2>Quote</h2>
 
 <h3>Example 1</h3>
@@ -1147,7 +1311,7 @@ Line</li>
 
 <h3>Example</h3>
 
-<p><a href="&#x6d;&#97;&#105;&#x6c;&#116;&#x6f;&#x3a;&#x61;&#x64;&#100;&#114;&#101;&#x73;&#115;&#64;&#101;&#120;&#97;&#109;&#x70;&#108;&#x65;&#x2e;&#x63;&#111;&#109;">&#x61;&#100;&#x64;&#x72;&#x65;&#115;&#x73;&#64;&#101;&#x78;&#x61;&#x6d;&#112;&#x6c;&#x65;&#46;&#x63;&#111;&#109;</a></p>
+<p><a href="&#x6d;&#97;&#105;&#x6c;&#116;&#x6f;&#x3a;&#x61;&#100;&#x64;&#114;&#x65;&#x73;&#x73;&#64;&#101;&#x78;&#97;&#109;&#x70;&#x6c;&#101;&#x2e;&#99;&#111;&#109;">&#x61;&#100;&#100;&#x72;&#x65;&#x73;&#x73;&#64;&#101;&#x78;&#x61;&#x6d;&#112;&#x6c;&#x65;&#x2e;&#99;&#111;&#109;</a></p>
 
 <h1>Atx format Header L1</h1>
 

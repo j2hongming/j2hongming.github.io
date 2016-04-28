@@ -3,6 +3,14 @@
   
   
   <url>
+    <loc>http://j2hongming.github.io/blog/2016/04/28/no-access-control-allow-origin-header-is-present-on-the-requested-resource/</loc>
+    
+    <lastmod>2016-04-28T11:25:22+08:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://j2hongming.github.io/blog/2016/03/31/get-field-names-of-content-type-in-drupal/</loc>
     
     <lastmod>2016-03-31T13:30:28+08:00</lastmod>
@@ -93,28 +101,28 @@
   
   <url>
     <loc>http://j2hongming.github.io/</loc>
-    <lastmod>2016-04-01T13:56:30+08:00</lastmod>
+    <lastmod>2016-04-28T13:20:41+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://j2hongming.github.io/blog/archives/</loc>
-    <lastmod>2016-04-01T13:56:30+08:00</lastmod>
+    <lastmod>2016-04-28T13:20:41+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://j2hongming.github.io/toolbox/</loc>
-    <lastmod>2016-04-01T13:56:30+08:00</lastmod>
+    <lastmod>2016-04-28T13:20:41+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://j2hongming.github.io/bookshelf/</loc>
-    <lastmod>2016-04-01T13:56:30+08:00</lastmod>
+    <lastmod>2016-04-28T13:20:41+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

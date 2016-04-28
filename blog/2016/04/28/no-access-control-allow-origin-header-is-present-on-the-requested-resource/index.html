@@ -5,18 +5,14 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>部落格開張Markdown Demo - J2hongming Blog</title>
+  <title>No Access-Control-Allow-Origin Header Is Present on the Requested Resource - J2hongming Blog</title>
   <meta name="author" content="HongMing ChangChine">
 
   
-  <meta name="description" content="Sharing Code Snippets
-Quote
-List
-Email
-Atx Format Header
-Setext Format Header
-Break Line
-Link Markdown Syntax Sharing Code Snippets Example 1 PHP &hellip;">
+  <meta name="description" content="問題描述
+本質
+解法 問題描述 使用jQuery AJAX發出Request時，console出現No &lsquo;Access-Control-Allow-Origin&rsquo; header is present on the requested resource CORS.js1
+2 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -25,7 +21,7 @@ Link Markdown Syntax Sharing Code Snippets Example 1 PHP &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://j2hongming.github.io/blog/2014/10/16/bu-luo-ge-kai-zhang">
+  <link rel="canonical" href="http://j2hongming.github.io/blog/2016/04/28/no-access-control-allow-origin-header-is-present-on-the-requested-resource">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="J2hongming Blog" type="application/atom+xml">
@@ -89,7 +85,7 @@ Link Markdown Syntax Sharing Code Snippets Example 1 PHP &hellip;">
   
   <header>
     
-      <h1 class="entry-title">部落格開張Markdown Demo</h1>
+      <h1 class="entry-title">No Access-Control-Allow-Origin Header Is Present on the Requested Resource</h1>
     
     
       <p class="meta">
@@ -98,7 +94,7 @@ Link Markdown Syntax Sharing Code Snippets Example 1 PHP &hellip;">
 
 
 
-<time class='entry-date' datetime='2014-10-16T16:22:49+08:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>4:22 pm</span></time>
+<time class='entry-date' datetime='2016-04-28T11:25:22+08:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>11:25 am</span></time>
         
            | <a href="#disqus_thread"
              data-disqus-identifier="http://j2hongming.github.io">Comments</a>
@@ -109,36 +105,20 @@ Link Markdown Syntax Sharing Code Snippets Example 1 PHP &hellip;">
 
 
 <div class="entry-content"><ul>
-<li>Sharing Code Snippets</li>
-<li>Quote</li>
-<li>List</li>
-<li>Email</li>
-<li>Atx Format Header</li>
-<li>Setext Format Header</li>
-<li>Break Line</li>
-<li>Link</li>
+<li>問題描述</li>
+<li>本質</li>
+<li>解法</li>
 </ul>
 
 
 <!-- more -->
 
 
-<p><a href="http://markdown.tw/">Markdown Syntax</a></p>
+<h2>問題描述</h2>
 
-<h2>Sharing Code Snippets</h2>
+<p>使用jQuery AJAX發出Request時，console出現No &lsquo;Access-Control-Allow-Origin&rsquo; header is present on the requested resource</p>
 
-<h3>Example  1</h3>
-
-<figure class='code'><figcaption><span>PHP echo-hello.php</span><a href='http://php.net/manual/en/function.echo.php'>link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="k">echo</span> <span class="s1">&#39;部落格開張&#39;</span><span class="p">;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Example  2</h3>
-
-<p><a href="http://octopress.org/docs/blogging/code/">Octopress: Sharing Code Snippets</a></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>CORS.js</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -148,45 +128,42 @@ Link Markdown Syntax Sharing Code Snippets Example 1 PHP &hellip;">
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
 <span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="cp">&lt;!DOCTYPE html&gt;</span>
-</span><span class='line'><span class="nt">&lt;html&gt;</span>
-</span><span class='line'><span class="nt">&lt;body&gt;</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span><span class="o">&gt;</span>
+</span><span class='line'><span class="c1">// ERROR, and show error message in console </span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">&quot;http://data.tycg.gov.tw/api/v1/rest/datastore/a1b4714b-3b75-4ff8-a8f2-cc377e4eaa0f?format=json&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="c1">// SUCCESS</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s1">&#39;http://ptx.transportdata.tw/MOTC/v1/Bus/EstimatedTimeOfArrival/Thb?%24format=json&amp;$top=10&#39;</span><span class="p">;</span>
 </span><span class='line'>
-</span><span class='line'><span class="nt">&lt;h1&gt;</span>My First Heading<span class="nt">&lt;/h1&gt;</span>
+</span><span class='line'><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+</span><span class='line'>   <span class="nx">url</span><span class="o">:</span> <span class="nx">url</span><span class="p">,</span>
+</span><span class='line'>   <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;GET&quot;</span><span class="p">,</span>
+</span><span class='line'>   <span class="nx">dataType</span><span class="o">:</span> <span class="s2">&quot;JSON&quot;</span><span class="p">,</span>
+</span><span class='line'>   <span class="nx">success</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">textStatus</span><span class="p">,</span> <span class="nx">request</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>     <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;SUCCESS!!!&quot;</span><span class="p">);</span>
+</span><span class='line'>     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+</span><span class='line'>   <span class="p">},</span>
+</span><span class='line'>   <span class="nx">error</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>     <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;ERROR!!!&quot;</span><span class="p">);</span>
+</span><span class='line'>   <span class="p">}</span>
+</span><span class='line'> <span class="p">});</span>
 </span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;</span>My first paragraph.<span class="nt">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;/body&gt;</span>
-</span><span class='line'><span class="nt">&lt;/html&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/script&gt;</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h3>Example 3</h3>
-
-<p><a href="http://octopress.org/docs/blogging/code/">Octopress: Sharing Code Snippets</a></p>
-
-<blockquote><p>&#8220;` [language] [title] [url] [link text]
-code snippet
-&#8220;`</p></blockquote>
-
-<figure class='code'><figcaption><span>Discover if a number is prime</span><a href='http://www.noulakaz.net/weblog/2007/03/18/a-regular-expression-to-check-for-prime-numbers/'>Source Article</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Fixnum</span>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">prime?</span>
-</span><span class='line'>    <span class="p">(</span><span class="s1">&#39;1&#39;</span> <span class="o">*</span> <span class="nb">self</span><span class="p">)</span> <span class="o">!~</span> <span class="sr">/^1?$|^(11+?)\1+$/</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Example 4: gist embed</h3>
-
-<p>{ % gist 89c858fdf4fd510fd910787a64eb9f04 % }</p>
-
-<div><script src='https://gist.github.com/89c858fdf4fd510fd910787a64eb9f04.js'></script>
+<div><script src='https://gist.github.com/89c858fdf4fd510fd910787a64eb9f04.js?file=CORS.js'></script>
 <noscript><pre><code>&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js&quot;&gt;&lt;/script&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
 // ERROR, and show error message in console 
@@ -210,98 +187,30 @@ $.ajax({
 &lt;/script&gt;</code></pre></noscript></div>
 
 
-<h2>Quote</h2>
+<h2>本質</h2>
 
-<h3>Example 1</h3>
+<p>基於同源策略(Same-origin policy)所形成的議題
+根據MDN所描述，同源的定義必須<code>protocol</code>, <code>host</code>, <code>port</code>相同
+所以若要取得不同網域的資源會受到限制。</p>
 
-<p><a href="http://octopress.org/docs/plugins/blockquote/">Octopress: Blockquote</a></p>
+<h2>解法</h2>
 
-<blockquote><p>Stay hungry, Stay foolish. -Steve Jobs</p>
+<p>HTTP response header加上<code>Access-Control-Allow-Origin</code>屬性，若有機會碰到Server端的前提下。</p>
 
-<p>A apple a day, keep the doctor away</p>
+<p>使用JSONP溝通，Client端和Server端都要支援。</p>
 
-<blockquote><p>May I help U?</p></blockquote>
+<p>JQuery降版到1.4，只能動到Client端，Server端是別人家的。</p>
 
-<ol>
-<li>First
-Line</li>
-<li>Two
-Line</li>
-</ol>
-</blockquote>
-
-<h3>Example 2</h3>
-
-<blockquote><p>Flying is learning how to throw yourself at the ground and miss.</p><footer><strong>Douglas Adams</strong> <cite>The Hichhikers Guide to the Galaxy</cite></footer></blockquote>
-
-
-<h2>List</h2>
-
-<h3>Example</h3>
-
-<h4>TODO List</h4>
+<h2>Ref.</h2>
 
 <ul>
-<li>open</li>
-<li><em>hadle em</em></li>
-<li><strong>*strong*</strong>
-
-<ol>
-<li>s1</li>
-<li>s2</li>
-<li>s3</li>
-</ol>
-</li>
+<li><a href="http://stackoverflow.com/questions/20035101/no-access-control-allow-origin-header-is-present-on-the-requested-resource">No &lsquo;Access-Control-Allow-Origin&rsquo; header is present on the requested resource</a></li>
+<li><a href="https://developer.mozilla.org/zh-TW/docs/HTTP/Access_control_CORS">HTTP access control (CORS):MDN</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy">Same-origin policy</a></li>
+<li><a href="http://ithelp.ithome.com.tw/question/10094915?tab=opinion">Cross Domain Ajax 跨網域抓取資料(JSONP)</a></li>
+<li><a href="http://stackoverflow.com/questions/10507345/ajax-and-jsonp-parseerror-and-uncaught-syntaxerror-unexpected-token">$.ajax and JSONP. ParseError and Uncaught SyntaxError: Unexpected token :</a></li>
 </ul>
 
-
-<h2>Email</h2>
-
-<h3>Example</h3>
-
-<p><a href="&#x6d;&#97;&#105;&#x6c;&#116;&#x6f;&#x3a;&#x61;&#100;&#x64;&#114;&#x65;&#x73;&#x73;&#64;&#101;&#x78;&#97;&#109;&#x70;&#x6c;&#101;&#x2e;&#99;&#111;&#109;">&#x61;&#100;&#100;&#x72;&#x65;&#x73;&#x73;&#64;&#101;&#x78;&#x61;&#x6d;&#112;&#x6c;&#x65;&#x2e;&#99;&#111;&#109;</a></p>
-
-<h1>Atx format Header L1</h1>
-
-<h2>Example</h2>
-
-<h2>Header L2</h2>
-
-<h3>Header L3</h3>
-
-<h4>Header L4</h4>
-
-<h5>Header L5</h5>
-
-<h6>Header L6</h6>
-
-<h1>This is an Setext Format  H1</h1>
-
-<h3>Example</h3>
-
-<h2>This is an  Setext Format  H2</h2>
-
-<h1>Break Line</h1>
-
-<h2>Example</h2>
-
-<p>BreakLine</p>
-
-<hr />
-
-<hr />
-
-<hr />
-
-<h1>Link</h1>
-
-<h3>Example 1: Inline</h3>
-
-<p>This is <a href="http://example.com/" title="Title">an example</a> inline link.</p>
-
-<h3>Example 2: Ref</h3>
-
-<p>This is <a href="http://example.com/" title="Optional Title Here">an example</a> reference-style link.</p>
 </div>
 
 
@@ -317,12 +226,12 @@ Line</li>
 
 
 
-<time class='entry-date' datetime='2014-10-16T16:22:49+08:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>4:22 pm</span></time>
+<time class='entry-date' datetime='2016-04-28T11:25:22+08:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>11:25 am</span></time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/blog/'>blog</a>, <a class='category' href='/blog/categories/intro/'>intro</a>
+    <a class='category' href='/blog/categories/cors/'>cors</a>, <a class='category' href='/blog/categories/http/'>http</a>
   
 </span>
 
@@ -331,7 +240,7 @@ Line</li>
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://j2hongming.github.io/blog/2014/10/16/bu-luo-ge-kai-zhang/" data-via="" data-counturl="http://j2hongming.github.io/blog/2014/10/16/bu-luo-ge-kai-zhang/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://j2hongming.github.io/blog/2016/04/28/no-access-control-allow-origin-header-is-present-on-the-requested-resource/" data-via="" data-counturl="http://j2hongming.github.io/blog/2016/04/28/no-access-control-allow-origin-header-is-present-on-the-requested-resource/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -344,8 +253,8 @@ Line</li>
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2016/03/31/get-field-names-of-content-type-in-drupal/" title="Previous Post: Get field names of Content Type in Drupal">&laquo; Get field names of Content Type in Drupal</a>
       
-        <a class="basic-alignment right" href="/blog/2014/10/20/linux-command-history/" title="Next Post: Linux指令歷史紀錄">Linux指令歷史紀錄 &raquo;</a>
       
     </p>
   </footer>
@@ -411,8 +320,8 @@ Line</li>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://j2hongming.github.io/blog/2014/10/16/bu-luo-ge-kai-zhang/';
-        var disqus_url = 'http://j2hongming.github.io/blog/2014/10/16/bu-luo-ge-kai-zhang/';
+        var disqus_identifier = 'http://j2hongming.github.io/blog/2016/04/28/no-access-control-allow-origin-header-is-present-on-the-requested-resource/';
+        var disqus_url = 'http://j2hongming.github.io/blog/2016/04/28/no-access-control-allow-origin-header-is-present-on-the-requested-resource/';
         var disqus_script = 'embed.js';
       
     (function () {
