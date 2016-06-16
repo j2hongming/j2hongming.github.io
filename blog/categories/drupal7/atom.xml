@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Drupal7 | J2hongming Blog]]></title>
   <link href="http://j2hongming.github.io/blog/categories/drupal7/atom.xml" rel="self"/>
   <link href="http://j2hongming.github.io/"/>
-  <updated>2016-04-28T13:20:41+08:00</updated>
+  <updated>2016-06-16T23:37:07+08:00</updated>
   <id>http://j2hongming.github.io/</id>
   <author>
     <name><![CDATA[HongMing ChangChine]]></name>
@@ -12,6 +12,39 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[客製化Drupal原生下拉式選單]]></title>
+    <link href="http://j2hongming.github.io/blog/2016/06/16/customize-drupal-origin-selectlist/"/>
+    <updated>2016-06-16T23:20:31+08:00</updated>
+    <id>http://j2hongming.github.io/blog/2016/06/16/customize-drupal-origin-selectlist</id>
+    <content type="html"><![CDATA[<p><div><script src='https://gist.github.com/f4fe361e7f0c3f83e796b006b8f4cbeb.js'></script>
+<noscript><pre><code>/**
+ * origin selectlist display:
+ * A
+ * B
+ * C
+ * -----
+ * customized selectlist display:
+ * 100 A
+ * 200 B
+ * 300 C
+ */
+function hook_field_widget_form_alter(&amp;$element, &amp;$form_state, $context){
+
+  if($element['#bundle'] == 'article' &amp;&amp; $element['#field_name'] == 'field_code_name'){
+    $new_code_name = array();
+    foreach ($element['#options'] as $key =&gt; $value) {
+      $term_obj = taxonomy_term_load($key);
+      $new_code_name[$key] = $term_obj-&gt;field_code_id['und'][0]['safe_value'].' '.$value;
+    }
+    
+    $element['#options'] = $new_code_name;
+  }
+}</code></pre></noscript></div>
+</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Get Field Names of Content Type in Drupal]]></title>
@@ -545,112 +578,6 @@ if (isset($result['node'])) {
 <li><a href="https://www.drupal.org/dynamic-queries">Dynamic queries</a></li>
 <li><a href="https://www.drupal.org/node/310072">Static queries</a></li>
 <li><a href="https://www.drupal.org/node/1343708">How to use EntityFieldQuery</a></li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Drupal 7 + Memcached on CentOS 6]]></title>
-    <link href="http://j2hongming.github.io/blog/2015/07/24/drupal-7-plus-memcached-on-centos-6/"/>
-    <updated>2015-07-24T17:24:34+08:00</updated>
-    <id>http://j2hongming.github.io/blog/2015/07/24/drupal-7-plus-memcached-on-centos-6</id>
-    <content type="html"><![CDATA[<ul>
-<li>安裝Memcached</li>
-<li>設定Memcached</li>
-<li>安裝Memcached PHP extension(PECL Memcache)</li>
-<li>設定Memcached PHP extension</li>
-<li>安裝Drupal 7 memcache 模組</li>
-<li>設定Drupal 7 setting.php</li>
-<li>注意事項</li>
-</ul>
-
-
-<!-- more -->
-
-
-<h2>Memcached</h2>
-
-<h3>安裝Memcached</h3>
-
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>yum install memcached</span></code></pre></td></tr></table></div></figure></p>
-
-<h3>設定Memcached</h3>
-
-<p>設定 /etc/sysconfig/memcached
-注意OPTIONS=&ldquo;-l 127.0.0.1&rdquo;</p>
-
-<h2>Memcached PHP extension</h2>
-
-<h3>安裝Memcached PHP extension</h3>
-
-<p>指定版本
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo pecl install channel://pecl.php.net/memcache-3.0.6</span></code></pre></td></tr></table></div></figure></p>
-
-<h3>設定Memcached PHP extension</h3>
-
-<p>設定/etc/php.d/memcache.ini</p>
-
-<p>開啟hash相關設定
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>memcache.hash_strategy=consistent</span></code></pre></td></tr></table></div></figure></p>
-
-<h2>Drupal 7</h2>
-
-<h3>安裝Drupal 7 memcache 模組</h3>
-
-<p><a href="https://www.drupal.org/project/memcache">Memcache API and Integration</a></p>
-
-<h3>設定Drupal 7 setting.php</h3>
-
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$conf[&lsquo;cache_backends&rsquo;][] = &lsquo;sites/all/modules/memcache/memcache.inc&rsquo;;
-</span><span class='line'>// The &lsquo;cache_form&rsquo; bin must be assigned no non-volatile storage.
-</span><span class='line'>$conf[&lsquo;cache_class_cache_form&rsquo;] = &lsquo;DrupalDatabaseCache&rsquo;;
-</span><span class='line'>$conf[&lsquo;cache_default_class&rsquo;] = &lsquo;MemCacheDrupal&rsquo;;
-</span><span class='line'>$conf[&lsquo;memcache_key_prefix&rsquo;] = &lsquo;something_unique&rsquo;;
-</span><span class='line'>// Don&rsquo;t bootstrap the database when serving pages from the cache.
-</span><span class='line'>$conf[&lsquo;page_cache_without_database&rsquo;] = TRUE;
-</span><span class='line'>$conf[&lsquo;page_cache_invoke_hooks&rsquo;] = FALSE;&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p>$conf[&lsquo;memcache_stampede_protection&rsquo;] = TRUE;
-</span><span class='line'>$conf[&lsquo;lock_inc&rsquo;] = &lsquo;sites/all/modules/memcache/memcache-lock.inc&rsquo;;&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></p>
-
-<h2>注意事項</h2>
-
-<ol>
-<li>若memcache service有起來，Druapl卻沒連到，注意防火牆設定</li>
-</ol>
-
-
-<h2>Ref</h2>
-
-<ul>
-<li><a href="https://www.drupal.org/node/1131468">Drupal 7 Memcache Tutorial</a>
-大致流程說明</li>
-<li><a href="http://tag1consulting.com/blog/memcache-centos-fedora">Memcached and PECL memcache on CentOS and Fedora</a>
-CentOS安裝注意事項</li>
-<li><a href="http://www.tecmint.com/install-memcached-caching-server-on-rhel-centos-fedora/">Install Memcached (Caching Server) on RHEL/CentOS 6.3/5.8 and Fedora 17-12</a>
-安裝流程與指令(推薦)</li>
-<li><a href="http://chimera.labs.oreilly.com/books/1230000000845/ch16.html">Chapter 16. Alternative Storage and Cache Backends</a>
-觀念</li>
-<li><a href="http://www.hellosanta.com.tw/Drupal%E7%B6%B2%E7%AB%99%E8%A8%AD%E8%A8%88/drupal-memcached">Drupal Memcached中文教學</a></li>
 </ul>
 
 ]]></content>

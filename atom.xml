@@ -4,7 +4,7 @@
   <title><![CDATA[J2hongming Blog]]></title>
   <link href="http://j2hongming.github.io/atom.xml" rel="self"/>
   <link href="http://j2hongming.github.io/"/>
-  <updated>2016-04-28T13:20:41+08:00</updated>
+  <updated>2016-06-16T23:37:07+08:00</updated>
   <id>http://j2hongming.github.io/</id>
   <author>
     <name><![CDATA[HongMing ChangChine]]></name>
@@ -12,6 +12,41 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[客製化Drupal原生下拉式選單]]></title>
+    <link href="http://j2hongming.github.io/blog/2016/06/16/customize-drupal-origin-selectlist/"/>
+    <updated>2016-06-16T23:20:31+08:00</updated>
+    <id>http://j2hongming.github.io/blog/2016/06/16/customize-drupal-origin-selectlist</id>
+    <content type="html"><![CDATA[<div><script src='https://gist.github.com/f4fe361e7f0c3f83e796b006b8f4cbeb.js'></script>
+<noscript><pre><code>/**
+ * origin selectlist display:
+ * A
+ * B
+ * C
+ * -----
+ * customized selectlist display:
+ * 100 A
+ * 200 B
+ * 300 C
+ */
+function hook_field_widget_form_alter(&amp;$element, &amp;$form_state, $context){
+
+  if($element['#bundle'] == 'article' &amp;&amp; $element['#field_name'] == 'field_code_name'){
+    $new_code_name = array();
+    foreach ($element['#options'] as $key =&gt; $value) {
+      $term_obj = taxonomy_term_load($key);
+      $new_code_name[$key] = $term_obj-&gt;field_code_id['und'][0]['safe_value'].' '.$value;
+    }
+    
+    $element['#options'] = $new_code_name;
+  }
+}</code></pre></noscript></div>
+
+
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[No Access-Control-Allow-Origin Header Is Present on the Requested Resource]]></title>
@@ -1311,7 +1346,7 @@ Line</li>
 
 <h3>Example</h3>
 
-<p><a href="&#x6d;&#97;&#105;&#x6c;&#116;&#x6f;&#x3a;&#x61;&#100;&#x64;&#114;&#x65;&#x73;&#x73;&#64;&#101;&#x78;&#97;&#109;&#x70;&#x6c;&#101;&#x2e;&#99;&#111;&#109;">&#x61;&#100;&#100;&#x72;&#x65;&#x73;&#x73;&#64;&#101;&#x78;&#x61;&#x6d;&#112;&#x6c;&#x65;&#x2e;&#99;&#111;&#109;</a></p>
+<p><a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x61;&#100;&#100;&#x72;&#x65;&#115;&#115;&#x40;&#101;&#120;&#97;&#x6d;&#112;&#108;&#x65;&#x2e;&#99;&#111;&#x6d;">&#x61;&#100;&#x64;&#114;&#x65;&#115;&#x73;&#64;&#101;&#120;&#x61;&#x6d;&#x70;&#108;&#x65;&#46;&#x63;&#x6f;&#x6d;</a></p>
 
 <h1>Atx format Header L1</h1>
 
