@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Database | J2hongming Blog]]></title>
   <link href="http://j2hongming.github.io/blog/categories/database/atom.xml" rel="self"/>
   <link href="http://j2hongming.github.io/"/>
-  <updated>2016-07-21T01:46:47+08:00</updated>
+  <updated>2016-07-21T01:52:49+08:00</updated>
   <id>http://j2hongming.github.io/</id>
   <author>
     <name><![CDATA[HongMing ChangChine]]></name>
@@ -96,6 +96,13 @@
 <p>同一款引擎可以安裝在多台車上，一台車同時間只能安裝一款引擎。引擎實體和車實體為一對多關係。</p>
 
 <p>(未完)</p>
+
+<h2>參考資料</h2>
+
+<ul>
+<li><a href="http://www.books.com.tw/products/0010720461">圖解資料庫系統理論：使用MySQL實作 / 黃春雄</a></li>
+</ul>
+
 ]]></content>
   </entry>
   
