@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ubuntu | J2hongming Blog]]></title>
   <link href="http://j2hongming.github.io/blog/categories/ubuntu/atom.xml" rel="self"/>
   <link href="http://j2hongming.github.io/"/>
-  <updated>2016-06-16T23:37:07+08:00</updated>
+  <updated>2016-07-20T17:48:34+08:00</updated>
   <id>http://j2hongming.github.io/</id>
   <author>
     <name><![CDATA[HongMing ChangChine]]></name>
@@ -12,6 +12,78 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Inno Setup With Wine in Linux]]></title>
+    <link href="http://j2hongming.github.io/blog/2016/07/20/inno-setup-with-wine-in-linux/"/>
+    <updated>2016-07-20T17:16:45+08:00</updated>
+    <id>http://j2hongming.github.io/blog/2016/07/20/inno-setup-with-wine-in-linux</id>
+    <content type="html"><![CDATA[<ul>
+<li>安裝紅酒(wine)</li>
+<li>測試紅酒(wine)</li>
+<li>安裝Inno Setup</li>
+<li>執行exe, cmd</li>
+<li>參考資源</li>
+</ul>
+
+
+<!-- more -->
+
+
+<h2>安裝紅酒(wine)</h2>
+
+<h3>Ubuntu 14.04</h3>
+
+<pre><code>sudo apt-get install wine
+</code></pre>
+
+<h3>Cent OS 6.5</h3>
+
+<pre><code>yum install epel-release
+yum install wine
+</code></pre>
+
+<p>目前CentOS使用手動make尚未成功</p>
+
+<h2>測試紅酒(wine)</h2>
+
+<pre><code>wine --version
+# 下載putty.exe測試
+wine putty.exe
+</code></pre>
+
+<h2>安裝Inno Setup</h2>
+
+<p>下載<a href="http://www.jrsoftware.org/isdl.php">Inno Setup QuickStart Pack</a></p>
+
+<pre><code>wget http://www.jrsoftware.org/download.php/ispack.exe
+wine ispack.exe
+</code></pre>
+
+<p>安裝完成後Inno Setup會出現在~/.wine/drive_c/Program Files (x86)/Inno Setup 5
+<a href="http://unix.stackexchange.com/questions/40492/change-directory-with-space-followed-by">cd到Program Files (x86)的方式</a></p>
+
+<h2>執行exe, cmd</h2>
+
+<p>下載大神做好的<a href="https://gist.githubusercontent.com/derekstavis/8288379/raw/f8f1f7ef290d4116cc30ec341e6b8e996cf8e602/iscc">iscc</a>放在可執行的目錄或是自己加到$PATH</p>
+
+<pre><code>echo $PATH
+# 自己加到$PATH,關掉Terminal後就會失效，下一次需要重新加入
+export PATH=$PATH:~/bin/my
+# 測試iscc
+iscc myScript.iss
+</code></pre>
+
+<h2>參考資源</h2>
+
+<ul>
+<li><a href="http://tecadmin.net/steps-install-wine-centos-rhel-fedora-systems/">How To Install Wine 1.9.9 (Development Release) on CentOS, RHEL &amp; Fedora</a></li>
+<li><a href="https://www.youtube.com/watch?v=Ds3Y9thewNQ">How to Install &amp; Configure Wine 1.7.34 on RHEL/CentOS 6/7 and Fedora 23/22/21 - Desktop</a></li>
+<li><a href="http://derek.nodeconf.org/posts/creating-a-installer-using-inno-setup-on-linux-and-mac-os-x/">CREATING A INSTALLER USING INNO SETUP ON LINUX AND MAC OS X</a></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Config Static IP in Ubuntu]]></title>
