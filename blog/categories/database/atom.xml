@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Database | J2hongming Blog]]></title>
+  <link href="http://j2hongming.github.io/blog/categories/database/atom.xml" rel="self"/>
+  <link href="http://j2hongming.github.io/"/>
+  <updated>2016-07-21T01:46:47+08:00</updated>
+  <id>http://j2hongming.github.io/</id>
+  <author>
+    <name><![CDATA[HongMing ChangChine]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[關聯式資料庫筆記]]></title>
+    <link href="http://j2hongming.github.io/blog/2016/07/20/relational-database-notes/"/>
+    <updated>2016-07-20T23:37:18+08:00</updated>
+    <id>http://j2hongming.github.io/blog/2016/07/20/relational-database-notes</id>
+    <content type="html"><![CDATA[<p>真實世界中存在各種<code>實體</code>(Entity)，實體與實體間存在某些<code>關係</code>(Relation)。
+歌手和專輯、歌曲和歌詞、皮卡丘和訓練師小智&hellip;實體無所不在。
+歌手出版了多張專輯，一張專輯內有多首歌曲，一首歌擁有一組歌詞，皮卡丘的訓練師是小智&hellip;實體之間總是有某種關係。</p>
+
+<!-- more -->
+
+
+<p>如何以資料的概念呈現實體與儲存實體?</p>
+
+<p>利用<code>屬性</code>來描述與呈現實體的某些特性，如：專輯的名稱、簡介、出版日期和封面圖片&hellip;等。歌曲的曲名、長度、性質&hellip;等</p>
+
+<p>其中某些屬性存在一些特別的性質，稱為<code>鍵值</code>(Key)。鍵值可分為幾種：<code>超鍵</code>、<code>候選鍵</code>、<code>主鍵</code>、<code>複合鍵</code>、<code>外來鍵</code>。</p>
+
+<p>此外，關係的呈現方式也分為三種：<code>一對一</code>、<code>一對多</code>和<code>多對多</code></p>
+
+<p>為了保持資料的一致性和完整性，避免異動資料時發生異常現象，訂下了三種<code>完整性規則</code>(Integrity Rules):實體完整性、參考完整性和值域完整性。</p>
+
+<p>稍微整理一下，主要的概念有：</p>
+
+<ul>
+<li>鍵值屬性</li>
+<li>關係的種類</li>
+<li>完整性規則</li>
+</ul>
+
+
+<p>鍵值屬性可分為</p>
+
+<ul>
+<li>超鍵(Super key)</li>
+<li>候選鍵(Candidate key)</li>
+<li>主鍵(Primary key)</li>
+<li>複合鍵(Composite key)</li>
+<li>外來鍵(Foreign key)</li>
+</ul>
+
+
+<p>關係種類可分為</p>
+
+<ul>
+<li>一對一關係(one-to-one)</li>
+<li>一對多關係(one-to-many)</li>
+<li>多對多關係(many-to-many)</li>
+</ul>
+
+
+<p>完整性規則可分為</p>
+
+<ul>
+<li>實體完整性規則(Entity Integrity Rule)</li>
+<li>參考完整性規則(Referential Integrity Rule)</li>
+<li>值域完整性規則(Domain Integrity Rule)</li>
+</ul>
+
+
+<h2>鍵值屬性</h2>
+
+<p>在計算機的世界裡，要如何判斷實體之間的差異呢?這輛車和那輛車指的是同一台車還是不同的車呢?</p>
+
+<p>這時必須使用一種屬性來明確地告訴計算機：「阿!這輛車和那輛車真的不是同一輛!」。</p>
+
+<p>使用車輛廠牌如何? Toyata, Ford, Mitsubishi&hellip;這看起來不太可行，因為一家車廠生產超過一輛車，假設A車和B車廠牌都是Toyato，計算機會準備掐死你&hellip;</p>
+
+<p>使用車輛廠牌加上車輛型號再加上車牌號碼可行嗎? 看起來似乎可行，A車是Toyato的yaris，車牌號碼是ABC-1234;B車是Mazda的CX-5，車牌號碼是EFG-5678。「阿!A車和B車真的不是同一輛!」</p>
+
+<p>等等&hellip;屬性太多太難記憶，直接使用車牌號碼OK嗎? A車車牌號碼是ABC-1234，B車是EFG-5678，「阿!A車和B車真的不是同一輛!」，計算機覺得開心。</p>
+
+<p>符合唯一性的屬性組合，這概念即為超鍵。(車輛廠牌, 車輛型號,車牌號碼)是超鍵集合中的一個元素。</p>
+
+<p>幫忙超鍵瘦身，移除屬性組合中的某些屬性後還是有唯一性，這概念即為候選鍵。(車牌號碼)是候選鍵。</p>
+
+<p>「就決定是你了!皮卡丘」，被選到的候選鍵有了另一個名字：主鍵。負責代表這個實體，有著遠大的抱負和責任，絕對<code>不可以重複</code>也<code>不可以為空</code>(Null)，壓力山大啊!</p>
+
+<h2>關係種類</h2>
+
+<p>同一款引擎可以安裝在多台車上，一台車同時間只能安裝一款引擎。引擎實體和車實體為一對多關係。</p>
+
+<p>(未完)</p>
+]]></content>
+  </entry>
+  
+</feed>
