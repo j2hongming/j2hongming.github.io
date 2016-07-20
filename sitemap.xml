@@ -124,29 +124,43 @@
   
   
   <url>
+    <loc>http://j2hongming.github.io/404.html</loc>
+    <lastmod>2016-07-21T04:49:08+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
     <loc>http://j2hongming.github.io/</loc>
-    <lastmod>2016-07-21T01:52:49+08:00</lastmod>
+    <lastmod>2016-07-21T04:49:08+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://j2hongming.github.io/blog/archives/</loc>
-    <lastmod>2016-07-21T01:52:49+08:00</lastmod>
+    <lastmod>2016-07-21T04:49:08+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://j2hongming.github.io/blog/categories/</loc>
+    <lastmod>2016-07-21T04:49:08+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://j2hongming.github.io/toolbox/</loc>
-    <lastmod>2016-07-21T01:52:49+08:00</lastmod>
+    <lastmod>2016-07-21T04:49:08+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://j2hongming.github.io/bookshelf/</loc>
-    <lastmod>2016-07-21T01:52:49+08:00</lastmod>
+    <lastmod>2016-07-21T04:49:08+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
