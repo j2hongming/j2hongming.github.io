@@ -4,7 +4,7 @@
   <title><![CDATA[J2hongming Blog]]></title>
   <link href="http://j2hongming.github.io/atom.xml" rel="self"/>
   <link href="http://j2hongming.github.io/"/>
-  <updated>2016-07-28T18:45:39+08:00</updated>
+  <updated>2016-08-02T18:42:26+08:00</updated>
   <id>http://j2hongming.github.io/</id>
   <author>
     <name><![CDATA[HongMing ChangChine]]></name>
@@ -12,6 +12,141 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[資工系課程整理與心得]]></title>
+    <link href="http://j2hongming.github.io/blog/2016/08/02/thoughts-about-courses-in-computer-science/"/>
+    <updated>2016-08-02T17:57:39+08:00</updated>
+    <id>http://j2hongming.github.io/blog/2016/08/02/thoughts-about-courses-in-computer-science</id>
+    <content type="html"><![CDATA[<p>畢業幾年後，偶然發現<a href="http://www.nand2tetris.org/">From NAND to Tetris</a>這個線上課程，從前求學時總是東一塊西一塊支離破碎的概念終於可以有一個概觀性的整理。</p>
+
+<ul>
+<li>心得</li>
+<li>整理</li>
+<li>參考</li>
+</ul>
+
+
+<!-- more -->
+
+
+<h2>心得</h2>
+
+<p>回頭去看，對於資工系科目要求的重點，有些小小的感想如下：</p>
+
+<blockquote><p>邏輯脈絡、對技術的熱情、對本質追根究柢的精神且要能夠應用出來、設計和解決問題的想法</p></blockquote>
+
+<p>自己在求學階段碰到實作的問題時，大部分會覺得很困難無法輕易解決，總是想逃避而不去找出問題的本質(用已知的理論去推演)</p>
+
+<p>總之，要在這領域有所成長，我覺得必須掌握以下的概念：</p>
+
+<ul>
+<li>觀察</li>
+<li>和實際生活做關聯</li>
+<li>原理</li>
+<li>抽象化能力(實例轉換到抽象程式語言)</li>
+<li>邏輯能力(資料結構和演算法理解的過程而非結果)(精神)</li>
+<li>大腦記憶和大腦Compiler</li>
+</ul>
+
+
+<h2>整理</h2>
+
+<ul>
+<li>From NAND to Tetris中Abstract Design的觀點</li>
+<li>以計算機為單位</li>
+</ul>
+
+
+<h3>From NAND to Tetris中Abstract Design的觀點</h3>
+
+<blockquote><p>[現實世界問題] > <strong>抽象化方法</strong> > [抽象化模型] > <strong>用計算機觀點模擬現實世界的問題</strong> > [計算機可運作的程式]</p></blockquote>
+
+<h4>抽象化方法</h4>
+
+<ul>
+<li>系統分析與設計(UML)</li>
+<li>資料庫系統(ER-Model)</li>
+<li>資料挖掘</li>
+<li>社群網路與運算</li>
+</ul>
+
+
+<h4>用計算機觀點模擬現實世界的問題</h4>
+
+<ul>
+<li>物件導向設計(SOLID, Design Pattern)</li>
+<li>資料庫系統(CRUD, DDL, DML)</li>
+<li>資料結構</li>
+<li>演算法</li>
+</ul>
+
+
+<h3>以計算機為單位</h3>
+
+<h4>計算機本身</h4>
+
+<ul>
+<li>電子電路學, 電子電路技術</li>
+<li>數位邏輯, 數位系統, 數位系統技術, 微算機技術&copy;</li>
+<li>計算機組織, 計算機結構, 系統程式, 作業系統, Unix系統程式設計&copy;</li>
+<li>程式設計&copy;, 計算機技術&copy;, 物件導向程式設計(C++), JAVA程式設計, 網際網路資料庫程式設計(PHP)</li>
+</ul>
+
+
+<h4>連接現實世界和計算機的橋樑</h4>
+
+<blockquote><p>現實世界問題抽象化後的模型轉變為計算機可理解的組成元素，意即用計算機觀點模擬現實世界的問題</p></blockquote>
+
+<ul>
+<li>資料結構</li>
+<li>演算法</li>
+</ul>
+
+
+<h4>應用計算機解決問題</h4>
+
+<ul>
+<li>系統分析與設計</li>
+<li>資料庫系統</li>
+<li>資料挖掘</li>
+<li>雲端運算導論</li>
+<li>社群網路與運算</li>
+<li>普及計算</li>
+</ul>
+
+
+<h4>把計算機組成一個軍團</h4>
+
+<ul>
+<li>網路概論, 計算機網路</li>
+<li>網路程式設計(JAVA)</li>
+<li>網路模擬與測試</li>
+<li>網路管理</li>
+<li>網路安全</li>
+<li>分散式系統</li>
+<li>雲端資料網路</li>
+</ul>
+
+
+<h4>計算機數學理論</h4>
+
+<ul>
+<li>線性代數</li>
+<li>離散數學</li>
+<li>機率論</li>
+<li>計算幾何</li>
+</ul>
+
+
+<h2>參考</h2>
+
+<ul>
+<li><a href="http://goo.gl/dg2Mpk">碼農在工作中的必備能力</a></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Windows Batch File Notes]]></title>
@@ -1835,7 +1970,7 @@ Line</li>
 
 <h3>Example</h3>
 
-<p><a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#58;&#x61;&#x64;&#100;&#114;&#101;&#x73;&#x73;&#64;&#x65;&#x78;&#x61;&#109;&#x70;&#108;&#101;&#46;&#99;&#111;&#x6d;">&#x61;&#x64;&#x64;&#x72;&#101;&#x73;&#115;&#64;&#101;&#x78;&#97;&#109;&#112;&#x6c;&#101;&#46;&#x63;&#x6f;&#x6d;</a></p>
+<p><a href="&#x6d;&#97;&#105;&#108;&#x74;&#111;&#58;&#97;&#x64;&#x64;&#x72;&#101;&#115;&#x73;&#x40;&#x65;&#x78;&#97;&#x6d;&#x70;&#x6c;&#x65;&#x2e;&#x63;&#x6f;&#109;">&#x61;&#100;&#100;&#x72;&#x65;&#x73;&#115;&#x40;&#101;&#x78;&#97;&#109;&#112;&#x6c;&#x65;&#x2e;&#x63;&#111;&#109;</a></p>
 
 <h1>Atx format Header L1</h1>
 
