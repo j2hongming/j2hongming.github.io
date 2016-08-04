@@ -4,7 +4,7 @@
   <title><![CDATA[J2hongming Blog]]></title>
   <link href="http://j2hongming.github.io/atom.xml" rel="self"/>
   <link href="http://j2hongming.github.io/"/>
-  <updated>2016-08-02T18:42:26+08:00</updated>
+  <updated>2016-08-04T17:38:36+08:00</updated>
   <id>http://j2hongming.github.io/</id>
   <author>
     <name><![CDATA[HongMing ChangChine]]></name>
@@ -12,6 +12,44 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[如何設定gitbook側邊欄大綱顯示階層數字]]></title>
+    <link href="http://j2hongming.github.io/blog/2016/08/04/gitbook-outline-number/"/>
+    <updated>2016-08-04T16:03:23+08:00</updated>
+    <id>http://j2hongming.github.io/blog/2016/08/04/gitbook-outline-number</id>
+    <content type="html"><![CDATA[<p>開心地開了一本gitbook，然後用線上編輯器做了初版的大綱，正當我準備檢視一下Build好的書長什麼樣子時&hellip;咦?</p>
+
+<p>為什麼大綱左邊沒有出現階層數字，印象中之前看過的gitbook有。第一個想法是會不會我的<code>SUMMARY.md</code>寫法有誤，看了一下官方文件的範例好像也沒有提到關於出現階層數字的寫法&hellip;，只好呼喚Google大神，翻了gitbook教學文似乎也沒有特別提到相關的資料，不死心看看別人的範例，發現<a href="https://www.gitbook.com/explore">Explore Gitbook</a>內的書有些有出現，有些沒有&hellip;</p>
+
+<!-- more -->
+
+
+<p>花了幾個小時測試和Google，毫無頭緒，正準備放棄的時候突然靈光一閃，想說gitbook最後也是根據某些模板產生相對應的html，既然如此會不會是有特別的模板提供這功能</p>
+
+<p>看了<a href="https://toolchain.gitbook.com/themes/">官方文件</a>發現gitbook 3.0.0之後有提供預設的模板，但在線上編輯器中卻沒看到相關設定，打開線上編輯器的Plugins Store搜尋<code>theme default</code>才發現預設沒被載入與啟用&hellip;，找到<a href="https://plugins.gitbook.com/plugin/theme-default">theme default的說明頁面</a>，看到有個setting是<code>showLevel</code>，恩，就是它了吧!</p>
+
+<p>以下為線上編輯器的設定畫面：</p>
+
+<ol>
+<li><p>點選<code>Plugins Store</code>。未設定前，右下方沒有出現<code>book.json</code>
+<img src="http://j2hongming.github.io/images/gitbook-snapshot/gitbook-plugin-theme-default-1.png" alt="設定畫面1" /></p></li>
+<li><p>搜尋列輸入<code>theme default</code>，找到之後按下+號加入此plugin
+<img src="http://j2hongming.github.io/images/gitbook-snapshot/gitbook-plugin-theme-default-2.png" alt="設定畫面2" /></p></li>
+<li><p>加入成功會顯示綠色並出現設定按鈕
+<img src="http://j2hongming.github.io/images/gitbook-snapshot/gitbook-plugin-theme-default-3.png" alt="設定畫面3" /></p></li>
+<li><p>進入theme default設定畫面將<strong>Show level indicator in TOC</strong>開關打開
+<img src="http://j2hongming.github.io/images/gitbook-snapshot/gitbook-plugin-theme-default-4.png" alt="設定畫面4" /></p></li>
+<li><p>回到編輯主畫面發現右下方出現了book.json，內容是剛剛設定的plugin，這邊要注意的是若沒有客製化的css，不須設定styles這個屬性，直接刪掉即可。
+<img src="http://j2hongming.github.io/images/gitbook-snapshot/gitbook-plugin-theme-default-5.png" alt="設定畫面5" /></p></li>
+<li><p>要確認plugin是否載入成功，需到最近一次UPDATE的Build頁面確認
+<img src="http://j2hongming.github.io/images/gitbook-snapshot/gitbook-plugin-theme-default-6.png" alt="設定畫面6" /></p></li>
+</ol>
+
+
+<p>檢視一下新build出來的書，呼，總算出現階層數字啦!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[資工系課程整理與心得]]></title>
@@ -1970,7 +2008,7 @@ Line</li>
 
 <h3>Example</h3>
 
-<p><a href="&#x6d;&#97;&#105;&#108;&#x74;&#111;&#58;&#97;&#x64;&#x64;&#x72;&#101;&#115;&#x73;&#x40;&#x65;&#x78;&#97;&#x6d;&#x70;&#x6c;&#x65;&#x2e;&#x63;&#x6f;&#109;">&#x61;&#100;&#100;&#x72;&#x65;&#x73;&#115;&#x40;&#101;&#x78;&#97;&#109;&#112;&#x6c;&#x65;&#x2e;&#x63;&#111;&#109;</a></p>
+<p><a href="&#x6d;&#97;&#105;&#x6c;&#x74;&#x6f;&#58;&#97;&#x64;&#x64;&#114;&#x65;&#x73;&#115;&#x40;&#101;&#120;&#x61;&#x6d;&#112;&#x6c;&#101;&#46;&#99;&#111;&#x6d;">&#x61;&#x64;&#100;&#114;&#x65;&#x73;&#115;&#x40;&#101;&#x78;&#97;&#109;&#x70;&#108;&#x65;&#46;&#x63;&#x6f;&#109;</a></p>
 
 <h1>Atx format Header L1</h1>
 

@@ -3,6 +3,14 @@
   
   
   <url>
+    <loc>http://j2hongming.github.io/blog/2016/08/04/gitbook-outline-number/</loc>
+    
+    <lastmod>2016-08-04T16:03:23+08:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://j2hongming.github.io/blog/2016/08/02/thoughts-about-courses-in-computer-science/</loc>
     
     <lastmod>2016-08-02T17:57:39+08:00</lastmod>
@@ -141,42 +149,42 @@
   
   <url>
     <loc>http://j2hongming.github.io/404.html</loc>
-    <lastmod>2016-08-02T18:42:26+08:00</lastmod>
+    <lastmod>2016-08-04T17:38:36+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://j2hongming.github.io/</loc>
-    <lastmod>2016-08-02T18:42:26+08:00</lastmod>
+    <lastmod>2016-08-04T17:38:36+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://j2hongming.github.io/blog/archives/</loc>
-    <lastmod>2016-08-02T18:42:26+08:00</lastmod>
+    <lastmod>2016-08-04T17:38:36+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://j2hongming.github.io/blog/categories/</loc>
-    <lastmod>2016-08-02T18:42:26+08:00</lastmod>
+    <lastmod>2016-08-04T17:38:36+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://j2hongming.github.io/toolbox/</loc>
-    <lastmod>2016-08-02T18:42:26+08:00</lastmod>
+    <lastmod>2016-08-04T17:38:36+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://j2hongming.github.io/bookshelf/</loc>
-    <lastmod>2016-08-02T18:42:26+08:00</lastmod>
+    <lastmod>2016-08-04T17:38:36+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

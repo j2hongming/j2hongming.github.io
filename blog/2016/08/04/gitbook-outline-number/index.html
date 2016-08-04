@@ -1,0 +1,293 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>如何設定gitbook側邊欄大綱顯示階層數字 - J2hongming Blog</title>
+  <meta name="author" content="HongMing ChangChine">
+
+  
+  <meta name="description" content="開心地開了一本gitbook，然後用線上編輯器做了初版的大綱，正當我準備檢視一下Build好的書長什麼樣子時&hellip;咦? 為什麼大綱左邊沒有出現階層數字，印象中之前看過的gitbook有。第一個想法是會不會我的SUMMARY.md寫法有誤， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://j2hongming.github.io/blog/2016/08/04/gitbook-outline-number">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="J2hongming Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-55818738-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">J2hongming Blog</a></h1>
+  
+    <h2>Notes for Reusing.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:j2hongming.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/toolbox">ToolBox</a></li>  
+  <li><a href="/bookshelf">BookShelf</a></li>
+  <li><a href="https://www.linkedin.com/in/j2hongming">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">如何設定gitbook側邊欄大綱顯示階層數字</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2016-08-04T16:03:23+08:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>4</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>4:03 pm</span></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://j2hongming.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>開心地開了一本gitbook，然後用線上編輯器做了初版的大綱，正當我準備檢視一下Build好的書長什麼樣子時&hellip;咦?</p>
+
+<p>為什麼大綱左邊沒有出現階層數字，印象中之前看過的gitbook有。第一個想法是會不會我的<code>SUMMARY.md</code>寫法有誤，看了一下官方文件的範例好像也沒有提到關於出現階層數字的寫法&hellip;，只好呼喚Google大神，翻了gitbook教學文似乎也沒有特別提到相關的資料，不死心看看別人的範例，發現<a href="https://www.gitbook.com/explore">Explore Gitbook</a>內的書有些有出現，有些沒有&hellip;</p>
+
+<!-- more -->
+
+
+<p>花了幾個小時測試和Google，毫無頭緒，正準備放棄的時候突然靈光一閃，想說gitbook最後也是根據某些模板產生相對應的html，既然如此會不會是有特別的模板提供這功能</p>
+
+<p>看了<a href="https://toolchain.gitbook.com/themes/">官方文件</a>發現gitbook 3.0.0之後有提供預設的模板，但在線上編輯器中卻沒看到相關設定，打開線上編輯器的Plugins Store搜尋<code>theme default</code>才發現預設沒被載入與啟用&hellip;，找到<a href="https://plugins.gitbook.com/plugin/theme-default">theme default的說明頁面</a>，看到有個setting是<code>showLevel</code>，恩，就是它了吧!</p>
+
+<p>以下為線上編輯器的設定畫面：</p>
+
+<ol>
+<li><p>點選<code>Plugins Store</code>。未設定前，右下方沒有出現<code>book.json</code>
+<img src="/images/gitbook-snapshot/gitbook-plugin-theme-default-1.png" alt="設定畫面1" /></p></li>
+<li><p>搜尋列輸入<code>theme default</code>，找到之後按下+號加入此plugin
+<img src="/images/gitbook-snapshot/gitbook-plugin-theme-default-2.png" alt="設定畫面2" /></p></li>
+<li><p>加入成功會顯示綠色並出現設定按鈕
+<img src="/images/gitbook-snapshot/gitbook-plugin-theme-default-3.png" alt="設定畫面3" /></p></li>
+<li><p>進入theme default設定畫面將<strong>Show level indicator in TOC</strong>開關打開
+<img src="/images/gitbook-snapshot/gitbook-plugin-theme-default-4.png" alt="設定畫面4" /></p></li>
+<li><p>回到編輯主畫面發現右下方出現了book.json，內容是剛剛設定的plugin，這邊要注意的是若沒有客製化的css，不須設定styles這個屬性，直接刪掉即可。
+<img src="/images/gitbook-snapshot/gitbook-plugin-theme-default-5.png" alt="設定畫面5" /></p></li>
+<li><p>要確認plugin是否載入成功，需到最近一次UPDATE的Build頁面確認
+<img src="/images/gitbook-snapshot/gitbook-plugin-theme-default-6.png" alt="設定畫面6" /></p></li>
+</ol>
+
+
+<p>檢視一下新build出來的書，呼，總算出現階層數字啦!</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">HongMing ChangChine</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2016-08-04T16:03:23+08:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>4</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>4:03 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/gitbook/'>gitbook</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://j2hongming.github.io/blog/2016/08/04/gitbook-outline-number/" data-via="" data-counturl="http://j2hongming.github.io/blog/2016/08/04/gitbook-outline-number/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2016/08/02/thoughts-about-courses-in-computer-science/" title="Previous Post: 資工系課程整理與心得">&laquo; 資工系課程整理與心得</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2016/08/04/gitbook-outline-number/">如何設定gitbook側邊欄大綱顯示階層數字</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/08/02/thoughts-about-courses-in-computer-science/">資工系課程整理與心得</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/07/28/windows-batch-file-notes/">Windows Batch File Notes</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/07/20/relational-database-notes/">關聯式資料庫筆記</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/07/20/inno-setup-with-wine-in-linux/">Inno Setup With Wine in Linux</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2016 - HongMing ChangChine -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'j2hongminggithubio';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://j2hongming.github.io/blog/2016/08/04/gitbook-outline-number/';
+        var disqus_url = 'http://j2hongming.github.io/blog/2016/08/04/gitbook-outline-number/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
