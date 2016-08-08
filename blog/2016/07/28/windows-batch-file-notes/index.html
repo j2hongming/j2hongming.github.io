@@ -415,6 +415,37 @@ set &gt; variables.txt
 </span></code></pre></td></tr></table></div></figure>
 
 
+<h3>日期與時間變數</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='bat'><span class='line'><span class="c">::民國年</span>
+</span><span class='line'><span class="k">set</span> <span class="n">/a</span> year<span class="o">=</span><span class="nv">%date:~</span><span class="p">,</span><span class="m">4</span>%<span class="m">-1911</span>
+</span><span class='line'><span class="c">::西元年</span>
+</span><span class='line'><span class="k">set</span> <span class="nv">year</span><span class="o">=</span><span class="nv">%date:~</span><span class="p">,</span><span class="m">4</span>%
+</span><span class='line'><span class="c">::月</span>
+</span><span class='line'><span class="k">set</span> <span class="nv">month</span><span class="o">=</span><span class="nv">%date:~5</span><span class="p">,</span><span class="m">2</span>%
+</span><span class='line'><span class="c">::日</span>
+</span><span class='line'><span class="k">set</span> <span class="nv">day</span><span class="o">=</span><span class="nv">%date:~8</span><span class="p">,</span><span class="m">2</span>%
+</span><span class='line'><span class="c">::今天日期</span>
+</span><span class='line'><span class="k">set</span> <span class="nv">Today</span><span class="o">=</span><span class="nv">%year%%month%%day%</span>
+</span><span class='line'><span class="c">::時間</span>
+</span><span class='line'><span class="k">set</span> <span class="nv">NowTimeTmp</span><span class="o">=</span><span class="nv">%time::</span><span class="o">=</span>%
+</span><span class='line'><span class="k">set</span> <span class="nv">NowTime</span><span class="o">=</span><span class="nv">%NowTimeTmp:~0</span><span class="p">,</span><span class="m">6</span>%
+</span></code></pre></td></tr></table></div></figure>
+
+
 <h2>參考資料</h2>
 
 <ul>
