@@ -4,7 +4,7 @@
   <title><![CDATA[J2hongming Blog]]></title>
   <link href="http://j2hongming.github.io/atom.xml" rel="self"/>
   <link href="http://j2hongming.github.io/"/>
-  <updated>2016-08-08T17:10:38+08:00</updated>
+  <updated>2016-08-10T17:02:07+08:00</updated>
   <id>http://j2hongming.github.io/</id>
   <author>
     <name><![CDATA[HongMing ChangChine]]></name>
@@ -12,6 +12,341 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Java String 常用操作]]></title>
+    <link href="http://j2hongming.github.io/blog/2016/08/10/java-string-basic/"/>
+    <updated>2016-08-10T11:53:36+08:00</updated>
+    <id>http://j2hongming.github.io/blog/2016/08/10/java-string-basic</id>
+    <content type="html"><![CDATA[<ul>
+<li>轉換(transform)-魔形女</li>
+<li>比較(compare)</li>
+<li>子集合(subset)</li>
+<li>分割(split)-次元刀</li>
+<li>合併(join)</li>
+</ul>
+
+
+<!-- more -->
+
+
+<h2>轉換(transform)-魔形女</h2>
+
+<h3>Some Data Type -> String</h3>
+
+<p>Integer -> String</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">1234</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// public static String valueOf(int i)</span>
+</span><span class='line'><span class="n">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">number</span><span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// public static String toString(int i)</span>
+</span><span class='line'><span class="n">Integer</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="n">number</span><span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Let JVM do it</span>
+</span><span class='line'><span class="s">&quot;&quot;</span> <span class="o">+</span> <span class="n">number</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>char -> String</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="sc">&#39;0&#39;</span><span class="o">;</span>
+</span><span class='line'><span class="n">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="kt">char</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>int Array -> String</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kt">int</span><span class="o">[]</span> <span class="n">array</span> <span class="o">=</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">,</span><span class="mi">4</span><span class="o">};</span>
+</span><span class='line'><span class="n">String</span> <span class="n">strArr</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="n">array</span><span class="o">);</span>
+</span><span class='line'><span class="c1">// strArr is &quot;[1, 2, 3, 4]&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>byte Array -> String</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="c1">// bytes is byte[] type</span>
+</span><span class='line'><span class="n">String</span> <span class="n">testString</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">String</span><span class="o">(</span><span class="n">bytes</span><span class="o">,</span> <span class="n">StandardCharsets</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><a href="http://javadevnotes.com/java-integer-to-string-examples">Java Integer To String Examples</a></li>
+<li><a href="http://stackoverflow.com/questions/5071040/java-convert-integer-to-string">Java - Convert integer to string</a></li>
+<li><a href="http://stackoverflow.com/questions/10904911/how-to-convert-an-int-array-to-string-with-tostring-method-in-java">How to convert an int array to String with toString method in Java</a></li>
+<li><a href="http://stackoverflow.com/documentation/java/109/strings/1862/conversion-to-from-bytes#t=201608100618202285977">Conversion to / from bytes</a></li>
+<li><a href="https://docs.oracle.com/javase/7/docs/api/java/lang/String.html">Oracle Docs: String</a></li>
+</ul>
+
+
+<h3>String -> Some Data Type</h3>
+
+<p>Some Data Type: int, long, BigInteger, BigDecimal, double, byte[], char[]</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">String</span> <span class="n">number</span> <span class="o">=</span> <span class="s">&quot;1234&quot;</span><span class="o">;</span>
+</span><span class='line'><span class="n">String</span> <span class="n">bigDecimal</span> <span class="o">=</span> <span class="s">&quot;1234.5678&quot;</span><span class="o">;</span>
+</span><span class='line'><span class="n">String</span> <span class="n">doubleN</span> <span class="o">=</span> <span class="s">&quot;3.14&quot;</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// String to int</span>
+</span><span class='line'><span class="kt">int</span> <span class="n">intNum</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">number</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// String to long</span>
+</span><span class='line'><span class="kt">long</span> <span class="n">longNum</span> <span class="o">=</span> <span class="n">Long</span><span class="o">.</span><span class="na">parseLong</span><span class="o">(</span><span class="n">number</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// String to BigInteger</span>
+</span><span class='line'><span class="n">BigInteger</span> <span class="n">bigIntegerNum</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">BigInteger</span><span class="o">(</span><span class="n">number</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// String to BigDecimal</span>
+</span><span class='line'><span class="n">BigDecimal</span> <span class="n">bigDecimalNum</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">BigDecimal</span><span class="o">(</span><span class="n">bigDecimal</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// String to double</span>
+</span><span class='line'><span class="kt">double</span> <span class="n">doubleNum</span> <span class="o">=</span> <span class="n">Double</span><span class="o">.</span><span class="na">parseDouble</span><span class="o">(</span><span class="n">doubleN</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Handle the &quot;NumberFormatException&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="c1">// String to byte[]</span>
+</span><span class='line'><span class="kt">byte</span><span class="o">[]</span> <span class="n">bytes</span> <span class="o">=</span> <span class="s">&quot;1234&quot;</span><span class="o">.</span><span class="na">getBytes</span><span class="o">(</span><span class="n">StandardCharsets</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="c1">// String to char[]</span>
+</span><span class='line'><span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&quot;1234&quot;</span><span class="o">;</span>
+</span><span class='line'><span class="kt">char</span><span class="o">[]</span> <span class="n">charArray</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="na">toCharArray</span><span class="o">();</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// if use 3rd party library (Apache commons-lang)</span>
+</span><span class='line'><span class="n">Character</span><span class="o">[]</span> <span class="n">charObjectArray</span> <span class="o">=</span> <span class="n">ArrayUtils</span><span class="o">.</span><span class="na">toObject</span><span class="o">(</span><span class="n">charArray</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="c1">// Arrays.asList</span>
+</span><span class='line'><span class="n">String</span> <span class="n">pokemon</span> <span class="o">=</span> <span class="s">&quot;Bulbasaur,Charmander,Squirtle,Pikachu&quot;</span><span class="o">;</span>
+</span><span class='line'><span class="n">String</span><span class="o">[]</span> <span class="n">pokemons</span> <span class="o">=</span> <span class="n">pokemon</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">&quot;,&quot;</span><span class="o">);</span>
+</span><span class='line'><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">pokemonList</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="n">pokemons</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// new ArrayList</span>
+</span><span class='line'><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">pokemonList2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;(</span><span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="n">pokemons</span><span class="o">));</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><a href="http://stackoverflow.com/documentation/java/109/strings/11480/converting-string-to-other-datatypes#t=201608100618128217497">Converting String to other datatypes.</a></li>
+<li><a href="http://stackoverflow.com/documentation/java/109/strings/1862/conversion-to-from-bytes#t=201608100618202285977">Conversion to / from bytes</a></li>
+<li><a href="http://stackoverflow.com/documentation/java/109/strings/1837/converting-string-to-character-array#t=201608100619012006559">Converting string to Character Array</a></li>
+<li><a href="http://javadevnotes.com/java-split-string-into-arraylist-examples">Java Split String Into ArrayList Examples</a></li>
+</ul>
+
+
+<h2>比較(compare)</h2>
+
+<p><code>equals</code>, <code>equalsIgnoreCase</code>, <code>compareTo</code>, <code>compareToIgnoreCase</code></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">String</span> <span class="n">str1</span> <span class="o">=</span> <span class="s">&quot;abc&quot;</span><span class="o">;</span>
+</span><span class='line'><span class="n">String</span> <span class="n">str2</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">String</span><span class="o">(</span><span class="s">&quot;abc&quot;</span><span class="o">);</span>
+</span><span class='line'><span class="n">String</span> <span class="n">str3</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">String</span><span class="o">(</span><span class="s">&quot;aBc&quot;</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// True</span>
+</span><span class='line'><span class="n">str1</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">str2</span><span class="o">)</span>
+</span><span class='line'><span class="c1">// False</span>
+</span><span class='line'><span class="n">str1</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">str3</span><span class="o">)</span>
+</span><span class='line'><span class="c1">// False</span>
+</span><span class='line'><span class="n">str2</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">str3</span><span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// 0</span>
+</span><span class='line'><span class="n">str1</span><span class="o">.</span><span class="na">compareTo</span><span class="o">(</span><span class="n">str2</span><span class="o">)</span>
+</span><span class='line'><span class="c1">// 32</span>
+</span><span class='line'><span class="n">str2</span><span class="o">.</span><span class="na">compareTo</span><span class="o">(</span><span class="n">str3</span><span class="o">)</span>
+</span><span class='line'><span class="c1">// -32</span>
+</span><span class='line'><span class="n">str3</span><span class="o">.</span><span class="na">compareTo</span><span class="o">(</span><span class="n">str2</span><span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><a href="http://stackoverflow.com/documentation/java/109/strings/453/comparing-strings#t=201608100648440805948">Comparing Strings</a></li>
+</ul>
+
+
+<h2>子集合(subset)</h2>
+
+<p><code>substring</code>, 使用開始(beginIndex)與結束標記(endIndex)取得不包含結束標記的子字串。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">String</span> <span class="n">str1</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">String</span><span class="o">(</span><span class="s">&quot;0123456789&quot;</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// 56789</span>
+</span><span class='line'><span class="n">str1</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">5</span><span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// 5678</span>
+</span><span class='line'><span class="n">str1</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">5</span><span class="o">,</span> <span class="mi">9</span><span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><a href="http://javadevnotes.com/java-substring-examples">Java Substring Examples</a></li>
+<li><a href="http://stackoverflow.com/documentation/java/109/strings/545/substrings#t=201608100717465737842">Stack Overflow: Java String: Substrings</a></li>
+</ul>
+
+
+<h2>分割(split)-次元刀</h2>
+
+<p><code>split</code> 或 <code>StringTokenizer</code>，注意escape character</p>
+
+<p>split</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="c1">// public String[] split(String regex)</span>
+</span><span class='line'><span class="n">String</span> <span class="n">pokemon</span> <span class="o">=</span> <span class="s">&quot;Bulbasaur,Charmander,Squirtle,Pikachu&quot;</span><span class="o">;</span>
+</span><span class='line'><span class="n">String</span><span class="o">[]</span> <span class="n">pokemons</span> <span class="o">=</span> <span class="n">pokemon</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">&quot;,&quot;</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">String</span> <span class="n">pokemonCP</span> <span class="o">=</span> <span class="s">&quot;Bulbasaur235Charmander167Squirtle3310Pikachu9527&quot;</span><span class="o">;</span>
+</span><span class='line'><span class="c1">// {&quot;Bulbasaur&quot;,&quot;Charmander&quot;,&quot;Squirtle&quot;,&quot;Pikachu&quot;}</span>
+</span><span class='line'><span class="n">String</span><span class="o">[]</span> <span class="n">pokemons</span> <span class="o">=</span> <span class="n">pokemonCP</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">&quot;\\d+&quot;</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>StringTokenizer</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="c1">// Default set of characters are empty spaces (\t\n\r\f)</span>
+</span><span class='line'><span class="n">String</span> <span class="n">pokemon</span> <span class="o">=</span> <span class="s">&quot;Bulbasaur Charmander Squirtle Pikachu&quot;</span><span class="o">;</span>
+</span><span class='line'><span class="n">StringTokenizer</span> <span class="n">tokenizer</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">StringTokenizer</span><span class="o">(</span><span class="n">pokemon</span><span class="o">);</span>
+</span><span class='line'><span class="k">while</span> <span class="o">(</span><span class="n">tokenizer</span><span class="o">.</span><span class="na">hasMoreTokens</span><span class="o">())</span> <span class="o">{</span>
+</span><span class='line'>    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">tokenizer</span><span class="o">.</span><span class="na">nextToken</span><span class="o">());</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><a href="http://javadevnotes.com/java-string-split-tutorial-and-examples">Java String Split Tutorial And Examples</a></li>
+<li><a href="http://stackoverflow.com/documentation/java/109/strings/3306/splitting-strings-using-split#t=201608100730280433428">Stack Overflow:Splitting Strings using split</a></li>
+<li><a href="http://stackoverflow.com/documentation/java/109/strings/6346/splitting-strings-using-stringtokenizer#t=201608100730292621908">Stack Overflow:Splitting Strings using StringTokenizer</a></li>
+</ul>
+
+
+<h2>合併(join)</h2>
+
+<p><code>+</code>,String的<code>concat</code>, StringBuffer或StringBuilder的<code>append</code></p>
+
+<p>延伸議題：<a href="http://stackoverflow.com/questions/1532461/stringbuilder-vs-string-concatenation-in-tostring-in-java">StringBuilder vs String concatenation in toString() in Java</a></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">String</span> <span class="n">str1</span> <span class="o">=</span> <span class="s">&quot;Pikachu is&quot;</span><span class="o">;</span>
+</span><span class='line'><span class="n">String</span> <span class="n">str2</span> <span class="o">=</span> <span class="s">&quot; cute&quot;</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">str1</span> <span class="o">=</span> <span class="n">str1</span><span class="o">.</span><span class="na">concat</span><span class="o">(</span><span class="n">str2</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">StringBuilder</span> <span class="n">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">StringBuilder</span><span class="o">();</span>
+</span><span class='line'><span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">str1</span><span class="o">);</span>
+</span><span class='line'><span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">str2</span><span class="o">);</span>
+</span><span class='line'><span class="n">sb</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[如何設定gitbook側邊欄大綱顯示階層數字]]></title>
@@ -181,6 +516,7 @@
 
 <ul>
 <li><a href="http://goo.gl/dg2Mpk">碼農在工作中的必備能力</a></li>
+<li><a href="http://blog.ericsk.org/archives/1308">「資訊系究竟在學什麼？」</a></li>
 </ul>
 
 ]]></content>
@@ -2039,7 +2375,7 @@ Line</li>
 
 <h3>Example</h3>
 
-<p><a href="&#109;&#x61;&#105;&#x6c;&#x74;&#x6f;&#58;&#x61;&#100;&#100;&#x72;&#x65;&#115;&#x73;&#x40;&#101;&#120;&#97;&#109;&#x70;&#x6c;&#x65;&#x2e;&#x63;&#x6f;&#x6d;">&#x61;&#x64;&#x64;&#x72;&#x65;&#115;&#115;&#64;&#x65;&#120;&#x61;&#x6d;&#x70;&#108;&#x65;&#46;&#x63;&#111;&#x6d;</a></p>
+<p><a href="&#109;&#97;&#105;&#108;&#x74;&#111;&#x3a;&#x61;&#x64;&#100;&#114;&#101;&#x73;&#x73;&#64;&#101;&#120;&#x61;&#109;&#x70;&#108;&#x65;&#46;&#x63;&#111;&#x6d;">&#97;&#100;&#100;&#x72;&#x65;&#115;&#x73;&#x40;&#x65;&#x78;&#97;&#109;&#112;&#x6c;&#x65;&#46;&#99;&#111;&#109;</a></p>
 
 <h1>Atx format Header L1</h1>
 
