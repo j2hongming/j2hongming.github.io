@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Algorithm | J2hongming Blog]]></title>
+  <link href="http://j2hongming.github.io/blog/categories/algorithm/atom.xml" rel="self"/>
+  <link href="http://j2hongming.github.io/"/>
+  <updated>2016-08-16T17:33:34+08:00</updated>
+  <id>http://j2hongming.github.io/</id>
+  <author>
+    <name><![CDATA[HongMing ChangChine]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[時間複雜度筆記]]></title>
+    <link href="http://j2hongming.github.io/blog/2016/08/16/time-complexity/"/>
+    <updated>2016-08-16T14:45:57+08:00</updated>
+    <id>http://j2hongming.github.io/blog/2016/08/16/time-complexity</id>
+    <content type="html"><![CDATA[<p>閱讀完<code>ChiuCC</code>的文章<a href="http://alrightchiu.github.io/SecondRound/complexityasymptotic-notationjian-jin-fu-hao.html">Complexity：Asymptotic Notation(漸進符號)</a>後整理的筆記。</p>
+
+<!-- more -->
+
+
+<p>時間複雜度(Complexity)旨在描述<code>時間</code>和<code>資料數量</code>的關係。漸進符號(Asymptotic Notation)是用來<code>評估</code>複雜度的工具，感覺上有種分類的味道。</p>
+
+<p>複雜度有三兄弟: Theta, O, Omega。</p>
+
+<p>漸進符號(Asymptotic Notation)本質上是<code>函數集合</code>，這裡的函數指的是f(n)，負責表現該算法的<code>趨勢</code>，並且經由找出趨勢的<code>邊界</code>，這裡的邊界指的是g(n)，來呈現該算法趨勢是屬於哪一類型的趨勢。</p>
+
+<p>複雜度三兄弟中，Theta負責三明治的所有外層吐司；O負責三明治的上層吐司；Omega負責三明治的下層吐司。</p>
+
+<p>上層吐司即為天花板，也就是上界(upper bound)，想得到的資訊為最差的情況需要花<code>多久</code>的時間。下層吐司即為地板，亦即下界(lower bound)，想取得的資訊為<code>至少</code>需花費多少時間。</p>
+
+<h3>其他資料</h3>
+
+<ul>
+<li><a href="http://bigocheatsheet.com/">Big-O Algorithm Complexity Cheat Sheet</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

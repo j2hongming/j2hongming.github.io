@@ -3,6 +3,14 @@
   
   
   <url>
+    <loc>http://j2hongming.github.io/blog/2016/08/16/time-complexity/</loc>
+    
+    <lastmod>2016-08-16T14:45:57+08:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://j2hongming.github.io/blog/2016/08/10/java-string-basic/</loc>
     
     <lastmod>2016-08-10T11:53:36+08:00</lastmod>
@@ -157,42 +165,42 @@
   
   <url>
     <loc>http://j2hongming.github.io/404.html</loc>
-    <lastmod>2016-08-10T17:02:07+08:00</lastmod>
+    <lastmod>2016-08-16T17:33:34+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://j2hongming.github.io/</loc>
-    <lastmod>2016-08-10T17:02:07+08:00</lastmod>
+    <lastmod>2016-08-16T17:33:34+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://j2hongming.github.io/blog/archives/</loc>
-    <lastmod>2016-08-10T17:02:07+08:00</lastmod>
+    <lastmod>2016-08-16T17:33:34+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://j2hongming.github.io/blog/categories/</loc>
-    <lastmod>2016-08-10T17:02:07+08:00</lastmod>
+    <lastmod>2016-08-16T17:33:34+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://j2hongming.github.io/toolbox/</loc>
-    <lastmod>2016-08-10T17:02:07+08:00</lastmod>
+    <lastmod>2016-08-16T17:33:34+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://j2hongming.github.io/bookshelf/</loc>
-    <lastmod>2016-08-10T17:02:07+08:00</lastmod>
+    <lastmod>2016-08-16T17:33:34+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
