@@ -1,0 +1,327 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>認證與授權筆記 - J2hongming Blog</title>
+  <meta name="author" content="HongMing ChangChine">
+
+  
+  <meta name="description" content="認證(Authentication)
+授權(Authorization) 認證(Authentication) 不要相信任何人! 對面走過來一個陌生人，「他是誰?」
+對面走過來一個熟人，「是某某某阿」 為什麼會有如此差異呢?仔細想想，我們內建的第一道認證機制或許就是臉孔， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://j2hongming.github.io/blog/2016/09/09/authentication-versus-authorization-notes">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="J2hongming Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-55818738-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">J2hongming Blog</a></h1>
+  
+    <h2>Notes for Reusing.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:j2hongming.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/toolbox">ToolBox</a></li>  
+  <li><a href="/bookshelf">BookShelf</a></li>
+  <li><a href="https://www.linkedin.com/in/j2hongming">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">認證與授權筆記</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2016-09-09T17:52:49+08:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>9</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>5:52 pm</span></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://j2hongming.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><ul>
+<li>認證(Authentication)</li>
+<li>授權(Authorization)</li>
+</ul>
+
+
+<!-- more -->
+
+
+<h2>認證(Authentication)</h2>
+
+<blockquote><p>不要相信任何人!</p></blockquote>
+
+<p>對面走過來一個陌生人，「他是誰?」
+對面走過來一個熟人，「是某某某阿」</p>
+
+<p>為什麼會有如此差異呢?仔細想想，我們內建的第一道認證機制或許就是<code>臉孔</code>，透過這張臉我們可以瞬間知道走過來的人是誰。
+等等&hellip;若是多胞胎的話呢?
+若是這情況，第一道認證機制就會失效，此時就必須透過其他認證機制幫助我們辨識這個人是誰。<code>名牌</code>、<code>名片</code>、<code>身分證</code>、<code>指紋</code>、<code>暗號</code>&hellip;等等。</p>
+
+<p>因此，回答「這個人是誰?」的問題就是<code>認證</code>。
+幫助我們回答這問題的方法就是<code>認證機制</code>。</p>
+
+<h3>認證機制</h3>
+
+<h4>Http Basic Authentication</h4>
+
+<p>參與元素：<code>Http Header</code>, <code>Username/Password</code>, <code>base64編碼</code></p>
+
+<p>一定要搭配SSL服用，否則會曝曬在陽光底下。</p>
+
+<h4>Token-base Authentication</h4>
+
+<p>回答以下三個問題</p>
+
+<blockquote><ol>
+<li>如何運作</li>
+<li>有什麼好處</li>
+<li>有什麼壞處</li>
+</ol>
+</blockquote>
+
+<h4>OAuth</h4>
+
+<h4>Json Web Token(JWT)</h4>
+
+<h2>授權(Authorization)</h2>
+
+<blockquote><p>朕不給﹐你不能搶</p></blockquote>
+
+<p>(未完待續&hellip;)</p>
+
+<h2>參考</h2>
+
+<ul>
+<li><a href="http://blog.nsfocus.net/rest-api-design-safety/">REST API安全設計指南</a></li>
+<li><a href="https://mengkang.net/625.html">RESTful Api 身份認證中的安全性設計探討</a></li>
+<li><a href="http://restcookbook.com/Basics/loggingin/">How do I let users log into my RESTful API</a></li>
+<li><a href="https://scotch.io/tutorials/the-ins-and-outs-of-token-based-authentication">The Ins and Outs of Token Based Authentication</a></li>
+<li><a href="http://www.slideshare.net/TunYuChang/restful-api-token">淺談RESTful API認證 Token機制使用經驗分享</a></li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">HongMing ChangChine</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2016-09-09T17:52:49+08:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>9</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>5:52 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/authentication/'>authentication</a>, <a class='category' href='/blog/categories/authorization/'>authorization</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://j2hongming.github.io/blog/2016/09/09/authentication-versus-authorization-notes/" data-via="" data-counturl="http://j2hongming.github.io/blog/2016/09/09/authentication-versus-authorization-notes/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2016/08/16/time-complexity/" title="Previous Post: 時間複雜度筆記">&laquo; 時間複雜度筆記</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2016/09/09/authentication-versus-authorization-notes/">認證與授權筆記</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/08/16/time-complexity/">時間複雜度筆記</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/08/10/java-string-basic/">Java String 常用操作</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/08/04/gitbook-outline-number/">如何設定gitbook側邊欄大綱顯示階層數字</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/08/02/thoughts-about-courses-in-computer-science/">資工系課程整理與心得</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2016 - HongMing ChangChine -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'j2hongminggithubio';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://j2hongming.github.io/blog/2016/09/09/authentication-versus-authorization-notes/';
+        var disqus_url = 'http://j2hongming.github.io/blog/2016/09/09/authentication-versus-authorization-notes/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

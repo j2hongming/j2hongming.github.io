@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Authorization | J2hongming Blog]]></title>
+  <link href="http://j2hongming.github.io/blog/categories/authorization/atom.xml" rel="self"/>
+  <link href="http://j2hongming.github.io/"/>
+  <updated>2016-09-23T16:30:25+08:00</updated>
+  <id>http://j2hongming.github.io/</id>
+  <author>
+    <name><![CDATA[HongMing ChangChine]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[認證與授權筆記]]></title>
+    <link href="http://j2hongming.github.io/blog/2016/09/09/authentication-versus-authorization-notes/"/>
+    <updated>2016-09-09T17:52:49+08:00</updated>
+    <id>http://j2hongming.github.io/blog/2016/09/09/authentication-versus-authorization-notes</id>
+    <content type="html"><![CDATA[<ul>
+<li>認證(Authentication)</li>
+<li>授權(Authorization)</li>
+</ul>
+
+
+<!-- more -->
+
+
+<h2>認證(Authentication)</h2>
+
+<blockquote><p>不要相信任何人!</p></blockquote>
+
+<p>對面走過來一個陌生人，「他是誰?」
+對面走過來一個熟人，「是某某某阿」</p>
+
+<p>為什麼會有如此差異呢?仔細想想，我們內建的第一道認證機制或許就是<code>臉孔</code>，透過這張臉我們可以瞬間知道走過來的人是誰。
+等等&hellip;若是多胞胎的話呢?
+若是這情況，第一道認證機制就會失效，此時就必須透過其他認證機制幫助我們辨識這個人是誰。<code>名牌</code>、<code>名片</code>、<code>身分證</code>、<code>指紋</code>、<code>暗號</code>&hellip;等等。</p>
+
+<p>因此，回答「這個人是誰?」的問題就是<code>認證</code>。
+幫助我們回答這問題的方法就是<code>認證機制</code>。</p>
+
+<h3>認證機制</h3>
+
+<h4>Http Basic Authentication</h4>
+
+<p>參與元素：<code>Http Header</code>, <code>Username/Password</code>, <code>base64編碼</code></p>
+
+<p>一定要搭配SSL服用，否則會曝曬在陽光底下。</p>
+
+<h4>Token-base Authentication</h4>
+
+<p>回答以下三個問題</p>
+
+<blockquote><ol>
+<li>如何運作</li>
+<li>有什麼好處</li>
+<li>有什麼壞處</li>
+</ol>
+</blockquote>
+
+<h4>OAuth</h4>
+
+<h4>Json Web Token(JWT)</h4>
+
+<h2>授權(Authorization)</h2>
+
+<blockquote><p>朕不給﹐你不能搶</p></blockquote>
+
+<p>(未完待續&hellip;)</p>
+
+<h2>參考</h2>
+
+<ul>
+<li><a href="http://blog.nsfocus.net/rest-api-design-safety/">REST API安全設計指南</a></li>
+<li><a href="https://mengkang.net/625.html">RESTful Api 身份認證中的安全性設計探討</a></li>
+<li><a href="http://restcookbook.com/Basics/loggingin/">How do I let users log into my RESTful API</a></li>
+<li><a href="https://scotch.io/tutorials/the-ins-and-outs-of-token-based-authentication">The Ins and Outs of Token Based Authentication</a></li>
+<li><a href="http://www.slideshare.net/TunYuChang/restful-api-token">淺談RESTful API認證 Token機制使用經驗分享</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

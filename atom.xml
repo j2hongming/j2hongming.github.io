@@ -4,7 +4,7 @@
   <title><![CDATA[J2hongming Blog]]></title>
   <link href="http://j2hongming.github.io/atom.xml" rel="self"/>
   <link href="http://j2hongming.github.io/"/>
-  <updated>2016-08-17T15:21:43+08:00</updated>
+  <updated>2016-09-23T16:30:25+08:00</updated>
   <id>http://j2hongming.github.io/</id>
   <author>
     <name><![CDATA[HongMing ChangChine]]></name>
@@ -12,6 +12,76 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[認證與授權筆記]]></title>
+    <link href="http://j2hongming.github.io/blog/2016/09/09/authentication-versus-authorization-notes/"/>
+    <updated>2016-09-09T17:52:49+08:00</updated>
+    <id>http://j2hongming.github.io/blog/2016/09/09/authentication-versus-authorization-notes</id>
+    <content type="html"><![CDATA[<ul>
+<li>認證(Authentication)</li>
+<li>授權(Authorization)</li>
+</ul>
+
+
+<!-- more -->
+
+
+<h2>認證(Authentication)</h2>
+
+<blockquote><p>不要相信任何人!</p></blockquote>
+
+<p>對面走過來一個陌生人，「他是誰?」
+對面走過來一個熟人，「是某某某阿」</p>
+
+<p>為什麼會有如此差異呢?仔細想想，我們內建的第一道認證機制或許就是<code>臉孔</code>，透過這張臉我們可以瞬間知道走過來的人是誰。
+等等&hellip;若是多胞胎的話呢?
+若是這情況，第一道認證機制就會失效，此時就必須透過其他認證機制幫助我們辨識這個人是誰。<code>名牌</code>、<code>名片</code>、<code>身分證</code>、<code>指紋</code>、<code>暗號</code>&hellip;等等。</p>
+
+<p>因此，回答「這個人是誰?」的問題就是<code>認證</code>。
+幫助我們回答這問題的方法就是<code>認證機制</code>。</p>
+
+<h3>認證機制</h3>
+
+<h4>Http Basic Authentication</h4>
+
+<p>參與元素：<code>Http Header</code>, <code>Username/Password</code>, <code>base64編碼</code></p>
+
+<p>一定要搭配SSL服用，否則會曝曬在陽光底下。</p>
+
+<h4>Token-base Authentication</h4>
+
+<p>回答以下三個問題</p>
+
+<blockquote><ol>
+<li>如何運作</li>
+<li>有什麼好處</li>
+<li>有什麼壞處</li>
+</ol>
+</blockquote>
+
+<h4>OAuth</h4>
+
+<h4>Json Web Token(JWT)</h4>
+
+<h2>授權(Authorization)</h2>
+
+<blockquote><p>朕不給﹐你不能搶</p></blockquote>
+
+<p>(未完待續&hellip;)</p>
+
+<h2>參考</h2>
+
+<ul>
+<li><a href="http://blog.nsfocus.net/rest-api-design-safety/">REST API安全設計指南</a></li>
+<li><a href="https://mengkang.net/625.html">RESTful Api 身份認證中的安全性設計探討</a></li>
+<li><a href="http://restcookbook.com/Basics/loggingin/">How do I let users log into my RESTful API</a></li>
+<li><a href="https://scotch.io/tutorials/the-ins-and-outs-of-token-based-authentication">The Ins and Outs of Token Based Authentication</a></li>
+<li><a href="http://www.slideshare.net/TunYuChang/restful-api-token">淺談RESTful API認證 Token機制使用經驗分享</a></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[時間複雜度筆記]]></title>
@@ -546,6 +616,8 @@
 <ul>
 <li><a href="http://goo.gl/dg2Mpk">碼農在工作中的必備能力</a></li>
 <li><a href="http://blog.ericsk.org/archives/1308">「資訊系究竟在學什麼？」</a></li>
+<li><a href="http://www.slideshare.net/ccckmit/nand2tetris">用十分鐘向nand2tetris學會設計處理器</a></li>
+<li><a href="http://www.slideshare.net/ccckmit/jserv">用十分鐘 向jserv學習作業系統設計</a></li>
 </ul>
 
 ]]></content>
@@ -2244,209 +2316,6 @@ CentOS安裝注意事項</li>
 <li><a href="http://www.gtwang.org/2013/10/mastering-linux-command-line-history.html">Linux 指令歷史紀錄（History）的操作教學與範例</a></li>
 </ol>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[部落格開張Markdown Demo]]></title>
-    <link href="http://j2hongming.github.io/blog/2014/10/16/bu-luo-ge-kai-zhang/"/>
-    <updated>2014-10-16T16:22:49+08:00</updated>
-    <id>http://j2hongming.github.io/blog/2014/10/16/bu-luo-ge-kai-zhang</id>
-    <content type="html"><![CDATA[<ul>
-<li>Sharing Code Snippets</li>
-<li>Quote</li>
-<li>List</li>
-<li>Email</li>
-<li>Atx Format Header</li>
-<li>Setext Format Header</li>
-<li>Break Line</li>
-<li>Link</li>
-</ul>
-
-
-<!-- more -->
-
-
-<p><a href="http://markdown.tw/">Markdown Syntax</a>
-<a href="http://genius.com/Genius-formatting-and-markdown-guide-annotated">Markdown Syntax 2</a></p>
-
-<h2>Sharing Code Snippets</h2>
-
-<h3>Example  1</h3>
-
-<figure class='code'><figcaption><span>PHP echo-hello.php</span><a href='http://php.net/manual/en/function.echo.php'>link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="k">echo</span> <span class="s1">&#39;部落格開張&#39;</span><span class="p">;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Example  2</h3>
-
-<p><a href="http://octopress.org/docs/blogging/code/">Octopress: Sharing Code Snippets</a></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="cp">&lt;!DOCTYPE html&gt;</span>
-</span><span class='line'><span class="nt">&lt;html&gt;</span>
-</span><span class='line'><span class="nt">&lt;body&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;h1&gt;</span>My First Heading<span class="nt">&lt;/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;</span>My first paragraph.<span class="nt">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;/body&gt;</span>
-</span><span class='line'><span class="nt">&lt;/html&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Example 3</h3>
-
-<p><a href="http://octopress.org/docs/blogging/code/">Octopress: Sharing Code Snippets</a></p>
-
-<blockquote><p>&#8220;` [language] [title] [url] [link text]
-code snippet
-&#8220;`</p></blockquote>
-
-<figure class='code'><figcaption><span>Discover if a number is prime</span><a href='http://www.noulakaz.net/weblog/2007/03/18/a-regular-expression-to-check-for-prime-numbers/'>Source Article</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Fixnum</span>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">prime?</span>
-</span><span class='line'>    <span class="p">(</span><span class="s1">&#39;1&#39;</span> <span class="o">*</span> <span class="nb">self</span><span class="p">)</span> <span class="o">!~</span> <span class="sr">/^1?$|^(11+?)\1+$/</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Example 4: gist embed</h3>
-
-<p>{ % gist 89c858fdf4fd510fd910787a64eb9f04 % }</p>
-
-<div><script src='https://gist.github.com/89c858fdf4fd510fd910787a64eb9f04.js'></script>
-<noscript><pre><code>&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js&quot;&gt;&lt;/script&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-// ERROR, and show error message in console 
-var url = &quot;http://data.tycg.gov.tw/api/v1/rest/datastore/a1b4714b-3b75-4ff8-a8f2-cc377e4eaa0f?format=json&quot;;
-// SUCCESS
-var url = 'http://ptx.transportdata.tw/MOTC/v1/Bus/EstimatedTimeOfArrival/Thb?%24format=json&amp;$top=10';
-
-$.ajax({
-   url: url,
-   type: &quot;GET&quot;,
-   dataType: &quot;JSON&quot;,
-   success: function(data, textStatus, request) {
-     alert(&quot;SUCCESS!!!&quot;);
-     console.log(data);
-   },
-   error: function() {
-     alert(&quot;ERROR!!!&quot;);
-   }
- });
-
-&lt;/script&gt;</code></pre></noscript></div>
-
-
-<h2>Quote</h2>
-
-<h3>Example 1</h3>
-
-<p><a href="http://octopress.org/docs/plugins/blockquote/">Octopress: Blockquote</a></p>
-
-<blockquote><p>Stay hungry, Stay foolish. -Steve Jobs</p>
-
-<p>A apple a day, keep the doctor away</p>
-
-<blockquote><p>May I help U?</p></blockquote>
-
-<ol>
-<li>First
-Line</li>
-<li>Two
-Line</li>
-</ol>
-</blockquote>
-
-<h3>Example 2</h3>
-
-<blockquote><p>Flying is learning how to throw yourself at the ground and miss.</p><footer><strong>Douglas Adams</strong> <cite>The Hichhikers Guide to the Galaxy</cite></footer></blockquote>
-
-
-<h2>List</h2>
-
-<h3>Example</h3>
-
-<h4>TODO List</h4>
-
-<ul>
-<li>open</li>
-<li><em>hadle em</em></li>
-<li><strong>*strong*</strong>
-
-<ol>
-<li>s1</li>
-<li>s2</li>
-<li>s3</li>
-</ol>
-</li>
-</ul>
-
-
-<h2>Email</h2>
-
-<h3>Example</h3>
-
-<p><a href="&#x6d;&#97;&#105;&#x6c;&#116;&#x6f;&#58;&#97;&#x64;&#x64;&#x72;&#x65;&#115;&#115;&#64;&#101;&#x78;&#x61;&#109;&#x70;&#x6c;&#x65;&#x2e;&#99;&#111;&#x6d;">&#97;&#100;&#x64;&#114;&#101;&#x73;&#115;&#64;&#101;&#x78;&#x61;&#109;&#x70;&#x6c;&#x65;&#46;&#99;&#x6f;&#109;</a></p>
-
-<h1>Atx format Header L1</h1>
-
-<h2>Example</h2>
-
-<h2>Header L2</h2>
-
-<h3>Header L3</h3>
-
-<h4>Header L4</h4>
-
-<h5>Header L5</h5>
-
-<h6>Header L6</h6>
-
-<h1>This is an Setext Format  H1</h1>
-
-<h3>Example</h3>
-
-<h2>This is an  Setext Format  H2</h2>
-
-<h1>Break Line</h1>
-
-<h2>Example</h2>
-
-<p>BreakLine</p>
-
-<hr />
-
-<hr />
-
-<hr />
-
-<h1>Link</h1>
-
-<h3>Example 1: Inline</h3>
-
-<p>This is <a href="http://example.com/" title="Title">an example</a> inline link.</p>
-
-<h3>Example 2: Ref</h3>
-
-<p>This is <a href="http://example.com/" title="Optional Title Here">an example</a> reference-style link.</p>
 ]]></content>
   </entry>
   
