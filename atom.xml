@@ -4,7 +4,7 @@
   <title><![CDATA[J2hongming Blog]]></title>
   <link href="http://j2hongming.github.io/atom.xml" rel="self"/>
   <link href="http://j2hongming.github.io/"/>
-  <updated>2016-12-17T00:37:03+08:00</updated>
+  <updated>2016-12-28T01:14:11+08:00</updated>
   <id>http://j2hongming.github.io/</id>
   <author>
     <name><![CDATA[HongMing ChangChine]]></name>
@@ -12,6 +12,138 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[類別的關係]]></title>
+    <link href="http://j2hongming.github.io/blog/2016/12/28/object-relation-note/"/>
+    <updated>2016-12-28T00:05:08+08:00</updated>
+    <id>http://j2hongming.github.io/blog/2016/12/28/object-relation-note</id>
+    <content type="html"><![CDATA[<p>從組成類別的結構開始，有兩大主體:<code>屬性</code>(instance variable, attribute)和<code>操作</code>(method, operation)。</p>
+
+<p>因此，類別和類別之間接合的地方可能會出現在屬性或者操作當中。</p>
+
+<!-- more -->
+
+
+<h2>出現在屬性</h2>
+
+<ul>
+<li>關聯關係: 一個類別被當作是另一個類別的變數。( [1]page 8-17 )</li>
+<li>聚合關係: 表達整體和部分的關係。( [1] page 8-18 )</li>
+<li>組合關係: 聚合關係且整體的消失會造成部分的消失。( [1] page 8-18 )</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Car</span><span class="o">{</span>
+</span><span class='line'>  <span class="kd">private</span> <span class="n">Driver</span> <span class="n">driver</span><span class="o">;</span>
+</span><span class='line'>  <span class="kd">private</span> <span class="n">Tire</span><span class="o">[]</span> <span class="n">tires</span><span class="o">;</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Car和Driver有關聯關係。Car和Tire有聚合關係。</p>
+
+<h2>出現在操作</h2>
+
+<ul>
+<li>相依關係: 一個類別使用(use)其他類別所提供的服務，意即類別A呼叫了類別B的操作。 ( [1]page 8-22 )</li>
+</ul>
+
+
+<p>因為操作的本體其實是函式(function)，函式的結構包含<code>帶入參數</code>和<code>函式本體</code>，所以帶入參數可能是其他的類別物件；函式本體可能包含宣告其他類別物件的<code>區域變數</code>或是直接使用其他類別物件的<code>static function</code>。以上皆代表類別A呼叫了類別B的操作可能產生的情形。</p>
+
+<h3>帶入參數</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">KFC</span><span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kd">public</span> <span class="n">Chicken</span> <span class="nf">makeChicken</span><span class="o">(</span> <span class="n">Meat</span> <span class="n">m</span><span class="o">){</span>
+</span><span class='line'>      <span class="n">m</span><span class="o">.</span><span class="na">disinfect</span><span class="o">();</span>
+</span><span class='line'>      <span class="o">...</span>
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>函式本體-區域變數</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">KFC</span><span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">preProcess</span><span class="o">(){</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">Oil</span> <span class="n">oil</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Oil</span><span class="o">();</span>
+</span><span class='line'>      <span class="n">oil</span><span class="o">.</span><span class="na">fry</span><span class="o">(</span> <span class="o">);</span>
+</span><span class='line'>      <span class="o">...</span>
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>函式本體-static method</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">KFC</span><span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">postProcess</span><span class="o">(){</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="c1">// clean is a static function</span>
+</span><span class='line'>      <span class="n">CleanMachine</span><span class="o">.</span><span class="na">clean</span><span class="o">();</span>
+</span><span class='line'>      <span class="o">...</span>
+</span><span class='line'>  <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>其他</h2>
+
+<ul>
+<li>一般化(抽象化)</li>
+<li>具體化</li>
+</ul>
+
+
+<p>在Java中，一般化用<code>extends</code>;具體化用<code>implements</code>。</p>
+
+<h2>總結</h2>
+
+<p>類別的關係總共有五種，其中透過類別屬性傳遞資料的關係為<code>關聯</code>、<code>聚合</code>以及<code>組合</code>。透過類別操作傳遞資料的關係為<code>相依</code>。其他為<code>一般化</code>和<code>具體化</code>。</p>
+
+<h2>Ref</h2>
+
+<ol>
+<li><a href="http://www.books.com.tw/products/0010509593">UML物件導向系統分析與設計[第二版] / 游峰碩</a></li>
+<li><a href="https://www.youtube.com/watch?v=mzaTpKZm54A">BGP - Part1: Software design principles for Agile 敏捷 軟體設計原則 / James Hsieh</a></li>
+</ol>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Interview in 2016]]></title>
@@ -2254,114 +2386,6 @@ rake new_page[super-awesome/page.html]
 
 <pre><code>rake deploy
 </code></pre>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Drupal 7 + Memcached on CentOS 6]]></title>
-    <link href="http://j2hongming.github.io/blog/2015/07/24/drupal-7-plus-memcached-on-centos-6/"/>
-    <updated>2015-07-24T17:24:34+08:00</updated>
-    <id>http://j2hongming.github.io/blog/2015/07/24/drupal-7-plus-memcached-on-centos-6</id>
-    <content type="html"><![CDATA[<ul>
-<li>安裝Memcached</li>
-<li>設定Memcached</li>
-<li>安裝Memcached PHP extension(PECL Memcache)</li>
-<li>設定Memcached PHP extension</li>
-<li>安裝Drupal 7 memcache 模組</li>
-<li>設定Drupal 7 setting.php</li>
-<li>注意事項</li>
-</ul>
-
-
-<!-- more -->
-
-
-<h2>Memcached</h2>
-
-<h3>安裝Memcached</h3>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>yum install memcached</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>設定Memcached</h3>
-
-<p>設定 /etc/sysconfig/memcached
-注意OPTIONS=&ldquo;-l 127.0.0.1&rdquo;</p>
-
-<h2>Memcached PHP extension</h2>
-
-<h3>安裝Memcached PHP extension</h3>
-
-<p>指定版本</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo pecl install channel://pecl.php.net/memcache-3.0.6</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>設定Memcached PHP extension</h3>
-
-<p>設定/etc/php.d/memcache.ini</p>
-
-<p>開啟hash相關設定</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>memcache.hash\_strategy=consistent</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Drupal 7</h2>
-
-<h3>安裝Drupal 7 memcache 模組</h3>
-
-<p><a href="https://www.drupal.org/project/memcache">Memcache API and Integration</a></p>
-
-<h3>設定Drupal 7 setting.php</h3>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$conf['cache_backends'][] = 'sites/all/modules/memcache/memcache.inc';
-</span><span class='line'>// The 'cache_form' bin must be assigned no non-volatile storage.
-</span><span class='line'>$conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
-</span><span class='line'>$conf['cache_default_class'] = 'MemCacheDrupal';
-</span><span class='line'>$conf['memcache_key_prefix'] = 'something_unique';
-</span><span class='line'>// Don't bootstrap the database when serving pages from the cache.
-</span><span class='line'>$conf['page_cache_without_database'] = TRUE;
-</span><span class='line'>$conf['page_cache_invoke_hooks'] = FALSE;
-</span><span class='line'>
-</span><span class='line'>$conf['memcache_stampede_protection'] = TRUE;
-</span><span class='line'>$conf['lock_inc'] = 'sites/all/modules/memcache/memcache-lock.inc';</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>注意事項</h2>
-
-<ol>
-<li>若memcache service有起來，Druapl卻沒連到，注意防火牆設定</li>
-</ol>
-
-
-<h2>Ref</h2>
-
-<ul>
-<li><a href="https://www.drupal.org/node/1131468">Drupal 7 Memcache Tutorial</a>
-大致流程說明</li>
-<li><a href="http://tag1consulting.com/blog/memcache-centos-fedora">Memcached and PECL memcache on CentOS and Fedora</a>
-CentOS安裝注意事項</li>
-<li><a href="http://www.tecmint.com/install-memcached-caching-server-on-rhel-centos-fedora/">Install Memcached (Caching Server) on RHEL/CentOS 6.3/5.8 and Fedora 17-12</a>
-安裝流程與指令(推薦)</li>
-<li><a href="http://chimera.labs.oreilly.com/books/1230000000845/ch16.html">Chapter 16. Alternative Storage and Cache Backends</a>
-觀念</li>
-<li><a href="http://www.hellosanta.com.tw/Drupal%E7%B6%B2%E7%AB%99%E8%A8%AD%E8%A8%88/drupal-memcached">Drupal Memcached中文教學</a></li>
-</ul>
-
 ]]></content>
   </entry>
   

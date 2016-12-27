@@ -9,10 +9,8 @@
   <meta name="author" content="HongMing ChangChine">
 
   
-  <meta name="description" content="
-問題描述
-本質
-解法 ">
+  <meta name="description" content="/** * origin selectlist display: * A * B * C * ----- * customized selectlist display: * 100 A * 200 B * 300 C */
+function &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -83,6 +81,64 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2016/06/16/customize-drupal-origin-selectlist/">客製化Drupal原生下拉式選單</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2016-06-16T23:20:31+08:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>11:20 pm</span></time>
+        
+           | <a href="/blog/2016/06/16/customize-drupal-origin-selectlist/#disqus_thread"
+             data-disqus-identifier="http://j2hongming.github.io/blog/2016/06/16/customize-drupal-origin-selectlist/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div><script src='https://gist.github.com/f4fe361e7f0c3f83e796b006b8f4cbeb.js'></script>
+<noscript><pre><code>/**
+ * origin selectlist display:
+ * A
+ * B
+ * C
+ * -----
+ * customized selectlist display:
+ * 100 A
+ * 200 B
+ * 300 C
+ */
+function hook_field_widget_form_alter(&amp;$element, &amp;$form_state, $context){
+
+  if($element['#bundle'] == 'article' &amp;&amp; $element['#field_name'] == 'field_code_name'){
+    $new_code_name = array();
+    foreach ($element['#options'] as $key =&gt; $value) {
+      $term_obj = taxonomy_term_load($key);
+      $new_code_name[$key] = $term_obj-&gt;field_code_id['und'][0]['safe_value'].' '.$value;
+    }
+    
+    $element['#options'] = $new_code_name;
+  }
+}</code></pre></noscript></div>
+
+
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -534,52 +590,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/07/24/drupal-7-plus-memcached-on-centos-6/">Drupal 7 + Memcached on CentOS 6</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2015-07-24T17:24:34+08:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>24</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>5:24 pm</span></time>
-        
-           | <a href="/blog/2015/07/24/drupal-7-plus-memcached-on-centos-6/#disqus_thread"
-             data-disqus-identifier="http://j2hongming.github.io/blog/2015/07/24/drupal-7-plus-memcached-on-centos-6/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><ul>
-<li>安裝Memcached</li>
-<li>設定Memcached</li>
-<li>安裝Memcached PHP extension(PECL Memcache)</li>
-<li>設定Memcached PHP extension</li>
-<li>安裝Drupal 7 memcache 模組</li>
-<li>設定Drupal 7 setting.php</li>
-<li>注意事項</li>
-</ul>
-
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2015/07/24/drupal-7-plus-memcached-on-centos-6/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/3">&larr; Older</a>
@@ -597,6 +607,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/12/28/object-relation-note/">類別的關係</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/11/07/interview-in-2016/">Interview in 2016</a>
       </li>
     
@@ -610,10 +624,6 @@
     
       <li class="post">
         <a href="/blog/2016/08/10/java-string-basic/">Java String 常用操作</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/08/04/gitbook-outline-number/">如何設定gitbook側邊欄大綱顯示階層數字</a>
       </li>
     
   </ul>

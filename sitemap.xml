@@ -3,6 +3,14 @@
   
   
   <url>
+    <loc>http://j2hongming.github.io/blog/2016/12/28/object-relation-note/</loc>
+    
+    <lastmod>2016-12-28T00:05:08+08:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://j2hongming.github.io/blog/2016/11/07/interview-in-2016/</loc>
     
     <lastmod>2016-11-07T21:23:21+08:00</lastmod>
@@ -181,42 +189,42 @@
   
   <url>
     <loc>http://j2hongming.github.io/404.html</loc>
-    <lastmod>2016-12-17T00:37:03+08:00</lastmod>
+    <lastmod>2016-12-28T01:14:11+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://j2hongming.github.io/</loc>
-    <lastmod>2016-12-17T00:37:03+08:00</lastmod>
+    <lastmod>2016-12-28T01:14:11+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://j2hongming.github.io/blog/archives/</loc>
-    <lastmod>2016-12-17T00:37:03+08:00</lastmod>
+    <lastmod>2016-12-28T01:14:11+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://j2hongming.github.io/blog/categories/</loc>
-    <lastmod>2016-12-17T00:37:03+08:00</lastmod>
+    <lastmod>2016-12-28T01:14:11+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://j2hongming.github.io/toolbox/</loc>
-    <lastmod>2016-12-17T00:37:03+08:00</lastmod>
+    <lastmod>2016-12-28T01:14:11+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://j2hongming.github.io/bookshelf/</loc>
-    <lastmod>2016-12-17T00:37:03+08:00</lastmod>
+    <lastmod>2016-12-28T01:14:11+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

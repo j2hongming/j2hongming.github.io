@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Relation | J2hongming Blog]]></title>
+  <link href="http://j2hongming.github.io/blog/categories/relation/atom.xml" rel="self"/>
+  <link href="http://j2hongming.github.io/"/>
+  <updated>2016-12-28T01:14:11+08:00</updated>
+  <id>http://j2hongming.github.io/</id>
+  <author>
+    <name><![CDATA[HongMing ChangChine]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[類別的關係]]></title>
+    <link href="http://j2hongming.github.io/blog/2016/12/28/object-relation-note/"/>
+    <updated>2016-12-28T00:05:08+08:00</updated>
+    <id>http://j2hongming.github.io/blog/2016/12/28/object-relation-note</id>
+    <content type="html"><![CDATA[<p>從組成類別的結構開始，有兩大主體:<code>屬性</code>(instance variable, attribute)和<code>操作</code>(method, operation)。</p>
+
+<p>因此，類別和類別之間接合的地方可能會出現在屬性或者操作當中。</p>
+
+<!-- more -->
+
+
+<h2>出現在屬性</h2>
+
+<ul>
+<li>關聯關係: 一個類別被當作是另一個類別的變數。( [1]page 8-17 )</li>
+<li>聚合關係: 表達整體和部分的關係。( [1] page 8-18 )</li>
+<li>組合關係: 聚合關係且整體的消失會造成部分的消失。( [1] page 8-18 )</li>
+</ul>
+
+
+<pre><code class="java">public class Car{
+  private Driver driver;
+  private Tire[] tires;
+}
+</code></pre>
+
+<p>Car和Driver有關聯關係。Car和Tire有聚合關係。</p>
+
+<h2>出現在操作</h2>
+
+<ul>
+<li>相依關係: 一個類別使用(use)其他類別所提供的服務，意即類別A呼叫了類別B的操作。 ( [1]page 8-22 )</li>
+</ul>
+
+
+<p>因為操作的本體其實是函式(function)，函式的結構包含<code>帶入參數</code>和<code>函式本體</code>，所以帶入參數可能是其他的類別物件；函式本體可能包含宣告其他類別物件的<code>區域變數</code>或是直接使用其他類別物件的<code>static function</code>。以上皆代表類別A呼叫了類別B的操作可能產生的情形。</p>
+
+<h3>帶入參數</h3>
+
+<pre><code class="java">public class KFC{
+
+  public Chicken makeChicken( Meat m){
+      m.disinfect();
+      ...
+  } 
+}
+</code></pre>
+
+<h3>函式本體-區域變數</h3>
+
+<pre><code class="java">public class KFC{
+
+  public void preProcess(){
+
+      Oil oil = new Oil();
+      oil.fry( );
+      ...
+  }
+}
+</code></pre>
+
+<h3>函式本體-static method</h3>
+
+<pre><code class="java">public class KFC{
+
+  public void postProcess(){
+
+      // clean is a static function
+      CleanMachine.clean();
+      ...
+  }
+}
+</code></pre>
+
+<h2>其他</h2>
+
+<ul>
+<li>一般化(抽象化)</li>
+<li>具體化</li>
+</ul>
+
+
+<p>在Java中，一般化用<code>extends</code>;具體化用<code>implements</code>。</p>
+
+<h2>總結</h2>
+
+<p>類別的關係總共有五種，其中透過類別屬性傳遞資料的關係為<code>關聯</code>、<code>聚合</code>以及<code>組合</code>。透過類別操作傳遞資料的關係為<code>相依</code>。其他為<code>一般化</code>和<code>具體化</code>。</p>
+
+<h2>Ref</h2>
+
+<ol>
+<li><a href="http://www.books.com.tw/products/0010509593">UML物件導向系統分析與設計[第二版] / 游峰碩</a></li>
+<li><a href="https://www.youtube.com/watch?v=mzaTpKZm54A">BGP - Part1: Software design principles for Agile 敏捷 軟體設計原則 / James Hsieh</a></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+</feed>
