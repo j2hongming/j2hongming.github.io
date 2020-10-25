@@ -1,0 +1,82 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>部落格開張Markdown Demo | I'm J2hongming</title><link rel="stylesheet" type="text/css" href="/css/normalize.css"><link rel="stylesheet" type="text/css" href="/css/highlight.css"><link rel="stylesheet" type="text/css" href="/css/very-simple.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><!-- include the sidebar--><!-- include ./includes/sidebar.jade--><!-- Blog title and subtitle--><header><div class="container header"><a id="logo" href="/." class="title">I'm J2hongming</a><span class="subtitle">Appreciate, respect and accept it, don't take it for granted</span><label id="toggle-menu" for="menu" onclick><i class="fa fa-bars"></i></label></div></header><!-- use checkbox hack for toggle nav-bar on small screens--><input id="menu" type="checkbox"><!-- Navigation Links--><nav id="nav"><div class="container"><a href="/" class="sidebar-nav-item active">Home</a><a href="/archives" class="sidebar-nav-item">Archives</a><a href="/bookshelf" class="sidebar-nav-item">Bookshelf</a><a href="/toolbox" class="sidebar-nav-item">Toolbox</a><a href="https://www.linkedin.com/in/j2hongming/" class="sidebar-nav-item">About</a></div></nav><div id="header-margin-bar"></div><!-- gallery that comes before the header--><div class="wrapper"><div class="container post-header"><h1>部落格開張Markdown Demo</h1></div></div><div class="wrapper"><div class="container meta"><div class="post-time">2014-10-16</div><div class="post-categories"><a class="post-category-link" href="/categories/Blog/">Blog</a>><a class="post-category-link" href="/categories/Blog/Intro/">Intro</a></div><div class="post-tags"><a class="post-tag-link" href="/tags/Demo/">Demo</a>/<a class="post-tag-link" href="/tags/MarkDown/">MarkDown</a></div></div></div><article><div class="container post"><ul>
+<li>Sharing Code Snippets</li>
+<li>Quote</li>
+<li>List</li>
+<li>Email</li>
+<li>Atx Format Header</li>
+<li>Setext Format Header</li>
+<li>Break Line</li>
+<li>Link<a id="more"></a>
+<a href="http://markdown.tw/" target="_blank" rel="noopener">Markdown Syntax</a><br><a href="http://genius.com/Genius-formatting-and-markdown-guide-annotated" target="_blank" rel="noopener">Markdown Syntax 2</a></li>
+</ul>
+<h2 id="Sharing-Code-Snippets"><a href="#Sharing-Code-Snippets" class="headerlink" title="Sharing Code Snippets"></a>Sharing Code Snippets</h2><h3 id="Example-1"><a href="#Example-1" class="headerlink" title="Example  1"></a>Example  1</h3><figure class="highlight php"><figcaption><span>PHP echo-hello.php</span><a href="http://php.net/manual/en/function.echo.php" target="_blank" rel="noopener">link</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">echo</span> <span class="string">'部落格開張'</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Example-2"><a href="#Example-2" class="headerlink" title="Example  2"></a>Example  2</h3><p><a href="http://octopress.org/docs/blogging/code/" target="_blank" rel="noopener">Octopress: Sharing Code Snippets</a></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>My First Heading<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>My first paragraph.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h3><p><a href="http://octopress.org/docs/blogging/code/" target="_blank" rel="noopener">Octopress: Sharing Code Snippets</a></p>
+<blockquote>
+<p>``` [language] [title] [url] [link text]<br>code snippet<br>```</p>
+</blockquote>
+<figure class="highlight ruby"><figcaption><span>Discover if a number is prime</span><a href="http://www.noulakaz.net/weblog/2007/03/18/a-regular-expression-to-check-for-prime-numbers/" target="_blank" rel="noopener">Source Article</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fixnum</span></span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">prime?</span></span></span><br><span class="line">    (<span class="string">'1'</span> * <span class="keyword">self</span>) !~ <span class="regexp">/^1?$|^(11+?)\1+$/</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Example-4-gist-embed"><a href="#Example-4-gist-embed" class="headerlink" title="Example 4: gist embed"></a>Example 4: gist embed</h3><p>{ % gist 89c858fdf4fd510fd910787a64eb9f04 % }</p>
+<script src="//gist.github.com/89c858fdf4fd510fd910787a64eb9f04.js"></script>
+
+<h2 id="Quote"><a href="#Quote" class="headerlink" title="Quote"></a>Quote</h2><h3 id="Example-1-1"><a href="#Example-1-1" class="headerlink" title="Example 1"></a>Example 1</h3><p><a href="http://octopress.org/docs/plugins/blockquote/" target="_blank" rel="noopener">Octopress: Blockquote</a></p>
+<blockquote>
+<p>Stay hungry, Stay foolish. -Steve Jobs</p>
+</blockquote>
+<blockquote>
+<p>A apple a day, keep the doctor away</p>
+<blockquote>
+<p>May I help U?</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<ol>
+<li>First<br>Line</li>
+<li>Two<br>Line</li>
+</ol>
+</blockquote>
+<h3 id="Example-2-1"><a href="#Example-2-1" class="headerlink" title="Example 2"></a>Example 2</h3><blockquote><p>Flying is learning how to throw yourself at the ground and miss.</p>
+<footer><strong>Douglas Adams</strong><cite>The Hichhikers Guide to the Galaxy</cite></footer></blockquote>
+
+<h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><h4 id="TODO-List"><a href="#TODO-List" class="headerlink" title="TODO List"></a>TODO List</h4><ul>
+<li>open</li>
+<li><em>hadle em</em></li>
+<li><strong>*strong*</strong><ol>
+<li>s1</li>
+<li>s2</li>
+<li>s3</li>
+</ol>
+</li>
+</ul>
+<h2 id="Email"><a href="#Email" class="headerlink" title="Email"></a>Email</h2><h3 id="Example-1"><a href="#Example-1" class="headerlink" title="Example"></a>Example</h3><p><a href="mailto:&#97;&#100;&#x64;&#114;&#x65;&#x73;&#115;&#x40;&#101;&#x78;&#97;&#x6d;&#112;&#108;&#101;&#x2e;&#x63;&#111;&#109;" target="_blank" rel="noopener">&#97;&#100;&#x64;&#114;&#x65;&#x73;&#115;&#x40;&#101;&#x78;&#97;&#x6d;&#112;&#108;&#101;&#x2e;&#x63;&#111;&#109;</a></p>
+<h1 id="Atx-format-Header-L1"><a href="#Atx-format-Header-L1" class="headerlink" title="Atx format Header L1"></a>Atx format Header L1</h1><h2 id="Example-2"><a href="#Example-2" class="headerlink" title="Example"></a>Example</h2><h2 id="Header-L2"><a href="#Header-L2" class="headerlink" title="Header L2"></a>Header L2</h2><h3 id="Header-L3"><a href="#Header-L3" class="headerlink" title="Header L3"></a>Header L3</h3><h4 id="Header-L4"><a href="#Header-L4" class="headerlink" title="Header L4"></a>Header L4</h4><h5 id="Header-L5"><a href="#Header-L5" class="headerlink" title="Header L5"></a>Header L5</h5><h6 id="Header-L6"><a href="#Header-L6" class="headerlink" title="Header L6"></a>Header L6</h6><h1 id="This-is-an-Setext-Format-H1"><a href="#This-is-an-Setext-Format-H1" class="headerlink" title="This is an Setext Format  H1"></a>This is an Setext Format  H1</h1><h3 id="Example-3"><a href="#Example-3" class="headerlink" title="Example"></a>Example</h3><h2 id="This-is-an-Setext-Format-H2"><a href="#This-is-an-Setext-Format-H2" class="headerlink" title="This is an  Setext Format  H2"></a>This is an  Setext Format  H2</h2><h1 id="Break-Line"><a href="#Break-Line" class="headerlink" title="Break Line"></a>Break Line</h1><h2 id="Example-4"><a href="#Example-4" class="headerlink" title="Example"></a>Example</h2><p>BreakLine</p>
+<hr>
+<hr>
+<hr>
+<h1 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h1><h3 id="Example-1-Inline"><a href="#Example-1-Inline" class="headerlink" title="Example 1: Inline"></a>Example 1: Inline</h3><p>This is <a href="http://example.com/" title="Title" target="_blank" rel="noopener">an example</a> inline link.</p>
+<h3 id="Example-2-Ref"><a href="#Example-2-Ref" class="headerlink" title="Example 2: Ref"></a>Example 2: Ref</h3><p>This is [an example] <a href="http://example.com/" title="Optional Title Here" target="_blank" rel="noopener">id</a> reference-style link.</p>
+</div><!-- comment system--><div class="container"><hr><div id="disqus_thread"></div><script type="text/javascript">
+var disqus_shortname = 'j2hongminggithubio';
+var disqus_identifier = '2014/10/16/bu-luo-ge-kai-zhang/';
+var disqus_title = '部落格開張Markdown Demo';
+var disqus_url = 'http://yoursite.com/2014/10/16/bu-luo-ge-kai-zhang/';
+(function() {
+   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+   dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">Blog comments powered by <span class="logo-disqus">Disqus</span></a></div></article><footer id="footer"><div class="container"><div class="bar"><div class="social"><a href="http://twitter.com/j2hongming" target="_blank"><i class="fa fa-twitter"></i></a><a href="https://github.com/j2hongming" target="_blank"><i class="fa fa-github"></i></a><a href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></div><div class="footer">© 2020 <a href="/" rel="nofollow">J2hongming</a>. Powered by <a rel="nofollow" target="_blank" href="https://hexo.io">Hexo</a>. Theme <a target="_blank" href="https://github.com/lotabout/very-simple">very-simple</a>.</div></div></div></footer><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.css"><script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script><script src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script><script>$(document).ready(function() {
+    $(".fancybox").fancybox();
+});
+</script></body><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+e.src='//www.google-analytics.com/analytics.js';
+r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+ga('create','UA-55818738-1');ga('send','pageview');</script></html>

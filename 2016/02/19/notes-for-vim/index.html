@@ -1,0 +1,67 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>Notes for Vim | I'm J2hongming</title><link rel="stylesheet" type="text/css" href="/css/normalize.css"><link rel="stylesheet" type="text/css" href="/css/highlight.css"><link rel="stylesheet" type="text/css" href="/css/very-simple.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><!-- include the sidebar--><!-- include ./includes/sidebar.jade--><!-- Blog title and subtitle--><header><div class="container header"><a id="logo" href="/." class="title">I'm J2hongming</a><span class="subtitle">Appreciate, respect and accept it, don't take it for granted</span><label id="toggle-menu" for="menu" onclick><i class="fa fa-bars"></i></label></div></header><!-- use checkbox hack for toggle nav-bar on small screens--><input id="menu" type="checkbox"><!-- Navigation Links--><nav id="nav"><div class="container"><a href="/" class="sidebar-nav-item active">Home</a><a href="/archives" class="sidebar-nav-item">Archives</a><a href="/bookshelf" class="sidebar-nav-item">Bookshelf</a><a href="/toolbox" class="sidebar-nav-item">Toolbox</a><a href="https://www.linkedin.com/in/j2hongming/" class="sidebar-nav-item">About</a></div></nav><div id="header-margin-bar"></div><!-- gallery that comes before the header--><div class="wrapper"><div class="container post-header"><h1>Notes for Vim</h1></div></div><div class="wrapper"><div class="container meta"><div class="post-time">2016-02-19</div><div class="post-categories"><a class="post-category-link" href="/categories/vim/">vim</a>><a class="post-category-link" href="/categories/vim/command/">command</a>><a class="post-category-link" href="/categories/vim/command/linux/">linux</a></div></div></div><article><div class="container post"><ul>
+<li>概念Concept</li>
+<li>基本Basic</li>
+<li>組合技Combo<a id="more"></a>
+<h2 id="概念Concept"><a href="#概念Concept" class="headerlink" title="概念Concept"></a>概念Concept</h2></li>
+<li>模式</li>
+<li>單檔案</li>
+<li>單行</li>
+<li>單詞</li>
+<li>單檔案</li>
+</ul>
+<h3 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h3><p>Command Line mode, Normal mode, Insert mode, 預設在Normal mode</p>
+<p>Nm to Im: <code>i</code></p>
+<p>Nm to CLm:<code>:</code></p>
+<p>Im to Nm:<code>esc</code></p>
+<h2 id="基本Basic"><a href="#基本Basic" class="headerlink" title="基本Basic"></a>基本Basic</h2><h3 id="存檔"><a href="#存檔" class="headerlink" title="存檔"></a>存檔</h3><h4 id="CL-mode"><a href="#CL-mode" class="headerlink" title="CL mode"></a>CL mode</h4><pre><code>w #存檔
+q #離開
+wq #存檔並離開
+q! #不存檔強制離開</code></pre><h3 id="瞬間移動"><a href="#瞬間移動" class="headerlink" title="瞬間移動"></a>瞬間移動</h3><h4 id="N-mode"><a href="#N-mode" class="headerlink" title="N mode"></a>N mode</h4><h5 id="搜尋"><a href="#搜尋" class="headerlink" title="搜尋"></a>搜尋</h5><pre><code>/ #搜尋
+n #下一個符合
+N #上一個符合</code></pre><h5 id="檔案觀點"><a href="#檔案觀點" class="headerlink" title="檔案觀點"></a>檔案觀點</h5><pre><code>gg #檔頭
+G #檔尾
+j5 #往下移動5行, 5可改為任意數字</code></pre><h5 id="行觀點"><a href="#行觀點" class="headerlink" title="行觀點"></a>行觀點</h5><pre><code>0 #行內移動: 行首
+^ #行內移動: 行首
+$ #行內移動: 行尾
+f #行內字元搜尋: 往後
+F #行內字元搜尋: 往前</code></pre><h5 id="詞觀點"><a href="#詞觀點" class="headerlink" title="詞觀點"></a>詞觀點</h5><pre><code>w #單詞移動: 下一單詞之詞頭
+e #單詞移動: 下一單詞之詞尾
+b #單詞移動: 上一單詞之詞頭</code></pre><h4 id="CL-mode-1"><a href="#CL-mode-1" class="headerlink" title="CL mode"></a>CL mode</h4><pre><code>0 #檔頭
+$ #檔尾
+n #跳到第n行</code></pre><h3 id="標記與複製"><a href="#標記與複製" class="headerlink" title="標記與複製"></a>標記與複製</h3><h4 id="N-mode-1"><a href="#N-mode-1" class="headerlink" title="N mode"></a>N mode</h4><pre><code>v #選取
+V #標記行
+Ctrl + v #標記區塊
+y #複製標記內容
+yy #複製游標行
+p #在下一行貼上複製或刪除的內容
+P #在上一行貼上複製或刪除的內容</code></pre><h3 id="刪除與復原"><a href="#刪除與復原" class="headerlink" title="刪除與復原"></a>刪除與復原</h3><h4 id="N-mode-2"><a href="#N-mode-2" class="headerlink" title="N mode"></a>N mode</h4><pre><code>dd #刪除一行
+D #刪除至行尾
+u #復原
+Ctrl + r #重做</code></pre><h2 id="組合技Combo"><a href="#組合技Combo" class="headerlink" title="組合技Combo"></a>組合技Combo</h2><h3 id="N-mode-3"><a href="#N-mode-3" class="headerlink" title="N mode"></a>N mode</h3><h4 id="CP大法"><a href="#CP大法" class="headerlink" title="CP大法"></a>CP大法</h4><pre><code>yy p #複製單行貼上</code></pre><h4 id="快速刪除"><a href="#快速刪除" class="headerlink" title="快速刪除"></a>快速刪除</h4><pre><code>d f 字元 #刪除當時游標所在到到該字元前</code></pre><h2 id="參考資源"><a href="#參考資源" class="headerlink" title="參考資源"></a>參考資源</h2><ul>
+<li><a href="http://www.slideshare.net/BruceLi2/008-vim" target="_blank" rel="noopener">vim超基礎入門</a></li>
+<li><a href="http://blog.eddie.com.tw/2012/04/27/screencast-1-learning-vim-from-the-beginning/" target="_blank" rel="noopener">爽爽快快學Vim(1)</a></li>
+<li><a href="http://blog.vgod.tw/2009/12/08/vim-cheat-sheet-for-programmers/" target="_blank" rel="noopener">給程式設計師的Vim入門圖解說明</a></li>
+<li><a href="http://blog.linux.org.tw/~jserv/archives/001675.html" target="_blank" rel="noopener">vi / vim 圖解鍵盤指令</a></li>
+<li><a href="http://www.slideshare.net/taichunmin/ss-16096723" target="_blank" rel="noopener">寫程式？那些老師沒教的事</a></li>
+</ul>
+</div><!-- comment system--><div class="container"><hr><div id="disqus_thread"></div><script type="text/javascript">
+var disqus_shortname = 'j2hongminggithubio';
+var disqus_identifier = '2016/02/19/notes-for-vim/';
+var disqus_title = 'Notes for Vim';
+var disqus_url = 'http://yoursite.com/2016/02/19/notes-for-vim/';
+(function() {
+   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+   dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">Blog comments powered by <span class="logo-disqus">Disqus</span></a></div></article><footer id="footer"><div class="container"><div class="bar"><div class="social"><a href="http://twitter.com/j2hongming" target="_blank"><i class="fa fa-twitter"></i></a><a href="https://github.com/j2hongming" target="_blank"><i class="fa fa-github"></i></a><a href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></div><div class="footer">© 2020 <a href="/" rel="nofollow">J2hongming</a>. Powered by <a rel="nofollow" target="_blank" href="https://hexo.io">Hexo</a>. Theme <a target="_blank" href="https://github.com/lotabout/very-simple">very-simple</a>.</div></div></div></footer><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.css"><script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script><script src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script><script>$(document).ready(function() {
+    $(".fancybox").fancybox();
+});
+</script></body><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+e.src='//www.google-analytics.com/analytics.js';
+r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+ga('create','UA-55818738-1');ga('send','pageview');</script></html>

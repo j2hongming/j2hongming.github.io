@@ -1,0 +1,53 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>類別的關係 | I'm J2hongming</title><link rel="stylesheet" type="text/css" href="/css/normalize.css"><link rel="stylesheet" type="text/css" href="/css/highlight.css"><link rel="stylesheet" type="text/css" href="/css/very-simple.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><!-- include the sidebar--><!-- include ./includes/sidebar.jade--><!-- Blog title and subtitle--><header><div class="container header"><a id="logo" href="/." class="title">I'm J2hongming</a><span class="subtitle">Appreciate, respect and accept it, don't take it for granted</span><label id="toggle-menu" for="menu" onclick><i class="fa fa-bars"></i></label></div></header><!-- use checkbox hack for toggle nav-bar on small screens--><input id="menu" type="checkbox"><!-- Navigation Links--><nav id="nav"><div class="container"><a href="/" class="sidebar-nav-item active">Home</a><a href="/archives" class="sidebar-nav-item">Archives</a><a href="/bookshelf" class="sidebar-nav-item">Bookshelf</a><a href="/toolbox" class="sidebar-nav-item">Toolbox</a><a href="https://www.linkedin.com/in/j2hongming/" class="sidebar-nav-item">About</a></div></nav><div id="header-margin-bar"></div><!-- gallery that comes before the header--><div class="wrapper"><div class="container post-header"><h1>類別的關係</h1></div></div><div class="wrapper"><div class="container meta"><div class="post-time">2016-12-28</div><div class="post-categories"><a class="post-category-link" href="/categories/object/">object</a>><a class="post-category-link" href="/categories/object/relation/">relation</a></div></div></div><article><div class="container post"><p>從組成類別的結構開始，有兩大主體:<code>屬性</code>(instance variable, attribute)和<code>操作</code>(method, operation)。</p>
+<p>因此，類別和類別之間接合的地方可能會出現在屬性或者操作當中。</p>
+<a id="more"></a>
+
+<h2 id="出現在屬性"><a href="#出現在屬性" class="headerlink" title="出現在屬性"></a>出現在屬性</h2><ul>
+<li>關聯關係: 一個類別被當作是另一個類別的變數。( [1]page 8-17 )</li>
+<li>聚合關係: 表達整體和部分的關係。( [1] page 8-18 )</li>
+<li>組合關係: 聚合關係且整體的消失會造成部分的消失。( [1] page 8-18 )</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Car</span></span>&#123;</span><br><span class="line">  <span class="keyword">private</span> Driver driver;</span><br><span class="line">  <span class="keyword">private</span> Tire[] tires;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Car和Driver有關聯關係。Car和Tire有聚合關係。</p>
+<h2 id="出現在操作"><a href="#出現在操作" class="headerlink" title="出現在操作"></a>出現在操作</h2><ul>
+<li>相依關係: 一個類別使用(use)其他類別所提供的服務，意即類別A呼叫了類別B的操作。 ( [1]page 8-22 )</li>
+</ul>
+<p>因為操作的本體其實是函式(function)，函式的結構包含<code>帶入參數</code>和<code>函式本體</code>，所以帶入參數可能是其他的類別物件；函式本體可能包含宣告其他類別物件的<code>區域變數</code>或是直接使用其他類別物件的<code>static function</code>。以上皆代表類別A呼叫了類別B的操作可能產生的情形。</p>
+<h3 id="帶入參數"><a href="#帶入參數" class="headerlink" title="帶入參數"></a>帶入參數</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">KFC</span></span>&#123;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">public</span> Chicken <span class="title">makeChicken</span><span class="params">( Meat m)</span></span>&#123;</span><br><span class="line">      m.disinfect();</span><br><span class="line">      ...</span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="函式本體-區域變數"><a href="#函式本體-區域變數" class="headerlink" title="函式本體-區域變數"></a>函式本體-區域變數</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">KFC</span></span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">preProcess</span><span class="params">()</span></span>&#123;</span><br><span class="line">      </span><br><span class="line">      Oil oil = <span class="keyword">new</span> Oil();</span><br><span class="line">      oil.fry( );</span><br><span class="line">      ...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="函式本體-static-method"><a href="#函式本體-static-method" class="headerlink" title="函式本體-static method"></a>函式本體-static method</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">KFC</span></span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">postProcess</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// clean is a static function</span></span><br><span class="line">      CleanMachine.clean();</span><br><span class="line">      ...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
+<li>一般化(抽象化)</li>
+<li>具體化</li>
+</ul>
+<p>在Java中，一般化用<code>extends</code>;具體化用<code>implements</code>。</p>
+<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>類別的關係總共有五種，其中透過類別屬性傳遞資料的關係為<code>關聯</code>、<code>聚合</code>以及<code>組合</code>。透過類別操作傳遞資料的關係為<code>相依</code>。其他為<code>一般化</code>和<code>具體化</code>。</p>
+<h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><ol>
+<li><a href="http://www.books.com.tw/products/0010509593" target="_blank" rel="noopener">UML物件導向系統分析與設計[第二版] / 游峰碩</a></li>
+<li><a href="https://www.youtube.com/watch?v=mzaTpKZm54A" target="_blank" rel="noopener">BGP - Part1: Software design principles for Agile 敏捷 軟體設計原則 / James Hsieh</a></li>
+</ol>
+</div><!-- comment system--><div class="container"><hr><div id="disqus_thread"></div><script type="text/javascript">
+var disqus_shortname = 'j2hongminggithubio';
+var disqus_identifier = '2016/12/28/object-relation-note/';
+var disqus_title = '類別的關係';
+var disqus_url = 'http://yoursite.com/2016/12/28/object-relation-note/';
+(function() {
+   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+   dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">Blog comments powered by <span class="logo-disqus">Disqus</span></a></div></article><footer id="footer"><div class="container"><div class="bar"><div class="social"><a href="http://twitter.com/j2hongming" target="_blank"><i class="fa fa-twitter"></i></a><a href="https://github.com/j2hongming" target="_blank"><i class="fa fa-github"></i></a><a href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></div><div class="footer">© 2020 <a href="/" rel="nofollow">J2hongming</a>. Powered by <a rel="nofollow" target="_blank" href="https://hexo.io">Hexo</a>. Theme <a target="_blank" href="https://github.com/lotabout/very-simple">very-simple</a>.</div></div></div></footer><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.css"><script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script><script src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script><script>$(document).ready(function() {
+    $(".fancybox").fancybox();
+});
+</script></body><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+e.src='//www.google-analytics.com/analytics.js';
+r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+ga('create','UA-55818738-1');ga('send','pageview');</script></html>

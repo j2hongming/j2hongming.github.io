@@ -1,0 +1,55 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>Drupal 7 + Memcached on CentOS 6 | I'm J2hongming</title><link rel="stylesheet" type="text/css" href="/css/normalize.css"><link rel="stylesheet" type="text/css" href="/css/highlight.css"><link rel="stylesheet" type="text/css" href="/css/very-simple.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><!-- include the sidebar--><!-- include ./includes/sidebar.jade--><!-- Blog title and subtitle--><header><div class="container header"><a id="logo" href="/." class="title">I'm J2hongming</a><span class="subtitle">Appreciate, respect and accept it, don't take it for granted</span><label id="toggle-menu" for="menu" onclick><i class="fa fa-bars"></i></label></div></header><!-- use checkbox hack for toggle nav-bar on small screens--><input id="menu" type="checkbox"><!-- Navigation Links--><nav id="nav"><div class="container"><a href="/" class="sidebar-nav-item active">Home</a><a href="/archives" class="sidebar-nav-item">Archives</a><a href="/bookshelf" class="sidebar-nav-item">Bookshelf</a><a href="/toolbox" class="sidebar-nav-item">Toolbox</a><a href="https://www.linkedin.com/in/j2hongming/" class="sidebar-nav-item">About</a></div></nav><div id="header-margin-bar"></div><!-- gallery that comes before the header--><div class="wrapper"><div class="container post-header"><h1>Drupal 7 + Memcached on CentOS 6</h1></div></div><div class="wrapper"><div class="container meta"><div class="post-time">2015-07-24</div><div class="post-categories"><a class="post-category-link" href="/categories/Linux/">Linux</a>><a class="post-category-link" href="/categories/Linux/Drupal7/">Drupal7</a>><a class="post-category-link" href="/categories/Linux/Drupal7/Memcache/">Memcache</a></div></div></div><article><div class="container post"><ul>
+<li>安裝Memcached</li>
+<li>設定Memcached</li>
+<li>安裝Memcached PHP extension(PECL Memcache)</li>
+<li>設定Memcached PHP extension</li>
+<li>安裝Drupal 7 memcache 模組</li>
+<li>設定Drupal 7 setting.php</li>
+<li>注意事項<a id="more"></a>
+<h2 id="Memcached"><a href="#Memcached" class="headerlink" title="Memcached"></a>Memcached</h2><h3 id="安裝Memcached"><a href="#安裝Memcached" class="headerlink" title="安裝Memcached"></a>安裝Memcached</h3></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install memcached</span><br></pre></td></tr></table></figure>
+
+<h3 id="設定Memcached"><a href="#設定Memcached" class="headerlink" title="設定Memcached"></a>設定Memcached</h3><p>設定 /etc/sysconfig/memcached<br>注意OPTIONS=”-l 127.0.0.1”</p>
+<h2 id="Memcached-PHP-extension"><a href="#Memcached-PHP-extension" class="headerlink" title="Memcached PHP extension"></a>Memcached PHP extension</h2><h3 id="安裝Memcached-PHP-extension"><a href="#安裝Memcached-PHP-extension" class="headerlink" title="安裝Memcached PHP extension"></a>安裝Memcached PHP extension</h3><p>指定版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pecl install channel://pecl.php.net/memcache-3.0.6</span><br></pre></td></tr></table></figure>
+
+<h3 id="設定Memcached-PHP-extension"><a href="#設定Memcached-PHP-extension" class="headerlink" title="設定Memcached PHP extension"></a>設定Memcached PHP extension</h3><p>設定/etc/php.d/memcache.ini</p>
+<p>開啟hash相關設定</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">memcache.hash\_strategy=consistent</span><br></pre></td></tr></table></figure>
+
+<h2 id="Drupal-7"><a href="#Drupal-7" class="headerlink" title="Drupal 7"></a>Drupal 7</h2><h3 id="安裝Drupal-7-memcache-模組"><a href="#安裝Drupal-7-memcache-模組" class="headerlink" title="安裝Drupal 7 memcache 模組"></a>安裝Drupal 7 memcache 模組</h3><p><a href="https://www.drupal.org/project/memcache" target="_blank" rel="noopener">Memcache API and Integration</a></p>
+<h3 id="設定Drupal-7-setting-php"><a href="#設定Drupal-7-setting-php" class="headerlink" title="設定Drupal 7 setting.php"></a>設定Drupal 7 setting.php</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$conf[&apos;cache_backends&apos;][] = &apos;sites/all/modules/memcache/memcache.inc&apos;;</span><br><span class="line">// The &apos;cache_form&apos; bin must be assigned no non-volatile storage.</span><br><span class="line">$conf[&apos;cache_class_cache_form&apos;] = &apos;DrupalDatabaseCache&apos;;</span><br><span class="line">$conf[&apos;cache_default_class&apos;] = &apos;MemCacheDrupal&apos;;</span><br><span class="line">$conf[&apos;memcache_key_prefix&apos;] = &apos;something_unique&apos;;</span><br><span class="line">// Don&apos;t bootstrap the database when serving pages from the cache.</span><br><span class="line">$conf[&apos;page_cache_without_database&apos;] = TRUE;</span><br><span class="line">$conf[&apos;page_cache_invoke_hooks&apos;] = FALSE;</span><br><span class="line"></span><br><span class="line">$conf[&apos;memcache_stampede_protection&apos;] = TRUE;</span><br><span class="line">$conf[&apos;lock_inc&apos;] = &apos;sites/all/modules/memcache/memcache-lock.inc&apos;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h2><ol>
+<li>若memcache service有起來，Druapl卻沒連到，注意防火牆設定</li>
+</ol>
+<h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><ul>
+<li><a href="https://www.drupal.org/node/1131468" target="_blank" rel="noopener">Drupal 7 Memcache Tutorial</a><br>大致流程說明</li>
+<li><a href="http://tag1consulting.com/blog/memcache-centos-fedora" target="_blank" rel="noopener">Memcached and PECL memcache on CentOS and Fedora</a><br>CentOS安裝注意事項</li>
+<li><a href="http://www.tecmint.com/install-memcached-caching-server-on-rhel-centos-fedora/" target="_blank" rel="noopener">Install Memcached (Caching Server) on RHEL/CentOS 6.3/5.8 and Fedora 17-12</a><br>安裝流程與指令(推薦)</li>
+<li><a href="http://chimera.labs.oreilly.com/books/1230000000845/ch16.html" target="_blank" rel="noopener">Chapter 16. Alternative Storage and Cache Backends</a><br>觀念</li>
+<li><a href="http://www.hellosanta.com.tw/Drupal%E7%B6%B2%E7%AB%99%E8%A8%AD%E8%A8%88/drupal-memcached" target="_blank" rel="noopener">Drupal Memcached中文教學</a></li>
+</ul>
+</div><!-- comment system--><div class="container"><hr><div id="disqus_thread"></div><script type="text/javascript">
+var disqus_shortname = 'j2hongminggithubio';
+var disqus_identifier = '2015/07/24/drupal-7-plus-memcached-on-centos-6/';
+var disqus_title = 'Drupal 7 + Memcached on CentOS 6';
+var disqus_url = 'http://yoursite.com/2015/07/24/drupal-7-plus-memcached-on-centos-6/';
+(function() {
+   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+   dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">Blog comments powered by <span class="logo-disqus">Disqus</span></a></div></article><footer id="footer"><div class="container"><div class="bar"><div class="social"><a href="http://twitter.com/j2hongming" target="_blank"><i class="fa fa-twitter"></i></a><a href="https://github.com/j2hongming" target="_blank"><i class="fa fa-github"></i></a><a href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></div><div class="footer">© 2020 <a href="/" rel="nofollow">J2hongming</a>. Powered by <a rel="nofollow" target="_blank" href="https://hexo.io">Hexo</a>. Theme <a target="_blank" href="https://github.com/lotabout/very-simple">very-simple</a>.</div></div></div></footer><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.css"><script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script><script src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script><script>$(document).ready(function() {
+    $(".fancybox").fancybox();
+});
+</script></body><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+e.src='//www.google-analytics.com/analytics.js';
+r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+ga('create','UA-55818738-1');ga('send','pageview');</script></html>

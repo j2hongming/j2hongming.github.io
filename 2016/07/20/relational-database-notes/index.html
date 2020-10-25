@@ -1,0 +1,68 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>關聯式資料庫筆記 | I'm J2hongming</title><link rel="stylesheet" type="text/css" href="/css/normalize.css"><link rel="stylesheet" type="text/css" href="/css/highlight.css"><link rel="stylesheet" type="text/css" href="/css/very-simple.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><!-- include the sidebar--><!-- include ./includes/sidebar.jade--><!-- Blog title and subtitle--><header><div class="container header"><a id="logo" href="/." class="title">I'm J2hongming</a><span class="subtitle">Appreciate, respect and accept it, don't take it for granted</span><label id="toggle-menu" for="menu" onclick><i class="fa fa-bars"></i></label></div></header><!-- use checkbox hack for toggle nav-bar on small screens--><input id="menu" type="checkbox"><!-- Navigation Links--><nav id="nav"><div class="container"><a href="/" class="sidebar-nav-item active">Home</a><a href="/archives" class="sidebar-nav-item">Archives</a><a href="/bookshelf" class="sidebar-nav-item">Bookshelf</a><a href="/toolbox" class="sidebar-nav-item">Toolbox</a><a href="https://www.linkedin.com/in/j2hongming/" class="sidebar-nav-item">About</a></div></nav><div id="header-margin-bar"></div><!-- gallery that comes before the header--><div class="wrapper"><div class="container post-header"><h1>關聯式資料庫筆記</h1></div></div><div class="wrapper"><div class="container meta"><div class="post-time">2016-07-20</div><div class="post-categories"><a class="post-category-link" href="/categories/database/">database</a></div></div></div><article><div class="container post"><p>真實世界中存在各種<code>實體</code>(Entity)，實體與實體間存在某些<code>關係</code>(Relation)。<br>歌手和專輯、歌曲和歌詞、皮卡丘和訓練師小智…實體無所不在。<br>歌手出版了多張專輯，一張專輯內有多首歌曲，一首歌擁有一組歌詞，皮卡丘的訓練師是小智…實體之間總是有某種關係。</p>
+<a id="more"></a>
+
+<p>如何以資料的概念呈現實體與儲存實體?</p>
+<p>利用<code>屬性</code>來描述與呈現實體的某些特性，如：專輯的名稱、簡介、出版日期和封面圖片…等。歌曲的曲名、長度、性質…等</p>
+<p>其中某些屬性存在一些特別的性質，稱為<code>鍵值</code>(Key)。鍵值可分為幾種：<code>超鍵</code>、<code>候選鍵</code>、<code>主鍵</code>、<code>複合鍵</code>、<code>外來鍵</code>。</p>
+<p>此外，關係的呈現方式也分為三種：<code>一對一</code>、<code>一對多</code>和<code>多對多</code></p>
+<p>為了保持資料的一致性和完整性，避免異動資料時發生異常現象，訂下了三種<code>完整性規則</code>(Integrity Rules):實體完整性、參考完整性和值域完整性。</p>
+<p>稍微整理一下，主要的概念有：</p>
+<ul>
+<li>鍵值屬性</li>
+<li>關係的種類</li>
+<li>完整性規則</li>
+</ul>
+<p>鍵值屬性可分為</p>
+<ul>
+<li>超鍵(Super key)</li>
+<li>候選鍵(Candidate key)</li>
+<li>主鍵(Primary key)</li>
+<li>複合鍵(Composite key)</li>
+<li>外來鍵(Foreign key)</li>
+</ul>
+<p>關係種類可分為</p>
+<ul>
+<li>一對一關係(one-to-one)</li>
+<li>一對多關係(one-to-many)</li>
+<li>多對多關係(many-to-many)</li>
+</ul>
+<p>完整性規則可分為</p>
+<ul>
+<li>實體完整性規則(Entity Integrity Rule)</li>
+<li>參考完整性規則(Referential Integrity Rule)</li>
+<li>值域完整性規則(Domain Integrity Rule)</li>
+</ul>
+<h2 id="鍵值屬性"><a href="#鍵值屬性" class="headerlink" title="鍵值屬性"></a>鍵值屬性</h2><p>在計算機的世界裡，要如何判斷實體之間的差異呢?這輛車和那輛車指的是同一台車還是不同的車呢?</p>
+<p>這時必須使用一種屬性來明確地告訴計算機：「阿!這輛車和那輛車真的不是同一輛!」。</p>
+<p>使用車輛廠牌如何? Toyata, Ford, Mitsubishi…這看起來不太可行，因為一家車廠生產超過一輛車，假設A車和B車廠牌都是Toyato，計算機會準備掐死你…</p>
+<p>使用車輛廠牌加上車輛型號再加上車牌號碼可行嗎? 看起來似乎可行，A車是Toyato的yaris，車牌號碼是ABC-1234;B車是Mazda的CX-5，車牌號碼是EFG-5678。「阿!A車和B車真的不是同一輛!」</p>
+<p>等等…屬性太多太難記憶，直接使用車牌號碼OK嗎? A車車牌號碼是ABC-1234，B車是EFG-5678，「阿!A車和B車真的不是同一輛!」，計算機覺得開心。</p>
+<p>符合唯一性的屬性組合，這概念即為超鍵。(車輛廠牌, 車輛型號,車牌號碼)是超鍵集合中的一個元素。</p>
+<p>幫忙超鍵瘦身，移除屬性組合中的某些屬性後還是有唯一性，這概念即為候選鍵。(車牌號碼)是候選鍵。</p>
+<p>「就決定是你了!皮卡丘」，被選到的候選鍵有了另一個名字：主鍵。負責代表這個實體，有著遠大的抱負和責任，絕對<code>不可以重複</code>也<code>不可以為空</code>(Null)，壓力山大啊!</p>
+<h2 id="關係種類"><a href="#關係種類" class="headerlink" title="關係種類"></a>關係種類</h2><p>同一款引擎可以安裝在多台車上，一台車同時間只能安裝一款引擎。引擎實體和車實體為一對多關係。</p>
+<p>(未完)</p>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
+<li><a href="http://www.books.com.tw/products/0010720461" target="_blank" rel="noopener">圖解資料庫系統理論：使用MySQL實作 / 黃春雄</a></li>
+</ul>
+</div><!-- comment system--><div class="container"><hr><div id="disqus_thread"></div><script type="text/javascript">
+var disqus_shortname = 'j2hongminggithubio';
+var disqus_identifier = '2016/07/20/relational-database-notes/';
+var disqus_title = '關聯式資料庫筆記';
+var disqus_url = 'http://yoursite.com/2016/07/20/relational-database-notes/';
+(function() {
+   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+   dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">Blog comments powered by <span class="logo-disqus">Disqus</span></a></div></article><footer id="footer"><div class="container"><div class="bar"><div class="social"><a href="http://twitter.com/j2hongming" target="_blank"><i class="fa fa-twitter"></i></a><a href="https://github.com/j2hongming" target="_blank"><i class="fa fa-github"></i></a><a href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></div><div class="footer">© 2020 <a href="/" rel="nofollow">J2hongming</a>. Powered by <a rel="nofollow" target="_blank" href="https://hexo.io">Hexo</a>. Theme <a target="_blank" href="https://github.com/lotabout/very-simple">very-simple</a>.</div></div></div></footer><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.css"><script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script><script src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script><script>$(document).ready(function() {
+    $(".fancybox").fancybox();
+});
+</script></body><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+e.src='//www.google-analytics.com/analytics.js';
+r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+ga('create','UA-55818738-1');ga('send','pageview');</script></html>

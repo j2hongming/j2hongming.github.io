@@ -1,0 +1,101 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>How to access data in Drupal 7 | I'm J2hongming</title><link rel="stylesheet" type="text/css" href="/css/normalize.css"><link rel="stylesheet" type="text/css" href="/css/highlight.css"><link rel="stylesheet" type="text/css" href="/css/very-simple.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><!-- include the sidebar--><!-- include ./includes/sidebar.jade--><!-- Blog title and subtitle--><header><div class="container header"><a id="logo" href="/." class="title">I'm J2hongming</a><span class="subtitle">Appreciate, respect and accept it, don't take it for granted</span><label id="toggle-menu" for="menu" onclick><i class="fa fa-bars"></i></label></div></header><!-- use checkbox hack for toggle nav-bar on small screens--><input id="menu" type="checkbox"><!-- Navigation Links--><nav id="nav"><div class="container"><a href="/" class="sidebar-nav-item active">Home</a><a href="/archives" class="sidebar-nav-item">Archives</a><a href="/bookshelf" class="sidebar-nav-item">Bookshelf</a><a href="/toolbox" class="sidebar-nav-item">Toolbox</a><a href="https://www.linkedin.com/in/j2hongming/" class="sidebar-nav-item">About</a></div></nav><div id="header-margin-bar"></div><!-- gallery that comes before the header--><div class="wrapper"><div class="container post-header"><h1>How to access data in Drupal 7</h1></div></div><div class="wrapper"><div class="container meta"><div class="post-time">2016-03-28</div><div class="post-categories"><a class="post-category-link" href="/categories/drupal7/">drupal7</a></div></div></div><article><div class="container post"><ul>
+<li>Basic API</li>
+<li>Database API<ul>
+<li>Dynamic Query</li>
+<li>Static Query</li>
+<li>Show Query String and Arguments</li>
+</ul>
+</li>
+<li>EntityFieldQuery</li>
+</ul>
+<a id="more"></a>
+<h2 id="Basic-API"><a href="#Basic-API" class="headerlink" title="Basic API"></a>Basic API</h2><pre><code>node_load, user_load, taxonomy_term_load, comment_load
+主要帶入參數為node id, user_id, term id, comment id</code></pre><h2 id="Database-API"><a href="#Database-API" class="headerlink" title="Database API"></a>Database API</h2><h3 id="Dynamic-Query"><a href="#Dynamic-Query" class="headerlink" title="Dynamic Query"></a>Dynamic Query</h3><h4 id="db-select"><a href="#db-select" class="headerlink" title="db_select"></a>db_select</h4><pre><code>$query = db_select(&apos;node&apos;, &apos;n&apos;);
+// access node table, alias is n</code></pre><h4 id="codition"><a href="#codition" class="headerlink" title="codition"></a>codition</h4><pre><code>$query-&gt;condition($field, $value = NULL, $operator = &apos;=&apos;)
+// 基本型態
+
+$query-&gt;condition(&apos;node.type&apos;, array(&apos;node_type_name&apos;),&apos;IN&apos;);
+// 使用In
+
+$query-&gt;condition(&apos;node.title&apos;,  &apos;%&apos;.db_like($key_word).&apos;%&apos;, &apos;LIKE&apos;);
+// 使用Like
+
+$query-&gt;where(&apos;now() &gt;  TIMESTAMPADD( DAY , 9, FROM_UNIXTIME( field_data_field_timefield.field_timefield_value  ) )&apos;);
+// 使用where而非condition的寫法
+
+$or = db_or();
+$or-&gt;condition(&apos;node.title&apos;,&apos;%&apos;.db_like($key_word).&apos;%&apos;, &apos;LIKE&apos;);
+$or-&gt;condition(&apos;comment.subject&apos;,&apos;%&apos;.db_like($key_word).&apos;%&apos;, &apos;LIKE&apos;);
+$query-&gt;condition($or);
+// 使用OR連接過濾條件</code></pre><h4 id="fields-addField"><a href="#fields-addField" class="headerlink" title="fields, addField"></a>fields, addField</h4><p>差別在於是否要使用欄位別名和一次可以存取的欄位數量<br>    $query-&gt;fields(‘node’, array(‘nid’, ‘title’));<br>    // 一次存取多個欄位但無法使用欄位別名</p>
+<pre><code>$query-&gt;addField(&apos;node&apos;,&apos;title&apos;,&apos;node_title&apos;);
+// 一次存取一個欄位，可以使用欄位別名</code></pre><h4 id="addExpression"><a href="#addExpression" class="headerlink" title="addExpression"></a>addExpression</h4><pre><code>$query-&gt;addExpression(&apos;IFNULL(count1, 0)+IFNULL(count2, 0)&apos;,&apos;total_count&apos;);
+
+$query-&gt;addExpression(&apos;SUM(clickCount)&apos;, &apos;total_count&apos;);</code></pre><h4 id="join"><a href="#join" class="headerlink" title="join"></a>join</h4><p>預設join的型態為inner join, 有提供<code>join()</code>, <code>innerJoin()</code>, <code>leftJoin()</code>, or <code>rightJoin()</code>的方法</p>
+<pre><code>$query = db_select(&apos;node&apos;, &apos;n&apos;);
+$table_alias = $query-&gt;join(&apos;users&apos;, &apos;u&apos;, &apos;n.uid = u.uid AND u.uid = :uid&apos;);
+// node table join user talbe on uid</code></pre><h4 id="SubQuery"><a href="#SubQuery" class="headerlink" title="SubQuery"></a>SubQuery</h4><pre><code>$subquery_customlog = db_select(&apos;customlog&apos;, &apos;clg&apos;)-&gt;fields(&apos;clg&apos;, array(&apos;nid&apos;));
+$subquery_customlog-&gt;addExpression(&apos;COUNT(*)&apos;, &apos;count&apos;);
+$subquery_customlog-&gt;groupBy(&apos;clg.nid&apos;);
+$query = db_select(&apos;node&apos;,&apos;n&apos;)-&gt;fields(&apos;n&apos;, array(&apos;nid&apos;,&apos;title&apos;));
+$query-&gt;leftJoin( $subquery_customlog, &apos;c_count&apos; ,&apos;c_count.nid = n.nid&apos;);
+...
+// 自行產生所需的table後, 再Join到另一個table</code></pre><h4 id="Extender"><a href="#Extender" class="headerlink" title="Extender"></a>Extender</h4><p>tablesort和pager</p>
+<pre><code>$query-&gt;extend(&apos;TableSort&apos;)
+      -&gt;orderByHeader($header);
+// Sorting Extender, 依照表格的Header排序
+
+$query-&gt;extend(&apos;PagerDefault&apos;)
+      -&gt;limit(10);
+// Pager Extender</code></pre><h3 id="Static-Query"><a href="#Static-Query" class="headerlink" title="Static Query"></a>Static Query</h3><pre><code>$result = db_query(&quot;SELECT nid, title FROM {node} WHERE type = :type&quot;, array( &apos;:type&apos; =&gt; &apos;page&apos;,));</code></pre><h3 id="Show-Query-String-and-Arguments"><a href="#Show-Query-String-and-Arguments" class="headerlink" title="Show Query String and Arguments"></a>Show Query String and Arguments</h3><p>顯示Drupal產生的SQL子句和參數</p>
+<pre><code>echo $query-&gt;__toString() . &quot;\n&quot;;
+// Get query string
+$args = $query-&gt;getArguments();
+var_dump($args);
+// Get the arguments passed to the string</code></pre><h2 id="EntityFieldQuery"><a href="#EntityFieldQuery" class="headerlink" title="EntityFieldQuery"></a>EntityFieldQuery</h2><p>取得Entity相關的資料, 在Drupal中Entity指的是node, user, taxonomy term, comment…等。回傳值是和entity相關的ID值，必須另外使用entity_load讀取entity其他資料。</p>
+<p>和Basic API相比，優勢在於能使用較複雜的過濾條件得到想要的entity資料；和Database API相比，優勢在於直接以entity觀點看資料，直覺性較強，有一個小缺點是EntityFieldQuery若要同時取得兩個entity的資訊，很難使用join的概念處理。</p>
+<pre><code>$query = new EntityFieldQuery();
+
+$query-&gt;entityCondition(&apos;entity_type&apos;, &apos;node&apos;)
+      -&gt;entityCondition(&apos;bundle&apos;, &apos;article&apos;)
+      -&gt;propertyCondition(&apos;status&apos;, NODE_PUBLISHED)
+      -&gt;fieldCondition(&apos;field_news_types&apos;, &apos;value&apos;, &apos;spotlight&apos;, &apos;=&apos;)
+      -&gt;fieldCondition(&apos;field_news_publishdate&apos;, &apos;value&apos;, $year . &apos;%&apos;, &apos;like&apos;)-&gt;fieldCondition(&apos;field_news_publishdate&apos;, &apos;value&apos;, $year . &apos;%&apos;, &apos;like&apos;)
+      -&gt;fieldOrderBy(&apos;field_photo&apos;, &apos;fid&apos;, &apos;DESC&apos;)
+      -&gt;range(0, 10);
+
+$result = $query-&gt;execute();
+
+if (isset($result[&apos;node&apos;])) {
+  $news_items_nids = array_keys($result[&apos;node&apos;]);
+  $news_items = entity_load(&apos;node&apos;, $news_items_nids);
+}</code></pre><h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref."></a>Ref.</h2><ul>
+<li><a href="https://api.drupal.org/api/drupal/modules%21node%21node.module/function/node_load/7" target="_blank" rel="noopener">node_load</a></li>
+<li><a href="https://api.drupal.org/api/drupal/modules%21user%21user.module/function/user_load/7" target="_blank" rel="noopener">user_load</a></li>
+<li><a href="https://api.drupal.org/api/drupal/modules%21taxonomy%21taxonomy.module/function/taxonomy_term_load/7" target="_blank" rel="noopener">taxonomy_term_load</a></li>
+<li><a href="https://api.drupal.org/api/drupal/modules%21comment%21comment.module/function/comment_load/7" target="_blank" rel="noopener">comment_load</a></li>
+<li><a href="https://www.drupal.org/dynamic-queries" target="_blank" rel="noopener">Dynamic queries</a></li>
+<li><a href="https://www.drupal.org/node/310072" target="_blank" rel="noopener">Static queries</a></li>
+<li><a href="https://www.drupal.org/node/1343708" target="_blank" rel="noopener">How to use EntityFieldQuery</a></li>
+</ul>
+</div><!-- comment system--><div class="container"><hr><div id="disqus_thread"></div><script type="text/javascript">
+var disqus_shortname = 'j2hongminggithubio';
+var disqus_identifier = '2016/03/28/how-to-access-data-in-drupal-7/';
+var disqus_title = 'How to access data in Drupal 7';
+var disqus_url = 'http://yoursite.com/2016/03/28/how-to-access-data-in-drupal-7/';
+(function() {
+   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+   dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">Blog comments powered by <span class="logo-disqus">Disqus</span></a></div></article><footer id="footer"><div class="container"><div class="bar"><div class="social"><a href="http://twitter.com/j2hongming" target="_blank"><i class="fa fa-twitter"></i></a><a href="https://github.com/j2hongming" target="_blank"><i class="fa fa-github"></i></a><a href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></div><div class="footer">© 2020 <a href="/" rel="nofollow">J2hongming</a>. Powered by <a rel="nofollow" target="_blank" href="https://hexo.io">Hexo</a>. Theme <a target="_blank" href="https://github.com/lotabout/very-simple">very-simple</a>.</div></div></div></footer><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.css"><script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script><script src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script><script>$(document).ready(function() {
+    $(".fancybox").fancybox();
+});
+</script></body><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+e.src='//www.google-analytics.com/analytics.js';
+r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+ga('create','UA-55818738-1');ga('send','pageview');</script></html>

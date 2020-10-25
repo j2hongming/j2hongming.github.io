@@ -1,0 +1,45 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>Github Pages with Octopress | I'm J2hongming</title><link rel="stylesheet" type="text/css" href="/css/normalize.css"><link rel="stylesheet" type="text/css" href="/css/highlight.css"><link rel="stylesheet" type="text/css" href="/css/very-simple.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><!-- include the sidebar--><!-- include ./includes/sidebar.jade--><!-- Blog title and subtitle--><header><div class="container header"><a id="logo" href="/." class="title">I'm J2hongming</a><span class="subtitle">Appreciate, respect and accept it, don't take it for granted</span><label id="toggle-menu" for="menu" onclick><i class="fa fa-bars"></i></label></div></header><!-- use checkbox hack for toggle nav-bar on small screens--><input id="menu" type="checkbox"><!-- Navigation Links--><nav id="nav"><div class="container"><a href="/" class="sidebar-nav-item active">Home</a><a href="/archives" class="sidebar-nav-item">Archives</a><a href="/bookshelf" class="sidebar-nav-item">Bookshelf</a><a href="/toolbox" class="sidebar-nav-item">Toolbox</a><a href="https://www.linkedin.com/in/j2hongming/" class="sidebar-nav-item">About</a></div></nav><div id="header-margin-bar"></div><!-- gallery that comes before the header--><div class="wrapper"><div class="container post-header"><h1>Github Pages with Octopress</h1></div></div><div class="wrapper"><div class="container meta"><div class="post-time">2016-02-18</div><div class="post-categories"><a class="post-category-link" href="/categories/Github/">Github</a>><a class="post-category-link" href="/categories/Github/Octopress/">Octopress</a></div></div></div><article><div class="container post"><ul>
+<li>建置Octopress</li>
+<li>設定佈署到 github</li>
+<li>網站設定</li>
+<li>內容管理<a id="more"></a>
+
+</li>
+</ul>
+<h2 id="建置Octopress"><a href="#建置Octopress" class="headerlink" title="建置Octopress"></a>建置Octopress</h2><h2 id="設定佈署到-github"><a href="#設定佈署到-github" class="headerlink" title="設定佈署到 github"></a>設定佈署到 github</h2><pre><code>rake setup_github_pages</code></pre><p>輸入自己的Github Pages repository url<br><a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:your_username/your_username.github.io.git</p>
+<h2 id="網站設定"><a href="#網站設定" class="headerlink" title="網站設定"></a>網站設定</h2><p><a href="http://octopress.org/docs/configuring/" target="_blank" rel="noopener">Configuring Octopress</a></p>
+<h2 id="內容管理"><a href="#內容管理" class="headerlink" title="內容管理"></a>內容管理</h2><p>Octopress的網頁內容是使用<a href="http://markdown.tw/" target="_blank" rel="noopener">Markdown語法</a><br>Blog的文章會被存放在source/_posts, 以Jekyll’s naming conventions:YYYY-MM-DD-post-title.markdown來命名</p>
+<h3 id="如何在Octopress分享程式碼"><a href="#如何在Octopress分享程式碼" class="headerlink" title="如何在Octopress分享程式碼"></a>如何在Octopress分享程式碼</h3><h4 id="markdown方法"><a href="#markdown方法" class="headerlink" title="markdown方法"></a>markdown方法</h4><pre><code>若為區塊程式碼, 使用4個空白或1個tab
+若為行內程式碼, 使用反引號 `</code></pre><h4 id="octopress方法"><a href="#octopress方法" class="headerlink" title="octopress方法"></a>octopress方法</h4><p><a href="http://octopress.org/docs/blogging/code/" target="_blank" rel="noopener">Sharing Code Snippets in Octopress</a></p>
+<h3 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h3><p>建立新文章</p>
+<pre><code>rake new_post[&quot;標題&quot;]
+#保存在 source/_posts/日期-標題.markdown</code></pre><p>建立新頁面</p>
+<pre><code>rake new_page[super-awesome]
+#creates /source/super-awesome/index.markdown
+#保存在anywhere in your blog source directory
+
+rake new_page[super-awesome/page.html]
+# creates /source/super-awesome/page.html </code></pre><p>產生網站檔案</p>
+<pre><code>rake generate
+# Generates posts and pages into the public directory</code></pre><p>發佈到 GitHub</p>
+<pre><code>rake deploy</code></pre></div><!-- comment system--><div class="container"><hr><div id="disqus_thread"></div><script type="text/javascript">
+var disqus_shortname = 'j2hongminggithubio';
+var disqus_identifier = '2016/02/18/github-pages-with-octopress/';
+var disqus_title = 'Github Pages with Octopress';
+var disqus_url = 'http://yoursite.com/2016/02/18/github-pages-with-octopress/';
+(function() {
+   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+   dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">Blog comments powered by <span class="logo-disqus">Disqus</span></a></div></article><footer id="footer"><div class="container"><div class="bar"><div class="social"><a href="http://twitter.com/j2hongming" target="_blank"><i class="fa fa-twitter"></i></a><a href="https://github.com/j2hongming" target="_blank"><i class="fa fa-github"></i></a><a href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></div><div class="footer">© 2020 <a href="/" rel="nofollow">J2hongming</a>. Powered by <a rel="nofollow" target="_blank" href="https://hexo.io">Hexo</a>. Theme <a target="_blank" href="https://github.com/lotabout/very-simple">very-simple</a>.</div></div></div></footer><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.css"><script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script><script src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script><script>$(document).ready(function() {
+    $(".fancybox").fancybox();
+});
+</script></body><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+e.src='//www.google-analytics.com/analytics.js';
+r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+ga('create','UA-55818738-1');ga('send','pageview');</script></html>
