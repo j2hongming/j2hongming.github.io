@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>I&#39;m J2hongming</title>
+  
+  <subtitle>Appreciate, respect and accept it, don&#39;t take it for granted</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2020-10-25T13:41:07.168Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>J2hongming</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2020/10/25/hello-world/"/>
+    <id>http://yoursite.com/2020/10/25/hello-world/</id>
+    <published>2020-10-25T13:41:07.168Z</published>
+    <updated>2020-10-25T13:41:07.168Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>類別的關係</title>
+    <link href="http://yoursite.com/2016/12/28/object-relation-note/"/>
+    <id>http://yoursite.com/2016/12/28/object-relation-note/</id>
+    <published>2016-12-27T16:05:08.000Z</published>
+    <updated>2020-10-25T13:41:07.168Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;從組成類別的結構開始，有兩大主體:&lt;code&gt;屬性&lt;/code&gt;(instance variable, attribute)和&lt;code&gt;操作&lt;/code&gt;(method, operation)。&lt;/p&gt;
+&lt;p&gt;因此，類別和類別之間接合的地方可能會出現在屬性或者操作當中。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="object" scheme="http://yoursite.com/categories/object/"/>
+    
+      <category term="relation" scheme="http://yoursite.com/categories/object/relation/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>interview in 2016</title>
+    <link href="http://yoursite.com/2016/11/07/interview-in-2016/"/>
+    <id>http://yoursite.com/2016/11/07/interview-in-2016/</id>
+    <published>2016-11-07T13:23:21.000Z</published>
+    <updated>2020-10-25T13:41:07.168Z</updated>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;綜合心得，主要描述被問什麼、問什麼、面試前後整體流程和參考資源
+    
+    </summary>
+    
+      <category term="interview" scheme="http://yoursite.com/categories/interview/"/>
+    
+      <category term="review" scheme="http://yoursite.com/categories/interview/review/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>認證與授權筆記</title>
+    <link href="http://yoursite.com/2016/09/09/authentication-versus-authorization-notes/"/>
+    <id>http://yoursite.com/2016/09/09/authentication-versus-authorization-notes/</id>
+    <published>2016-09-09T09:52:49.000Z</published>
+    <updated>2020-10-25T13:41:07.168Z</updated>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;認證(Authentication)&lt;/li&gt;
+&lt;li&gt;授權(Authorization)
+    
+    </summary>
+    
+      <category term="Authentication" scheme="http://yoursite.com/categories/Authentication/"/>
+    
+      <category term="Authorization" scheme="http://yoursite.com/categories/Authentication/Authorization/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>時間複雜度筆記</title>
+    <link href="http://yoursite.com/2016/08/16/time-complexity/"/>
+    <id>http://yoursite.com/2016/08/16/time-complexity/</id>
+    <published>2016-08-16T06:45:57.000Z</published>
+    <updated>2020-10-25T13:41:07.168Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;閱讀完&lt;code&gt;ChiuCC&lt;/code&gt;的文章&lt;a href=&quot;http://alrightchiu.github.io/SecondRound/complexityasymptotic-notationjian-jin-fu-hao.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Complexity：Asymptotic Notation(漸進符號)&lt;/a&gt;後整理的筆記。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="algorithm" scheme="http://yoursite.com/categories/algorithm/"/>
+    
+      <category term="time complexity" scheme="http://yoursite.com/categories/algorithm/time-complexity/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java String 常用操作</title>
+    <link href="http://yoursite.com/2016/08/10/java-string-basic/"/>
+    <id>http://yoursite.com/2016/08/10/java-string-basic/</id>
+    <published>2016-08-10T03:53:36.000Z</published>
+    <updated>2020-10-25T13:41:07.168Z</updated>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;轉換(transform)-魔形女&lt;/li&gt;
+&lt;li&gt;比較(compare)&lt;/li&gt;
+&lt;li&gt;子集合(subset)&lt;/li&gt;
+&lt;li&gt;分割(split)-次元刀&lt;/li&gt;
+&lt;li&gt;合併(join)&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+      <category term="string" scheme="http://yoursite.com/categories/java/string/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>如何設定gitbook側邊欄大綱顯示階層數字</title>
+    <link href="http://yoursite.com/2016/08/04/gitbook-outline-number/"/>
+    <id>http://yoursite.com/2016/08/04/gitbook-outline-number/</id>
+    <published>2016-08-04T08:03:23.000Z</published>
+    <updated>2020-10-25T13:41:07.168Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;開心地開了一本gitbook，然後用線上編輯器做了初版的大綱，正當我準備檢視一下Build好的書長什麼樣子時…咦?&lt;/p&gt;
+&lt;p&gt;為什麼大綱左邊沒有出現階層數字，印象中之前看過的gitbook有。第一個想法是會不會我的&lt;code&gt;SUMMARY.md&lt;/code&gt;寫法有誤，看了一下官方文件的範例好像也沒有提到關於出現階層數字的寫法…，只好呼喚Google大神，翻了gitbook教學文似乎也沒有特別提到相關的資料，不死心看看別人的範例，發現&lt;a href=&quot;https://www.gitbook.com/explore&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Explore Gitbook&lt;/a&gt;內的書有些有出現，有些沒有…&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="gitbook" scheme="http://yoursite.com/categories/gitbook/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>資工系課程整理與心得</title>
+    <link href="http://yoursite.com/2016/08/02/thoughts-about-courses-in-computer-science/"/>
+    <id>http://yoursite.com/2016/08/02/thoughts-about-courses-in-computer-science/</id>
+    <published>2016-08-02T09:57:39.000Z</published>
+    <updated>2020-10-25T13:41:07.168Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;畢業幾年後，偶然發現&lt;a href=&quot;http://www.nand2tetris.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;From NAND to Tetris&lt;/a&gt;這個線上課程，從前求學時總是東一塊西一塊支離破碎的概念終於可以有一個概觀性的整理。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;心得&lt;/li&gt;
+&lt;li&gt;整理&lt;/li&gt;
+&lt;li&gt;參考&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="CS" scheme="http://yoursite.com/categories/CS/"/>
+    
+      <category term="thought" scheme="http://yoursite.com/categories/CS/thought/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Windows Batch File Notes</title>
+    <link href="http://yoursite.com/2016/07/28/windows-batch-file-notes/"/>
+    <id>http://yoursite.com/2016/07/28/windows-batch-file-notes/</id>
+    <published>2016-07-28T08:34:39.000Z</published>
+    <updated>2020-10-25T13:41:07.168Z</updated>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;變數&lt;/li&gt;
+&lt;li&gt;if&lt;/li&gt;
+&lt;li&gt;導向&lt;/li&gt;
+&lt;li&gt;常用範例&lt;/li&gt;
+&lt;li&gt;參考資料
+    
+    </summary>
+    
+      <category term="windows" scheme="http://yoursite.com/categories/windows/"/>
+    
+      <category term="bat" scheme="http://yoursite.com/categories/windows/bat/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>關聯式資料庫筆記</title>
+    <link href="http://yoursite.com/2016/07/20/relational-database-notes/"/>
+    <id>http://yoursite.com/2016/07/20/relational-database-notes/</id>
+    <published>2016-07-20T15:37:18.000Z</published>
+    <updated>2020-10-25T13:41:07.168Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;真實世界中存在各種&lt;code&gt;實體&lt;/code&gt;(Entity)，實體與實體間存在某些&lt;code&gt;關係&lt;/code&gt;(Relation)。&lt;br&gt;歌手和專輯、歌曲和歌詞、皮卡丘和訓練師小智…實體無所不在。&lt;br&gt;歌手出版了多張專輯，一張專輯內有多首歌曲，一首歌擁有一組歌詞，皮卡丘的訓練師是小智…實體之間總是有某種關係。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="database" scheme="http://yoursite.com/categories/database/"/>
+    
+    
+  </entry>
+  
+</feed>
