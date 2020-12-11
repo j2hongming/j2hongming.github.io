@@ -78,7 +78,7 @@ theme: very-simple
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/j2hongming/j2hongming.github.io
+  repo: git@github.com:j2hongming/j2hongming.github.io.git
   branch: master
 
 # Feed
