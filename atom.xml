@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-11-05T15:59:04.433Z</updated>
+  <updated>2020-12-11T12:29:24.198Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>從更換手機電池體會專業的感受</title>
+    <link href="http://yoursite.com/2020/12/11/professional-by-changing-mobile-battery/"/>
+    <id>http://yoursite.com/2020/12/11/professional-by-changing-mobile-battery/</id>
+    <published>2020-12-11T09:52:24.000Z</published>
+    <updated>2020-12-11T12:29:24.198Z</updated>
+    
+    <summary type="html">
+    
+      藉由之前在高雄更換電池的經驗和這次在新竹的差異, 思考專業帶給他人的感受
+    
+    </summary>
+    
+      <category term="essay" scheme="http://yoursite.com/categories/essay/"/>
+    
+    
+      <category term="professional" scheme="http://yoursite.com/tags/professional/"/>
+    
+  </entry>
   
   <entry>
     <title>建立個人實驗環境</title>
@@ -210,31 +230,6 @@
       <category term="CS" scheme="http://yoursite.com/categories/CS/"/>
     
       <category term="thought" scheme="http://yoursite.com/categories/CS/thought/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Windows Batch File Notes</title>
-    <link href="http://yoursite.com/2016/07/28/windows-batch-file-notes/"/>
-    <id>http://yoursite.com/2016/07/28/windows-batch-file-notes/</id>
-    <published>2016-07-28T08:34:39.000Z</published>
-    <updated>2020-10-25T13:41:07.168Z</updated>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;變數&lt;/li&gt;
-&lt;li&gt;if&lt;/li&gt;
-&lt;li&gt;導向&lt;/li&gt;
-&lt;li&gt;常用範例&lt;/li&gt;
-&lt;li&gt;參考資料
-    
-    </summary>
-    
-      <category term="windows" scheme="http://yoursite.com/categories/windows/"/>
-    
-      <category term="bat" scheme="http://yoursite.com/categories/windows/bat/"/>
     
     
   </entry>
