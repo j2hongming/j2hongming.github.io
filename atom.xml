@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-12-11T12:29:24.198Z</updated>
+  <updated>2020-12-20T16:40:48.642Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2020年回顧</title>
+    <link href="http://yoursite.com/2020/12/11/2020-retrospective/"/>
+    <id>http://yoursite.com/2020/12/11/2020-retrospective/</id>
+    <published>2020-12-11T12:33:08.000Z</published>
+    <updated>2020-12-20T16:40:48.642Z</updated>
+    
+    <summary type="html">
+    
+      回顧並整理這混沌且焦慮的2020
+    
+    </summary>
+    
+      <category term="essay" scheme="http://yoursite.com/categories/essay/"/>
+    
+    
+      <category term="retrospective" scheme="http://yoursite.com/tags/retrospective/"/>
+    
+  </entry>
   
   <entry>
     <title>從更換手機電池體會專業的感受</title>
@@ -205,31 +225,6 @@
     </summary>
     
       <category term="gitbook" scheme="http://yoursite.com/categories/gitbook/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>資工系課程整理與心得</title>
-    <link href="http://yoursite.com/2016/08/02/thoughts-about-courses-in-computer-science/"/>
-    <id>http://yoursite.com/2016/08/02/thoughts-about-courses-in-computer-science/</id>
-    <published>2016-08-02T09:57:39.000Z</published>
-    <updated>2020-10-25T13:41:07.168Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;畢業幾年後，偶然發現&lt;a href=&quot;http://www.nand2tetris.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;From NAND to Tetris&lt;/a&gt;這個線上課程，從前求學時總是東一塊西一塊支離破碎的概念終於可以有一個概觀性的整理。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;心得&lt;/li&gt;
-&lt;li&gt;整理&lt;/li&gt;
-&lt;li&gt;參考&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="CS" scheme="http://yoursite.com/categories/CS/"/>
-    
-      <category term="thought" scheme="http://yoursite.com/categories/CS/thought/"/>
     
     
   </entry>
