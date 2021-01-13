@@ -9,7 +9,7 @@ description: 回顧並整理這混沌且焦慮的2020
 
 
 ![](https://images.unsplash.com/photo-1495427513693-3f40da04b3fd)
-source: [unsplash](https://unsplash.com/photos/6SNbWyFwuhk)
+Photo by [nikko macaspac](https://unsplash.com/@nikkotations) on [unsplash](https://unsplash.com/photos/6SNbWyFwuhk)
 
 混沌且焦慮的一年, 除了COVID-19侵襲世界的這件大事, 自己在生活, 工作和心理狀態也是非常混沌
 
@@ -189,7 +189,7 @@ source: [RunningQuotient](https://www.runningquotient.com/)
 
 整體來說透過書中的講解, 可以略知數據的來龍去脈和其目的, 比較踏實且有系統性
 
-### 時間管理的30道難題
+### {% post_link top-30-issues-for-time-management '時間管理的30道難題' %}
 電腦玩物站長Esor出的一本書, 平常就有看他的[部落格](https://www.playpcesor.com/)文章, 實用程度很高
 
 這本書最打到我的點在於作者提到的情境和處理方式都是`符合人性`的而不是高大上或是要進入超人模式的
@@ -233,9 +233,4 @@ KOBO週年慶時購入的書籍, 光看書名會覺得睡覺就睡覺, 每天必
 
 ### 白夜行
 好像有拍成日劇, 透過不同事件創造懸疑的感覺, 看似不相干的兩條線：桐原亮司和唐澤雪穗, 在某些事件中有些細微的連結, 也埋了不少隱晦的伏筆
-
-
-
-
-
 
