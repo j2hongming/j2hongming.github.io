@@ -186,23 +186,24 @@
   </entry>
   
   <entry>
-    <title>interview in 2016</title>
+    <title>2016面試整理</title>
     <link href="http://yoursite.com/2016/11/07/interview-in-2016/"/>
     <id>http://yoursite.com/2016/11/07/interview-in-2016/</id>
     <published>2016-11-07T13:23:21.000Z</published>
-    <updated>2020-10-25T13:41:07.168Z</updated>
+    <updated>2021-01-16T13:00:01.802Z</updated>
     
     <summary type="html">
     
-      &lt;ul&gt;
-&lt;li&gt;綜合心得，主要描述被問什麼、問什麼、面試前後整體流程和參考資源
+      主要描述面試前後整體流程, 被問什麼, 問什麼和參考資源
     
     </summary>
     
-      <category term="interview" scheme="http://yoursite.com/categories/interview/"/>
+      <category term="lab" scheme="http://yoursite.com/categories/lab/"/>
     
-      <category term="review" scheme="http://yoursite.com/categories/interview/review/"/>
     
+      <category term="interview" scheme="http://yoursite.com/tags/interview/"/>
+    
+      <category term="retrospective" scheme="http://yoursite.com/tags/retrospective/"/>
     
   </entry>
   
