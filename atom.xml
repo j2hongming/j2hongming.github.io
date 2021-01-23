@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-01-13T17:12:49.547Z</updated>
+  <updated>2021-01-23T12:45:39.358Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Google Resume-整理與心得</title>
+    <link href="http://yoursite.com/2021/01/23/google-resume/"/>
+    <id>http://yoursite.com/2021/01/23/google-resume/</id>
+    <published>2021-01-23T08:20:10.000Z</published>
+    <updated>2021-01-23T12:45:39.358Z</updated>
+    
+    <summary type="html">
+    
+      整理第一章和第四章的內容
+    
+    </summary>
+    
+      <category term="reading" scheme="http://yoursite.com/categories/reading/"/>
+    
+    
+      <category term="career" scheme="http://yoursite.com/tags/career/"/>
+    
+      <category term="resume" scheme="http://yoursite.com/tags/resume/"/>
+    
+  </entry>
   
   <entry>
     <title>預估AWS SQS API Requests的使用量</title>
@@ -190,7 +212,7 @@
     <link href="http://yoursite.com/2016/11/07/interview-in-2016/"/>
     <id>http://yoursite.com/2016/11/07/interview-in-2016/</id>
     <published>2016-11-07T13:23:21.000Z</published>
-    <updated>2021-01-16T13:00:01.802Z</updated>
+    <updated>2021-01-16T13:21:08.757Z</updated>
     
     <summary type="html">
     
@@ -204,28 +226,6 @@
       <category term="interview" scheme="http://yoursite.com/tags/interview/"/>
     
       <category term="retrospective" scheme="http://yoursite.com/tags/retrospective/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>認證與授權筆記</title>
-    <link href="http://yoursite.com/2016/09/09/authentication-versus-authorization-notes/"/>
-    <id>http://yoursite.com/2016/09/09/authentication-versus-authorization-notes/</id>
-    <published>2016-09-09T09:52:49.000Z</published>
-    <updated>2020-10-25T13:41:07.168Z</updated>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;認證(Authentication)&lt;/li&gt;
-&lt;li&gt;授權(Authorization)
-    
-    </summary>
-    
-      <category term="Authentication" scheme="http://yoursite.com/categories/Authentication/"/>
-    
-      <category term="Authorization" scheme="http://yoursite.com/categories/Authentication/Authorization/"/>
-    
     
   </entry>
   
