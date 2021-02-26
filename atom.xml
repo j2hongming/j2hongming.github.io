@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-01-23T12:45:39.358Z</updated>
+  <updated>2021-02-26T16:37:38.400Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>雙薪家庭進化論-整理與心得</title>
+    <link href="http://yoursite.com/2021/02/19/dual-career-couples-that-works/"/>
+    <id>http://yoursite.com/2021/02/19/dual-career-couples-that-works/</id>
+    <published>2021-02-19T15:52:15.000Z</published>
+    <updated>2021-02-26T16:37:38.400Z</updated>
+    
+    <summary type="html">
+    
+      整理第一章到第四章, 先專注於第一次轉變
+    
+    </summary>
+    
+      <category term="reading" scheme="http://yoursite.com/categories/reading/"/>
+    
+    
+      <category term="career" scheme="http://yoursite.com/tags/career/"/>
+    
+      <category term="relationship" scheme="http://yoursite.com/tags/relationship/"/>
+    
+      <category term="couples" scheme="http://yoursite.com/tags/couples/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>就決定是你了! Apache</title>
+    <link href="http://yoursite.com/2021/01/29/apache-quick-start/"/>
+    <id>http://yoursite.com/2021/01/29/apache-quick-start/</id>
+    <published>2021-01-28T16:42:16.000Z</published>
+    <updated>2021-01-28T18:53:49.101Z</updated>
+    
+    <summary type="html">
+    
+      架設Apache的注意事項
+    
+    </summary>
+    
+      <category term="software_development" scheme="http://yoursite.com/categories/software-development/"/>
+    
+    
+      <category term="web" scheme="http://yoursite.com/tags/web/"/>
+    
+      <category term="apache" scheme="http://yoursite.com/tags/apache/"/>
+    
+      <category term="http" scheme="http://yoursite.com/tags/http/"/>
+    
+  </entry>
   
   <entry>
     <title>Google Resume-整理與心得</title>
@@ -107,7 +155,7 @@
     <link href="http://yoursite.com/2020/12/24/2020-retrospective/"/>
     <id>http://yoursite.com/2020/12/24/2020-retrospective/</id>
     <published>2020-12-24T12:33:08.000Z</published>
-    <updated>2021-01-05T18:07:32.260Z</updated>
+    <updated>2021-02-26T16:49:15.184Z</updated>
     
     <summary type="html">
     
@@ -183,49 +231,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>類別的關係</title>
-    <link href="http://yoursite.com/2016/12/28/object-relation-note/"/>
-    <id>http://yoursite.com/2016/12/28/object-relation-note/</id>
-    <published>2016-12-27T16:05:08.000Z</published>
-    <updated>2020-10-25T13:41:07.168Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;從組成類別的結構開始，有兩大主體:&lt;code&gt;屬性&lt;/code&gt;(instance variable, attribute)和&lt;code&gt;操作&lt;/code&gt;(method, operation)。&lt;/p&gt;
-&lt;p&gt;因此，類別和類別之間接合的地方可能會出現在屬性或者操作當中。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="object" scheme="http://yoursite.com/categories/object/"/>
-    
-      <category term="relation" scheme="http://yoursite.com/categories/object/relation/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>2016面試整理</title>
-    <link href="http://yoursite.com/2016/11/07/interview-in-2016/"/>
-    <id>http://yoursite.com/2016/11/07/interview-in-2016/</id>
-    <published>2016-11-07T13:23:21.000Z</published>
-    <updated>2021-01-16T13:21:08.757Z</updated>
-    
-    <summary type="html">
-    
-      主要描述面試前後整體流程, 被問什麼, 問什麼和參考資源
-    
-    </summary>
-    
-      <category term="lab" scheme="http://yoursite.com/categories/lab/"/>
-    
-    
-      <category term="interview" scheme="http://yoursite.com/tags/interview/"/>
-    
-      <category term="retrospective" scheme="http://yoursite.com/tags/retrospective/"/>
     
   </entry>
   
