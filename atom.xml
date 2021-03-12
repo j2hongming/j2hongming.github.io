@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-02-26T16:37:38.400Z</updated>
+  <updated>2021-03-12T16:10:58.604Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>購買手機紀錄與消費使用習慣</title>
+    <link href="http://yoursite.com/2021/03/12/buy-mobile-experience/"/>
+    <id>http://yoursite.com/2021/03/12/buy-mobile-experience/</id>
+    <published>2021-03-12T15:54:40.000Z</published>
+    <updated>2021-03-12T16:10:58.604Z</updated>
+    
+    <summary type="html">
+    
+      沒有解決異常耗電和手機背板發燙的問題, 決定換手機了XD
+    
+    </summary>
+    
+      <category term="lab" scheme="http://yoursite.com/categories/lab/"/>
+    
+    
+      <category term="mobile" scheme="http://yoursite.com/tags/mobile/"/>
+    
+      <category term="habits" scheme="http://yoursite.com/tags/habits/"/>
+    
+  </entry>
   
   <entry>
     <title>雙薪家庭進化論-整理與心得</title>
@@ -56,11 +78,11 @@
       <category term="software_development" scheme="http://yoursite.com/categories/software-development/"/>
     
     
-      <category term="web" scheme="http://yoursite.com/tags/web/"/>
-    
       <category term="apache" scheme="http://yoursite.com/tags/apache/"/>
     
       <category term="http" scheme="http://yoursite.com/tags/http/"/>
+    
+      <category term="web" scheme="http://yoursite.com/tags/web/"/>
     
   </entry>
   
@@ -209,28 +231,6 @@
       <category term="tmux" scheme="http://yoursite.com/tags/tmux/"/>
     
       <category term="python" scheme="http://yoursite.com/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2020/10/25/hello-world/"/>
-    <id>http://yoursite.com/2020/10/25/hello-world/</id>
-    <published>2020-10-25T13:41:07.168Z</published>
-    <updated>2020-10-25T13:41:07.168Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;
-        
-      
-    
-    </summary>
-    
     
   </entry>
   
