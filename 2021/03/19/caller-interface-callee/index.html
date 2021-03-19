@@ -1,0 +1,43 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>呼叫者與被呼叫者 | I'm J2hongming</title><link rel="stylesheet" type="text/css" href="/css/normalize.css"><link rel="stylesheet" type="text/css" href="/css/highlight.css"><link rel="stylesheet" type="text/css" href="/css/very-simple.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><!-- include the sidebar--><!-- include ./includes/sidebar.jade--><!-- Blog title and subtitle--><header><div class="container header"><a id="logo" href="/." class="title">I'm J2hongming</a><span class="subtitle">Appreciate, respect and accept it, don't take it for granted</span><label id="toggle-menu" for="menu" onclick><i class="fa fa-bars"></i></label></div></header><!-- use checkbox hack for toggle nav-bar on small screens--><input id="menu" type="checkbox"><!-- Navigation Links--><nav id="nav"><div class="container"><a href="/" class="sidebar-nav-item active">Home</a><a href="/archives" class="sidebar-nav-item">Archives</a><a href="/sitemap" class="sidebar-nav-item">SiteMap</a><a href="/experience" class="sidebar-nav-item">Experience</a><a href="/bookshelf" class="sidebar-nav-item">Bookshelf</a><a href="https://www.linkedin.com/in/j2hongming/" class="sidebar-nav-item">About</a></div></nav><div id="header-margin-bar"></div><!-- gallery that comes before the header--><div class="wrapper"><div class="container post-header"><h1>呼叫者與被呼叫者</h1></div></div><div class="wrapper"><div class="container meta"><div class="post-time">2021-03-19</div><div class="post-categories"><a class="post-category-link" href="/categories/software-development/">software_development</a></div><div class="post-tags"><a class="post-tag-link" href="/tags/coding/">coding</a>/<a class="post-tag-link" href="/tags/interface/">interface</a></div></div></div><article><div class="container post"><ul>
+<li>呼叫者: 抽象一點, 意思是使用流程依賴於概念較為抽象的介面, 少依賴具體</li>
+<li>被呼叫者: 具體一點, 有彈性(提供的使用介面足夠抽象)</li>
+</ul>
+<p>化繁為簡, 以簡馭繁, 具體繁瑣的部分還是會存在於被呼叫者, 介面是兩者之間的承諾(commitment)</p>
+<p>用安德魯大大的<a href="https://columns.chicken-house.net/2020/03/10/interview-abstraction/" target="_blank" rel="noopener">抽象化設計；折扣規則的設計機制</a>來看, 重點如下</p>
+<blockquote>
+<p>隱藏細節, 提取重點</p>
+</blockquote>
+<blockquote>
+<p>思考這類問題時別太在意對錯，這種思考題目是沒有對錯的。會發生的狀況是，你隱藏的細節，不是你解決的問題需要的；你提取的重點，也剛好不是你要解決的問題的重點；如此而以，只是適不適合的差別。因此要是覺得不對勁，請回頭重新想想。</p>
+</blockquote>
+<blockquote>
+<p>最終目的是不要修改購物車的主程式，就要能夠支援後面的各種折扣規則</p>
+</blockquote>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><p>以駕駛者和車子為例, 中間的使用介面是方向盤和踏板, 控制面板, 細節的部份可能是冷卻系統, 潤滑系統, 點火系統, 啟動系統, 傳動系統, 煞車系統, 懸吊系統, 轉向系統</p>
+<p><img src="driver_car.png" alt></p>
+<p>以工程師和部屬工具為例, 中間的使用介面是Ansible, Puppet, Serverless, 細節的部份可能是AWS, Azure, GCP</p>
+<p><img src="engineer_deployment.png" alt></p>
+<h2 id="參考"><a href="#參考" class="headerlink" title="參考"></a>參考</h2><ul>
+<li><a href="https://spicyboyd.blogspot.com/2018/07/umlclass-diagram-relationships.html" target="_blank" rel="noopener">【UML】Class Diagram 類別圖 (下)：Relationships 關係</a></li>
+</ul>
+</div><!-- comment system--><div class="container"><hr><div id="disqus_thread"></div><script type="text/javascript">
+var disqus_shortname = 'j2hongminggithubio';
+var disqus_identifier = '2021/03/19/caller-interface-callee/';
+var disqus_title = '呼叫者與被呼叫者';
+var disqus_url = 'http://yoursite.com/2021/03/19/caller-interface-callee/';
+(function() {
+   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+   dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">Blog comments powered by <span class="logo-disqus">Disqus</span></a></div></article><footer id="footer"><div class="container"><div class="bar"><div class="social"><a href="http://twitter.com/j2hongming" target="_blank"><i class="fa fa-twitter"></i></a><a href="https://github.com/j2hongming" target="_blank"><i class="fa fa-github"></i></a><a href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></div><div class="footer">© 2021 <a href="/" rel="nofollow">J2hongming</a>. Powered by <a rel="nofollow" target="_blank" href="https://hexo.io">Hexo</a>. Theme <a target="_blank" href="https://github.com/lotabout/very-simple">very-simple</a>.</div></div></div></footer><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.css"><script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script><script src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script><script>$(document).ready(function() {
+    $(".fancybox").fancybox();
+});
+</script></body><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+e.src='//www.google-analytics.com/analytics.js';
+r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+ga('create','UA-55818738-1');ga('send','pageview');</script></html>

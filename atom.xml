@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-03-12T16:10:58.604Z</updated>
+  <updated>2021-03-19T15:31:02.801Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,48 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>呼叫者與被呼叫者</title>
+    <link href="http://yoursite.com/2021/03/19/caller-interface-callee/"/>
+    <id>http://yoursite.com/2021/03/19/caller-interface-callee/</id>
+    <published>2021-03-19T14:12:59.000Z</published>
+    <updated>2021-03-19T15:31:02.801Z</updated>
+    
+    <summary type="html">
+    
+      常見的模型, 重點是化繁為簡, 以簡馭繁
+    
+    </summary>
+    
+      <category term="software_development" scheme="http://yoursite.com/categories/software-development/"/>
+    
+    
+      <category term="coding" scheme="http://yoursite.com/tags/coding/"/>
+    
+      <category term="interface" scheme="http://yoursite.com/tags/interface/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Line Pay Money 簡單整理</title>
+    <link href="http://yoursite.com/2021/03/19/line-pay-money/"/>
+    <id>http://yoursite.com/2021/03/19/line-pay-money/</id>
+    <published>2021-03-19T13:59:00.000Z</published>
+    <updated>2021-03-19T14:10:28.425Z</updated>
+    
+    <summary type="html">
+    
+      簡單整理注意事項和手續費
+    
+    </summary>
+    
+      <category term="finance" scheme="http://yoursite.com/categories/finance/"/>
+    
+    
+      <category term="payment" scheme="http://yoursite.com/tags/payment/"/>
+    
+  </entry>
   
   <entry>
     <title>購買手機紀錄與消費使用習慣</title>
@@ -78,11 +120,11 @@
       <category term="software_development" scheme="http://yoursite.com/categories/software-development/"/>
     
     
+      <category term="web" scheme="http://yoursite.com/tags/web/"/>
+    
       <category term="apache" scheme="http://yoursite.com/tags/apache/"/>
     
       <category term="http" scheme="http://yoursite.com/tags/http/"/>
-    
-      <category term="web" scheme="http://yoursite.com/tags/web/"/>
     
   </entry>
   
@@ -189,48 +231,6 @@
     
     
       <category term="retrospective" scheme="http://yoursite.com/tags/retrospective/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>從更換手機電池體會專業的感受</title>
-    <link href="http://yoursite.com/2020/12/11/professional-by-changing-mobile-battery/"/>
-    <id>http://yoursite.com/2020/12/11/professional-by-changing-mobile-battery/</id>
-    <published>2020-12-11T09:52:24.000Z</published>
-    <updated>2020-12-11T12:29:24.198Z</updated>
-    
-    <summary type="html">
-    
-      藉由之前在高雄更換電池的經驗和這次在新竹的差異, 思考專業帶給他人的感受
-    
-    </summary>
-    
-      <category term="essay" scheme="http://yoursite.com/categories/essay/"/>
-    
-    
-      <category term="professional" scheme="http://yoursite.com/tags/professional/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>建立個人實驗環境</title>
-    <link href="http://yoursite.com/2020/10/25/create-labs-environment/"/>
-    <id>http://yoursite.com/2020/10/25/create-labs-environment/</id>
-    <published>2020-10-25T14:17:19.000Z</published>
-    <updated>2020-11-05T15:59:04.433Z</updated>
-    
-    <summary type="html">
-    
-      從做中學, 建立個人實驗環境並做過實驗後才有安全感
-    
-    </summary>
-    
-      <category term="lab" scheme="http://yoursite.com/categories/lab/"/>
-    
-    
-      <category term="tmux" scheme="http://yoursite.com/tags/tmux/"/>
-    
-      <category term="python" scheme="http://yoursite.com/tags/python/"/>
     
   </entry>
   
