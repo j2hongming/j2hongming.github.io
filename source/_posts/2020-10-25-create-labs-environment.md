@@ -21,7 +21,8 @@ comments: true
     - tpm
     - tmux-resurrect
 - powerline
-
+- screenkey
+ 
 ### 其他
 - tldr
 - docker
@@ -34,6 +35,10 @@ comments: true
 ### IDE
 - vscode
 - pycharm
+  - IdeaVim plugin
+  - AceJump plugin
+  - Custom Postfix Template
+  - Surround Template
 
 
 ### source control
@@ -50,6 +55,9 @@ comments: true
     - [終端機管理工具：tmux](https://mropengate.blogspot.com/2017/12/tmux.html)
 - powerline
     - [Installing Powerline on Ubuntu Linux](https://devpro.media/install-powerline-ubuntu/)
+- [screenkey](https://gitlab.com/screenkey/screenkey#id4)
+    - [Display Pressed Keys In Screencasts With Screenkey (Now With Python 3 And GTK 3 Support)](https://www.linuxuprising.com/2020/05/screenkey-is-tool-that-shows-pressed.html)
+    - [Show keys pressed in Linux](https://superuser.com/questions/248517/show-keys-pressed-in-linux)
 - python
     - [用 pyenv 及 pipenv 為多專案建立虛擬開發環境](https://blog.steven5538.tw/2018/05/13/use-pyenv-pipenv-in-your-project/)
     - [Pipenv指令大全](https://medium.com/@hiimdoublej/pipenv%E6%8C%87%E4%BB%A4%E5%A4%A7%E5%85%A8-6e4415cc8a15)

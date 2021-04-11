@@ -57,11 +57,49 @@ date: 2020-11-30 21:43:35
 
 腦海中慢慢描述出屬於自己的模型
 
-版本1
+### 版本1
 ![personal version 1](/images/consultation/j2hongming_model_v1.jpeg)
 
+自己面對事情的反射性動作，第一層是好學生模板，第二層是貶低自己
 
-版本2
+
+### 版本2
 ![personal version 2](/images/consultation/j2hongming_model_v2.jpeg)
 
+加上他人的影響
+
+面對同一件事，我和他人有可能會以不同的角度看待而形成不同的期待，所以使用了一副眼鏡來表示
+
+貶低自己 => 降低期望(期待別人讓)(有台階下) => 做到或沒做到
+貶低自己這個行為對我來說會帶來一些好處，例如面對一件麻煩或困難的事，我可能會用「我好爛，我做不到」來降低自己對事情的期望，同時，內心深處期待別人可以讓著我（因為已表明了我不行）以及希望別人也降低對同一件事的期望，如此一來，若事情有做到，我可以贏得信任，若事情沒有做到，也幫自己留了一個台階可以下，但慢慢發現一個盲點，別人為什麼一定要讓你或對你友善呢？真正的癥結點還是需要培養處理問題的方法
+
+
+### 版本3
+![personal version 3](/images/consultation/j2hongming_model_v3.png)
+
+`引導者`較為具體的表現方式: [自我批判的時候怎麼辦 -  與「壞感覺」工作的三個步驟 By soidid](https://soidid.tw/2021/02/01/working-with-self-criticism/)
+
+事情或任務, 依照不確定性和複雜度, 依照當時的個人能力和認知, 可以分為幾種類型:
+- 不確定性低, 複雜度低 => C
+- 不確定性高或複雜度高 => B, 例如: 開車是一種不確定性高的任務, 隨時會出現意料之外的事情需要快速反應
+- 不確定性高和複雜度高 => A, 例如: 規劃一次旅行, 需要處理交通, 住宿, 行程
+- 不確定性極高或複雜度極高 => S
+- 例外 => 發自內心的恐懼感, 例如: 處理小強 
+
+2021的自己只會挑確定性高且有把握, 能夠一次到位的C級任務, 以確保不會失敗, 不會被瞧不起, 不想也不敢挑複雜度高或不確定性高, 需要拆解的B級和A級任務, 但是其實這種能力無法一蹴可幾, 需要花時間培養, 以視覺化來看, 就像這張圖
+
+![your plan and reality](/images/consultation/your_plan_and_reality.png)
+ 
+有些任務可能是外在因素(家人朋友工作)外加給自己的而非自我目標延伸, 偏偏又屬於B級或A級, 2021的思維模式偏向: 整個故事100%確定和可行才去做, 一次定生死(全有或全無, 沒有中間值), 但是其實有另一種看待方式: 分階段與版本執行, 有版本1, 2, 3..., 舉例: 給你100年的時間登陸月球
+
+總結來說, `處理問題的方法`目前可以歸納為以下原則:
+1. 事件分級(SABC), C即為行動層級; A和B為任務層級
+2. 可調整且分階段推進(下一階段成果), 版本1: 度過山谷, 版本2: 過橋, 版本3: 過河, 版本4: 在暴風雨的環境下爬上陡坡
+3. 在任務和行動使用[SMART原則](https://www.atlassian.com/blog/productivty/how-to-write-smart-goals)
+  - Any goal worth achieving probably won’t happen overnight
+4. 問問自己: 你盡力去做了嗎?
+
+SMART原則範本
+
+> Our goal is to [quantifiable objective] by [timeframe or deadline]. [Key players or teams] will accomplish this goal by [what steps you’ll take to achieve the goal]. Accomplishing this goal will [result or benefit].
 

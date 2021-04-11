@@ -4,7 +4,7 @@ date: 2020-11-05 22:45:06
 comments: false
 ---
 
-> 紙上得來終覺淺, 覺絕知此事要躬行
+> 紙上得來終覺淺, 絕知此事要躬行
 
 
 某天看了JserV的影片, 除了被提醒要誠實面對自己之外, 也在其中一張投影片中點到了這句話, 那一瞬間對我是當頭棒喝
@@ -17,7 +17,7 @@ comments: false
 依照大方向產出分類(category), 粒度較tag大且抽象, **一篇文章一個category**
 tag, 粒度較category小且具體,  **一篇文章可以多個tag**, 可以從evernote記事本的名稱歸納
 
-分類可以分為軟體開發(software_development), 讀書心得(reading), 生活隨筆(essay), 嘗試與體驗(lab)
+分類可以分為軟體開發(software_development), 讀書心得(reading), 生活隨筆(essay), 嘗試與體驗(lab), 理財(finance)
 
 ## 嘗試與體驗
 紀錄體驗的想法和心得
@@ -31,3 +31,6 @@ python, git, 工具使用(tmux, vim...)
 
 ## 生活隨筆
 紀錄生活發生的事情, 腦中迸出的想法
+
+## 理財
+紀錄和財務相關的事項
