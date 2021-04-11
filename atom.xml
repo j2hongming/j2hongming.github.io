@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-03-19T15:31:02.801Z</updated>
+  <updated>2021-04-11T16:07:03.652Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>極速開發課後心得與練習紀錄</title>
+    <link href="http://yoursite.com/2021/04/12/extrem-develop/"/>
+    <id>http://yoursite.com/2021/04/12/extrem-develop/</id>
+    <published>2021-04-11T16:00:22.000Z</published>
+    <updated>2021-04-11T16:07:03.652Z</updated>
+    
+    <summary type="html">
+    
+      體驗與練習紀錄
+    
+    </summary>
+    
+      <category term="software_development" scheme="http://yoursite.com/categories/software-development/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>呼叫者與被呼叫者</title>
@@ -211,26 +229,6 @@
       <category term="phone" scheme="http://yoursite.com/tags/phone/"/>
     
       <category term="repair" scheme="http://yoursite.com/tags/repair/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2020年回顧</title>
-    <link href="http://yoursite.com/2020/12/24/2020-retrospective/"/>
-    <id>http://yoursite.com/2020/12/24/2020-retrospective/</id>
-    <published>2020-12-24T12:33:08.000Z</published>
-    <updated>2021-02-26T16:49:15.184Z</updated>
-    
-    <summary type="html">
-    
-      回顧並整理這混沌且焦慮的2020
-    
-    </summary>
-    
-      <category term="essay" scheme="http://yoursite.com/categories/essay/"/>
-    
-    
-      <category term="retrospective" scheme="http://yoursite.com/tags/retrospective/"/>
     
   </entry>
   
