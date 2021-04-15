@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-04-11T16:07:03.652Z</updated>
+  <updated>2021-04-15T17:43:35.104Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2021/04/12/extrem-develop/"/>
     <id>http://yoursite.com/2021/04/12/extrem-develop/</id>
     <published>2021-04-11T16:00:22.000Z</published>
-    <updated>2021-04-11T16:07:03.652Z</updated>
+    <updated>2021-04-15T17:43:35.104Z</updated>
     
     <summary type="html">
     
@@ -138,11 +138,11 @@
       <category term="software_development" scheme="http://yoursite.com/categories/software-development/"/>
     
     
-      <category term="web" scheme="http://yoursite.com/tags/web/"/>
-    
       <category term="apache" scheme="http://yoursite.com/tags/apache/"/>
     
       <category term="http" scheme="http://yoursite.com/tags/http/"/>
+    
+      <category term="web" scheme="http://yoursite.com/tags/web/"/>
     
   </entry>
   
