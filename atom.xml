@@ -138,11 +138,11 @@
       <category term="software_development" scheme="http://yoursite.com/categories/software-development/"/>
     
     
+      <category term="web" scheme="http://yoursite.com/tags/web/"/>
+    
       <category term="apache" scheme="http://yoursite.com/tags/apache/"/>
     
       <category term="http" scheme="http://yoursite.com/tags/http/"/>
-    
-      <category term="web" scheme="http://yoursite.com/tags/web/"/>
     
   </entry>
   
