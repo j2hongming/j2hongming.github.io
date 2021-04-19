@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-04-15T17:43:35.104Z</updated>
+  <updated>2021-04-19T15:39:33.325Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,62 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Google Analytics IP 去識別化功能</title>
+    <link href="http://yoursite.com/2021/04/19/google-analytics-ip-anonymization/"/>
+    <id>http://yoursite.com/2021/04/19/google-analytics-ip-anonymization/</id>
+    <published>2021-04-19T15:34:15.000Z</published>
+    <updated>2021-04-19T15:39:33.325Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;IP 去識別化功能的效果&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;會在 IP 位址傳送到
+        
+      
+    
+    </summary>
+    
+      <category term="software_development" scheme="http://yoursite.com/categories/software-development/"/>
+    
+    
+      <category term="google_analytics" scheme="http://yoursite.com/tags/google-analytics/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu 20 錄製影片</title>
+    <link href="http://yoursite.com/2021/04/19/ubuntu-screen-records/"/>
+    <id>http://yoursite.com/2021/04/19/ubuntu-screen-records/</id>
+    <published>2021-04-19T15:25:56.000Z</published>
+    <updated>2021-04-19T15:31:51.760Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Ubuntu 20內建錄製工具: &lt;code&gt;Ctrl + Alt + Shift +
+        
+      
+    
+    </summary>
+    
+      <category term="software_development" scheme="http://yoursite.com/categories/software-development/"/>
+    
+    
+      <category term="ubuntu" scheme="http://yoursite.com/tags/ubuntu/"/>
+    
+      <category term="screen" scheme="http://yoursite.com/tags/screen/"/>
+    
+  </entry>
   
   <entry>
     <title>極速開發課後心得與練習紀錄</title>
@@ -187,48 +243,6 @@
       <category term="AWS" scheme="http://yoursite.com/tags/AWS/"/>
     
       <category term="SQS" scheme="http://yoursite.com/tags/SQS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>時間管理的三十道難題-整理與心得</title>
-    <link href="http://yoursite.com/2021/01/06/top-30-issues-for-time-management/"/>
-    <id>http://yoursite.com/2021/01/06/top-30-issues-for-time-management/</id>
-    <published>2021-01-06T15:20:38.000Z</published>
-    <updated>2021-01-13T17:07:18.725Z</updated>
-    
-    <summary type="html">
-    
-      整理第一章到第三章, 幫助自己複習並練習輸出2021的大方向且拆解為可以實現的狀態
-    
-    </summary>
-    
-      <category term="reading" scheme="http://yoursite.com/categories/reading/"/>
-    
-    
-      <category term="time_management" scheme="http://yoursite.com/tags/time-management/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>手機送去維修的時候對我的影響</title>
-    <link href="http://yoursite.com/2020/12/27/phone-repair/"/>
-    <id>http://yoursite.com/2020/12/27/phone-repair/</id>
-    <published>2020-12-27T14:26:32.000Z</published>
-    <updated>2020-12-27T15:17:09.215Z</updated>
-    
-    <summary type="html">
-    
-      手機因為異常耗電的狀況送去維修, 這一去就是兩個禮拜, 發現對自己的生活還是有些影響
-    
-    </summary>
-    
-      <category term="essay" scheme="http://yoursite.com/categories/essay/"/>
-    
-    
-      <category term="phone" scheme="http://yoursite.com/tags/phone/"/>
-    
-      <category term="repair" scheme="http://yoursite.com/tags/repair/"/>
     
   </entry>
   
