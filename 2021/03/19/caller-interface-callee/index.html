@@ -17,6 +17,9 @@
 <p><img src="driver_car.png" alt></p>
 <p>以工程師和部屬工具為例, 中間的使用介面是Ansible, Puppet, Serverless, 細節的部份可能是AWS, Azure, GCP</p>
 <p><img src="engineer_deployment.png" alt></p>
+<h2 id="依賴反轉原則-Dependency-Inversion-Principle-DIP"><a href="#依賴反轉原則-Dependency-Inversion-Principle-DIP" class="headerlink" title="依賴反轉原則 Dependency Inversion Principle (DIP)"></a>依賴反轉原則 Dependency Inversion Principle (DIP)</h2><p>高層模組不應該依賴於低層模組, 兩者皆應該依賴抽象</p>
+<p>從A點移動到B點, 移動是個抽象的概念, 可以用不同的方式實作, 例如：搭火車，搭計程車，開車，騎機車，走路</p>
+<p>今天的需求若是去桃園聽五月天演唱會, 要完成這個需求，直接依賴搭火車的實作，如果有一天火車這個工具消失了，呼叫者要改</p>
 <h2 id="參考"><a href="#參考" class="headerlink" title="參考"></a>參考</h2><ul>
 <li><a href="https://spicyboyd.blogspot.com/2018/07/umlclass-diagram-relationships.html" target="_blank" rel="noopener">【UML】Class Diagram 類別圖 (下)：Relationships 關係</a></li>
 </ul>
