@@ -3,7 +3,8 @@ layout: post
 title: "Java String 常用操作"
 date: 2016-08-10 11:53:36 +0800
 comments: true
-categories:
+categories: software_development
+tags:
 - java
 - string 
 ---

@@ -3,7 +3,8 @@ layout: post
 title: "關聯式資料庫筆記"
 date: 2016-07-20 23:37:18 +0800
 comments: true
-categories: 
+categories: software_development
+tags:
 - database
 ---
 

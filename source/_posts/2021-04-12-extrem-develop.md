@@ -16,6 +16,13 @@ tags:
 - 讓參與者自己發現問題
 - 感受到一種不斷地想讓自己變得更好的感染力
 
+![](self_awareness.jpeg)
+
+## 觀察
+1. 最後的driver和navigator的演練，自己有出現害怕丟臉的恐懼和逃避感, 原來很多人都有XD
+2. 不要臉學得比較快XD，第二次聽到
+3. 一致性：91哥說出來和做到的一致性極高，感覺上做事和生活的哲學就是TDD實踐的延伸
+
 ## 練習紀錄
 上課是輸入和體驗，最後一哩路是輸出
 就如同版本控制git, 上課僅是你從main新增一個分支並在該分支下了第一個commit而已, 真正要完成這門課必須要透過練習再進至少2筆commit(階段一和二), 再把分支merge回原本的main
@@ -40,11 +47,51 @@ A: 每天練習一個番茄鐘, 試試看把滑鼠拿掉XDD
 R: 練習解決這種無法一步到位且需要拆解的任務, 為馬拉松做熱身
 T: 2021/4/21之前完成 
 
-先放youtube測試影片
-{% youtube lJIrF4YjHfQ %} 
+Practice 1: 
+love all, fifteen love
+
+{% youtube 97b2MxE3Bv4 %} 
 
 
-## 觀察
-1. 最後的driver和navigator的演練，自己有出現害怕丟臉的恐懼和逃避感, 原來很多人都有XD
-2. 不要臉學得比較快XD，第二次聽到
-3. 一致性：91哥說出來和做到的一致性極高，感覺上做事和生活的哲學就是TDD實踐的延伸
+Practice 2: 
+love all, fifteen love, thirty love
+
+{% youtube wcUZqouc7Y0 %} 
+
+
+Practice 3: 
+love all, fifteen love, thirty love, 練習第十五次
+
+{% youtube l7XMr1Ex_Rs %} 
+
+
+Practice 4: 
+to love fifteen
+
+{% youtube sDyY2nQSqzI %} 
+
+Practice 5: 
+練習紀錄
+第二十次thirty love
+第五次test_forty_love, test_love_fifteen
+第四次test_love_thirty
+
+
+{% youtube l7XMr1Ex_Rs %} 
+
+
+Practice 6: 
+練習紀錄
+第二十一次test_love_all, test_fifteen_love, test_thirty love
+第九次test_forty_love, test_love_fifteen, test_love_thirty
+第二次test_fifteen_all, test_thirty_all, test_deuce
+
+{% youtube VI2Daax6lTA %} 
+
+Practice 7: 
+練習紀錄
+第二十二次test_love_all, test_fifteen_love, test_thirty love
+第十次test_forty_love, test_love_fifteen, test_love_thirty
+第三次test_fifteen_all, test_thirty_all, test_deuce
+
+{% youtube OHVxR0odymQ %} 

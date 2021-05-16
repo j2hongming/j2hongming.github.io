@@ -3,9 +3,10 @@ layout: post
 title: "Get field names of Content Type in Drupal"
 date: 2016-03-31 13:30:28 +0800
 comments: true
-categories:
+categories: software_development
+tags:
 - drupal7
-- code snippet 
+- development
 ---
 
 {% codeblock  lang:php %}

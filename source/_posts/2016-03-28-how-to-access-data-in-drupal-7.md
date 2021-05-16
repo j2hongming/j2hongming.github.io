@@ -3,7 +3,8 @@ layout: post
 title: "How to access data in Drupal 7"
 date: 2016-03-28 10:05:52 +0800
 comments: true
-categories:
+categories: software_development
+tags:
 - drupal7 
 ---
 

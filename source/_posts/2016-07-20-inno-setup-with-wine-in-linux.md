@@ -3,8 +3,9 @@ layout: post
 title: "Inno Setup with Wine in Linux"
 date: 2016-07-20 17:16:45 +0800
 comments: true
-categories:
-- inno setup
+categories: software_development
+tags:
+- inno_setup
 - linux
 - wine
 - ubuntu

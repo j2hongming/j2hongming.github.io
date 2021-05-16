@@ -31,6 +31,12 @@ tags:
 
 ![](engineer_deployment.png)
 
+## 依賴反轉原則 Dependency Inversion Principle (DIP)
+高層模組不應該依賴於低層模組, 兩者皆應該依賴抽象
+
+從A點移動到B點, 移動是個抽象的概念, 可以用不同的方式實作, 例如：搭火車，搭計程車，開車，騎機車，走路
+
+今天的需求若是去桃園聽五月天演唱會, 要完成這個需求，直接依賴搭火車的實作，如果有一天火車這個工具消失了，呼叫者要改
 
 ## 參考
 - [【UML】Class Diagram 類別圖 (下)：Relationships 關係](https://spicyboyd.blogspot.com/2018/07/umlclass-diagram-relationships.html)

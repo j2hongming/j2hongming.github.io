@@ -3,9 +3,10 @@ layout: post
 title: "Github Pages with Octopress"
 date: 2016-02-18 17:29:01 +0800
 comments: true
-categories:
-- Github
-- Octopress 
+categories: software_development
+tags:
+- github
+- octopress 
 ---
 
 - 建置Octopress

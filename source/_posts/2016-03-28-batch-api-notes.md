@@ -3,7 +3,8 @@ layout: post
 title: "Batch API Notes"
 date: 2016-03-28 14:41:34 +0800
 comments: true
-categories:
+categories: software_development
+tags:
 - drupal7
 - batch 
 ---

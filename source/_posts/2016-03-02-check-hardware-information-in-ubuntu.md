@@ -3,7 +3,8 @@ layout: post
 title: "Check Hardware Information in Ubuntu"
 date: 2016-03-02 16:17:19 +0800
 comments: true
-categories:
+categories: software_development
+tags:
 - linux
 - ubuntu
 - command

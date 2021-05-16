@@ -3,7 +3,8 @@ layout: post
 title: "Config Static IP in Ubuntu"
 date: 2016-03-02 16:48:33 +0800
 comments: true
-categories: 
+categories: software_development
+tags:
 - linux
 - ubuntu
 - command

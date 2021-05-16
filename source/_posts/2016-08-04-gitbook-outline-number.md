@@ -3,7 +3,8 @@ layout: post
 title: "如何設定gitbook側邊欄大綱顯示階層數字"
 date: 2016-08-04 16:03:23 +0800
 comments: true
-categories: 
+categories: software_development
+tags:
 - gitbook
 ---
 

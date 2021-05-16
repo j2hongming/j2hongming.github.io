@@ -3,7 +3,8 @@ layout: post
 title: "類別的關係"
 date: 2016-12-28 00:05:08 +0800
 comments: true
-categories:
+categories: software_development
+tags:
 - object
 - relation 
 ---

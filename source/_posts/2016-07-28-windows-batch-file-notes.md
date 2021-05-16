@@ -3,7 +3,8 @@ layout: post
 title: "Windows Batch File Notes"
 date: 2016-07-28 16:34:39 +0800
 comments: true
-categories:
+categories: software_development
+tags:
 - windows
 - bat 
 ---

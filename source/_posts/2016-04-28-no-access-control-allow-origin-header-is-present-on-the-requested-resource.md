@@ -3,9 +3,10 @@ layout: post
 title: "No Access-Control-Allow-Origin header is present on the requested resource"
 date: 2016-04-28 11:25:22 +0800
 comments: true
-categories:
-- HTTP
-- CORS 
+categories: software_development
+tags:
+- http
+- cors 
 ---
 
 - 問題描述

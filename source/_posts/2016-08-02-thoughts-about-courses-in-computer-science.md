@@ -3,9 +3,9 @@ layout: post
 title: "資工系課程整理與心得"
 date: 2016-08-02 17:57:39 +0800
 comments: true
-categories:
-- CS
-- thought
+categories: software_development
+tags:
+- computer_science
 ---
 
 畢業幾年後，偶然發現[From NAND to Tetris](http://www.nand2tetris.org/)這個線上課程，從前求學時總是東一塊西一塊支離破碎的概念終於可以有一個概觀性的整理。

@@ -3,9 +3,9 @@ layout: post
 title: "Drupal Development Resources"
 date: 2016-03-31 11:39:48 +0800
 comments: true
-categories:
+categories: software_development
+tags:
 - drupal7
-- develop
 - resource 
 ---
 

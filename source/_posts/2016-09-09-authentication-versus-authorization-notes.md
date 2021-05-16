@@ -3,9 +3,10 @@ layout: post
 title: "認證與授權筆記"
 date: 2016-09-09 17:52:49 +0800
 comments: true
-categories:
-- Authentication
-- Authorization 
+categories: software_development
+tags:
+- authentication
+- authorization 
 ---
 - 認證(Authentication)
 - 授權(Authorization)

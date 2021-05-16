@@ -3,9 +3,10 @@ layout: post
 title: "時間複雜度筆記"
 date: 2016-08-16 14:45:57 +0800
 comments: true
-categories: 
+categories: software_development
+tags:
 - algorithm
-- time complexity
+- time_complexity
 ---
 閱讀完`ChiuCC`的文章[Complexity：Asymptotic Notation(漸進符號)](http://alrightchiu.github.io/SecondRound/complexityasymptotic-notationjian-jin-fu-hao.html)後整理的筆記。
 <!-- more -->

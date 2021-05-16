@@ -3,10 +3,11 @@ layout: post
 title: "Drupal 7 + Memcached on CentOS 6"
 date: 2015-07-24 17:24:34 +0800
 comments: true
-categories:
-- Linux
-- Drupal7
-- Memcache 
+categories: software_development
+tags:
+- linux
+- drupal7
+- memcache 
 ---
 
 - 安裝Memcached

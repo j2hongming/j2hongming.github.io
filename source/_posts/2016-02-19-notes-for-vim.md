@@ -3,10 +3,9 @@ layout: post
 title: "Notes for Vim"
 date: 2016-02-19 11:28:15 +0800
 comments: true
-categories:
+categories: software_development
+tags:
 - vim
-- command
-- linux 
 ---
 
 - 概念Concept

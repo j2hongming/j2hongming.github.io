@@ -3,9 +3,11 @@ layout: post
 title: "Linux指令歷史紀錄"
 date: 2014-10-20 17:09:32 +0800
 comments: true
-categories: 
-- Linux
-- Command
+categories: software_development
+tags:
+- linux
+- command
+- history
 ---
 ##方法一
 `Ctrl + r`: 搜尋指令歷史紀錄，進入**(reverse-i-search)**模式

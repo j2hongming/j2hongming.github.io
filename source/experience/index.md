@@ -30,6 +30,7 @@ date: 2020-11-30 21:43:35
 
 {% youtube lJIrF4YjHfQ %}
 
+
 ### 憨人 - 五月天
 80 bpm
 2020/5/13
@@ -79,18 +80,26 @@ date: 2020-11-30 21:43:35
 
 `引導者`較為具體的表現方式: [自我批判的時候怎麼辦 -  與「壞感覺」工作的三個步驟 By soidid](https://soidid.tw/2021/02/01/working-with-self-criticism/)
 
-事情或任務, 依照不確定性和複雜度, 依照當時的個人能力和認知, 可以分為幾種類型:
+事情或任務, 依照不確定性和複雜度,以及當時的個人能力和認知, 可以分為幾種類型:
 - 不確定性低, 複雜度低 => C
 - 不確定性高或複雜度高 => B, 例如: 開車是一種不確定性高的任務, 隨時會出現意料之外的事情需要快速反應
 - 不確定性高和複雜度高 => A, 例如: 規劃一次旅行, 需要處理交通, 住宿, 行程
 - 不確定性極高或複雜度極高 => S
 - 例外 => 發自內心的恐懼感, 例如: 處理小強 
 
+複雜度如同毛線球, 不確定性如同黑盒子
+
 2021的自己只會挑確定性高且有把握, 能夠一次到位的C級任務, 以確保不會失敗, 不會被瞧不起, 不想也不敢挑複雜度高或不確定性高, 需要拆解的B級和A級任務, 但是其實這種能力無法一蹴可幾, 需要花時間培養, 以視覺化來看, 就像這張圖
 
 ![your plan and reality](/images/consultation/your_plan_and_reality.png)
+
+注意兩個大師
+忍耐大師: 不想改變, 繼續workaround而不想去想更有效的方法
+引擎空轉大師: 落入陷阱, A, B及任務卡關且沒有推進的動力時會落入拖延魔第一式的裝忙而不敢真正地休息, 加上全有或全無心態讓整個引擎空轉或停止
  
 有些任務可能是外在因素(家人朋友工作)外加給自己的而非自我目標延伸, 偏偏又屬於B級或A級, 2021的思維模式偏向: 整個故事100%確定和可行才去做, 一次定生死(全有或全無, 沒有中間值), 但是其實有另一種看待方式: 分階段與版本執行, 有版本1, 2, 3..., 舉例: 給你100年的時間登陸月球
+
+就如同爬樓梯, 如果是一個較高的樓層, 找到一個中間可以喘息的平台, 原因是腿沒那長, 沒辦法每次都一步到位, 會喘
 
 總結來說, `處理問題的方法`目前可以歸納為以下原則:
 1. 事件分級(SABC), C即為行動層級; A和B為任務層級
@@ -103,3 +112,8 @@ SMART原則範本
 
 > Our goal is to [quantifiable objective] by [timeframe or deadline]. [Key players or teams] will accomplish this goal by [what steps you’ll take to achieve the goal]. Accomplishing this goal will [result or benefit].
 
+S: `Key players or teams` and `what steps you’ll take to achieve the goal` 
+M: `quantifiable objective`
+A: `uncertainty or potential roadblocks`
+R: `result or benefit`
+T: `timeframe or deadline`

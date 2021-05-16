@@ -3,12 +3,10 @@ layout: post
 title: "部落格開張Markdown Demo"
 date: 2014-10-16 16:22:49 +0800
 comments: true
-categories: 
-- Blog
-- Intro
+categories: lab
 tags:
-- MarkDown
-- Demo
+- markDown
+- blog
 ---
 - Sharing Code Snippets
 - Quote
