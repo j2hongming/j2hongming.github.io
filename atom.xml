@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-05-16T04:03:37.219Z</updated>
+  <updated>2021-05-23T14:28:43.818Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>和焦慮和解-整理與心得</title>
+    <link href="http://yoursite.com/2021/05/23/the-anxiety-toolkit/"/>
+    <id>http://yoursite.com/2021/05/23/the-anxiety-toolkit/</id>
+    <published>2021-05-23T14:02:33.000Z</published>
+    <updated>2021-05-23T14:28:43.818Z</updated>
+    
+    <summary type="html">
+    
+      關注與處理對於五種焦慮陷阱的反應 - 過度猶豫不決, 反芻思考與擔憂, 因完美主義而停滯, 害怕建議與批評, 逃避(包含拖延)
+    
+    </summary>
+    
+      <category term="reading" scheme="http://yoursite.com/categories/reading/"/>
+    
+    
+      <category term="anxiety" scheme="http://yoursite.com/tags/anxiety/"/>
+    
+      <category term="cbt" scheme="http://yoursite.com/tags/cbt/"/>
+    
+  </entry>
   
   <entry>
     <title>鋪木地板體驗</title>
@@ -221,28 +243,6 @@
       <category term="http" scheme="http://yoursite.com/tags/http/"/>
     
       <category term="apache" scheme="http://yoursite.com/tags/apache/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Google Resume-整理與心得</title>
-    <link href="http://yoursite.com/2021/01/23/google-resume/"/>
-    <id>http://yoursite.com/2021/01/23/google-resume/</id>
-    <published>2021-01-23T08:20:10.000Z</published>
-    <updated>2021-01-23T12:45:39.358Z</updated>
-    
-    <summary type="html">
-    
-      整理第一章和第四章的內容
-    
-    </summary>
-    
-      <category term="reading" scheme="http://yoursite.com/categories/reading/"/>
-    
-    
-      <category term="career" scheme="http://yoursite.com/tags/career/"/>
-    
-      <category term="resume" scheme="http://yoursite.com/tags/resume/"/>
     
   </entry>
   
