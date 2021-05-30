@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-05-23T14:28:43.818Z</updated>
+  <updated>2021-05-30T15:00:18.615Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>沒使用過的產品, 怎麼買</title>
+    <link href="http://yoursite.com/2021/05/30/shopping-for-new-thing/"/>
+    <id>http://yoursite.com/2021/05/30/shopping-for-new-thing/</id>
+    <published>2021-05-30T14:49:09.000Z</published>
+    <updated>2021-05-30T15:00:18.615Z</updated>
+    
+    <summary type="html">
+    
+      沒使用過的產品, 沒有手感, 怎麼辦
+    
+    </summary>
+    
+      <category term="lab" scheme="http://yoursite.com/categories/lab/"/>
+    
+    
+      <category term="shooping" scheme="http://yoursite.com/tags/shooping/"/>
+    
+  </entry>
   
   <entry>
     <title>和焦慮和解-整理與心得</title>
@@ -219,30 +239,6 @@
       <category term="relationship" scheme="http://yoursite.com/tags/relationship/"/>
     
       <category term="couples" scheme="http://yoursite.com/tags/couples/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>就決定是你了! Apache</title>
-    <link href="http://yoursite.com/2021/01/29/apache-quick-start/"/>
-    <id>http://yoursite.com/2021/01/29/apache-quick-start/</id>
-    <published>2021-01-28T16:42:16.000Z</published>
-    <updated>2021-01-28T18:53:49.101Z</updated>
-    
-    <summary type="html">
-    
-      架設Apache的注意事項
-    
-    </summary>
-    
-      <category term="software_development" scheme="http://yoursite.com/categories/software-development/"/>
-    
-    
-      <category term="web" scheme="http://yoursite.com/tags/web/"/>
-    
-      <category term="http" scheme="http://yoursite.com/tags/http/"/>
-    
-      <category term="apache" scheme="http://yoursite.com/tags/apache/"/>
     
   </entry>
   
