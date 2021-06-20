@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-05-30T15:00:18.615Z</updated>
+  <updated>2021-06-20T06:51:22.359Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>最高學習法(Stop Talking, Start Influencing)-整理與心得</title>
+    <link href="http://yoursite.com/2021/06/20/start-influencing/"/>
+    <id>http://yoursite.com/2021/06/20/start-influencing/</id>
+    <published>2021-06-20T05:42:05.000Z</published>
+    <updated>2021-06-20T06:51:22.359Z</updated>
+    
+    <summary type="html">
+    
+      整本書都是作者的實驗室, 讀起來很有趣也特別有感, 不拖泥帶水或空洞, 從一個現象開始, 例如, 酒吧和簡報會議的相似性(文本與口語), 一首歌中的歌詞誤解(圖像與口語), 叔叔在自家後院是高爾夫之神(情境/狀態), 幾個常識問答題(錯誤), 一個謎題(促發), 在體驗現象過後開始說明背後的運作原理, 接著給予好幾個在實際生活中要如何運用的關鍵提示與常碰到的疑問, 最後透過重點整理將該章的內容條列梳理
+    
+    </summary>
+    
+      <category term="reading" scheme="http://yoursite.com/categories/reading/"/>
+    
+    
+      <category term="learn" scheme="http://yoursite.com/tags/learn/"/>
+    
+      <category term="memory" scheme="http://yoursite.com/tags/memory/"/>
+    
+      <category term="recall" scheme="http://yoursite.com/tags/recall/"/>
+    
+      <category term="error" scheme="http://yoursite.com/tags/error/"/>
+    
+      <category term="pressure" scheme="http://yoursite.com/tags/pressure/"/>
+    
+  </entry>
   
   <entry>
     <title>沒使用過的產品, 怎麼買</title>
@@ -215,30 +243,6 @@
       <category term="mobile" scheme="http://yoursite.com/tags/mobile/"/>
     
       <category term="habits" scheme="http://yoursite.com/tags/habits/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>雙薪家庭進化論-整理與心得</title>
-    <link href="http://yoursite.com/2021/02/19/dual-career-couples-that-works/"/>
-    <id>http://yoursite.com/2021/02/19/dual-career-couples-that-works/</id>
-    <published>2021-02-19T15:52:15.000Z</published>
-    <updated>2021-02-26T16:37:38.400Z</updated>
-    
-    <summary type="html">
-    
-      整理第一章到第四章, 先專注於第一次轉變
-    
-    </summary>
-    
-      <category term="reading" scheme="http://yoursite.com/categories/reading/"/>
-    
-    
-      <category term="career" scheme="http://yoursite.com/tags/career/"/>
-    
-      <category term="relationship" scheme="http://yoursite.com/tags/relationship/"/>
-    
-      <category term="couples" scheme="http://yoursite.com/tags/couples/"/>
     
   </entry>
   
