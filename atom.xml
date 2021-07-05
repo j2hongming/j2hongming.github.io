@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-06-20T07:25:07.416Z</updated>
+  <updated>2021-07-05T16:22:27.797Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>離婚活動</title>
+    <link href="http://yoursite.com/2021/07/05/divorce-activity/"/>
+    <id>http://yoursite.com/2021/07/05/divorce-activity/</id>
+    <published>2021-07-05T15:56:43.000Z</published>
+    <updated>2021-07-05T16:22:27.797Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;前6集有不少因為男主角誇張的表演方式讓我笑出來的橋段, 此外還有促進多巴胺分泌的灑糖場景,
+        
+      
+    
+    </summary>
+    
+      <category term="drama" scheme="http://yoursite.com/categories/drama/"/>
+    
+    
+      <category term="divorce" scheme="http://yoursite.com/tags/divorce/"/>
+    
+      <category term="japanese" scheme="http://yoursite.com/tags/japanese/"/>
+    
+  </entry>
   
   <entry>
     <title>最高學習法(Stop Talking, Start Influencing)-整理與心得</title>
@@ -221,28 +249,6 @@
     
     
       <category term="payment" scheme="http://yoursite.com/tags/payment/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>購買手機紀錄與消費使用習慣</title>
-    <link href="http://yoursite.com/2021/03/12/buy-mobile-experience/"/>
-    <id>http://yoursite.com/2021/03/12/buy-mobile-experience/</id>
-    <published>2021-03-12T15:54:40.000Z</published>
-    <updated>2021-03-12T16:10:58.604Z</updated>
-    
-    <summary type="html">
-    
-      沒有解決異常耗電和手機背板發燙的問題, 決定換手機了XD
-    
-    </summary>
-    
-      <category term="lab" scheme="http://yoursite.com/categories/lab/"/>
-    
-    
-      <category term="mobile" scheme="http://yoursite.com/tags/mobile/"/>
-    
-      <category term="habits" scheme="http://yoursite.com/tags/habits/"/>
     
   </entry>
   
