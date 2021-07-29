@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-07-05T16:22:27.797Z</updated>
+  <updated>2021-07-29T17:55:16.485Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,62 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CloudFront使用Host Header決定distribution</title>
+    <link href="http://yoursite.com/2021/07/30/cloudfront-distribution-by-host/"/>
+    <id>http://yoursite.com/2021/07/30/cloudfront-distribution-by-host/</id>
+    <published>2021-07-29T17:27:56.000Z</published>
+    <updated>2021-07-29T17:55:16.485Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;測試某個功能時, 本來想透過設定本地端的CNAME, 達成訪問測試站而非正式站的目的,
+        
+      
+    
+    </summary>
+    
+      <category term="software_development" scheme="http://yoursite.com/categories/software-development/"/>
+    
+    
+      <category term="AWS" scheme="http://yoursite.com/tags/AWS/"/>
+    
+      <category term="CloudFront" scheme="http://yoursite.com/tags/CloudFront/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>透過AWS S3 Static Web設定Redirect</title>
+    <link href="http://yoursite.com/2021/07/30/s3-static-web-redirect/"/>
+    <id>http://yoursite.com/2021/07/30/s3-static-web-redirect/</id>
+    <published>2021-07-29T17:13:37.000Z</published>
+    <updated>2021-07-29T17:45:19.418Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;因為時間的關係, 工作上有一個需求,
+        
+      
+    
+    </summary>
+    
+      <category term="software_development" scheme="http://yoursite.com/categories/software-development/"/>
+    
+    
+      <category term="AWS" scheme="http://yoursite.com/tags/AWS/"/>
+    
+      <category term="S3" scheme="http://yoursite.com/tags/S3/"/>
+    
+  </entry>
   
   <entry>
     <title>離婚活動</title>
@@ -207,48 +263,6 @@
     
       <category term="software_development" scheme="http://yoursite.com/categories/software-development/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>呼叫者與被呼叫者</title>
-    <link href="http://yoursite.com/2021/03/19/caller-interface-callee/"/>
-    <id>http://yoursite.com/2021/03/19/caller-interface-callee/</id>
-    <published>2021-03-19T14:12:59.000Z</published>
-    <updated>2021-05-09T14:52:18.410Z</updated>
-    
-    <summary type="html">
-    
-      常見的模型, 重點是化繁為簡, 以簡馭繁
-    
-    </summary>
-    
-      <category term="software_development" scheme="http://yoursite.com/categories/software-development/"/>
-    
-    
-      <category term="coding" scheme="http://yoursite.com/tags/coding/"/>
-    
-      <category term="interface" scheme="http://yoursite.com/tags/interface/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Line Pay Money 簡單整理</title>
-    <link href="http://yoursite.com/2021/03/19/line-pay-money/"/>
-    <id>http://yoursite.com/2021/03/19/line-pay-money/</id>
-    <published>2021-03-19T13:59:00.000Z</published>
-    <updated>2021-04-04T10:59:17.784Z</updated>
-    
-    <summary type="html">
-    
-      簡單整理注意事項和手續費
-    
-    </summary>
-    
-      <category term="finance" scheme="http://yoursite.com/categories/finance/"/>
-    
-    
-      <category term="payment" scheme="http://yoursite.com/tags/payment/"/>
     
   </entry>
   
