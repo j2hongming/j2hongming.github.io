@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-07-29T17:55:16.485Z</updated>
+  <updated>2021-08-05T17:14:02.330Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在本機瀏覽Open API格式的文件</title>
+    <link href="http://yoursite.com/2021/08/06/view-open-api-in-local/"/>
+    <id>http://yoursite.com/2021/08/06/view-open-api-in-local/</id>
+    <published>2021-08-05T16:59:35.000Z</published>
+    <updated>2021-08-05T17:14:02.330Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Open API類似原始資料, 可以使用ReDoc或是Swagger
+        
+      
+    
+    </summary>
+    
+      <category term="software_development" scheme="http://yoursite.com/categories/software-development/"/>
+    
+    
+      <category term="open_api" scheme="http://yoursite.com/tags/open-api/"/>
+    
+      <category term="swagger" scheme="http://yoursite.com/tags/swagger/"/>
+    
+      <category term="redoc" scheme="http://yoursite.com/tags/redoc/"/>
+    
+  </entry>
   
   <entry>
     <title>CloudFront使用Host Header決定distribution</title>
@@ -245,24 +275,6 @@
       <category term="ubuntu" scheme="http://yoursite.com/tags/ubuntu/"/>
     
       <category term="screen" scheme="http://yoursite.com/tags/screen/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>極速開發課後心得與練習紀錄</title>
-    <link href="http://yoursite.com/2021/04/12/extrem-develop/"/>
-    <id>http://yoursite.com/2021/04/12/extrem-develop/</id>
-    <published>2021-04-11T16:00:22.000Z</published>
-    <updated>2021-05-16T04:08:02.872Z</updated>
-    
-    <summary type="html">
-    
-      體驗與練習紀錄
-    
-    </summary>
-    
-      <category term="software_development" scheme="http://yoursite.com/categories/software-development/"/>
-    
     
   </entry>
   
