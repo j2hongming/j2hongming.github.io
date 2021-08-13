@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-08-06T17:07:41.293Z</updated>
+  <updated>2021-08-13T16:55:59.218Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>啟動AWS EC2 instance遇到iam:PassRole的權限問題</title>
+    <link href="http://yoursite.com/2021/08/14/launch-an-ec2-with-a-role/"/>
+    <id>http://yoursite.com/2021/08/14/launch-an-ec2-with-a-role/</id>
+    <published>2021-08-13T16:19:44.000Z</published>
+    <updated>2021-08-13T16:55:59.218Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;測試部門的同事遇到一個問題: 在AWS EC2
+        
+      
+    
+    </summary>
+    
+      <category term="software_development" scheme="http://yoursite.com/categories/software-development/"/>
+    
+    
+      <category term="AWS" scheme="http://yoursite.com/tags/AWS/"/>
+    
+      <category term="EC2" scheme="http://yoursite.com/tags/EC2/"/>
+    
+      <category term="IAM" scheme="http://yoursite.com/tags/IAM/"/>
+    
+  </entry>
   
   <entry>
     <title>基本面之獲利狀況-毛利, 營業利益率, 淨利</title>
@@ -249,28 +279,6 @@
       <category term="anxiety" scheme="http://yoursite.com/tags/anxiety/"/>
     
       <category term="cbt" scheme="http://yoursite.com/tags/cbt/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>鋪木地板體驗</title>
-    <link href="http://yoursite.com/2021/05/16/flooring/"/>
-    <id>http://yoursite.com/2021/05/16/flooring/</id>
-    <published>2021-05-16T03:50:38.000Z</published>
-    <updated>2021-05-16T04:03:37.219Z</updated>
-    
-    <summary type="html">
-    
-      鋪木地板和收邊
-    
-    </summary>
-    
-      <category term="lab" scheme="http://yoursite.com/categories/lab/"/>
-    
-    
-      <category term="diy" scheme="http://yoursite.com/tags/diy/"/>
-    
-      <category term="flooring" scheme="http://yoursite.com/tags/flooring/"/>
     
   </entry>
   
