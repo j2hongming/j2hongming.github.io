@@ -17,7 +17,7 @@ comments: false
 依照大方向產出分類(category), 粒度較tag大且抽象, **一篇文章一個category**
 tag, 粒度較category小且具體,  **一篇文章可以多個tag**, 可以從evernote記事本的名稱歸納
 
-分類可以分為軟體開發(software_development), 讀書心得(reading), 生活隨筆(essay), 嘗試與體驗(lab), 理財(finance)
+分類可以分為軟體開發(software_development), 讀書心得(reading), 生活隨筆(essay), 嘗試與體驗(lab), 理財(finance), 戲劇(drama)
 
 ## 嘗試與體驗
 紀錄體驗的想法和心得
@@ -34,3 +34,6 @@ python, git, 工具使用(tmux, vim...)
 
 ## 理財
 紀錄和財務相關的事項
+
+## 戲劇
+紀錄戲劇心得

@@ -34,6 +34,12 @@ comments: true
 
 ### IDE
 - vscode
+  - [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
+    - Code Review好物, 大多使用PyCharm的功能, 若非python的repo可以使用vs code的這個plugin
+  - [OpenAPI (Swagger) Editor](https://marketplace.visualstudio.com/items?itemName=42Crunch.vscode-openapi)
+    - 離線版編輯open api的文件, 且可以視覺化兩種Doc格式: Swagger UI和ReDoc
+  - [Markdown Table](https://marketplace.visualstudio.com/items?itemName=TakumiI.markdowntable)
+    - 編輯markdown文件的表格可以一鍵重整格式
 - pycharm
   - IdeaVim plugin
   - AceJump plugin
