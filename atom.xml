@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-08-13T16:55:59.218Z</updated>
+  <updated>2021-08-21T14:55:58.194Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我想跟你好好說話</title>
+    <link href="http://yoursite.com/2021/08/21/nonviolent-communication/"/>
+    <id>http://yoursite.com/2021/08/21/nonviolent-communication/</id>
+    <published>2021-08-21T10:00:47.000Z</published>
+    <updated>2021-08-21T14:55:58.194Z</updated>
+    
+    <summary type="html">
+    
+      以觀察, 感受, 需要, 請求和所發生的事件拉出一個空間, 讓溝通的門有機會敞開, 進而有機會達成共識
+    
+    </summary>
+    
+      <category term="reading" scheme="http://yoursite.com/categories/reading/"/>
+    
+    
+      <category term="communication" scheme="http://yoursite.com/tags/communication/"/>
+    
+  </entry>
   
   <entry>
     <title>啟動AWS EC2 instance遇到iam:PassRole的權限問題</title>
@@ -257,28 +277,6 @@
     
     
       <category term="shooping" scheme="http://yoursite.com/tags/shooping/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>和焦慮和解-整理與心得</title>
-    <link href="http://yoursite.com/2021/05/23/the-anxiety-toolkit/"/>
-    <id>http://yoursite.com/2021/05/23/the-anxiety-toolkit/</id>
-    <published>2021-05-23T14:02:33.000Z</published>
-    <updated>2021-05-23T14:28:43.818Z</updated>
-    
-    <summary type="html">
-    
-      關注與處理對於五種焦慮陷阱的反應 - 過度猶豫不決, 反芻思考與擔憂, 因完美主義而停滯, 害怕建議與批評, 逃避(包含拖延)
-    
-    </summary>
-    
-      <category term="reading" scheme="http://yoursite.com/categories/reading/"/>
-    
-    
-      <category term="anxiety" scheme="http://yoursite.com/tags/anxiety/"/>
-    
-      <category term="cbt" scheme="http://yoursite.com/tags/cbt/"/>
     
   </entry>
   
