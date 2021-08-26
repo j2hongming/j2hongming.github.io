@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-08-21T14:55:58.194Z</updated>
+  <updated>2021-08-26T16:21:35.234Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AWS Parameter Store to Bash Associative Arrays</title>
+    <link href="http://yoursite.com/2021/08/27/aws-parameter-store-to-bash-associative-array/"/>
+    <id>http://yoursite.com/2021/08/27/aws-parameter-store-to-bash-associative-array/</id>
+    <published>2021-08-26T16:08:27.000Z</published>
+    <updated>2021-08-26T16:21:35.234Z</updated>
+    
+    <summary type="html">
+    
+      擷取ssm回傳值在bash中轉為Associative Arrays使用
+    
+    </summary>
+    
+      <category term="software_development" scheme="http://yoursite.com/categories/software-development/"/>
+    
+    
+      <category term="AWS" scheme="http://yoursite.com/tags/AWS/"/>
+    
+      <category term="Systems Manager" scheme="http://yoursite.com/tags/Systems-Manager/"/>
+    
+      <category term="bash" scheme="http://yoursite.com/tags/bash/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>從source安裝python並記錄遇到的問題</title>
+    <link href="http://yoursite.com/2021/08/26/install-python-from-source/"/>
+    <id>http://yoursite.com/2021/08/26/install-python-from-source/</id>
+    <published>2021-08-26T15:55:58.000Z</published>
+    <updated>2021-08-26T16:04:03.202Z</updated>
+    
+    <summary type="html">
+    
+      相依和空間不足問題
+    
+    </summary>
+    
+      <category term="software_development" scheme="http://yoursite.com/categories/software-development/"/>
+    
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>我想跟你好好說話</title>
@@ -229,54 +273,6 @@
       <category term="divorce" scheme="http://yoursite.com/tags/divorce/"/>
     
       <category term="japanese" scheme="http://yoursite.com/tags/japanese/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>最高學習法(Stop Talking, Start Influencing)-整理與心得</title>
-    <link href="http://yoursite.com/2021/06/20/start-influencing/"/>
-    <id>http://yoursite.com/2021/06/20/start-influencing/</id>
-    <published>2021-06-20T05:42:05.000Z</published>
-    <updated>2021-06-20T07:25:07.416Z</updated>
-    
-    <summary type="html">
-    
-      整本書都是作者的實驗室, 讀起來很有趣也特別有感, 不拖泥帶水或空洞, 從一個現象開始, 例如, 酒吧和簡報會議的相似性(文本與口語), 一首歌中的歌詞誤解(圖像與口語), 叔叔在自家後院是高爾夫之神(情境/狀態), 幾個常識問答題(錯誤), 一個謎題(促發), 在體驗現象過後開始說明背後的運作原理, 接著給予好幾個在實際生活中要如何運用的關鍵提示與常碰到的疑問, 最後透過重點整理將該章的內容條列梳理
-    
-    </summary>
-    
-      <category term="reading" scheme="http://yoursite.com/categories/reading/"/>
-    
-    
-      <category term="learn" scheme="http://yoursite.com/tags/learn/"/>
-    
-      <category term="memory" scheme="http://yoursite.com/tags/memory/"/>
-    
-      <category term="recall" scheme="http://yoursite.com/tags/recall/"/>
-    
-      <category term="error" scheme="http://yoursite.com/tags/error/"/>
-    
-      <category term="pressure" scheme="http://yoursite.com/tags/pressure/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>沒使用過的產品, 怎麼買</title>
-    <link href="http://yoursite.com/2021/05/30/shopping-for-new-thing/"/>
-    <id>http://yoursite.com/2021/05/30/shopping-for-new-thing/</id>
-    <published>2021-05-30T14:49:09.000Z</published>
-    <updated>2021-05-30T15:00:18.615Z</updated>
-    
-    <summary type="html">
-    
-      沒使用過的產品, 沒有手感, 怎麼辦
-    
-    </summary>
-    
-      <category term="lab" scheme="http://yoursite.com/categories/lab/"/>
-    
-    
-      <category term="shooping" scheme="http://yoursite.com/tags/shooping/"/>
     
   </entry>
   
