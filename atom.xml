@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-08-26T16:21:35.234Z</updated>
+  <updated>2021-10-03T16:53:12.197Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PyCon Taiwan 2021體驗</title>
+    <link href="http://yoursite.com/2021/10/04/pycontw2021/"/>
+    <id>http://yoursite.com/2021/10/04/pycontw2021/</id>
+    <published>2021-10-03T16:25:05.000Z</published>
+    <updated>2021-10-03T16:53:12.197Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;第一次參加Python Conf就是線上的形式, 用一句話來形容體驗後的感覺: 豐富有趣,
+        
+      
+    
+    </summary>
+    
+      <category term="lab" scheme="http://yoursite.com/categories/lab/"/>
+    
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+      <category term="pycontw" scheme="http://yoursite.com/tags/pycontw/"/>
+    
+  </entry>
   
   <entry>
     <title>AWS Parameter Store to Bash Associative Arrays</title>
@@ -245,34 +273,6 @@
       <category term="AWS" scheme="http://yoursite.com/tags/AWS/"/>
     
       <category term="S3" scheme="http://yoursite.com/tags/S3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>離婚活動</title>
-    <link href="http://yoursite.com/2021/07/05/divorce-activity/"/>
-    <id>http://yoursite.com/2021/07/05/divorce-activity/</id>
-    <published>2021-07-05T15:56:43.000Z</published>
-    <updated>2021-07-05T16:22:27.797Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;前6集有不少因為男主角誇張的表演方式讓我笑出來的橋段, 此外還有促進多巴胺分泌的灑糖場景,
-        
-      
-    
-    </summary>
-    
-      <category term="drama" scheme="http://yoursite.com/categories/drama/"/>
-    
-    
-      <category term="divorce" scheme="http://yoursite.com/tags/divorce/"/>
-    
-      <category term="japanese" scheme="http://yoursite.com/tags/japanese/"/>
     
   </entry>
   
