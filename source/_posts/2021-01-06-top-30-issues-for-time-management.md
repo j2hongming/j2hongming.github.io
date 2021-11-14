@@ -12,6 +12,7 @@ Photo by [Ben White](https://unsplash.com/@benwhitephotography) on [unsplash](ht
 
 整理第一章到第三章, 幫助自己複習並練習輸出2021的大方向且拆解為可以實現的狀態
 
+![your plan and reality](/images/consultation/your_plan_and_reality_description.png)
 
 ## 第一章: 幫助自己選擇, 設計和充分完成
 記得以前唸書時總會聽到一種會玩又會讀書的人, 會覺得他們大概就是練武奇才, 天生就擁有這樣的本領, 非常羨慕阿QQ
