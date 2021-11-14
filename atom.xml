@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-10-27T16:26:29.004Z</updated>
+  <updated>2021-11-14T16:29:27.877Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>透過週期化訓練後完成一場全程馬拉松</title>
+    <link href="http://yoursite.com/2021/11/14/periodization-for-marathon/"/>
+    <id>http://yoursite.com/2021/11/14/periodization-for-marathon/</id>
+    <published>2021-11-14T13:52:01.000Z</published>
+    <updated>2021-11-14T16:29:27.877Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;在還沒開始之前, 跑步這件事對我來說是屬於歡樂跑的性質, 就是平常下班後都會去跑步,
+        
+      
+    
+    </summary>
+    
+      <category term="lab" scheme="http://yoursite.com/categories/lab/"/>
+    
+    
+      <category term="periodization" scheme="http://yoursite.com/tags/periodization/"/>
+    
+      <category term="marathon" scheme="http://yoursite.com/tags/marathon/"/>
+    
+  </entry>
   
   <entry>
     <title>練習不壓抑</title>
@@ -245,34 +273,6 @@
       <category term="swagger" scheme="http://yoursite.com/tags/swagger/"/>
     
       <category term="redoc" scheme="http://yoursite.com/tags/redoc/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CloudFront使用Host Header決定distribution</title>
-    <link href="http://yoursite.com/2021/07/30/cloudfront-distribution-by-host/"/>
-    <id>http://yoursite.com/2021/07/30/cloudfront-distribution-by-host/</id>
-    <published>2021-07-29T17:27:56.000Z</published>
-    <updated>2021-07-29T17:55:16.485Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;測試某個功能時, 本來想透過設定本地端的CNAME, 達成訪問測試站而非正式站的目的,
-        
-      
-    
-    </summary>
-    
-      <category term="software_development" scheme="http://yoursite.com/categories/software-development/"/>
-    
-    
-      <category term="AWS" scheme="http://yoursite.com/tags/AWS/"/>
-    
-      <category term="CloudFront" scheme="http://yoursite.com/tags/CloudFront/"/>
     
   </entry>
   
