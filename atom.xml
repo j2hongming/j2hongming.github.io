@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-11-14T16:29:27.877Z</updated>
+  <updated>2021-11-24T17:20:52.449Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python try-except-finally, return and raise</title>
+    <link href="http://yoursite.com/2021/11/25/python-try-except-finally-return-raise/"/>
+    <id>http://yoursite.com/2021/11/25/python-try-except-finally-return-raise/</id>
+    <published>2021-11-24T17:17:09.000Z</published>
+    <updated>2021-11-24T17:20:52.449Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;利用request
+        
+      
+    
+    </summary>
+    
+      <category term="software_development" scheme="http://yoursite.com/categories/software-development/"/>
+    
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+      <category term="exception" scheme="http://yoursite.com/tags/exception/"/>
+    
+  </entry>
   
   <entry>
     <title>透過週期化訓練後完成一場全程馬拉松</title>
@@ -243,36 +271,6 @@
     
     
       <category term="excel" scheme="http://yoursite.com/tags/excel/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>在本機瀏覽Open API格式的文件</title>
-    <link href="http://yoursite.com/2021/08/06/view-open-api-in-local/"/>
-    <id>http://yoursite.com/2021/08/06/view-open-api-in-local/</id>
-    <published>2021-08-05T16:59:35.000Z</published>
-    <updated>2021-08-05T17:14:02.330Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Open API類似原始資料, 可以使用ReDoc或是Swagger
-        
-      
-    
-    </summary>
-    
-      <category term="software_development" scheme="http://yoursite.com/categories/software-development/"/>
-    
-    
-      <category term="open_api" scheme="http://yoursite.com/tags/open-api/"/>
-    
-      <category term="swagger" scheme="http://yoursite.com/tags/swagger/"/>
-    
-      <category term="redoc" scheme="http://yoursite.com/tags/redoc/"/>
     
   </entry>
   
