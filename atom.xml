@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-11-24T17:20:52.449Z</updated>
+  <updated>2021-12-02T16:52:00.903Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>斷捨離體驗</title>
+    <link href="http://yoursite.com/2021/12/03/simple-life/"/>
+    <id>http://yoursite.com/2021/12/03/simple-life/</id>
+    <published>2021-12-02T16:29:39.000Z</published>
+    <updated>2021-12-02T16:52:00.903Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Daily log中有一張從2020年9月加入的卡片, 不知為何,
+        
+      
+    
+    </summary>
+    
+      <category term="lab" scheme="http://yoursite.com/categories/lab/"/>
+    
+    
+      <category term="declutter" scheme="http://yoursite.com/tags/declutter/"/>
+    
+      <category term="minimalism" scheme="http://yoursite.com/tags/minimalism/"/>
+    
+  </entry>
   
   <entry>
     <title>python try-except-finally, return and raise</title>
@@ -245,32 +273,6 @@
     
     
       <category term="fundamental_analysis" scheme="http://yoursite.com/tags/fundamental-analysis/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Excel的數值與文字</title>
-    <link href="http://yoursite.com/2021/08/07/excel-str-num/"/>
-    <id>http://yoursite.com/2021/08/07/excel-str-num/</id>
-    <published>2021-08-06T16:41:31.000Z</published>
-    <updated>2021-08-06T16:55:15.908Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;使用python程式parse一個Excel發生錯誤,
-        
-      
-    
-    </summary>
-    
-      <category term="software_development" scheme="http://yoursite.com/categories/software-development/"/>
-    
-    
-      <category term="excel" scheme="http://yoursite.com/tags/excel/"/>
     
   </entry>
   
