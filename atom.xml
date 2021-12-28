@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-12-02T16:52:00.903Z</updated>
+  <updated>2021-12-28T14:34:30.301Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>個人資訊流第一版使用心得和第二版概念</title>
+    <link href="http://yoursite.com/2021/12/28/personal-information-system-v1-experience/"/>
+    <id>http://yoursite.com/2021/12/28/personal-information-system-v1-experience/</id>
+    <published>2021-12-28T14:16:35.000Z</published>
+    <updated>2021-12-28T14:34:30.301Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;參考&amp;lt;子彈筆記&amp;gt;, &amp;lt;時間管理的三十道難題&amp;gt;,
+        
+      
+    
+    </summary>
+    
+      <category term="lab" scheme="http://yoursite.com/categories/lab/"/>
+    
+    
+      <category term="personal" scheme="http://yoursite.com/tags/personal/"/>
+    
+      <category term="information" scheme="http://yoursite.com/tags/information/"/>
+    
+      <category term="system" scheme="http://yoursite.com/tags/system/"/>
+    
+  </entry>
   
   <entry>
     <title>斷捨離體驗</title>
@@ -247,32 +277,6 @@
       <category term="EC2" scheme="http://yoursite.com/tags/EC2/"/>
     
       <category term="IAM" scheme="http://yoursite.com/tags/IAM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>基本面之獲利狀況-毛利, 營業利益率, 淨利</title>
-    <link href="http://yoursite.com/2021/08/07/profit/"/>
-    <id>http://yoursite.com/2021/08/07/profit/</id>
-    <published>2021-08-06T17:01:47.000Z</published>
-    <updated>2021-08-06T17:07:41.293Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;股票的基本面有一項是獲利狀況&lt;br&gt;可以觀察的點有: 毛利, 營業利益率,
-        
-      
-    
-    </summary>
-    
-      <category term="finance" scheme="http://yoursite.com/categories/finance/"/>
-    
-    
-      <category term="fundamental_analysis" scheme="http://yoursite.com/tags/fundamental-analysis/"/>
     
   </entry>
   
