@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2022-01-23T06:54:47.917Z</updated>
+  <updated>2022-02-28T12:34:43.355Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>老派少女購物路線-讀後感</title>
+    <link href="http://yoursite.com/2022/02/28/old-school-shopping-experience/"/>
+    <id>http://yoursite.com/2022/02/28/old-school-shopping-experience/</id>
+    <published>2022-02-28T12:24:16.000Z</published>
+    <updated>2022-02-28T12:34:43.355Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;蜜蜂與遠雷將聲音描繪成一幕幕栩栩如生的畫面&lt;br&gt;老派少女購物路線將食物的氣味和色澤以及包裹在
+        
+      
+    
+    </summary>
+    
+      <category term="reading" scheme="http://yoursite.com/categories/reading/"/>
+    
+    
+      <category term="food" scheme="http://yoursite.com/tags/food/"/>
+    
+  </entry>
   
   <entry>
     <title>2021 回顧</title>
@@ -253,26 +279,6 @@
     
     
       <category term="python" scheme="http://yoursite.com/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>我想跟你好好說話</title>
-    <link href="http://yoursite.com/2021/08/21/nonviolent-communication/"/>
-    <id>http://yoursite.com/2021/08/21/nonviolent-communication/</id>
-    <published>2021-08-21T10:00:47.000Z</published>
-    <updated>2021-08-21T14:55:58.194Z</updated>
-    
-    <summary type="html">
-    
-      以觀察, 感受, 需要, 請求和所發生的事件拉出一個空間, 讓溝通的門有機會敞開, 進而有機會達成共識
-    
-    </summary>
-    
-      <category term="reading" scheme="http://yoursite.com/categories/reading/"/>
-    
-    
-      <category term="communication" scheme="http://yoursite.com/tags/communication/"/>
     
   </entry>
   
