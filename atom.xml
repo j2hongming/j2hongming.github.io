@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2022-02-28T12:34:43.355Z</updated>
+  <updated>2022-04-28T15:56:09.404Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>跟著柴鼠學FQ-整理與心得</title>
+    <link href="http://yoursite.com/2022/04/28/financial-quotient/"/>
+    <id>http://yoursite.com/2022/04/28/financial-quotient/</id>
+    <published>2022-04-28T15:50:38.000Z</published>
+    <updated>2022-04-28T15:56:09.404Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;股價尚未回填之前，除權息對股東來說算是獲利了嗎?&lt;/p&gt;
+&lt;p&gt;將艱澀的概念用淺顯的方式循序漸
+        
+      
+    
+    </summary>
+    
+      <category term="reading" scheme="http://yoursite.com/categories/reading/"/>
+    
+    
+      <category term="finance" scheme="http://yoursite.com/tags/finance/"/>
+    
+  </entry>
   
   <entry>
     <title>老派少女購物路線-讀後感</title>
@@ -259,26 +286,6 @@
       <category term="Systems Manager" scheme="http://yoursite.com/tags/Systems-Manager/"/>
     
       <category term="bash" scheme="http://yoursite.com/tags/bash/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>從source安裝python並記錄遇到的問題</title>
-    <link href="http://yoursite.com/2021/08/26/install-python-from-source/"/>
-    <id>http://yoursite.com/2021/08/26/install-python-from-source/</id>
-    <published>2021-08-26T15:55:58.000Z</published>
-    <updated>2021-08-26T16:04:03.202Z</updated>
-    
-    <summary type="html">
-    
-      相依和空間不足問題
-    
-    </summary>
-    
-      <category term="software_development" scheme="http://yoursite.com/categories/software-development/"/>
-    
-    
-      <category term="python" scheme="http://yoursite.com/tags/python/"/>
     
   </entry>
   
