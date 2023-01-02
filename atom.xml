@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2022-04-28T15:56:09.404Z</updated>
+  <updated>2023-01-02T15:18:58.666Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2022回顧</title>
+    <link href="http://yoursite.com/2023/01/02/2022-retrospective/"/>
+    <id>http://yoursite.com/2023/01/02/2022-retrospective/</id>
+    <published>2023-01-02T15:08:21.000Z</published>
+    <updated>2023-01-02T15:18:58.666Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;2022的年度主軸(main branch)是減少鑽牛角尖的頻率, 確認關鍵要素,
+        
+      
+    
+    </summary>
+    
+      <category term="essay" scheme="http://yoursite.com/categories/essay/"/>
+    
+    
+      <category term="retrospective" scheme="http://yoursite.com/tags/retrospective/"/>
+    
+  </entry>
   
   <entry>
     <title>跟著柴鼠學FQ-整理與心得</title>
@@ -262,30 +288,6 @@
       <category term="python" scheme="http://yoursite.com/tags/python/"/>
     
       <category term="pycontw" scheme="http://yoursite.com/tags/pycontw/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>AWS Parameter Store to Bash Associative Arrays</title>
-    <link href="http://yoursite.com/2021/08/27/aws-parameter-store-to-bash-associative-array/"/>
-    <id>http://yoursite.com/2021/08/27/aws-parameter-store-to-bash-associative-array/</id>
-    <published>2021-08-26T16:08:27.000Z</published>
-    <updated>2021-08-26T16:21:35.234Z</updated>
-    
-    <summary type="html">
-    
-      擷取ssm回傳值在bash中轉為Associative Arrays使用
-    
-    </summary>
-    
-      <category term="software_development" scheme="http://yoursite.com/categories/software-development/"/>
-    
-    
-      <category term="AWS" scheme="http://yoursite.com/tags/AWS/"/>
-    
-      <category term="Systems Manager" scheme="http://yoursite.com/tags/Systems-Manager/"/>
-    
-      <category term="bash" scheme="http://yoursite.com/tags/bash/"/>
     
   </entry>
   
