@@ -56,10 +56,6 @@ class Fixnum
 end
 ```
 
-### Example 4: gist embed
-\{ % gist 89c858fdf4fd510fd910787a64eb9f04 % \}
-
-{% gist 89c858fdf4fd510fd910787a64eb9f04 %}
 
 ## Quote ##
 ### Example 1 ###

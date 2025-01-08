@@ -50,25 +50,23 @@ T: 2021/4/21之前完成
 Practice 1: 
 love all, fifteen love
 
-{% youtube 97b2MxE3Bv4 %} 
+https://www.youtube.com/watch?v=97b2MxE3Bv4
 
 
 Practice 2: 
 love all, fifteen love, thirty love
 
-{% youtube wcUZqouc7Y0 %} 
-
+https://www.youtube.com/watch?v=wcUZqouc7Y0
 
 Practice 3: 
 love all, fifteen love, thirty love, 練習第十五次
 
-{% youtube l7XMr1Ex_Rs %} 
-
+https://www.youtube.com/watch?v=l7XMr1Ex_Rs
 
 Practice 4: 
 to love fifteen
 
-{% youtube sDyY2nQSqzI %} 
+https://www.youtube.com/watch?v=sDyY2nQSqzI
 
 Practice 5: 
 練習紀錄
@@ -77,8 +75,7 @@ Practice 5:
 第四次test_love_thirty
 
 
-{% youtube l7XMr1Ex_Rs %} 
-
+https://www.youtube.com/watch?v=l7XMr1Ex_Rs
 
 Practice 6: 
 練習紀錄
@@ -86,7 +83,7 @@ Practice 6:
 第九次test_forty_love, test_love_fifteen, test_love_thirty
 第二次test_fifteen_all, test_thirty_all, test_deuce
 
-{% youtube VI2Daax6lTA %} 
+https://www.youtube.com/watch?v=VI2Daax6lTA
 
 Practice 7: 
 練習紀錄
@@ -94,4 +91,4 @@ Practice 7:
 第十次test_forty_love, test_love_fifteen, test_love_thirty
 第三次test_fifteen_all, test_thirty_all, test_deuce
 
-{% youtube OHVxR0odymQ %} 
+https://www.youtube.com/watch?v=OHVxR0odymQ

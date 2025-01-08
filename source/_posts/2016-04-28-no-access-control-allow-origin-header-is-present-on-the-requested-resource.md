@@ -40,7 +40,8 @@ $.ajax({
 
 </script>
 ```
-{% gist 89c858fdf4fd510fd910787a64eb9f04 CORS.js %}
+
+https://gist.githubusercontent.com/j2hongming/89c858fdf4fd510fd910787a64eb9f04/raw/c99e3642aa0cd58feb5038f2a8d07652efee65ff/CORS.js
 
 ## 本質
 基於同源策略(Same-origin policy)所形成的議題

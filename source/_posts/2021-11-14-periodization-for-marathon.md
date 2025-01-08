@@ -64,19 +64,19 @@ tags:
 
 ### 5月
 調整前
-{% youtube Fx2niLpUWXs %}
+https://www.youtube.com/watch?v=Fx2niLpUWXs
 
 練習抬大腿, 夾屁股, 身體向前傾, 看起來有點刻意, 落地的位置從腳跟轉移至中間
 
-{% youtube 6tUkFp1Rh74 %}
+https://www.youtube.com/watch?v=6tUkFp1Rh74
 
 ### 8月
 疲倦時左腳會跑掉
 
-{% youtube eFNusrgct28 %}
+https://www.youtube.com/watch?v=eFNusrgct28
 
 ### 9月
-{% youtube jVpioU8msZE %}
+https://www.youtube.com/watch?v=jVpioU8msZE
 
 ## 開始訓練
 在批踢踢Road_running 找到網友分享的[漢森訓練課表](https://www.ptt.cc/bbs/Road_Running/M.1547561117.A.E61.html), 並且加上了番茄鐘的資訊, 幫助自己了解大約會花費的時間
