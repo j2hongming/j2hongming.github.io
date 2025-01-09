@@ -87,10 +87,16 @@ deploy:
 # Feed
 ## Docs: https://github.com/hexojs/hexo-generator-feed
 feed:
-  type: atom
-  path: atom.xml
+  type:
+    - atom
+    - rss2
+  path:
+    - atom.xml
+    - rss2.xml
   limit: 10
   hub:
   content:
-  content_limit: 50
+  content_limit: 140
   content_limit_delim: ' '
+  order_by: -date
+  autodiscovery: true

@@ -29,8 +29,14 @@ cd j2hongming.github.io
 npm install
 ```
 
-post, test and verify on local
+if rss feed is required
+``` bash
+# https://github.com/hexojs/hexo-generator-feed
+npm install hexo-generator-feed --save
 ```
+
+post, test and verify on local
+``` bash
 hexo new post "update blog flow"
 hexo generate
 hexo server
