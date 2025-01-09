@@ -35,6 +35,12 @@ if rss feed is required
 npm install hexo-generator-feed --save
 ```
 
+if local search is required
+``` bash
+# https://github.com/Wzpan/hexo-generator-search
+npm install hexo-generator-search --save
+```
+
 post, test and verify on local
 ``` bash
 hexo new post "update blog flow"
