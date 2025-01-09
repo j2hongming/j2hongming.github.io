@@ -192,10 +192,10 @@ cloudflare_analytics:
 
 # Fill in your Umami Analytics tracking ID to enable Umami Analytics.
 umami_analytics:
-  enabled: false
-  id: e77e68be-f6e4-4br3-9365-2b76b57cd571
-  host: https://analytics.domain.com
-  script_name: umami.js
+  enabled: true
+  id: 08f5c508-b897-4883-a7f5-4c807260db9b
+  host: https://cloud.umami.is
+  script_name: script.js
 
 # Fill in you Gravatar email or hash if you want to use your gravatar as the
 # logo and/or favicons of you website.

@@ -10,6 +10,8 @@ Follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0-
     - theme: [cactus](https://github.com/probberechts/hexo-theme-cactus)
 - comments system
     - [utterances](https://utteranc.es/)
+- analytics
+    - [umami](https://eu.umami.is)
 
 ### nvm
 ``` bash
