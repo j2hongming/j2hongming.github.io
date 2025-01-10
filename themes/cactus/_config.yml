@@ -17,10 +17,11 @@ nav:
   home: /
   about: /about/
   articles: /archives/
-  experience: /experience/
-  sitemap: /sitemap/
-  projects: https://github.com/j2hongming
+  Experience: /experience/
+  Sitemap: /sitemap/
+  # projects: https://github.com/j2hongming
   search: /search/
+  Awesome Resource: /awesome-resource/
 
 
 # Links to your social media accounts.
