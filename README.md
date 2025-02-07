@@ -49,6 +49,12 @@ if local search is required
 npm install hexo-generator-search --save
 ```
 
+if seo is required
+``` bash
+# https://github.com/hexojs/hexo-generator-sitemap
+npm install hexo-generator-sitemap --save
+```
+
 post, test and verify on local
 ``` bash
 hexo new post "update blog flow"
