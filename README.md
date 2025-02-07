@@ -12,6 +12,12 @@ Follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0-
     - [utterances](https://utteranc.es/)
 - analytics
     - [umami](https://eu.umami.is)
+- seo
+    - Google Search Console
+    - [試著學 Hexo - SEO 篇 - Google Search Console](https://ithelp.ithome.com.tw/articles/10249885)
+    - [試著學 Hexo - SEO 篇 - SEO 觀念補充](https://ithelp.ithome.com.tw/articles/10250681)
+    - [Hexo搜尋引擎優化 | 是 Ray 不是 Array](https://israynotarray.com/hexo/20190514/2072033203/)
+    - [輕鬆地提交 Hexo 部落格的 Sitemap.xml 到 Google Search Console - Askie's Coding Life](https://askie.today/upload-sitemap-google-search-console-seo-hexo-blog/)
 
 ### nvm
 ``` bash
