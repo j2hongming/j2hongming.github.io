@@ -136,3 +136,4 @@ Identitiy providers => Add 'OpenID Connect'
     - [How to create a certificate with Subject Alternative Name (SAN) extensions for OpenShift 4 mirror registry - Red Hat Customer Portal](https://access.redhat.com/solutions/6973542)
     - [Create a self-signed certificate using OpenSSL | by Allan Sun | 隨筆雜記](https://blog.cssuen.tw/create-a-self-signed-certificate-using-openssl-240c7b0579d3)
     - [用 SAN Certificate 做 Multi-Domain Certificate | by Allan Sun | 隨筆雜記](https://blog.cssuen.tw/%E7%94%A8-san-certificate-%E5%81%9A-multi-domain-certificate-c7403e05c697)
+- ["Could not create user" : Error when trying to log in to Red Hat OpenShift console - Red Hat Customer Portal](https://access.redhat.com/solutions/4824871)
