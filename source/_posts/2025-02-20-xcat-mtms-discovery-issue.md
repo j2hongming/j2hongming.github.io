@@ -11,7 +11,7 @@ tags:
 
 目前遇過以下幾種:
 1. gensis image缺少網卡驅動
-2. BMC FRU的值為空(Manufacturer, Serial Number, Part Number)
+2. BMC FRU/DMI的值為空(Manufacturer, Serial Number, Part Number)
 3. ipmitool搭配lanplus選項造成連線失敗
 
 ### gensis image缺少網卡驅動
@@ -49,9 +49,32 @@ rpm -ivh xCAT-genesis-base*.rpm
 mknb x86_64
 ```
 
-### BMC FRU的值為空
+### BMC FRU/DMI的值為空
 
-處理方式: 使用各家廠商自己的工具調整BMC FRU的值(Manufacturer, Serial Number, Part Number)
+處理方式: 使用各家廠商自己的工具調整BMC FRU的值(Manufacturer, Serial Number, Part Number)，有時候連DMI都要一起調整
+
+以下為追查DMI的議題的脈絡:
+
+利用IPMI Tool確認`ipmitool fru print`，結果有值，發現只改FRU無效
+
+在`/var/log/xcat/cluster.log`發現以下log
+log
+```
+Warning: Could not find any node for $mtms using mtms-based discovery
+```
+
+查到該log是從[/opt/xcat/lib/perl/xCAT_plugin/typemtms.pm](https://github.com/xcat2/xcat-core/blob/master/xCAT-server/lib/xcat/plugins/typemtms.pm)而來，找到相關變數$mtms並確認serial為空
+
+``` perl
+my $mtms       = $request->{'mtm'}->[0] . "*" . $request->{'serial'}->[0];
+```
+
+知道MTMS discovery是透過gensis image完成該行為，檢查[dodiscovery](https://github.com/xcat2/xcat-core/blob/7cc8f8b9794f1228a38443f3f926ad0c075c1265/xCAT-genesis-scripts/usr/bin/dodiscovery#L106)中serial是如何取得，檢查已載入gensis image的目標節點，利用BMC Console確認`/sys/devices/virtual/dmi/id/product_serial`的值確實為空
+
+
+``` perl
+SERIAL=`cat /sys/devices/virtual/dmi/id/product_serial`
+```
 
 ### ipmitool搭配lanplus選項造成連線失敗
 
