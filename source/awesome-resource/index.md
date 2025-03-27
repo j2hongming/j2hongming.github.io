@@ -31,3 +31,7 @@ date: 2025-01-10 08:28:03
 ## Git
 - [為你自己學 Git | 高見龍](https://gitbook.tw/)
     - 龍哥的為你自己學系列，都是實務上會碰到的狀況，很讚
+
+## Network
+- [Computer Networking Fundamentals For Developers, DevOps, and Platform Engineers](https://labs.iximiuz.com/courses/computer-networking-fundamentals)
+    - iximiuz循序漸進地說明，搭配適當的脈絡，清楚易懂且有較完整的視野
