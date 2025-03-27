@@ -35,3 +35,7 @@ date: 2025-01-10 08:28:03
 ## Network
 - [Computer Networking Fundamentals For Developers, DevOps, and Platform Engineers](https://labs.iximiuz.com/courses/computer-networking-fundamentals)
     - iximiuz循序漸進地說明，搭配適當的脈絡，清楚易懂且有較完整的視野
+
+## 好書重讀計畫
+- 做自己的生命設計師
+- {% post_link top-30-issues-for-time-management '時間管理的30道難題' %}
