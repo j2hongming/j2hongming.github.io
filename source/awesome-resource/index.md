@@ -14,6 +14,12 @@ date: 2025-01-10 08:28:03
     - [MyApollo - 軟體開發資訊分享與教學](https://myapollo.com.tw/)
     - [Code and Me](https://blog.kyomind.tw/)
 
+## Linux
+- [LPIC-1 Exam 101](https://learning.lpi.org/en/learning-materials/101-500/)
+- [LPIC-1 Exam 102](https://learning.lpi.org/en/learning-materials/102-500/)
+- [The LPIC2 Exam Prep](https://lpic2book.github.io/src/)
+    - [PDF version](https://lpic2book.github.io/src/pdf/lpic2book.pdf)
+
 ## Container
 - [那些關於 docker 你知道與不知道的事 :: 2022 iThome 鐵人賽](https://ithelp.ithome.com.tw/users/20151857/ironman/5419)
     - 小賴的這個系列完全滿足了我對於"Why it works"的需求
