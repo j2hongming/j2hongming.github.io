@@ -33,3 +33,10 @@ esxcli hardware clock get
 
 並在該虛擬機器的設定中，開啟主客體時間同步的設定
 ![ESXi Config VM](esxi_config_vm.png)
+
+## 參考
+- [Configure Network Time Protocol (NTP)](https://knowledge.broadcom.com/external/article/317537/configuring-network-time-protocol-ntp-on.html)
+
+## 延伸閱讀
+- [time - Does my system clock automatically sync to the hardware clock? - Ask Ubuntu](https://askubuntu.com/questions/1079364/does-my-system-clock-automatically-sync-to-the-hardware-clock)
+- [linux - System Clock vs. Hardware Clock (RTC) in embedded systems - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/710523/system-clock-vs-hardware-clock-rtc-in-embedded-systems)
