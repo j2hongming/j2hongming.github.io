@@ -7,7 +7,7 @@ categories: reading
 tags: time_management
 ---
 
-![](https://images.unsplash.com/photo-1485881697404-78678dbc4639)
+![](unsplash_time.jpg)
 Photo by [Ben White](https://unsplash.com/@benwhitephotography) on [unsplash](https://unsplash.com/photos/xqjMjaGGhmw)
 
 整理第一章到第三章, 幫助自己複習並練習輸出2021的大方向且拆解為可以實現的狀態
