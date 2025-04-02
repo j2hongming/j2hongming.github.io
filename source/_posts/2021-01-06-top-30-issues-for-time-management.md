@@ -12,6 +12,8 @@ Photo by [Ben White](https://unsplash.com/@benwhitephotography) on [unsplash](ht
 
 整理第一章到第三章, 幫助自己複習並練習輸出2021的大方向且拆解為可以實現的狀態
 
+本書的核心思維: 用「**具體願景**」來修正目標，用「**列出阻礙問題**」來找出真正值得設定的任務
+
 ![your plan and reality](/images/consultation/your_plan_and_reality_description.png)
 
 ## 第一章: 幫助自己選擇, 設計和充分完成
@@ -157,6 +159,31 @@ Esor舉了拍婚紗的例子, 精準地呈現了認同價值貼紙的情境
 - 週期化訓練與全馬，比賽，上課，最大和靜止心率
 - 閱讀完一本書後能夠和自己的生活連結並用自己的話recap
 - 有意識地規劃休閒娛樂和休息, 減少被突然跑出來的資訊所牽制
+
+## 目標現實化表單模板(Template)與範例
+
+模板(Template) v1
+``` bash
+我真正想要的是什麼
+# 不需要找到最好，只要足夠好的具體願景即可
+# 目標達成後，對誰有價值? 如何描述出這個具體可見的價值?
+# 我想要…
+
+目前面臨的阻礙是什麼? 我要做出什麼改變?
+# 在不改變目標大方向的前提下, 找出現階段最值得先做且能夠消除當前阻礙的計畫, 專注在真正可以完成的下一個成果
+
+下一個階段成果
+
+```
+
+範例1: 目標=>好書重讀計畫-時間管理的三十道難題
+
+![](object_to_reality_example_top_30_issues_for_time_management.png)
+
+範例2: 目標=>自煮計畫
+
+![](object_to_reality_example_self_cooking.png)
+
 
 ## 延伸閱讀
 - [開啟持續改善之路：找到你的 gap - Joey Chen](https://www.facebook.com/467664836741473/posts/1777441965763747/?d=n)
