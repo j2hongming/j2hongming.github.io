@@ -27,20 +27,22 @@ uid=jdoe,ou=People,dc=example,dc=com
 uid=william,ou=People,dc=example,dc=com
 ou=Groups,dc=example,dc=com
 ldap:/ # dsidm localhost -b "dc=example,dc=com" group create
-Enter value for cn : bu_1
-Successfully created bu_1
+Enter value for cn : bu-1
+Successfully created bu-1
 ldap:/ # dsidm localhost -b "dc=example,dc=com" group create
-Enter value for cn : bu_2
-Successfully created bu_2
-ldap:/ # dsidm localhost group add_member bu_1 uid=jdoe,ou=People,dc=example,dc=com
+Enter value for cn : bu-2
+Successfully created bu-2
+ldap:/ # dsidm localhost group add_member bu-1 uid=jdoe,ou=People,dc=example,dc=com
 added member: uid=jdoe,ou=People,dc=example,dc=com
-ldap:/ # dsidm localhost group add_member bu_2 uid=william,ou=People,dc=example,dc=com
+ldap:/ # dsidm localhost group add_member bu-2 uid=william,ou=People,dc=example,dc=com
 added member: uid=william,ou=People,dc=example,dc=com
 ldap:/ #
 ```
 
-`jdoe` belongs to group `bu_1`
-`william` belongs to group `bu_2`
+`jdoe` belongs to group `bu-1`
+`william` belongs to group `bu-2`
+
+注意underscore(_)在整合openshfit的時候會有一些問題(ex. 有設定RoleBinding但沒有發生效果)，暫時先用hyphen(-)
 
 有兩件事要處理
 1. LDAP的group同步至Keycloak
@@ -68,7 +70,7 @@ ldap:/ #
 prompt如下
 ```
 I have a openshift cluster and a keycloak. I use OAuth in openshift with openid connect related with keycloak.
-keycloak has a realm which name is test-realm and there are two users and two groups. one of the user is foo_user and its group is bu_1
+keycloak has a realm which name is test-realm and there are two users and two groups. one of the user is foo_user and its group is bu-1
 
 using openshift webconsole to login in with foo_user. there is user sync from keycloak but the group does not sync.
 
@@ -96,7 +98,7 @@ can you figure out what happen
 
 這邊須注意**Full group path**要關閉，開啟的話登入會失敗
 
-開或關的影響是在openid connect回傳的JWT ID Tokens內的groups內容，開啟的話例如: **/bu_1**，關閉的話僅保留 **bu_1**，沒有/，這部分會在下面驗證的段落看到實際例子
+開或關的影響是在openid connect回傳的JWT ID Tokens內的groups內容，開啟的話例如: **/bu-1**，關閉的話僅保留 **bu-1**，沒有/，這部分會在下面驗證的段落看到實際例子
 ![keycloak_client_groups_5](keycloak_client_groups_5.png)
 
 ![keycloak_client_groups_6](keycloak_client_groups_6.png)
@@ -187,7 +189,7 @@ curl -k --request POST \
   "email_verified": false,
   "name": "John Doe Doe",
   "groups": [
-    "bu_1"
+    "bu-1"
   ],
   "preferred_username": "jdoe",
   "given_name": "John Doe",
