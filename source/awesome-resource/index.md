@@ -19,6 +19,7 @@ date: 2025-01-10 08:28:03
 - [LPIC-1 Exam 102](https://learning.lpi.org/en/learning-materials/102-500/)
 - [The LPIC2 Exam Prep](https://lpic2book.github.io/src/)
     - [PDF version](https://lpic2book.github.io/src/pdf/lpic2book.pdf)
+- [NCNU OpenSource - LSA 課程](https://hackmd.io/@ncnu-opensource/book/%2FF40AXYr2QMOrUD8HO12zTg)
 
 ## Container
 - [那些關於 docker 你知道與不知道的事 :: 2022 iThome 鐵人賽](https://ithelp.ithome.com.tw/users/20151857/ironman/5419)
