@@ -28,8 +28,14 @@ date: 2025-01-10 08:28:03
 - [Docker 镜像构建的一些技巧 | 卡瓦邦噶！](https://www.kawabangga.com/posts/4676)
 
 ## Kubernetes
-- [從Software Developer的角度一起認識 Kubernetes :: 2023 iThome 鐵人賽](https://ithelp.ithome.com.tw/users/20147637/ironman/6738)
-- [從Software Developer的角度一起認識 Kubernetes (二) :: 2024 iThome 鐵人賽](https://ithelp.ithome.com.tw/users/20147637/ironman/7525)
+- Level 1
+    - [關於我怎麼把一年內學到的新手 IT/SRE 濃縮到 30 天筆記這檔事 :: 2022 iThome 鐵人賽](https://ithelp.ithome.com.tw/users/20112934/ironman/5640)
+        - 清楚說明若要使用Kubernetes搭建服務時的必要元素，閱讀完後動手會有最基本的概念
+- Level 2
+    - [入門 Kubernetes 到考取 CKA 證照 :: 2024 iThome 鐵人賽](https://ithelp.ithome.com.tw/users/20168692/ironman/7376)
+        - 文章閱讀起來很紮實且有趣，透過不斷地反思深入了解Kubernetes的核心概念
+    - [從Software Developer的角度一起認識 Kubernetes :: 2023 iThome 鐵人賽](https://ithelp.ithome.com.tw/users/20147637/ironman/6738)
+    - [從Software Developer的角度一起認識 Kubernetes (二) :: 2024 iThome 鐵人賽](https://ithelp.ithome.com.tw/users/20147637/ironman/7525)
 
 ## Python
 - [為你自己學 PYTHON | 高見龍](https://pythonbook.cc/chapters/basic/introduction)
