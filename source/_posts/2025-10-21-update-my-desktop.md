@@ -123,4 +123,4 @@ j2hongming可以改為自己的帳號或同一台裝置上的另一個帳號
 
 ![](2025_desktop_cyberpunk_2077_1.jpg)
 
-![](2025_desktop_cyberpunk_2077_1.jpg)
+![](2025_desktop_cyberpunk_2077_2.jpg)
