@@ -5,3 +5,13 @@
 關鍵是**It works, why?**，事情能夠正常運作，背後的工作原理是什麼
 
 ![it works why](/images/meme/it_works_why.jpg)
+
+## 幫助自己的三張圖
+
+![](/images/consultation/your_plan_and_reality_description.png)
+
+![](/images/choice_unsplash.jpg)
+Photo by <a href="https://unsplash.com/@notso?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Christopher Ott</a> on <a href="https://unsplash.com/s/photos/anxiety?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+![](/images/eat_and_sleep.jpg)
+日劇-法醫女王
