@@ -18,6 +18,9 @@ tags:
 
 有效的部分，指的是遇到事情時提醒自己什麼做法是有效的，不過在真正遇到事情時幾乎沒有用到或提醒XD，還是會有自我內耗的習慣。
 
+![](this_is_fine.png)
+this is fine場景和秋葵很chill的反差感，是天平的兩個極端。
+
 ## 幾個回顧小心得
 
 關於健康
@@ -120,6 +123,15 @@ My Little Puppy: 柯基好讚，表情包Get
 ![](my_little_puppy_2.jpg)
 
 ![](my_little_puppy_3.jpg)
+
+### 活動
+參觀2025 G-EIGHT 遊戲展: 前幾年就知道這個活動，今年鼓起勇氣(?到現場參觀，看到6tan與學長Abby本人，內心的「我好興奮阿」圖浮現XD，剛好前一天有跟到2025/12月的LNG，讚的
+
+![](2025_geight_1.png)
+
+![](2025_geight_2.png)
+
+參觀泰拳交流賽: [同事有比賽](https://www.youtube.com/watch?v=0dd0giWXDUc)，第一次看泰拳比賽，現場看很震撼，隔壁場有選手脫臼，怕QQ
 
 ## 2026前行的一些想法
 
