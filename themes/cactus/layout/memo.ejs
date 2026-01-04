@@ -1,0 +1,151 @@
+<article class="post">
+  <div class="content">
+    <div class="timeline-raw">
+      <%- page.content %>
+    </div>
+
+    <div class="timeline" aria-live="polite"></div>
+  </div>
+</article>
+
+<script>
+(function(){
+  function isDateText(t){
+    if(!t) return false;
+    // match YYYYMMDD or YYYY-MM-DD or YYYY/MM/DD
+    return /^\s*\d{6,8}\s*$/.test(t) || /^\s*\d{4}[-\/]\d{1,2}[-\/]\d{1,2}\s*$/.test(t);
+  }
+
+  function formatDate(t){
+    t = t.trim();
+    if(/^\d{8}$/.test(t)) return t.slice(0,4)+"-"+t.slice(4,6)+"-"+t.slice(6);
+    if(/^\d{6}$/.test(t)) return t.slice(0,4)+"-"+t.slice(4,6);
+    return t.replace(/[\/]/g,'-');
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){
+    var raw = document.querySelector('.timeline-raw');
+    var out = document.querySelector('.timeline');
+    if(!raw || !out) return;
+
+    var nodes = Array.prototype.slice.call(raw.childNodes);
+    var currentGroup = null;
+
+    nodes.forEach(function(node){
+      if(node.nodeType === Node.TEXT_NODE){
+        var txt = node.textContent.trim();
+        if(!txt) return;
+        // treat standalone date text nodes
+        if(isDateText(txt)){
+          currentGroup = document.createElement('div');
+          currentGroup.className = 'timeline-group';
+          var header = document.createElement('div');
+          header.className = 'timeline-date';
+          header.textContent = formatDate(txt);
+          currentGroup.appendChild(header);
+          var items = document.createElement('div');
+          items.className = 'timeline-items';
+          currentGroup.appendChild(items);
+          out.appendChild(currentGroup);
+        } else {
+          // plain text: convert to content under an anonymous group
+          if(!currentGroup){
+            currentGroup = document.createElement('div');
+            currentGroup.className = 'timeline-group';
+            var items = document.createElement('div');
+            items.className = 'timeline-items';
+            currentGroup.appendChild(items);
+            out.appendChild(currentGroup);
+          }
+          var items = currentGroup.querySelector('.timeline-items');
+          var item = document.createElement('div');
+          item.className = 'timeline-item';
+          var body = document.createElement('div');
+          body.className = 'timeline-body';
+          body.innerHTML = txt.replace(/\n/g,'<br>');
+          item.appendChild(body);
+          items.appendChild(item);
+        }
+      } else if(node.nodeType === Node.ELEMENT_NODE){
+        if(node.tagName === 'P'){
+          var txt = node.textContent.trim();
+          if(isDateText(txt)){
+            currentGroup = document.createElement('div');
+            currentGroup.className = 'timeline-group';
+            var header = document.createElement('div');
+            header.className = 'timeline-date';
+            header.textContent = formatDate(txt);
+            currentGroup.appendChild(header);
+            var items = document.createElement('div');
+            items.className = 'timeline-items';
+            currentGroup.appendChild(items);
+            out.appendChild(currentGroup);
+            return;
+          }
+        }
+
+        if(node.tagName === 'UL' || node.tagName === 'OL'){
+          if(!currentGroup){
+            currentGroup = document.createElement('div');
+            currentGroup.className = 'timeline-group';
+            var items = document.createElement('div');
+            items.className = 'timeline-items';
+            currentGroup.appendChild(items);
+            out.appendChild(currentGroup);
+          }
+          var items = currentGroup.querySelector('.timeline-items');
+
+          Array.prototype.slice.call(node.children).forEach(function(li){
+            var item = document.createElement('div');
+            item.className = 'timeline-item';
+            var body = document.createElement('div');
+            body.className = 'timeline-body';
+            body.innerHTML = li.innerHTML;
+            item.appendChild(body);
+            items.appendChild(item);
+          });
+          return;
+        }
+
+        // fallback: append element content as an item
+        if(!currentGroup){
+          currentGroup = document.createElement('div');
+          currentGroup.className = 'timeline-group';
+          var items = document.createElement('div');
+          items.className = 'timeline-items';
+          currentGroup.appendChild(items);
+          out.appendChild(currentGroup);
+        }
+        var items = currentGroup.querySelector('.timeline-items');
+        var item = document.createElement('div');
+        item.className = 'timeline-item';
+        var body = document.createElement('div');
+        body.className = 'timeline-body';
+        body.innerHTML = node.innerHTML;
+        item.appendChild(body);
+        items.appendChild(item);
+      }
+    });
+
+    // hide the raw source
+    raw.style.display = 'none';
+
+    // animate items when they come into view
+    var items = out.querySelectorAll('.timeline-item');
+    if('IntersectionObserver' in window){
+      var obs = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){
+            e.target.classList.add('in-view');
+            obs.unobserve(e.target);
+          }
+        });
+      }, {threshold: 0.2});
+      items.forEach(function(it){ obs.observe(it); });
+    } else {
+      items.forEach(function(it){ it.classList.add('in-view'); });
+    }
+
+  });
+})();
+</script>
