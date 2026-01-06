@@ -17,12 +17,13 @@ nav:
   home: /
   about: /about/
   articles: /archives/
-  Experience: /experience/
-  Sitemap: /sitemap/
-  # projects: https://github.com/j2hongming
-  search: /search/
-  Awesome Resource: /awesome-resource/
   Timeline: /memos/2026
+  Now: /now/
+  Experience: /experience/
+  # projects: https://github.com/j2hongming
+  Awesome Resource: /awesome-resource/
+  Sitemap: /sitemap/
+  search: /search/
 
 
 # Links to your social media accounts.
