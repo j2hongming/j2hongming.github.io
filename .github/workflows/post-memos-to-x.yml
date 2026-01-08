@@ -37,5 +37,5 @@ jobs:
           python .github/scripts/post_memos_to_x.py
 
       - name: Dry run (no secrets)
-        if: ${{ !secrets.X_API_KEY || !secrets.X_ACCESS_TOKEN }}
+        if: ${{ secrets.X_API_KEY == '' || secrets.X_ACCESS_TOKEN == '' }}
         run: echo "No X credentials found — Action did a dry-run (printed new items). Add secrets to enable posting."
