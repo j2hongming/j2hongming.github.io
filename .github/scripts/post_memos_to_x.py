@@ -35,7 +35,6 @@ POST_URL = 'https://api.twitter.com/2/tweets'
 MAX_LEN = 280
 
 # OAuth2 secrets (from GitHub secrets)
-X_BEARER_TOKEN = os.environ.get('X_BEARER_TOKEN')  # optional: direct user access token
 X_CLIENT_ID = os.environ.get('X_CLIENT_ID')
 X_CLIENT_SECRET = os.environ.get('X_CLIENT_SECRET')  # optional
 X_REFRESH_TOKEN = os.environ.get('X_REFRESH_TOKEN')
@@ -113,9 +112,8 @@ def refresh_access_token(client_id: str, refresh_token: str, client_secret: Opti
 access_token = None
 is_dry_run = False
 
-if X_BEARER_TOKEN:
-    access_token = X_BEARER_TOKEN
-elif X_CLIENT_ID and X_REFRESH_TOKEN:
+
+if X_CLIENT_ID and X_REFRESH_TOKEN:
     print('Refreshing access token using refresh token...')
     access_token = refresh_access_token(X_CLIENT_ID, X_REFRESH_TOKEN, X_CLIENT_SECRET)
     if not access_token:
