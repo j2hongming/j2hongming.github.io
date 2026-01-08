@@ -8,6 +8,7 @@ layout: memo
 20260108
 - 測試利用github action自動發出一則twitter
 - 測試利用github action自動發出一則twitter, OAuth 2
+- 測試利用github action自動發出一則twitter, OAuth 2.0, tweepy
 
 20260106
 - 待辦清單與截止日期是雙面刃

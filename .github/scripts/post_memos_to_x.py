@@ -125,6 +125,45 @@ else:
     print('No bearer token nor refresh config found: running in dry-run mode and printing items.')
     is_dry_run = True
 
+# Token-type check (verify this is a user-context token)
+if not is_dry_run:
+    print('Verifying token is user-context by calling GET /2/users/me')
+    try:
+        me_resp = requests.get('https://api.twitter.com/2/users/me', headers={'Authorization': f'Bearer {access_token}'}, timeout=10)
+    except Exception as e:
+        print('Exception while checking token type:', e)
+        print('Proceeding in dry-run mode.')
+        is_dry_run = True
+        me_resp = None
+
+    if me_resp is not None and me_resp.status_code != 200:
+        # Handle unsupported/authentication errors and guidance
+        try:
+            me_body = me_resp.json()
+        except Exception:
+            me_body = me_resp.text
+        print('GET /2/users/me returned', me_resp.status_code, me_body)
+        if me_resp.status_code == 403 and isinstance(me_body, dict) and me_body.get('type', '').endswith('unsupported-authentication'):
+            print('\nUnsupported Authentication (403): the token appears to be an application-only token (app context).')
+            print('Posting requires a user-context token (OAuth 1.0a user context or OAuth2 user context).')
+            print('Remediation: obtain a user refresh token via the OAuth2 Authorization Code flow (scopes: `tweet.write offline.access`) and set `X_REFRESH_TOKEN` and `X_CLIENT_ID` in repository secrets.')
+            print('See .github/scripts/README.md for a helper to perform the one-time authorization.')
+            is_dry_run = True
+        elif me_resp.status_code == 401:
+            print('\nUnauthorized (401): token is invalid or expired. Try refreshing or obtaining a user token.')
+            is_dry_run = True
+        else:
+            # Other non-200 — fail-safe to dry-run
+            print('\nUnexpected response from /2/users/me: running in dry-run mode to avoid accidental posts.')
+            is_dry_run = True
+    elif me_resp is not None and me_resp.status_code == 200:
+        try:
+            me = me_resp.json()
+            user = me.get('data', {})
+            print('Token verified for user:', user.get('username') or user.get('id'))
+        except Exception:
+            print('Token verified (could not parse user info).')
+
 # Prepare and post items
 for item in added_items:
     status = item
@@ -142,28 +181,42 @@ for item in added_items:
         print('Dry run: would post:', status)
         continue
 
-    headers = {'Authorization': f'Bearer {access_token}', 'Content-Type': 'application/json'}
-    payload = {'text': status}
+    # Prefer using Tweepy for posting to v2 tweets endpoint
     try:
-        resp = requests.post(POST_URL, headers=headers, json=payload, timeout=15)
+        import tweepy
     except Exception as e:
-        print('Exception while posting:', e)
+        print('Tweepy not available or failed to import:', e)
+        print('Falling back to direct HTTP POST (requests).')
+        try:
+            headers = {'Authorization': f'Bearer {access_token}', 'Content-Type': 'application/json'}
+            payload = {'text': status}
+            resp = requests.post(POST_URL, headers=headers, json=payload, timeout=15)
+            if resp.status_code in (200, 201):
+                print('Posted (via requests):', status)
+            else:
+                try:
+                    body = resp.json()
+                except Exception:
+                    body = resp.text
+                print('Failed to post (via requests):', status)
+                print('Status code:', resp.status_code, 'Body:', body)
+        except Exception as e:
+            print('Exception while posting (requests fallback):', e)
+        time.sleep(1)
         continue
 
-    if resp.status_code in (200, 201):
-        print('Posted:', status)
-    else:
-        # Handle known error codes
-        try:
-            body = resp.json()
-        except Exception:
-            body = resp.text
-        print('Failed to post:', status)
-        print('Status code:', resp.status_code, 'Body:', body)
-        # Helpful guidance for common permission error
-        if resp.status_code == 403:
-            print("Permission error (403). Your app might not have the required `tweet.write` scope or access level.")
-            print('See https://developer.x.com/en/portal/product and ensure your app has `tweet.write` and `offline.access` if using refresh tokens.')
+    # Use Tweepy client with the user access token
+    try:
+        client = tweepy.Client(access_token=access_token)
+        resp = client.create_tweet(text=status)
+        # Tweepy returns a Response with .data containing tweet id
+        if resp and getattr(resp, 'data', None):
+            print('Posted (via Tweepy):', status)
+        else:
+            print('Failed to post (via Tweepy):', status, 'Response:', resp)
+    except Exception as e:
+        # Tweepy may raise exceptions for HTTP errors
+        print('Exception while posting (via Tweepy):', e)
 
     # polite delay
     time.sleep(1)
