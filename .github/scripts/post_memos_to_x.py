@@ -35,9 +35,15 @@ POST_URL = 'https://api.twitter.com/2/tweets'
 MAX_LEN = 280
 
 # OAuth2 secrets (from GitHub secrets)
+X_BEARER_TOKEN = os.environ.get('X_BEARER_TOKEN')  # optional: direct user access token
 X_CLIENT_ID = os.environ.get('X_CLIENT_ID')
 X_CLIENT_SECRET = os.environ.get('X_CLIENT_SECRET')  # optional
 X_REFRESH_TOKEN = os.environ.get('X_REFRESH_TOKEN')
+# OAuth1 user-context secrets (API key/secret + user access token/secret)
+X_API_KEY = os.environ.get('X_API_KEY')
+X_API_KEY_SECRET = os.environ.get('X_API_KEY_SECRET')
+X_ACCESS_TOKEN = os.environ.get('X_ACCESS_TOKEN')
+X_ACCESS_TOKEN_SECRET = os.environ.get('X_ACCESS_TOKEN_SECRET')
 
 if not BEFORE or not AFTER:
     print('Missing BEFORE or AFTER commit; exiting.')
@@ -108,23 +114,32 @@ def refresh_access_token(client_id: str, refresh_token: str, client_secret: Opti
     return access_token
 
 
-# Decide how to obtain an access token
+# Decide how to obtain an access token or OAuth1 credentials
 access_token = None
 is_dry_run = False
+use_oauth1 = False
 
-
-if X_CLIENT_ID and X_REFRESH_TOKEN:
-    print('Refreshing access token using refresh token...')
-    access_token = refresh_access_token(X_CLIENT_ID, X_REFRESH_TOKEN, X_CLIENT_SECRET)
-    if not access_token:
-        print('Token refresh failed: will run in dry-run mode and print found items.')
-        is_dry_run = True
+# Detect OAuth1 user-context availability
+if X_API_KEY and X_API_KEY_SECRET and X_ACCESS_TOKEN and X_ACCESS_TOKEN_SECRET:
+    use_oauth1 = True
+    print('OAuth1 credentials detected — will attempt to post using OAuth1 user context (API Key + Access Token).')
 else:
-    print('No bearer token nor refresh config found: running in dry-run mode and printing items.')
-    is_dry_run = True
+    # Prefer a direct bearer (user) token if provided
+    if X_BEARER_TOKEN:
+        access_token = X_BEARER_TOKEN
+    elif X_CLIENT_ID and X_REFRESH_TOKEN:
+        print('Refreshing access token using refresh token...')
+        access_token = refresh_access_token(X_CLIENT_ID, X_REFRESH_TOKEN, X_CLIENT_SECRET)
+        if not access_token:
+            print('Token refresh failed: will run in dry-run mode and print found items.')
+            is_dry_run = True
+    else:
+        print('No bearer token, refresh config, or OAuth1 credentials found: running in dry-run mode and printing items.')
+        is_dry_run = True
 
 # Token-type check (verify this is a user-context token)
-if not is_dry_run:
+# Skip this check for OAuth1 (we will authenticate with OAuth1 user context directly)
+if not is_dry_run and not use_oauth1:
     print('Verifying token is user-context by calling GET /2/users/me')
     try:
         me_resp = requests.get('https://api.twitter.com/2/users/me', headers={'Authorization': f'Bearer {access_token}'}, timeout=10)
@@ -205,14 +220,23 @@ for item in added_items:
 
     # Use Tweepy client with the user access token (provide client id/secret if available)
     try:
-        client_kwargs = {}
-        # Tweepy historically refers to these as consumer_key/consumer_secret for some internal flows
-        if X_CLIENT_ID:
-            client_kwargs['consumer_key'] = X_CLIENT_ID
-        if X_CLIENT_SECRET:
-            client_kwargs['consumer_secret'] = X_CLIENT_SECRET
+        # If OAuth1 credentials are available prefer that (API key/secret + access token/secret)
+        if use_oauth1:
+            client = tweepy.Client(
+                consumer_key=X_API_KEY,
+                consumer_secret=X_API_KEY_SECRET,
+                access_token=X_ACCESS_TOKEN,
+                access_token_secret=X_ACCESS_TOKEN_SECRET,
+            )
+        else:
+            client_kwargs = {}
+            # Supply OAuth2 client credentials if present (these may be optional)
+            if X_CLIENT_ID:
+                client_kwargs['consumer_key'] = X_CLIENT_ID
+            if X_CLIENT_SECRET:
+                client_kwargs['consumer_secret'] = X_CLIENT_SECRET
+            client = tweepy.Client(access_token=access_token, **client_kwargs)
 
-        client = tweepy.Client(access_token=access_token, **client_kwargs)
         resp = client.create_tweet(text=status)
         # Tweepy returns a Response with .data containing tweet id
         if resp and getattr(resp, 'data', None):

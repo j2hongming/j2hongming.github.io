@@ -9,6 +9,7 @@ layout: memo
 - 測試利用github action自動發出一則twitter, OAuth 2.0, tweepy, REFRESH TOKEN
 - 測試利用github action自動發出一則twitter, OAuth 2.0, tweepy, REFRESH TOKEN FIX
 - 測試利用github action自動發出一則twitter, OAuth 2.0, tweepy fix, REFRESH TOKEN FIX
+- 測試利用github action自動發出一則twitter, OAuth 1, tweepy
 
 20260108
 - 測試利用github action自動發出一則twitter
