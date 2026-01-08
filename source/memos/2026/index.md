@@ -5,6 +5,9 @@ date: 2026-01-04 22:55:24
 layout: memo
 ---
 
+20260109
+- 測試利用github action自動發出一則twitter, OAuth 2.0, tweepy, REFRESH TOKEN
+
 20260108
 - 測試利用github action自動發出一則twitter
 - 測試利用github action自動發出一則twitter, OAuth 2
