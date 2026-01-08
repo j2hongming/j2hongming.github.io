@@ -203,9 +203,16 @@ for item in added_items:
         time.sleep(1)
         continue
 
-    # Use Tweepy client with the user access token
+    # Use Tweepy client with the user access token (provide client id/secret if available)
     try:
-        client = tweepy.Client(access_token=access_token)
+        client_kwargs = {}
+        # Tweepy historically refers to these as consumer_key/consumer_secret for some internal flows
+        if X_CLIENT_ID:
+            client_kwargs['consumer_key'] = X_CLIENT_ID
+        if X_CLIENT_SECRET:
+            client_kwargs['consumer_secret'] = X_CLIENT_SECRET
+
+        client = tweepy.Client(access_token=access_token, **client_kwargs)
         resp = client.create_tweet(text=status)
         # Tweepy returns a Response with .data containing tweet id
         if resp and getattr(resp, 'data', None):
@@ -213,8 +220,29 @@ for item in added_items:
         else:
             print('Failed to post (via Tweepy):', status, 'Response:', resp)
     except Exception as e:
-        # Tweepy may raise exceptions for HTTP errors
+        err_str = str(e)
         print('Exception while posting (via Tweepy):', e)
+        # Provide a helpful hint for common error where Tweepy expects consumer key/secret
+        if 'consumer' in err_str.lower() or 'consumer key' in err_str.lower() or 'consumer_key' in err_str.lower():
+            print('It looks like Tweepy attempted to use OAuth1 internals but no consumer key/secret were provided.')
+            print('If you have a client id/secret for your app, set `X_CLIENT_ID` and `X_CLIENT_SECRET` in repository secrets.')
+            print('Falling back to direct HTTP POST using the access token (may still fail if token is app-only).')
+        # Fallback to direct HTTP POST
+        try:
+            headers = {'Authorization': f'Bearer {access_token}', 'Content-Type': 'application/json'}
+            payload = {'text': status}
+            resp = requests.post(POST_URL, headers=headers, json=payload, timeout=15)
+            if resp.status_code in (200, 201):
+                print('Posted (via requests fallback):', status)
+            else:
+                try:
+                    body = resp.json()
+                except Exception:
+                    body = resp.text
+                print('Failed to post (via requests fallback):', status)
+                print('Status code:', resp.status_code, 'Body:', body)
+        except Exception as e2:
+            print('Exception while posting (requests fallback):', e2)
 
     # polite delay
     time.sleep(1)

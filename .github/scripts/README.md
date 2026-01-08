@@ -24,6 +24,9 @@ Notes & links
 Using Tweepy
 - The poster script now uses `tweepy` (if available) to post tweets via v2 (`Client.create_tweet`). The GitHub Action installs `tweepy` by default. If `tweepy` is not available the script falls back to a direct HTTP POST using `requests`.
 
+Note about consumer keys
+- If Tweepy raises errors about a missing "consumer key" (e.g., "Consumer key must be string or bytes, not NoneType"), it indicates Tweepy attempted an OAuth1-related flow and expected consumer credentials. Provide `X_CLIENT_ID` and `X_CLIENT_SECRET` in repo secrets to supply these values.
+- If you cannot or prefer not to provide them, the script will automatically fall back to a direct HTTP POST using your user access token (but posting will still fail if the token is an application-only token).
 Security
 - Treat your refresh tokens and client secrets as sensitive — store them in GitHub Secrets and do not print them in logs.
 
