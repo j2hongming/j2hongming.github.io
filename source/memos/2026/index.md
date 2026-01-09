@@ -10,6 +10,7 @@ layout: memo
 - 測試利用github action自動發出一則twitter, OAuth 2.0, tweepy, REFRESH TOKEN FIX
 - 測試利用github action自動發出一則twitter, OAuth 2.0, tweepy fix, REFRESH TOKEN FIX
 - 測試利用github action自動發出一則twitter, OAuth 1, tweepy
+- 三個階段的心境變化：1. 想說點什麼，但想想還是算了 2. 進入狂吐槽模式 3. 管他去死
 
 20260108
 - 測試利用github action自動發出一則twitter
