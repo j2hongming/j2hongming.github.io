@@ -4,7 +4,7 @@ comments: false
 date: 2026-01-06 23:35:58
 ---
 
-最後更新: 2026/01/19
+最後更新: 2026/01/21
 參考來源: [Wiwi 的近況 /now](https://wiwi.blog/now/)
 
 ## 🔋 最近的狀態
@@ -15,6 +15,7 @@ date: 2026-01-06 23:35:58
 - [時間軸](/memos/2026/)
 
 ## 🍔 最近吃的/喝的
+- 抹茶牛奶: 療育好喝，牛奶先微波後加入1.5匙抹茶粉
 
 ## ✨ 最近看的/聽的/讀的
 - 無框身體: 透過烏烏醫生的說明，理解生理機制的運行，人類大概是荷爾蒙的奴隸吧(笑
@@ -23,6 +24,7 @@ date: 2026-01-06 23:35:58
 - Cursor agent
   - [Best practices for coding with agents · Cursor](https://cursor.com/blog/agent-best-practices)
   - [Cursor for what task and roles](https://cursor.com/for/product-managers)
+  - [Claude Code Skills：讓 AI 變身專業工匠 | 高見龍](https://kaochenlong.com/claude-code-skills)
 - [要讓技術取代創作嗎？ - 🍃 leafwind.tw](https://leafwind.substack.com/p/ai-anxiety)
 
 ## 🎮 最近玩的
