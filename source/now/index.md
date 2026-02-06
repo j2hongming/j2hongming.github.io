@@ -19,6 +19,8 @@ date: 2026-01-06 23:35:58
 ## 🍔 最近吃的/喝的
 
 ## ✨ 最近看的/聽的/讀的
+- Wiwi的[「推坑」──2026 年 1 月 BlogBlog 同樂會回顧](https://wiwi.blog/blog/blogblog-party-recap-jan-2026)
+  - 很讚，知道了很多有趣的東西和部落格，順手加進了Feedly  
 - Morden Family: 嘗試先關字幕看一次，第二次打開英文或中文字幕
 
 
