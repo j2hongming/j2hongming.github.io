@@ -6,6 +6,11 @@
 
 ![it works why](/images/meme/it_works_why.jpg)
 
+## 三句話
+- 試著擬訂計畫並大膽提供方案尋求進一步的討論，決定與執行
+- 紙上得來終覺淺, 絕知此事要躬行
+- 當斷不斷，反受其亂
+
 ## 幫助自己的三張圖
 
 ![](/images/consultation/your_plan_and_reality_description.png)
