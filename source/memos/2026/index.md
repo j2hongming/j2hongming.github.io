@@ -6,7 +6,7 @@ layout: memo
 ---
 
 20260213
-- 正處於一個大部分事情似乎都需要經過LLM Gareway的年代，想想看有什麼事情是不需要經由LLM Gateway的呢🤔
+- 正處於一個大部分事情似乎都需要經過LLM Gateway的年代，想想看有什麼事情是不需要經由LLM Gateway的呢🤔
 
 20260211
 - 如果我是一個LLM，TOOL是資料交換工具，MCP是詳細說明文件，SKILL是快速啟動文件
