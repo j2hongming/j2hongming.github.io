@@ -14,6 +14,12 @@ date: 2025-01-10 08:28:03
     - [MyApollo - 軟體開發資訊分享與教學](https://myapollo.com.tw/)
     - [Code and Me](https://blog.kyomind.tw/)
 
+## LLM
+- [「第一屆 AI 取暖會」講義文字稿 - ai agent 原理、應用與展望與挑戰](https://gist.github.com/coodoo/6b36342f825e2eb77acfc0a40588e897)
+    - 推特上的大大分享的資訊，非常有用，更加理解LLM到Agent的脈絡 
+- [Reviewing Code with Cursor | Cursor Docs](https://cursor.com/for/code-review)
+    - Cursor的官方文件，同一份文件中還有提到其他非常實用的情境，"Code Understanding"、"Test Generation"和"Documentation" 
+
 ## Linux
 - [LPIC-1 Exam 101](https://learning.lpi.org/en/learning-materials/101-500/)
 - [LPIC-1 Exam 102](https://learning.lpi.org/en/learning-materials/102-500/)
