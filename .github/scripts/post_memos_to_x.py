@@ -33,6 +33,10 @@ BRANCH_REF = os.environ.get('BRANCH', 'refs/heads/unknown')
 FILES_GLOB = 'source/memos/'
 POST_URL = 'https://api.twitter.com/2/tweets'
 MAX_LEN = 280
+# Retry config for transient errors (e.g., 503 Service Unavailable)
+MAX_RETRIES = 5
+RETRYABLE_STATUS = {429, 500, 502, 503, 504}
+BACKOFF_BASE = 1.0  # seconds
 
 # OAuth2 secrets (from GitHub secrets)
 X_BEARER_TOKEN = os.environ.get('X_BEARER_TOKEN')  # optional: direct user access token
@@ -188,81 +192,120 @@ for item in added_items:
         print('Dry run: would post:', status)
         continue
 
-    # Prefer using Tweepy for posting to v2 tweets endpoint
-    try:
-        import tweepy
-    except Exception as e:
-        print('Tweepy not available or failed to import:', e)
-        print('Falling back to direct HTTP POST (requests).')
-        try:
-            headers = {'Authorization': f'Bearer {access_token}', 'Content-Type': 'application/json'}
-            payload = {'text': status}
-            resp = requests.post(POST_URL, headers=headers, json=payload, timeout=15)
-            if resp.status_code in (200, 201):
-                print('Posted (via requests):', status)
-            else:
+    # Helper: post via requests with retries
+    def post_requests_with_retries(text: str) -> bool:
+        headers = {'Authorization': f'Bearer {access_token}', 'Content-Type': 'application/json'}
+        payload = {'text': text}
+        for attempt in range(1, MAX_RETRIES + 1):
+            try:
+                resp = requests.post(POST_URL, headers=headers, json=payload, timeout=15)
+            except Exception as e:
+                print(f'Exception while posting (requests) attempt {attempt}:', e)
+                resp = None
+
+            status_code = getattr(resp, 'status_code', None)
+            if resp is not None and status_code in (200, 201):
+                print('Posted (via requests):', text)
+                return True
+
+            # Extract body for logging
+            body = None
+            if resp is not None:
                 try:
                     body = resp.json()
                 except Exception:
                     body = resp.text
-                print('Failed to post (via requests):', status)
-                print('Status code:', resp.status_code, 'Body:', body)
+
+            # If status is retryable, wait and retry
+            if status_code in RETRYABLE_STATUS or resp is None:
+                wait = min(60, BACKOFF_BASE * (2 ** (attempt - 1)))
+                print(f'Retryable response (attempt {attempt}) status={status_code} body={body}; retrying after {wait}s')
+                time.sleep(wait)
+                continue
+
+            # Non-retryable failure
+            print('Failed to post (via requests):', text)
+            print('Status code:', status_code, 'Body:', body)
+            return False
+
+        print('Exceeded max retries for requests POST; giving up on:', text)
+        return False
+
+    # Helper: post via Tweepy with retries (if client creation/consumer issues occur we'll fallback)
+    def post_tweepy_with_retries(text: str) -> bool:
+        try:
+            import tweepy
         except Exception as e:
-            print('Exception while posting (requests fallback):', e)
-        time.sleep(1)
-        continue
+            print('Tweepy not available or failed to import:', e)
+            return post_requests_with_retries(text)
 
-    # Use Tweepy client with the user access token (provide client id/secret if available)
-    try:
-        # If OAuth1 credentials are available prefer that (API key/secret + access token/secret)
-        if use_oauth1:
-            client = tweepy.Client(
-                consumer_key=X_API_KEY,
-                consumer_secret=X_API_KEY_SECRET,
-                access_token=X_ACCESS_TOKEN,
-                access_token_secret=X_ACCESS_TOKEN_SECRET,
-            )
-        else:
-            client_kwargs = {}
-            # Supply OAuth2 client credentials if present (these may be optional)
-            if X_CLIENT_ID:
-                client_kwargs['consumer_key'] = X_CLIENT_ID
-            if X_CLIENT_SECRET:
-                client_kwargs['consumer_secret'] = X_CLIENT_SECRET
-            client = tweepy.Client(access_token=access_token, **client_kwargs)
-
-        resp = client.create_tweet(text=status)
-        # Tweepy returns a Response with .data containing tweet id
-        if resp and getattr(resp, 'data', None):
-            print('Posted (via Tweepy):', status)
-        else:
-            print('Failed to post (via Tweepy):', status, 'Response:', resp)
-    except Exception as e:
-        err_str = str(e)
-        print('Exception while posting (via Tweepy):', e)
-        # Provide a helpful hint for common error where Tweepy expects consumer key/secret
-        if 'consumer' in err_str.lower() or 'consumer key' in err_str.lower() or 'consumer_key' in err_str.lower():
-            print('It looks like Tweepy attempted to use OAuth1 internals but no consumer key/secret were provided.')
-            print('If you have a client id/secret for your app, set `X_CLIENT_ID` and `X_CLIENT_SECRET` in repository secrets.')
-            print('Falling back to direct HTTP POST using the access token (may still fail if token is app-only).')
-        # Fallback to direct HTTP POST
+        # Build client
         try:
-            headers = {'Authorization': f'Bearer {access_token}', 'Content-Type': 'application/json'}
-            payload = {'text': status}
-            resp = requests.post(POST_URL, headers=headers, json=payload, timeout=15)
-            if resp.status_code in (200, 201):
-                print('Posted (via requests fallback):', status)
+            if use_oauth1:
+                client = tweepy.Client(
+                    consumer_key=X_API_KEY,
+                    consumer_secret=X_API_KEY_SECRET,
+                    access_token=X_ACCESS_TOKEN,
+                    access_token_secret=X_ACCESS_TOKEN_SECRET,
+                )
             else:
-                try:
-                    body = resp.json()
-                except Exception:
-                    body = resp.text
-                print('Failed to post (via requests fallback):', status)
-                print('Status code:', resp.status_code, 'Body:', body)
-        except Exception as e2:
-            print('Exception while posting (requests fallback):', e2)
+                client_kwargs = {}
+                if X_CLIENT_ID:
+                    client_kwargs['consumer_key'] = X_CLIENT_ID
+                if X_CLIENT_SECRET:
+                    client_kwargs['consumer_secret'] = X_CLIENT_SECRET
+                client = tweepy.Client(access_token=access_token, **client_kwargs)
+        except Exception as e:
+            print('Exception while constructing Tweepy client:', e)
+            return post_requests_with_retries(text)
 
-    # polite delay
+        for attempt in range(1, MAX_RETRIES + 1):
+            try:
+                resp = client.create_tweet(text=text)
+            except Exception as e:
+                err_str = str(e)
+                # Try to detect transient 5xx in the exception text
+                if any(code in err_str for code in ('503', '502', '504', '500', '429')):
+                    wait = min(60, BACKOFF_BASE * (2 ** (attempt - 1)))
+                    print(f'Exception while posting (via Tweepy) attempt {attempt}:', e)
+                    print(f'Retrying after {wait}s')
+                    time.sleep(wait)
+                    continue
+                print('Exception while posting (via Tweepy):', e)
+                # If Tweepy hints about consumer key, fall back to requests
+                if 'consumer' in err_str.lower() or 'consumer key' in err_str.lower() or 'consumer_key' in err_str.lower():
+                    print('Tweepy attempted to use OAuth1 internals without consumer key/secret; falling back to requests.')
+                return post_requests_with_retries(text)
+
+            # If Tweepy returns a response object, check for data
+            if resp and getattr(resp, 'data', None):
+                print('Posted (via Tweepy):', text)
+                return True
+
+            # Inspect resp for status info if possible
+            status_code = None
+            try:
+                # Tweepy Response may have .status or underlying http response
+                status_code = getattr(resp, 'status', None) or None
+            except Exception:
+                status_code = None
+
+            if status_code in RETRYABLE_STATUS:
+                wait = min(60, BACKOFF_BASE * (2 ** (attempt - 1)))
+                print(f'Tweepy returned retryable status {status_code}; retrying after {wait}s')
+                time.sleep(wait)
+                continue
+
+            # Non-retryable or unknown failure — fall back to requests
+            print('Failed to post (via Tweepy):', text, 'Response:', resp)
+            return post_requests_with_retries(text)
+
+    # Prefer Tweepy when available, otherwise requests. Both functions internally retry.
+    posted = post_tweepy_with_retries(status)
+    if not posted:
+        print('Giving up on posting item after retries:', status)
+
+    # polite delay between items
     time.sleep(1)
 
 print('Done.')
