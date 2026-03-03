@@ -180,15 +180,9 @@ if not is_dry_run and not use_oauth1:
 # Prepare and post items
 for item in added_items:
     status = item
-    suffix = f' — {REPO} (memos)'
-    if len(status) + len(suffix) <= MAX_LEN:
-        status = status + suffix
-    else:
-        keep = MAX_LEN - len(suffix) - 3
-        if keep > 0:
-            status = status[:keep].rstrip() + '...' + suffix
-        else:
-            status = status[:MAX_LEN]
+    # trim to MAX_LEN if necessary, adding an ellipsis when we cut
+    if len(status) > MAX_LEN:
+        status = status[:MAX_LEN-3].rstrip() + '...'
 
     if is_dry_run:
         print('Dry run: would post:', status)
