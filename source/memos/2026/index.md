@@ -7,6 +7,7 @@ layout: memo
 
 20260304
 - 上一則遇到503，測試一下retry
+- 2026開局的流行語肯定是agent，腦海中浮現出目前為止遇到的buzzword: mobile APP、雲端運算(Cluod Computing)、Open Data、RWD、容器化(Containerize)、大數據(Big Data)、IOT、GAI。感覺更迭速度愈來愈快，2026中期不曉得會是什麼呢?
 
 20260303
 - 原來在部落格內的memo紀錄已經串好twitter（X)了，今天才發現😆，重複貼了好幾遍重複的東西
