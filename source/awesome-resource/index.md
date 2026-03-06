@@ -52,8 +52,16 @@ date: 2025-01-10 08:28:03
     - 龍哥的為你自己學系列，都是實務上會碰到的狀況，很讚
 
 ## Network
-- [Computer Networking Fundamentals For Developers, DevOps, and Platform Engineers](https://labs.iximiuz.com/courses/computer-networking-fundamentals)
-    - iximiuz循序漸進地說明，搭配適當的脈絡，清楚易懂且有較完整的視野
+- Overview
+    - [雲端時代必備網路紮根概念（含TCP/IP與IPV6） - 阿彬電腦](https://www.youtube.com/watch?v=JuHq_AWAPog&list=PLX8pvRCsO71PCwA_AgWwDO8TI503XdXiG)
+        - 蠻淺顯易懂，推薦。有[Udemy課程](https://www.udemy.com/course/tcpipipv6/?referralCode=6C8F3C4D4EBB95130B02)，可以支持這位講師
+    - [就是要你懂網路--一個網路封包的旅程 | plantegg](https://plantegg.github.io/2019/05/15/%E5%B0%B1%E6%98%AF%E8%A6%81%E4%BD%A0%E6%87%82%E7%BD%91%E7%BB%9C--%E4%B8%80%E4%B8%AA%E7%BD%91%E7%BB%9C%E5%8C%85%E7%9A%84%E6%97%85%E7%A8%8B/)
+    - [Computer Networking Fundamentals For Developers, DevOps, and Platform Engineers](https://labs.iximiuz.com/courses/computer-networking-fundamentals)
+        - iximiuz循序漸進地說明，搭配適當的脈絡，清楚易懂且有較完整的視野
+- VLAN
+    - [【網路基礎】 VLAN 基礎概念 - YouTube](https://www.youtube.com/watch?v=5jijK2YTFnw)
+- Routing
+    - [learn the routing behavior in linux steps by steps](https://chatgpt.com/share/67da2713-e0c8-8009-b4a0-2327dca0b74e)
 
 ## 好書重讀計畫
 - 做自己的生命設計師
