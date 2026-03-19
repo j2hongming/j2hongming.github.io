@@ -21,7 +21,9 @@ date: 2025-01-10 08:28:03
     - 這是可以免費看的嗎XD? 佛心的推特大大分享的資訊，主要說明context的重要性和現有agent workflow需要關注的地方
     - 錄影在此: [Agentic Engineering 不傳之秘 / Jeremy Lu / https://x.com/thecat88tw - YouTube](https://www.youtube.com/watch?v=9kb7oCamafE)
 - [Reviewing Code with Cursor | Cursor Docs](https://cursor.com/for/code-review)
-    - Cursor的官方文件，同一份文件中還有提到其他非常實用的情境，"Code Understanding"、"Test Generation"和"Documentation" 
+    - Cursor的官方文件，同一份文件中還有提到其他非常實用的情境，"Code Understanding"、"Test Generation"和"Documentation"
+- [Cursor Learn](https://cursor.com/learn)
+    - Cursor的官方學習資源，提到使用Agent時的相關資訊
 
 ## Linux
 - [LPIC-1 Exam 101](https://learning.lpi.org/en/learning-materials/101-500/)
