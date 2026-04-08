@@ -16,6 +16,12 @@ GitHub Actions setup (recommended):
    
 2. Add these as GitHub repository secrets
 
+Alternative: OAuth1 user context
+- X_API_KEY: Your Twitter App API Key
+- X_API_KEY_SECRET: Your Twitter App API Key Secret
+- X_ACCESS_TOKEN: The user access token
+- X_ACCESS_TOKEN_SECRET: The user access token secret
+
 Alternative (direct bearer token):
 - X_BEARER_TOKEN: A user OAuth2 access token with `tweet.write` scope
   (Note: Bearer tokens expire and must be manually refreshed, so refresh token flow is recommended)
@@ -32,6 +38,7 @@ import time
 from typing import Optional
 
 import requests
+from requests_oauthlib import OAuth1Session
 
 # Configuration
 BEFORE = os.environ.get('BEFORE')
@@ -51,6 +58,11 @@ X_BEARER_TOKEN = os.environ.get('X_BEARER_TOKEN')  # optional: direct user acces
 X_CLIENT_ID = os.environ.get('X_CLIENT_ID')
 X_CLIENT_SECRET = os.environ.get('X_CLIENT_SECRET')  # optional
 X_REFRESH_TOKEN = os.environ.get('X_REFRESH_TOKEN')
+# OAuth1 user-context secrets (from GitHub secrets)
+X_API_KEY = os.environ.get('X_API_KEY')
+X_API_KEY_SECRET = os.environ.get('X_API_KEY_SECRET')
+X_ACCESS_TOKEN = os.environ.get('X_ACCESS_TOKEN')
+X_ACCESS_TOKEN_SECRET = os.environ.get('X_ACCESS_TOKEN_SECRET')
 
 if not BEFORE or not AFTER:
     print('Missing BEFORE or AFTER commit; exiting.')
@@ -121,25 +133,31 @@ def refresh_access_token(client_id: str, refresh_token: str, client_secret: Opti
     return access_token
 
 
-# Decide how to obtain an access token
+# Decide how to authenticate
 access_token = None
 is_dry_run = False
+use_oauth1 = False
 
-# Prefer a direct bearer (user) token if provided
-if X_BEARER_TOKEN:
-    access_token = X_BEARER_TOKEN
-elif X_CLIENT_ID and X_REFRESH_TOKEN:
-    print('Refreshing access token using refresh token...')
-    access_token = refresh_access_token(X_CLIENT_ID, X_REFRESH_TOKEN, X_CLIENT_SECRET)
-    if not access_token:
-        print('Token refresh failed: will run in dry-run mode and print found items.')
-        is_dry_run = True
+# Prefer OAuth1 user context if full credentials are available
+if X_API_KEY and X_API_KEY_SECRET and X_ACCESS_TOKEN and X_ACCESS_TOKEN_SECRET:
+    use_oauth1 = True
+    print('OAuth1 credentials detected — will attempt to post using OAuth1 user context.')
 else:
-    print('No bearer token or refresh config found: running in dry-run mode and printing items.')
-    is_dry_run = True
+    # Prefer a direct bearer (user) token if provided
+    if X_BEARER_TOKEN:
+        access_token = X_BEARER_TOKEN
+    elif X_CLIENT_ID and X_REFRESH_TOKEN:
+        print('Refreshing access token using refresh token...')
+        access_token = refresh_access_token(X_CLIENT_ID, X_REFRESH_TOKEN, X_CLIENT_SECRET)
+        if not access_token:
+            print('Token refresh failed: will run in dry-run mode and print found items.')
+            is_dry_run = True
+    else:
+        print('No bearer token, refresh config, or OAuth1 credentials found: running in dry-run mode and printing items.')
+        is_dry_run = True
 
 # Token-type check (verify this is a user-context token)
-if not is_dry_run:
+if not is_dry_run and not use_oauth1:
     print('Verifying token is user-context by calling GET /2/users/me')
     try:
         me_resp = requests.get('https://api.twitter.com/2/users/me', headers={'Authorization': f'Bearer {access_token}'}, timeout=10)
@@ -227,6 +245,47 @@ for item in added_items:
         print('Exceeded max retries for requests POST; giving up on:', text)
         return False
 
+    # Helper: post via OAuth1 with retries
+    def post_oauth1_with_retries(text: str) -> bool:
+        payload = {'text': text}
+        for attempt in range(1, MAX_RETRIES + 1):
+            try:
+                oauth = OAuth1Session(
+                    client_key=X_API_KEY,
+                    client_secret=X_API_KEY_SECRET,
+                    resource_owner_key=X_ACCESS_TOKEN,
+                    resource_owner_secret=X_ACCESS_TOKEN_SECRET,
+                )
+                resp = oauth.post(POST_URL, json=payload, timeout=15)
+            except Exception as e:
+                print(f'Exception while posting (via OAuth1) attempt {attempt}:', e)
+                resp = None
+
+            status_code = getattr(resp, 'status_code', None)
+            if resp is not None and status_code in (200, 201):
+                print('Posted (via OAuth1):', text)
+                return True
+
+            body = None
+            if resp is not None:
+                try:
+                    body = resp.json()
+                except Exception:
+                    body = resp.text
+
+            if status_code in RETRYABLE_STATUS or resp is None:
+                wait = min(60, BACKOFF_BASE * (2 ** (attempt - 1)))
+                print(f'Retryable response (attempt {attempt}) status={status_code} body={body}; retrying after {wait}s')
+                time.sleep(wait)
+                continue
+
+            print('Failed to post (via OAuth1):', text)
+            print('Status code:', status_code, 'Body:', body)
+            return False
+
+        print('Exceeded max retries for OAuth1 POST; giving up on:', text)
+        return False
+
     # Helper: post via Tweepy with retries
     def post_tweepy_with_retries(text: str) -> bool:
         try:
@@ -285,8 +344,11 @@ for item in added_items:
             print('Failed to post (via Tweepy):', text, 'Response:', resp)
             return post_requests_with_retries(text)
 
-    # Post using Tweepy (OAuth2)
-    posted = post_tweepy_with_retries(status)
+    if use_oauth1:
+        posted = post_oauth1_with_retries(status)
+    else:
+        # Post using Tweepy (OAuth2)
+        posted = post_tweepy_with_retries(status)
     if not posted:
         print('Giving up on posting item after retries:', status)
 
