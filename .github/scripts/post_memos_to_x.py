@@ -8,9 +8,17 @@ Behavior:
 - Supports obtaining an access token by refreshing a refresh token (recommended) or using a provided bearer token.
 - If credentials are missing, it prints found items (dry run).
 
-Required GitHub secrets (one of the following):
-- `X_BEARER_TOKEN` (a user OAuth2 access token with `tweet.write`) OR
-- `X_CLIENT_ID`, `X_REFRESH_TOKEN` (and optionally `X_CLIENT_SECRET`) + the app must have `tweet.write` and `offline.access`.
+GitHub Actions setup (recommended):
+1. Obtain OAuth2 credentials with refresh token:
+   - X_CLIENT_ID: Your Twitter App's Client ID
+   - X_CLIENT_SECRET: Your Twitter App's Client Secret (optional for PKCE flow)
+   - X_REFRESH_TOKEN: A refresh token with scopes `tweet.write offline.access`
+   
+2. Add these as GitHub repository secrets
+
+Alternative (direct bearer token):
+- X_BEARER_TOKEN: A user OAuth2 access token with `tweet.write` scope
+  (Note: Bearer tokens expire and must be manually refreshed, so refresh token flow is recommended)
 
 See `.github/scripts/README.md` for setup guidance.
 """
@@ -43,11 +51,6 @@ X_BEARER_TOKEN = os.environ.get('X_BEARER_TOKEN')  # optional: direct user acces
 X_CLIENT_ID = os.environ.get('X_CLIENT_ID')
 X_CLIENT_SECRET = os.environ.get('X_CLIENT_SECRET')  # optional
 X_REFRESH_TOKEN = os.environ.get('X_REFRESH_TOKEN')
-# OAuth1 user-context secrets (API key/secret + user access token/secret)
-X_API_KEY = os.environ.get('X_API_KEY')
-X_API_KEY_SECRET = os.environ.get('X_API_KEY_SECRET')
-X_ACCESS_TOKEN = os.environ.get('X_ACCESS_TOKEN')
-X_ACCESS_TOKEN_SECRET = os.environ.get('X_ACCESS_TOKEN_SECRET')
 
 if not BEFORE or not AFTER:
     print('Missing BEFORE or AFTER commit; exiting.')
@@ -118,32 +121,25 @@ def refresh_access_token(client_id: str, refresh_token: str, client_secret: Opti
     return access_token
 
 
-# Decide how to obtain an access token or OAuth1 credentials
+# Decide how to obtain an access token
 access_token = None
 is_dry_run = False
-use_oauth1 = False
 
-# Detect OAuth1 user-context availability
-if X_API_KEY and X_API_KEY_SECRET and X_ACCESS_TOKEN and X_ACCESS_TOKEN_SECRET:
-    use_oauth1 = True
-    print('OAuth1 credentials detected — will attempt to post using OAuth1 user context (API Key + Access Token).')
-else:
-    # Prefer a direct bearer (user) token if provided
-    if X_BEARER_TOKEN:
-        access_token = X_BEARER_TOKEN
-    elif X_CLIENT_ID and X_REFRESH_TOKEN:
-        print('Refreshing access token using refresh token...')
-        access_token = refresh_access_token(X_CLIENT_ID, X_REFRESH_TOKEN, X_CLIENT_SECRET)
-        if not access_token:
-            print('Token refresh failed: will run in dry-run mode and print found items.')
-            is_dry_run = True
-    else:
-        print('No bearer token, refresh config, or OAuth1 credentials found: running in dry-run mode and printing items.')
+# Prefer a direct bearer (user) token if provided
+if X_BEARER_TOKEN:
+    access_token = X_BEARER_TOKEN
+elif X_CLIENT_ID and X_REFRESH_TOKEN:
+    print('Refreshing access token using refresh token...')
+    access_token = refresh_access_token(X_CLIENT_ID, X_REFRESH_TOKEN, X_CLIENT_SECRET)
+    if not access_token:
+        print('Token refresh failed: will run in dry-run mode and print found items.')
         is_dry_run = True
+else:
+    print('No bearer token or refresh config found: running in dry-run mode and printing items.')
+    is_dry_run = True
 
 # Token-type check (verify this is a user-context token)
-# Skip this check for OAuth1 (we will authenticate with OAuth1 user context directly)
-if not is_dry_run and not use_oauth1:
+if not is_dry_run:
     print('Verifying token is user-context by calling GET /2/users/me')
     try:
         me_resp = requests.get('https://api.twitter.com/2/users/me', headers={'Authorization': f'Bearer {access_token}'}, timeout=10)
@@ -231,7 +227,7 @@ for item in added_items:
         print('Exceeded max retries for requests POST; giving up on:', text)
         return False
 
-    # Helper: post via Tweepy with retries (if client creation/consumer issues occur we'll fallback)
+    # Helper: post via Tweepy with retries
     def post_tweepy_with_retries(text: str) -> bool:
         try:
             import tweepy
@@ -241,20 +237,12 @@ for item in added_items:
 
         # Build client
         try:
-            if use_oauth1:
-                client = tweepy.Client(
-                    consumer_key=X_API_KEY,
-                    consumer_secret=X_API_KEY_SECRET,
-                    access_token=X_ACCESS_TOKEN,
-                    access_token_secret=X_ACCESS_TOKEN_SECRET,
-                )
-            else:
-                client_kwargs = {}
-                if X_CLIENT_ID:
-                    client_kwargs['consumer_key'] = X_CLIENT_ID
-                if X_CLIENT_SECRET:
-                    client_kwargs['consumer_secret'] = X_CLIENT_SECRET
-                client = tweepy.Client(access_token=access_token, **client_kwargs)
+            client_kwargs = {}
+            if X_CLIENT_ID:
+                client_kwargs['consumer_key'] = X_CLIENT_ID
+            if X_CLIENT_SECRET:
+                client_kwargs['consumer_secret'] = X_CLIENT_SECRET
+            client = tweepy.Client(access_token=access_token, **client_kwargs)
         except Exception as e:
             print('Exception while constructing Tweepy client:', e)
             return post_requests_with_retries(text)
@@ -272,9 +260,6 @@ for item in added_items:
                     time.sleep(wait)
                     continue
                 print('Exception while posting (via Tweepy):', e)
-                # If Tweepy hints about consumer key, fall back to requests
-                if 'consumer' in err_str.lower() or 'consumer key' in err_str.lower() or 'consumer_key' in err_str.lower():
-                    print('Tweepy attempted to use OAuth1 internals without consumer key/secret; falling back to requests.')
                 return post_requests_with_retries(text)
 
             # If Tweepy returns a response object, check for data
@@ -300,7 +285,7 @@ for item in added_items:
             print('Failed to post (via Tweepy):', text, 'Response:', resp)
             return post_requests_with_retries(text)
 
-    # Prefer Tweepy when available, otherwise requests. Both functions internally retry.
+    # Post using Tweepy (OAuth2)
     posted = post_tweepy_with_retries(status)
     if not posted:
         print('Giving up on posting item after retries:', status)
