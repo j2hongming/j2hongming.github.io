@@ -7,6 +7,7 @@ layout: memo
 
 20260409
 - 買了pay-per-use的$5 credit後發出，503 Error消失了
+- 測試利用github action自動發出一則twitter
 
 20260408
 - 清明連假後，「討厭自己」的感受出現次數變頻繁了😓，狀態整體不是很好。試試看給自己一個「什麼都不做也沒有關係」的10分鐘。（記錄一下，這則訊息是買了pay-per-use的$5 credit後發出
