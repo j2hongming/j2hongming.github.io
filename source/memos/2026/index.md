@@ -5,6 +5,9 @@ date: 2026-01-04 22:55:24
 layout: memo
 ---
 
+20260413
+- 進入無意義論者的狀態第二個禮拜了
+
 20260409
 - 買了pay-per-use的$5 credit後發出，503 Error消失了
 - 測試利用github action自動發出一則twitter
