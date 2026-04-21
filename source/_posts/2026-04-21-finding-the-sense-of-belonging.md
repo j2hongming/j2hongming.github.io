@@ -1,11 +1,11 @@
+---
 title: 格格不入感
 comments: true
 date: 2026-04-21 23:11:07
 description: 
 categories: essay
 tags:
-
-# 格格不入感
+---
 
 Alice Hsu在[異鄉人]（https://alicehsu.blog/zh-tw/posts/2026/04/the-stranger/）提到
 
