@@ -7,7 +7,7 @@ categories: essay
 tags:
 ---
 
-Alice Hsu在[異鄉人]（https://alicehsu.blog/zh-tw/posts/2026/04/the-stranger/）提到
+Alice Hsu在[異鄉人](https://alicehsu.blog/zh-tw/posts/2026/04/the-stranger/）提到
 
 > 光是能舒服待著、不覺得格格不入（而是格格入入）就很神奇了。在這廣袤的世界裡，在這個總是能夠讓我們感到不自在的環境裡，可以找到一兩個舒舒服服待著的格子，可說是萬分幸運的事情了。
 
