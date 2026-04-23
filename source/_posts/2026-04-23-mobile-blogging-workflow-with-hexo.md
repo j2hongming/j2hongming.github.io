@@ -1,5 +1,5 @@
 ---
-title: 降低發文摩擦力：我的行動部落格發布工作流
+title: 發文摩擦力降低了
 comments: true
 date: 2026-04-23 21:46:20
 description: 分享如何利用 GitHub Action 與 AI 工具優化 Hexo 發文流程，實現隨時隨地用手機寫作並發布。
