@@ -11,7 +11,7 @@ tags:
   - Gemini
 ---
 
-自從成功在高鐵上使用手機成功發出{% post_link 2026-04-04-productivity-from-chef-to-intentional-living ‘針對生產力的一些想法’ %}，隱約感覺發文的摩擦力有明顯地下降。
+自從成功在高鐵上使用手機成功發出{% post_link productivity-from-chef-to-intentional-living '針對生產力的一些想法' %}，隱約感覺發文的摩擦力有明顯地下降。
 
 整理並記錄一下脈絡。
 
