@@ -9,14 +9,14 @@ tags:
   - Porkbun
 ---
 
-拖延很久的一件事，最近受到[只贏！ | Wiwi.Blog](https://wiwi.blog/blog/onlywin)這一篇的推波助瀾，今天入手了網域:j2hongming.com
+拖延很久的一件事，最近受到[只贏！ | Wiwi.Blog](https://wiwi.blog/blog/onlywin) 這一篇的推廣，今天入手了網域:j2hongming.com
 
 看到了這個畫面，感覺到近期少數的快樂。
 ![](domain_done.png)
 
 之前就有閱讀AlexHsu的[如何為網站選一個好域名 | Alex Hsu](https://alexhsu.com/domain-names)，知道了porkbun這個購買網域的地方，這次試試看在porkbun購入
 
-拖延的其中一個點其實是為了要用.com , .blog或是 .io 結尾在糾結，還參考了一些範例，結果看到了更多可能性(.dev, .org , .net, .tw)，現在想想為了這個小事而拖延，覺得自己有點好笑，但也沒關係，這是我其中的一個選擇障礙特質XD。
+拖延的其中一個點其實是為了要用`.com` , `.blog`或是 `.io` 結尾在糾結，還參考了一些範例，結果看到了更多可能性(`.dev`, `.org` , `.net`, `.tw`)，現在想想為了這個小事而拖延，覺得自己有點好笑，但也沒關係，這是我其中的一個選擇障礙特質XD。
 
 - https://wiwi.blog/
 - https://alexhsu.com/
