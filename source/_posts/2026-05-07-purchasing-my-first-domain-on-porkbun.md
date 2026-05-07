@@ -35,6 +35,9 @@ tags:
 這個圖好可愛XDD
 ![](porkbun_done.png)
 
+## porkbun端的設定
+- [How to Add DNS Records on Porkbun - Porkbun Knowledge Base](https://kb.porkbun.com/article/231-how-to-add-dns-records-on-porkbun)
+
 ## github端的設定
 
 設定時才知道除了ALIAS Type之外需要額外確認www.j2hongming.com有正確的CNAME
