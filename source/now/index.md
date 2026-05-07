@@ -13,7 +13,7 @@ date: 2026-01-06 23:35:58
 - 覺得現代生活模式其實比想像中的脆弱
 
 ## 💬 最近放到網路上的
-
+- [擺脫糾結，入手個人網域](https://j2hongming.com/2026/05/07/purchasing-my-first-domain-on-porkbun/)
 
 ## 🍔 最近吃的/喝的
 
