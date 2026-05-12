@@ -5,6 +5,7 @@ date: 2026-03-17 23:05:00
 description: 
 categories: essay
 tags:
+  - BlogBlog同樂會
 ---
 
 這是我的「[BlogBlog 同樂會 - 2026 年 3 月](https://blogblog.club/party)」的投稿文章。本月主題是「[理想的日常](https://alexhsu.com/perfect-days)」，由 [Alex Hsu](https://alexhsu.com/) 主持。如果你有自己的部落格，歡迎一起來參加！
