@@ -14,7 +14,7 @@ tags:
 
 總之，我目前還是有個需求：想要在更新部落格Timeline和Now的內容後也能夠讓其出現在一些還有在使用的社群媒體（Twitter, Facebook)
 
-因此，部落格是我的單一資料來源（single point of truth ，現有的社群媒體成為了下游。
+因此，部落格是我的單一資料來源（single point of truth)，現有的社群媒體成為了下游。
 
 現在更新Timeline後，透過購買Twitter API額度和GitHub actions 的幫忙，Twitter 上過一會兒就會自動出現一樣的文字。更新Now後，目前就簡單地手動將連結發文至Facebook 。
 
