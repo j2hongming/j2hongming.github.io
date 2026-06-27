@@ -8,7 +8,7 @@ tags:
   - BlogBlog同樂會
 ---
 
-> 這是我的「[BlogBlog 同樂會 - 2026 年 6 月](https://blogblog.club/party/)」的投稿文章。本月主題是「[音樂與記憶](https://www.yozblog.com/posts/music-and-memories)」，由 [柚子](https://www.yozblog.com/) 主持。如果你有自己的部落格，歡迎一起來參加！
+> 這是我的「[BlogBlog 同樂會 - 2026 年 6 月](https://blogblog.club/party/)」的投稿文章。本月主題是「 [音樂與記憶](https://www.yozblog.com/posts/music-and-memories) 」，由 [柚子](https://www.yozblog.com/) 主持。如果你有自己的部落格，歡迎一起來參加！
 
 音樂這個載體封存了我不同時期的回憶與感受，以前總是聽到某一首歌曲後，勾起些許片段的回憶。在還沒開始之前，我其實有點害怕XD，怕一聽會停不下來，一首接著一首，此外，也會想知道歌手的近況，這樣花費的時間或許會比想像中還要多。整理後發現蠻有趣的，隨著時代演進，CD，MP3，串流，能夠接觸到的類型變很多。偶爾懷舊一下，會有活著的感覺，也期許適時聽一些新的歌，封存更多的回憶與感受。
 
