@@ -55,11 +55,11 @@ tags:
 
 ## 嚴重低潮期
 
-2019進入了嚴重低潮期，有種站在高塔上不知道何時會崩塌的感覺，對什麼樣的不感興趣也不抱有期待，有幾首音樂陪伴著。
+2019進入了嚴重低潮期，有種站在高塔上不知道何時會崩塌的感覺，對什麼東西都不感興趣也不抱有期待，有幾首音樂陪伴著。
 
 印象中，當時情緒一直處於低落的狀態，一家早餐店的捲餅當中的蛋香味是記憶中最香的食物，有一種會讓人想要下次再來吃的期待感。
 
-[Something I don't need]（https://youtu.be/8FS9MvbXoUc?si=8zni-5qmJMHlrvSU）: 瘦子的這首是最主要的一首，聽著聽著仿佛帶我去到一個悠閒的小島，並且開始思考自己真正想要的是什麼。
+[Something I don't need](https://youtu.be/8FS9MvbXoUc?si=8zni-5qmJMHlrvSU): 瘦子的這首是最主要的一首，聽著聽著仿佛帶我去到一個悠閒的小島，並且開始思考自己真正想要的是什麼。
 
 [明天的煩惱](https://youtu.be/2EI5Vlww4mg?si=jsJi0WiCK08Glloa): 可能是內心中的渴望，希望把今天自己鑽牛角尖的混亂思緒與自我質疑留到明天再煩惱。
 
@@ -80,5 +80,3 @@ tags:
 
 
 [What it sounds like](https://youtu.be/TbMEMCvFbZk?si=xtphyK0IZIFchQ_w): 獵魔女團的歌都很好聽，其中最喜歡這一首，聽起來有種「誠實面對自己」後的堅毅感。
-
-
