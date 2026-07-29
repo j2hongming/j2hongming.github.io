@@ -24,3 +24,5 @@ tags:
 ## github網頁編輯
 
 在repository頁面按下`.`，會進入vscode的編輯器畫面，現在這篇就是透過這個方式發布XD
+
+![github_editor](github_editor.png)
