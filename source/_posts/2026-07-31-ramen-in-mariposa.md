@@ -30,6 +30,8 @@ tags:
 
 下午進入到優勝美地，氣溫降了很多，因為剛好是淡季，遊客並沒有想像中的多，有看到著名的酋長岩和剩下一點點水流的瀑布，當時的我不知道酋長岩就是Alex Honnold這位攀岩好手挑戰徒手攀登的地方，當下只感覺很壯觀、很冷，想趕快回到溫暖的車上，同事說了一句: 「好冷，好想吃一碗熱騰騰的拉麵。」，我們當時都覺得要在晚上住宿的小鎮馬里波薩找到一間拉麵店有些天方夜譚，畢竟這是個在美國的小鎮，殊不知google map打開，還真的有XD，[Little Shop of Ramen](https://maps.app.goo.gl/5Unxv6194XZDgAU96)，下山後先去民宿check-in，趕在關門前吃一碗拉麵，這間店一半的空間看起來像是一般的餐廳，另一半竟然是酒吧!XD
 
+![waterfall](waterfall.png)
+
 ![little_shop_of_ramen](little_shop_of_ramen.png)
 
 於是，我和這碗拉麵完成了一期一會的緣分。
