@@ -8,7 +8,7 @@ tags:
   - BlogBlog同樂會
 ---
 
-> 這是我的「BlogBlog 同樂會 – 2026 年 8 月 」的投稿文章。本月主題是「一期一會」，由 ikuka 主持。如果你有自己的部落格，歡迎一起來參加！
+> 這是我的「[BlogBlog 同樂會 - 2026 年 8 月](https://blogblog.club/party/)」的投稿文章。本月主題是「[一期一會](https://blog.ikukaroom.com/ichigo-ichie/)」，由 [ikuka](https://blog.ikukaroom.com/) 主持。如果你有自己的部落格，歡迎一起來參加！
 
 先祝本屆主持人ikuka生日快樂，歐咩爹都🎉
 
