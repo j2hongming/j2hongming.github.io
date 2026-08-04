@@ -189,4 +189,3 @@ Esor舉了拍婚紗的例子, 精準地呈現了認同價值貼紙的情境
 - [開啟持續改善之路：找到你的 gap - Joey Chen](https://www.facebook.com/467664836741473/posts/1777441965763747/?d=n)
 - [有所回饋 - 你明明做得到，為什麼不做 -童童老師的孩子這樣說](https://www.facebook.com/100212014834114/posts/348568153331831/?d=n)
 - [時間管理的30道難題 閱讀心得 | 點字記](https://roulesophy.github.io/20200613-esor-time-management-book/)
-- 
