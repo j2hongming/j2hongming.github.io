@@ -1,5 +1,5 @@
 ---
-title: 誠實面對自己系列1:體能
+title: 誠實面對自己系列1：體能
 comments: true
 date: 2026-08-06 22:23:33
 description: 
