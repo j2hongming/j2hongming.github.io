@@ -10,7 +10,7 @@ tags:
   - system
 ---
 
-{% post_link personal-information-system-v2-experience '個人資訊流v2使用心得和v2.1概念' %}
+來源：{% post_link personal-information-system-v2-experience '個人資訊流v2使用心得和v2.1概念' %}
 
 ## 規劃與做決定
 - 當事情一起來且多又雜時，無法判斷先後次序，變成放棄無管理狀態，系統停擺
