@@ -1,0 +1,37 @@
+---
+title: Nothing Good Happens After 2AM
+comments: true
+date: 2026-09-21 00:39:28
+description:
+categories: essay
+tags:
+  - BlogBlog同樂會
+  - 睡眠
+---
+
+> 這是「[BlogBlog 同樂會 - 2026 年 9 月](https://blogblog.club/party/)」的投稿文章。本月主題是「[晚上不睡覺](https://jasonjlai.net/zh/3pwriting/stay-up.html)」，由 [Jason Lai](https://jasonjlai.net/) 主持。如果你有自己的部落格，歡迎一起來參加！
+
+自從於HIMYM S1E18認識到「Nothing Good Happens After 2AM」這句話之後，似乎就很少晚上不睡覺了...
+
+另一個原因是太常碰到心累的狀況，只好練習「法醫女王」傳授的智慧
+
+![](/images/eat_and_sleep.jpg)
+
+沒有拉，其實只是因為現在睡覺時間十分珍貴，連周末休息時間身體都不知為何地呈現易於入睡的狀態，睡覺 aka 休息對於我來說是一種需要列入行程考量的其中一個項目。
+
+那麼只好透過自己腦海中的一些回憶來看看是哪些狀況會讓我晚上不睡覺
+
+「思緒太多」是第一個浮上來的字，大概的狀況是睡前有個想法縈繞在腦海，關燈後揮之不去，間接造成晚上睡不著覺。
+
+![](/images/meme/why_it_is_always_thinking.jpg)
+[twitter post](https://twitter.com/CatgirlFingies/status/1434742695658868738)
+
+「蚊子」是第二個浮上來的字，在耳朵旁的嗡嗡聲很讓人困惱，搭配觸覺的癢感，晚上睡不著覺。
+
+以上兩個都是有點被動的狀況，想了想有沒有甚麼比較主動的狀況呢?
+
+「夜衝」是第三個浮上來的字，雖然我不曉得在2026這個時間點是否還存在這個概念XD，畢竟是個快20年前的記憶點，大ㄧ時期初生之犢不畏虎，半夜在剛認識沒多久的同學號召下，加上沒體驗過晚上不睡覺在外面的新鮮感，從彰化市區騎車到清水休息站「夜衝」
+
+「狼人殺」是第四個浮上來的字，大學班籃每年有固定的聚會，很多同學還沒有組成家庭前，一群人晚上不睡覺玩「狼人殺」直到日出，印象深刻，現在當然是不太可能會這樣幹了XD
+
+總之，對於2026年的我來說，Nothing Good Happens After 2AM，感覺是愈來愈準確了。
