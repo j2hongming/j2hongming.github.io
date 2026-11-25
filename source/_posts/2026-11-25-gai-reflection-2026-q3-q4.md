@@ -28,6 +28,7 @@ tags:
 開發的節奏才回到正軌。
 
 ## 好物分享
-[ 026 生成式 AI 年會｜觀看指南](https://blog.gaiconf.com/news/2026-gaiconf-guidance/)
- AI Era, 架構師的注意力該用在哪裡? — 安德魯的部落格](https://columns.chicken-house.net/2026/07/08/devopsdays-aiera-architect-showcase/#41-%E8%A6%8F%E6%A0%BC%E5%B0%8D%E9%BD%8A-%E6%88%90%E6%9E%9C%E6%98%AF%E5%90%A6%E7%AC%A6%E5%90%88%E6%A5%AD%E5%8B%99%E9%9C%80%E6%B1%82)
-[ 052⛰️ 高見龍｜用一段提示詞，讓AI不再亂寫程式：高見龍的「規格驅動開發」實戰心法](https://blog.gaiconf.com/2026/eddie-kao-spec-driven-development/)
+- [工程判斷力的養成與傳承（HWDC 2026・32 頁版）](https://s.itho.me/ccms_slides/2026/10/19/6b6e0565-40e4-4efd-96b2-99c2d87b26b1.pdf)
+- [ 026 生成式 AI 年會｜觀看指南](https://blog.gaiconf.com/news/2026-gaiconf-guidance/)
+- [AI Era, 架構師的注意力該用在哪裡? — 安德魯的部落格](https://columns.chicken-house.net/2026/07/08/devopsdays-aiera-architect-showcase/#41-%E8%A6%8F%E6%A0%BC%E5%B0%8D%E9%BD%8A-%E6%88%90%E6%9E%9C%E6%98%AF%E5%90%A6%E7%AC%A6%E5%90%88%E6%A5%AD%E5%8B%99%E9%9C%80%E6%B1%82)
+- [ 052⛰️ 高見龍｜用一段提示詞，讓AI不再亂寫程式：高見龍的「規格驅動開發」實戰心法](https://blog.gaiconf.com/2026/eddie-kao-spec-driven-development/)
