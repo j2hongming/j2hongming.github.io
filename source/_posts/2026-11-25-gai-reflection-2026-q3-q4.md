@@ -27,6 +27,11 @@ tags:
 ・把讓 AI 每改一次就能自己檢查的那套機制補上
 開發的節奏才回到正軌。
 
+總結三個自己覺得重要的部分
+- 讓第一版穩定codebase的結構保持良好的設計的方法
+- 連線與權限管理
+- Agent時代管理credentials的方法
+
 ## 好物分享
 - [工程判斷力的養成與傳承（HWDC 2026・32 頁版）](https://s.itho.me/ccms_slides/2026/10/19/6b6e0565-40e4-4efd-96b2-99c2d87b26b1.pdf)
 - [ 026 生成式 AI 年會｜觀看指南](https://blog.gaiconf.com/news/2026-gaiconf-guidance/)
